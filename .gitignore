@@ -1,0 +1,12 @@
+#Ignored files
+
+#OS
+.DS_Store
+
+#Awestruct
+/.sass-cache
+/_site
+/_tmp
+
+#Editor
+*.tmproj

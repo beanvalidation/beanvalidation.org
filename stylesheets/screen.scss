@@ -1,0 +1,119 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Import the non-default scaffolding module.
+@import "blueprint/scaffolding";
+
+@import "compass/utilities/lists";
+
+@import "compass/utilities/links/link-colors";
+
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+// @include blueprint
+
+// If you are doing a lot of stylesheet concatenation, it is suggested
+// that you scope your blueprint styles, so that you can better control
+// what pages use blueprint when stylesheets are concatenated together.
+body.bp {
+  @include blueprint-typography(true);
+  @include blueprint-utilities;
+  @include blueprint-debug;
+  @include blueprint-interaction;
+  // Remove the scaffolding when you're ready to start doing visual design.
+  // Or leave it in if you're happy with how blueprint looks out-of-the-box
+}
+
+form.bp {
+  @include blueprint-form;
+  // You'll probably want to remove the scaffolding once you start styling your site.
+  @include blueprint-scaffolding; 
+}
+
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+
+$h_color:#AE5500;
+body.bp {
+  font-size:90%;
+  pre {
+    margin-top:0em;
+    margin-bottom:0em;
+  }
+  p {
+    margin-top:0em;
+    margin-bottom:.5em;
+  }
+  h1 {
+    margin-top:1em;
+    margin-bottom:1em;
+    line-height:1em;
+    font-size:180%;
+	color:$h_color;
+  }
+  h2 {
+    margin-top:.75em;
+    margin-bottom:.75em;
+	font-size:150%;
+	color:$h_color;
+  }
+  h3 {
+    margin-top:.5em;
+    margin-bottom:.5em;
+    line-height:1.5em;
+	font-size:120%;
+	color:$h_color;
+  }
+
+  #container {
+    @include container; 
+  }
+}
+
+#header {
+  clear: both; 
+  text-align:center;
+}
+
+#footer {
+  clear: both; 
+  text-align:center; 
+  margin-top:3em;
+  font-size:70%
+}
+
+//Global error
+#error-404 {
+  @include prepend(4);
+  @include column(16);
+  @include append(4);
+  padding-top: 2em;
+  font-size: 100%;
+}
+
+//Per page specifics
+
+//Bean Validation
+#bv-title {
+  text-align:center;
+}
+#bv-two-columns {
+  //@include container
+  #bv-column-left {
+    @include column(11);
+    @include append(2);
+  }
+  #bv-column-right {
+    @include column(11, true);
+  }
+}
+#bv-bottom {
+  clear:both;
+  margin-top:2em;
+}
+

@@ -1,0 +1,10 @@
+RewriteEngine on
+
+IndexIgnore *
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+#beanvalidation.org/issues
+RewriteCond %{HTTP_HOST} ^beanvalidation.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www.beanvalidation.org$
+RewriteRule ^issues$ "https\:\/\/hibernate\.onjira\.com\/browse\/BVAL" [R=302,L]
