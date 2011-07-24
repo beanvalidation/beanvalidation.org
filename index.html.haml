@@ -3,22 +3,20 @@ title: Bean Validation
 layout: default
 author: Emmanuel Bernard
 ---
-#bv-title
-  :markdown
-    # Bean Validation
-    
 :markdown
-  Welcome to the Bean Validation specification website. You will find information about version 1.0 (stable) as well as the version 1.1 (work in progress).
+  # Bean Validation
+
+  Welcome to the Bean Validation specification website. You will find information about the stable version 1.0 as well as version 1.1 currently being worked on.
 
 #bv-two-columns
   #bv-column-left
     :markdown
       ## What is Bean Validation
       
-      Bean Validation is a Java specification conducted under the JCP umbrella and lead
-      by [Emmanuel Bernard](http://emmanuelbernard.com) / [Red Hat](http://redhat.com).
-      Bean Validation provides a unified way of declaring and defining constraints on
-      an object model.
+      Bean Validation is a Java specification which:
+      * provides a unified way of declaring and defining constraints on an object model.
+      * defines a runtime engine to validate objects
+      
       <pre>
       public class User {
           &#64;NotNull &#64;Email 
@@ -30,44 +28,20 @@ author: Emmanuel Bernard
       }
       </pre>
       
-      Bean Validation also defines a runtime to validate objects. Layers of your 
-      application (presentation, business layer, persistence) can delegate validation
-      logic to Bean Validation and reuse constraints declared on your domain model.
-      In the Java EE space, JSF, JPA, EJB and CDI components are integrating Bean Validation.
-      
-      Read the [Bean Validation 1.0 specification](/1.0/spec/).
-
+      [Learn more...](intro)
+            
   #bv-column-right
     :markdown
       ## Bean Validation 1.1
       
-      Bean Validation 1.1 known as [JSR-349](http://jcp.org/en/jsr/detail?id=349) is 
-      being made in the open. You are encourage to come contribute to make a difference.
+      Bean Validation 1.1 is a specification proposal which aims at improving upon the intitial version. Its JCP matricule is [JSR-349](http://jcp.org/en/jsr/detail?id=349). Like all Red Hat lead JSRs, Bean Validation is made in the open in an open source fashion. You are encourage to come contribute to make a difference.
       
       Though we adjust them as needed, you can check out the [Bean Validation 1.1 goals](roadmap).
       
-      ### Participate
-      
-      If you want to casually propose/discuss a feature, use our [forum](https://forum.hibernate.org/viewforum.php?f=26). You can also consult our [bug tracker](/issues).
-      
-      For more heavy contribution, follow our progress and participate to the work by:
-      
-      * [joining the JSR-349 expert group](http://www.jcp.org/en/jsr/egnom?id=349)
-      * joining the mailing list: [beanvalidation-dev@lists.jboss.org](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev)
-      
-      The mailing is is where all the work is done.
-      
-      ### Repositories
-      
-      All of the expert group work is done in the open. That includes the specification, its API the reference implementation (RI) and the test compatibility kit (TCK):
-      
-      * specification repository (TBD)
-      * [Reference implementation repository](https://github.com/hibernate/hibernate-validator)
-      * [API repository](https://github.com/beanvalidation/beanvalidation-api)
-      * [TCK repository](https://github.com/beanvalidation/beanvalidation-tck)
-      
+      [Learn how to provide feedback or participate](/contribute).
+
 #bv-bottom
   :markdown
-    ## News
-    
+    ## Latest news
+
     The specification has been proposed to the JCP expert committee and is in review ballot. Stay tuned for the real work to begin.
