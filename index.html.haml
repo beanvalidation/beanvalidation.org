@@ -41,7 +41,18 @@ author: Emmanuel Bernard
       [Learn how to provide feedback or participate](/contribute).
 
 #bv-bottom
-  :markdown
-    ## Latest news
-
-    The specification has been proposed to the JCP expert committee and is in review ballot. Stay tuned for the real work to begin.
+  
+  %h2 
+    Latest news  
+  #latest-news
+    - for post in site.posts[0,4] do
+      .item
+        %h2 
+          %a{:href=>post.url}= post.title
+        %h3 #{post.date.strftime( '%d %B %Y' )}
+        .body
+          #{summarize( html_to_text( post.content ), 50 )}
+        .tail
+          %a{:href=>post.url} Read more
+    #even-more
+      %a{:href=>'/news'}Even more news!
