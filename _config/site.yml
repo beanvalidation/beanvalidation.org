@@ -2,11 +2,7 @@ title: Bean Validation
 
 profiles:
   development:
-  # staging:
-  #   base_url: http://test.beanvalidation.org/
-  #   deploy:
-  #     host: emmanue2@emmanuelbernard.com
-  #     path: /home1/emmanue2/public_html/test/beanvalidation
+    disqus_developer: true
   production:
     base_url: http://beanvalidation.org/
     deploy:
@@ -14,3 +10,4 @@ profiles:
       path: ~/public_html/topdomain-beanvalidation-org
 
 google_analytics: UA-24703879-1
+disqus: beanvalidation
