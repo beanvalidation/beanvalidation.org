@@ -1,8 +1,10 @@
+require 'mytagger'
+
 Awestruct::Extensions::Pipeline.new do
   # extension Awestruct::Extensions::Posts.new( '/news' ) 
   extension Awestruct::Extensions::Posts.new( '/news', :posts )
   extension Awestruct::Extensions::Paginator.new(:posts, '/news/index', :per_page => 5 )
-  extension Awestruct::Extensions::Tagger.new( :posts, 
+  extension Awestruct::Extensions::MyTagger.new( :posts, 
                                                '/news/index', 
                                                '/news/tags', 
                                                :per_page=>5 )
