@@ -31,9 +31,10 @@ You can also join the [JSR 349 expert group](http://www.jcp.org/en/jsr/egnom?id=
 
 The specification is done in the open: both discussions and artifacts.
 
-* specification repository (TBD)
+* [Specification repository](https://github.com/beanvalidation/beanvalidation-spec)
 * [Reference implementation repository](https://github.com/hibernate/hibernate-validator)
 * [API repository](https://github.com/beanvalidation/beanvalidation-api)
 * [TCK repository](https://github.com/beanvalidation/beanvalidation-tck)
+* [This website source](https://github.com/beanvalidation/beanvalidation.org)
 
 Fork and propose your pull requests.
