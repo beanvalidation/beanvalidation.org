@@ -37,4 +37,7 @@ The specification is done in the open: both discussions and artifacts.
 * [TCK repository](https://github.com/beanvalidation/beanvalidation-tck)
 * [This website source](https://github.com/beanvalidation/beanvalidation.org)
 
-Fork and propose your pull requests.
+Interested? Read all about how to
+
+* [concretely contributing to the specification](specification)
+* [improve this website](site).
