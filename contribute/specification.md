@@ -13,10 +13,10 @@ The recommended approach to contribute to the spec is via
 This is an extremely useful tool to review and comment proposals.
 
 Many specification changes involve API changes as well. In this case, propose a pull 
-request for based of the Bean Validation API repository as well.
+request for the [Bean Validation API](https://github.com/beanvalidation/beanvalidation-api) repository as well.
 
 Want to be a very good citizen? Also work on implementing your proposal on the 
-reference implementation and the tck and send a pull request for each. Easy :)
+[reference implementation](https://github.com/hibernate/hibernate-validator) and the [TCK](https://github.com/beanvalidation/beanvalidation-tck) and send a pull request for each. Easy :)
 
 ## Pull requests
 
@@ -27,7 +27,7 @@ When doing a pull request, make sure to:
 * rebase your work off the latest master
 * name your topic branch by the issue number 
   (like [BVAL-42](https://hibernate.onjira.com/browse/BVAL-42))
-* rebase your work rather than merge, non linear history are annoying
+* rebase your work rather than merge, non linear histories are annoying
 * respect the style (coding, number of columns per line etc)
 
 ## Recommended tools to edit the Docbook specification
