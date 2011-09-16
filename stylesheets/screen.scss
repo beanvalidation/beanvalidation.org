@@ -42,8 +42,16 @@ $h_color:#AE5500;
 body.bp {
   font-size:90%;
   pre {
-    margin-top:0em;
-    margin-bottom:0em;
+    //margin-top:0em;
+    //margin-bottom:0em;
+    margin:0;
+    padding:0;
+    line-height:1.5em;
+    font-family:"Monaco","Lucida Console","Consolas","Courier New";
+    margin-left:4em;
+    margin-top:1em;
+    margin-bottom:1em;
+    margin-right:4em;
   }
   p {
     margin-top:0em;
