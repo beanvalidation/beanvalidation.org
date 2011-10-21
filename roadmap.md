@@ -10,6 +10,8 @@ Bean Validation standardizes constraint definition, declaration and validation f
 
 Being a version 1.0, Bean Validation stayed on the conservative side feature wise. The community has expressed interest in additional features to enhance the work done in the first version of the specification.
 
+## Topics
+
 The work of the Expert Group will be around the following main topics:
 
 ### Integration with other JSRs
@@ -70,3 +72,48 @@ Today Bean Validation clients need to assemble `ConstraintViolationException`s b
 Note that this list is not exhaustive but gives a good representation. Additional feature requests are available in Bean Validation's [issue tracker](/issues).
 
 The goal of the Expert Group will be to assess these issues, prioritize them as well as identify and pursue directions for enhancement of the overall programming model and facilities of Bean Validation.
+
+## Priorities
+
+Priorities are constantly evolving but the expert group as of today ahs the following priorities.
+
+### Must have
+- BVAL-241 Method level validation
+- BVAL-238 Support for container injection in ConstraintValidator
+- BVAL-226 Make clear whether the static or the runtime type should be considered when creating property paths in case of cascaded validations
+- BVAL-221 The constraint violation builder cannot put constraint on a top level map key
+- BVAL-210 Make sure JTA / Java EE plays well with Bean Validation + JPA when exceptions occurs (at least raise the concern upstairs ;) )
+- BVAL-208 Support groups translation when cascading operations (hosted on @Valid or not)
+
+### Should have
+- BVAL-220 Offer stereotypes to skip validation on empty or null
+- BVAL-240 Revisit cross-field validation
+- BVAL-225 Propose ability to provide default resource bundles (for a constraint definition provider)
+- BVAL-219 Consider interpolating the value in error messages
+- BVAL-223 Add formatter syntax for interpolated messages
+- BVAL-216 Work with the JAXB EG to have a nice Bean Validation integration
+- BVAL-214 Ability to validate an object and a list of changes
+- BVAL-199 Offer helper classes to build ConstraintViolationExceptions (and potentially raise them)
+- BVAL-198 Simplify creation of ConstraintViolationExceptions
+- BVAL-192 Add 'exclusive' boolean attribute to @DecimalMin/@DecimalMax constraints
+- BVAL-230 Add support for validating CharSequence types instead of just Strings
+- BVAL-217 Seperate the notion of message resolver vs message interpolator
+- BVAL-249 Add unwrap method to ConstraintValidatorContext for provider extension
+
+### Nice to have
+- BVAL-235 Support parameterized payload attributes (additional string param on @Payload)
+- BVAL-233 provide access to contextual info during message interpolation
+- BVAL-229 Offer a programmatic API to declare constraints on a domain model
+- BVAL-222 Add a ALL group to validate all groups instead of DEFAULT or the selected ones
+- BVAL-215 Make composition more flexible (OR support)
+- BVAL-213 Convert persistence storage exception into Bean Validation exceptions
+- BVAL-202 Apply constraints on the elements of an iterator
+- BVAL-191 Introduce a addEntityNode() method to the fluent node builder API
+- BVAL-211 Consider making javax.validation.ValidatorContext a self-referential generic type
+- BVAL-237 Expose validated bean via ConstraintValidatorContext
+
+### Next revision
+-
+
+### Discuss with JPA's expert group
+- BVAL-234 Ignore @NotNull on JPA's @GeneratedValue properties for pre-persist operations
