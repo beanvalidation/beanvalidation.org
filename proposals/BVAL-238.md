@@ -15,36 +15,39 @@ Provide CDI injection to `ConstraintValidator` implementations.
 
 ## Lifecycle
 
-When CDI integration is active, instantiation as well as destruction of `ConstraintViolation` objects 
+When CDI integration is active, instantiation as well as destruction of `ConstraintValidator` objects 
 must be delegated to the CDI container.
 
-The Bean Validation provider is free to instantiate and destroy `ConstraintViolation` objects at the time of its choosing.
+The Bean Validation provider is free to instantiate and destroy `ConstraintValidator` objects at the time of its choosing.
 (See open questions).
 
 ## Open questions
 
-### Should this be the default behavior and disabled when a custom `ConstraintViolationFactory` is provided?
+### Should this be the default behavior and disabled when a custom `ConstraintValidatorFactory` is provided?
 
-The natural integration point is `ConstraintViolationFactory`. If a custom `ConstraintViolationFactory`
+The natural integration point is `ConstraintValidatorFactory`. If a custom `ConstraintValidatorFactory`
 is provided, it would be hard or impossible to honor CDI behavior as it would have to be done
 **after** the factory has created the object.
 
+In OVal, injection is done after object instantiation. Spring Framework offer an inject method. 
+Does CDI offer / wants to offer such option?
+
 Temporary answer is: yes
 
-### Should we specify the lifecycle of `ConstraintViolation` instance?
+### Should we specify the lifecycle of `ConstraintValidation` instance?
 
-Today the life cycle of `ConstraintViolation` objects is undefined. 
+Today the life cycle of `ConstraintValidation` objects is undefined. 
 
 Should
 this be defined when CDI integration is activated to always retrieve a 
-`ConstraintViolation` instance from CDI right before it is used?
+`ConstraintValidation` instance from CDI right before it is used?
 Or should we leave Bean Validation providers free to call CDI for
 object instantiation when it pleases?
 
 I'm tempted to believe we should leave it undefined. CDI components
 can get injections from more restrictive scopes. For example, this would allow
-`ConstraintViolation` instances to get request scoped component injected (eg
-to react to some user specific settings). So the time at which `ConstraintViolation`
+`ConstraintValidation` instances to get request scoped component injected (eg
+to react to some user specific settings). So the time at which `ConstraintValidation`
 is requested does not matter much. 
 
 ### How is CDI `BeanManager` (or equivalent) injected into Bean Validation?
