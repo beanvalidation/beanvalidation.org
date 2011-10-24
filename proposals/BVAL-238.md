@@ -18,6 +18,12 @@ Provide CDI injection to `ConstraintValidator` implementations.
 When CDI integration is active, instantiation as well as destruction of `ConstraintValidator` objects 
 must be delegated to the CDI container.
 
+This presuppose that CDI has the following pseudo contracts `instantiateBean()` / `destroyBean()`. Such contracts
+are necessary as Bean Validation providers must be in control of the `ConstraintValidator` instance lifecycle as 
+it needs to call initialize(Annotation). If CDI only offer a `getBean()` contract, we would not be able to
+differentiate new instances from reused instances or we would force users to specify a `@Dependent` scope of sort
+(prone to errors).
+
 The Bean Validation provider is free to instantiate and destroy `ConstraintValidator` objects at the time of its choosing.
 (See open questions).
 
@@ -38,8 +44,7 @@ Temporary answer is: yes
 
 Today the life cycle of `ConstraintValidation` objects is undefined. 
 
-Should
-this be defined when CDI integration is activated to always retrieve a 
+Should this be defined when CDI integration is activated to always retrieve a 
 `ConstraintValidation` instance from CDI right before it is used?
 Or should we leave Bean Validation providers free to call CDI for
 object instantiation when it pleases?
