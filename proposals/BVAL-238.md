@@ -40,19 +40,19 @@ Does CDI offer / wants to offer such option?
 
 Temporary answer is: yes
 
-### Should we specify the lifecycle of `ConstraintValidation` instance?
+### Should we specify the lifecycle of `ConstraintValidator` instance?
 
-Today the life cycle of `ConstraintValidation` objects is undefined. 
+Today the life cycle of `ConstraintValidator` objects is undefined. 
 
 Should this be defined when CDI integration is activated to always retrieve a 
-`ConstraintValidation` instance from CDI right before it is used?
+`ConstraintValidator` instance from CDI right before it is used?
 Or should we leave Bean Validation providers free to call CDI for
 object instantiation when it pleases?
 
 I'm tempted to believe we should leave it undefined. CDI components
 can get injections from more restrictive scopes. For example, this would allow
-`ConstraintValidation` instances to get request scoped component injected (eg
-to react to some user specific settings). So the time at which `ConstraintValidation`
+`ConstraintValidator` instances to get request scoped component injected (eg
+to react to some user specific settings). So the time at which `ConstraintValidator`
 is requested does not matter much. 
 
 ### How is CDI `BeanManager` (or equivalent) injected into Bean Validation?
