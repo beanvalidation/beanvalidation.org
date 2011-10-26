@@ -105,11 +105,18 @@ I however feel chagrined that the nicely typed `Configuration` API requires such
 
 ### Make sure the interaction contract between Bean Validation and CDI is well defined
 
-Talk to Pete and review discussions between JPA 2.1 and CDI
+Talk to Pete and review discussions between JPA 2.1 and CDI. An example of interaction is defined 
+[on this page](http://seamframework.org/Documentation/HowDoIDoNoncontextualInjectionForAThirdpartyFramework).
 
 ### Should we expand the `ConstraintValidatorFactory` contract with a destroy method?
 
 That would allow support for more DI solutions.
+
+Note that `ValidatorFactory` does not have a `close()` method unfortunately :( If we want a close hook:
+
+- implementors of v1 won't support v1.1 APIs (acceptable change I'd venture)
+- containers compatible with v1.1 should call `close()`
+- users should call `close()`, though we cannot mandate it
 
 ### Should we support JSR @Inject rather than CDI?
 
