@@ -18,8 +18,8 @@ Provide CDI injection to `ConstraintValidator` implementations.
 When CDI integration is active, instantiation as well as destruction of `ConstraintValidator` objects 
 must be delegated to the CDI container.
 
-Integration should use CDI's BeanManager SPI to obtain non-contextual instances of `ConstratintValidator onjects.
-Usage of the SPI is described at <http://seamframework.org/Documentation/HowDoIDoNoncontextualInjectionForAThirdpartyFramework
+Integration should use CDI's BeanManager SPI to obtain non-contextual instances of `ConstratintValidator` onjects.
+Usage of the SPI is described at <http://seamframework.org/Documentation/HowDoIDoNoncontextualInjectionForAThirdpartyFramework>
 
 The Bean Validation provider is free to instantiate and destroy `ConstraintValidator` objects at the time of its choosing.
 (See open questions).
