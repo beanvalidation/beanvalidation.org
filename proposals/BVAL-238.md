@@ -137,10 +137,6 @@ Note that `ValidatorFactory` does not have a `close()` method unfortunately :( I
 - containers compatible with v1.1 should call `close()`
 - users should call `close()`, though we cannot mandate it
 
-> Why not just support @PostConstruct/@PreDestroy? 
->
-> Pete Muir, 27 October 2011
-
 ### Should we support JSR @Inject rather than CDI?
 
 There is not equivalent to `BeanManager` in @Inject, so the only approach for this is to write a custom 
