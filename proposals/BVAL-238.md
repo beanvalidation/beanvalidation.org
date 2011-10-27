@@ -18,11 +18,8 @@ Provide CDI injection to `ConstraintValidator` implementations.
 When CDI integration is active, instantiation as well as destruction of `ConstraintValidator` objects 
 must be delegated to the CDI container.
 
-This presuppose that CDI has the following pseudo contracts `instantiateBean()` / `destroyBean()`. Such contracts
-are necessary as Bean Validation providers must be in control of the `ConstraintValidator` instance lifecycle as 
-it needs to call initialize(Annotation). If CDI only offer a `getBean()` contract, we would not be able to
-differentiate new instances from reused instances or we would force users to specify a `@Dependent` scope of sort
-(prone to errors).
+Integration should use CDI's BeanManager SPI to obtain non-contextual instances of `ConstratintValidator onjects.
+Usage of the SPI is described at <http://seamframework.org/Documentation/HowDoIDoNoncontextualInjectionForAThirdpartyFramework
 
 The Bean Validation provider is free to instantiate and destroy `ConstraintValidator` objects at the time of its choosing.
 (See open questions).
@@ -37,6 +34,11 @@ is provided, it would be hard or impossible to honor CDI behavior as it would ha
 
 In OVal, injection is done after object instantiation. Spring Framework offer an inject method. 
 Does CDI offer / wants to offer such option?
+
+> The same class mentioned above for CDI instatiation can be used to inject an existing instance. Just skip the call to
+> `produce()` and call `inject()`.
+>
+> Pete Muir, 27 October 2011
 
 Temporary answer is: yes
 
@@ -54,6 +56,12 @@ can get injections from more restrictive scopes. For example, this would allow
 `ConstraintValidator` instances to get request scoped component injected (eg
 to react to some user specific settings). So the time at which `ConstraintValidator`
 is requested does not matter much. 
+
+
+> IMO you should leave it undefined.
+>
+> Pete Muir, 27 October 2011
+
 
 ### How is CDI `BeanManager` (or equivalent) injected into Bean Validation?
 
@@ -74,6 +82,13 @@ Alternatives are:
 - have an untyped version of the above proposal
 - offer a generic `Map<String,Object> addObject(String key, Object value)` method on `Configuration`
 - make use of a Java EE defined JNDI name to retrieve `BeanManager`
+
+
+> CDI 1.1 offers programmatic lookup via the CDI class, see EDR1 spec for details. 
+<http://docs.jboss.org/cdi/spec/1.1.EDR1/html/spi.html#provider>
+>
+> Pete Muir, 27 October 2011
+
 
 I would favor either untyped version with a specific method or with a generic placeholder for a few reasons:
 
@@ -103,6 +118,10 @@ vs
 I however feel chagrined that the nicely typed `Configuration` API requires such untyped approach.
 (I don't think introducing CdiBeanManagerFactory solves any issue, is that true?).
 
+> This is essentially what the CDI class offers - but is service provider driven
+>
+> Pete Muir, 27 October 2011
+
 ### Make sure the interaction contract between Bean Validation and CDI is well defined
 
 Talk to Pete and review discussions between JPA 2.1 and CDI. An example of interaction is defined 
@@ -118,6 +137,10 @@ Note that `ValidatorFactory` does not have a `close()` method unfortunately :( I
 - containers compatible with v1.1 should call `close()`
 - users should call `close()`, though we cannot mandate it
 
+> Why not just support @PostConstruct/@PreDestroy? 
+>
+> Pete Muir, 27 October 2011
+
 ### Should we support JSR @Inject rather than CDI?
 
 There is not equivalent to `BeanManager` in @Inject, so the only approach for this is to write a custom 
@@ -125,4 +148,6 @@ There is not equivalent to `BeanManager` in @Inject, so the only approach for th
 
 My answer to the question would then be no at this stage.
 
-   
+> Agreed, 330 is too undefined.
+>
+> Pete Muir, 27 October 2011   
