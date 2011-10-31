@@ -122,6 +122,22 @@ I however feel chagrined that the nicely typed `Configuration` API requires such
 >
 > Pete Muir, 27 October 2011
 
+&nbsp;
+
+> Another idea would be to integrate BV/CDI via a CDI-aware `ConstraintValidatorFactory` to be provided by CDI runtimes:
+
+    ValidatorFactory factory = Validation
+        .byDefaultProvider()
+        .configure()
+            .constraintValidatorFactory( new CdiAwareConstraintValidatorFactory( beanManager ) )
+        .buildValidatorFactory();
+ 
+> That way the integration is completely managed by the CDI-side. `Validator` and `ValidatorFactory` are already 
+> built-in beans in CDI so this wouldn't add much complexity IMO (and we wouldn't have a circular reference between
+> the specs). The CDI runtime would use this factory whenever a `Validator` or `ValidatorFactory` is retrieved.
+>
+> Gunnar Morling, 31 October 2011
+
 ### Make sure the interaction contract between Bean Validation and CDI is well defined
 
 Talk to Pete and review discussions between JPA 2.1 and CDI. An example of interaction is defined 
