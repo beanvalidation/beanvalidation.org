@@ -123,7 +123,6 @@ I however feel chagrined that the nicely typed `Configuration` API requires such
 > Pete Muir, 27 October 2011
 
 &nbsp;
-
 > Another idea would be to integrate BV/CDI via a CDI-aware `ConstraintValidatorFactory` to be provided by CDI runtimes:
 
     ValidatorFactory factory = Validation
@@ -152,6 +151,27 @@ Note that `ValidatorFactory` does not have a `close()` method unfortunately :( I
 - implementors of v1 won't support v1.1 APIs (acceptable change I'd venture)
 - containers compatible with v1.1 should call `close()`
 - users should call `close()`, though we cannot mandate it
+
+> Another idea would be to change the contract of ConstraintValidatorFactory and make it completely responsible for 
+> the lifecycle of validator instances:
+
+    public interface ConstraintValidatorFactory {
+    
+        <T extends ConstraintValidator<?,?>> T getInstance(Annotation constraint, Class<T> key);
+    
+    }
+
+> By passing the constraint the factory would have all required information for creating and initializing validators.
+> It could take care for the lifecycle and enforce the constraints required by the programing model (in case of CDI 
+> for instance a CDI-aware factory would ensure that no singleton-scoped beans are validators etc.). It could also 
+> cache validators per annotation and dispose validators when applicable.
+> 
+> BV providers must not keep references to validators in order to not interfere with the lifecycle management of the
+> factory, i.e. they must invoke getInstance() whenever they need a validator.
+>
+> Emmanuel raised concerns about this due to tying the `getInstance()` and `initialize()` contracts together.
+>
+> Gunnar Morling, 31 October 2011
 
 ### Should we support JSR @Inject rather than CDI?
 
