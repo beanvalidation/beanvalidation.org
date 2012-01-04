@@ -84,6 +84,7 @@ Priorities are constantly evolving but the expert group as of today ahs the foll
 - BVAL-221 The constraint violation builder cannot put constraint on a top level map key
 - BVAL-210 Make sure JTA / Java EE plays well with Bean Validation + JPA when exceptions occurs (at least raise the concern upstairs ;) )
 - BVAL-208 Support groups translation when cascading operations (hosted on @Valid or not)
+- BVAL-248 Introduce order for propery constraints and allow to stop validation for first failing property constraint
 
 ### Should have
 - BVAL-220 Offer stereotypes to skip validation on empty or null
