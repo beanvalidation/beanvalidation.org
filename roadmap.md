@@ -100,8 +100,10 @@ Priorities are constantly evolving but the expert group as of today ahs the foll
 - BVAL-230 Add support for validating CharSequence types instead of just Strings
 - BVAL-217 Seperate the notion of message resolver vs message interpolator
 - BVAL-249 Add unwrap method to ConstraintValidatorContext for provider extension
+- BVAL-252 Improve support for the creation of constraint libraries
 
 ### Nice to have
+
 - BVAL-235 Support parameterized payload attributes (additional string param on @Payload)
 - BVAL-233 provide access to contextual info during message interpolation
 - BVAL-229 Offer a programmatic API to declare constraints on a domain model
