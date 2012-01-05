@@ -87,6 +87,7 @@ Priorities are constantly evolving but the expert group as of today ahs the foll
 - BVAL-248 Introduce order for propery constraints and allow to stop validation for first failing property constraint
 
 ### Should have
+- BVAL-259 Enforce in the spec that @ReportAsSingleViolation does apply validators once one is reporting a failure
 - BVAL-220 Offer stereotypes to skip validation on empty or null
 - BVAL-240 Revisit cross-field validation
 - BVAL-225 Propose ability to provide default resource bundles (for a constraint definition provider)
