@@ -18,7 +18,7 @@ Describe CDI and generally any dependency injection integration. Specifically to
 When CDI integration is active, instantiation as well as destruction of `ConstraintValidator` objects 
 must be delegated to the CDI container.
 
-Integration should use CDI's BeanManager SPI to obtain non-contextual instances of `ConstratintValidator` onjects.
+Integration should use CDI's BeanManager SPI to obtain non-contextual instances of `ConstratintValidator` objects.
 Usage of the SPI is described at <http://seamframework.org/Documentation/HowDoIDoNoncontextualInjectionForAThirdpartyFramework>
 
 The Bean Validation provider is free to instantiate and destroy `ConstraintValidator` objects at the time of its choosing.
@@ -35,13 +35,15 @@ is provided, it would be hard or impossible to honor CDI behavior as it would ha
 In OVal, injection is done after object instantiation. Spring Framework offer an inject method. 
 Does CDI offer / wants to offer such option?
 
-> The same class mentioned above for CDI instatiation can be used to inject an existing instance. Just skip the call to
+> The same class mentioned above for CDI instantiation can be used to inject an existing instance. Just skip the call to
 > `produce()` and call `inject()`.
 >
 > Pete Muir, 27 October 2011
 
 Even if partial injection is possible, it is probably better to leave instance handling to the custom 
-`ConstraintValidatorFactory`.
+`ConstraintValidatorFactory`. One concern is that a custom implementation would need to look up
+the CDI `BeanManager` and do a lot of work. But the primary use case is an integration point
+for dependency injection solutions so I don't see this as a problem.
 
 Temporary answer is: yes (ie disabled on custom implementation).
 
@@ -67,6 +69,9 @@ is requested does not matter much.
 
 
 ### How does the dependency injection interacts with Bean Validation - specifically CDI?
+
+The answer to this question might be specified in the Java EE spec rather than Bean Validation (
+or CDI) but we will write it as an appendix for now.
 
 I'm assuming CDI exposes the ability to instantiate and destroy CDI beans via a `BeanManager` interface.
 
@@ -115,7 +120,7 @@ CDI exposes `BeanManager` via JNDI in EE, we could use it.
 Also CDI 1.1 offers programmatic lookup via the CDI class, see EDR1 spec for details. 
 <http://docs.jboss.org/cdi/spec/1.1.EDR1/html/spi.html#provider>
 
-#### Option 3: Ask CDI to inject a CDI aware `ConstraintValidatorFactory` when creating the `ValidatorFactory` object
+#### Option 3: Ask EE or the bootstrap to inject a CDI aware `ConstraintValidatorFactory` when creating the `ValidatorFactory` object
 
 Another idea would be to integrate BV/CDI via a CDI-aware `ConstraintValidatorFactory` to be provided by CDI runtimes:
 
@@ -125,9 +130,11 @@ Another idea would be to integrate BV/CDI via a CDI-aware `ConstraintValidatorFa
             .constraintValidatorFactory( new CdiAwareConstraintValidatorFactory( beanManager ) )
         .buildValidatorFactory();
  
-That way the integration is completely managed by the CDI-side. `Validator` and `ValidatorFactory` are already 
+That way the integration is completely managed by the bootstrapper. `Validator` and `ValidatorFactory` are already 
 built-in beans in CDI so this wouldn't add much complexity. 
 The CDI runtime would use this factory whenever a `Validator` or `ValidatorFactory` is retrieved.
+
+Note that today the EE container is responsible for creating `ValidatorFactory` and passing it to the CDI container.
 
 One advantage of this solution is to keep things minimalist and leave the wiring to
 the various DI solution (that's their job after all). Also in a DI environment, 
@@ -135,10 +142,16 @@ the various DI solution (that's their job after all). Also in a DI environment,
 `MessageInterpolator`, `TraversableResolver` and `ConstraintValidatorFactory`
 is easy.
 
-Note that the Bean Validation bootstrap process needs to provide the data from `validation.xml`.
+There is a chicken and egg issue between EE, CDI and BV as `ValidatorFactory` needs to be passed to the
+CDI container. Pete Muir thinks that's possible however - **waiting for a proposal from him**.
 
-Bean Validation should also define the expected CDI producer method and even potentially provide 
-an implementation? Question: how to make that portable across Bean Validation providers?
+Note that the Bean Validation bootstrap process needs to provide the data from `validation.xml`. 
+**we need to make sure Bean Validation has the right APIs for that**.
+
+For SE, CDI today does not have a portable way to boot and inject things but a portable
+extension or something similar might be sufficient but that will be CDI provider specific.
+
+> Pete: option 3 still has my preference over option 4 even in SE 
 
 #### Option 4: Add a method accepting an `InstanceProvider` implementation in Bean Validation's bootstrap
 
