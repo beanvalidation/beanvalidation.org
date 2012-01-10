@@ -1,5 +1,5 @@
 ---
-title: Introduce order for propery constraints and allow to stop validation for first failing property constraint
+title: Introduce an evalutation order for constraints defined on a single property
 layout: default
 author: Emmanuel Bernard
 ---
@@ -20,7 +20,7 @@ globally for the subsequent groups if a failure is found.
 
 ## Related issues
 
-A partial solution for this could be solved by making sure `@ReportAsSingleViolation` does not 
+A partial solution for this could be provided by making sure `@ReportAsSingleViolation` does not 
 validate the composing constraint if a composed constraint fails. See [BVAL-259][BVAL-259] and
 [BVAL-220][BVAL-220].
 
@@ -29,7 +29,7 @@ validate the composing constraint if a composed constraint fails. See [BVAL-259]
 
 ## Solutions
 
-### option 1: `@GroupSequence` with ordering scope
+### Option 1: `@GroupSequence` with ordering scope
 
 We can reuse group sequence but refine the scope of their execution from global to per target.
 A target is a property (field, getter) or a class.
@@ -73,11 +73,11 @@ Also, one could write a preset of `PER_TARGET` group sequence and reuse it acros
 
 We can apply the same kind of ordering solution on `@ReportAsSingleViolation`.
 
-### Option 2: salience
+### Option 2: Add explicit _order_ parameter to constraints
 
 We can't rely on the order annotations are declared in the source file as Java compilers and runtime do not
-guarantee that. We might work around that with annotation processors or ways to read data from the bytecode
- but I'd see that as overkill. __Thoughts?__ So we need explicit order numbers defining a proper ordering.
+guarantee that. We might work around that with annotation processors or ways to read data from the bytecode 
+but I'd see that as overkill. __Thoughts?__ So we need explicit order numbers defining a proper ordering.
 
 	public class DomainObject {
 
@@ -130,8 +130,8 @@ Older constraints not defining order will be executed before the other ones.
 Questions:
 
 - should number ordering be honored per target only? Or globally? Or should it be configurable? 
-  What about inheritance?  
-  _If per target, that would probably reduce some of the candidates for bugs. Inheritance would still be a problem_
+  What about inheritance? If per target, that would probably reduce some of the candidates for bugs. 
+  Inheritance would still be a problem.
 
 Note that global ordering might reduce performance of Bean Validation engines.
 
@@ -162,8 +162,7 @@ We can offer number groups to reduce the number of groups a user has to declare.
 	
 	package javax.validation.groups;
 
-	@GroupSequence({Level1.class, Level2.class, Level3.class, Level4.class, 
-		            Level5.class, Level6.class, Level7.class, Level8.class, Level9.class, Level10.class})
+	@GroupSequence({Level1.class, Level2.class, Level3.class, Level4.class, Level5.class, Level6.class, Level7.class, Level8.class, Level9.class, Level10.class})
 	interface Order {
 	    interface Level1 {}
 	    interface Level2 {}
