@@ -54,7 +54,7 @@ That means that the Bean Validation API can be used to describe and validate the
 * the preconditions that must be met by the method caller before the method may be invoked and
 * the postconditions that are guaranteed to the caller after a method invocation returns.
 
-This allows to use the Bean Validation API for a programming style known as "Programming by Contract" (PbC). Note that it is *not* the goal of this specification to develop a fully-fledged PbC solution but rather an easy-to-use facility to fulfill the most common needs related to applying constraints to method parameters and return values based on the proven concepts of the Bean Validation API.
+This allows to use the Bean Validation API for a programming style known as "Programming by Contract" (PbC). Note that it is *not* the goal of this specification to develop a fully-fledged PbC solution but rather an easy-to-use facility for fulfilling the most common needs related to applying constraints to method parameters and return values, based on the proven concepts of the Bean Validation API.
 
 Compared to traditional means of checking the sanity of a method's argument values (within the method implementation) and its return value (by the caller after invoking the method) this approach has several advantages:
 
@@ -71,9 +71,11 @@ As with bean constraints, this can happen using either actual Java annotations o
 
 ### Requirements on methods to be validated <a id="requirements"></a>
 
-Methods which shall be annotated with parameter or return value constraints must be non-static. 
+Methods which shall be annotated with parameter or return value constraints must be non-static.
 
 There is no restriction with respect to the visibility of validated methods from the perspective of this specification, but it's possible that certain technologies integrating with method validation (see ...) support only the validation of methods with certain visibilities.
+
+TODO: Should something be specified with respect to `native` methods?
 
 ### Defining parameter constraints <a id="parameter"></a>
  
@@ -315,26 +317,37 @@ Example xy: Declaring return value constraints
 
 	public class OrderService {
 
+		private CreditCardProcessor creditCardProcessor;
+
+		@ValidOnlineOrderService
+		public OrderService(OnlineCreditCardProcessor creditCardProcessor) {
+			this.creditCardProcessor = creditCardProcessor;
+		}
+
+		@ValidBatchOrderService
+		public OrderService(BatchCreditCardProcessor creditCardProcessor) {
+			this.creditCardProcessor = creditCardProcessor;
+		}
+
 		@NotNull
 		@Size(min=1)
-		public Set<CreditCardProcessor> getCreditCardProcessors() {
-			//...
-		}
+		public Set<CreditCardProcessor> getCreditCardProcessors() { ... }
 
 		@NotNull
 		@Future
-		public Date getNextAvailableDeliveryDate() {
-			//...
-		}
+		public Date getNextAvailableDeliveryDate() { ... }
 	}
 
-Here the following postconditions are defined which are guaranteed to the caller of the methods of the `OrderService` class:
+Here the following postconditions are defined which are guaranteed to the caller of the methods and constructors of the `OrderService` class:
 
+* The newly created `OrderService` object returned by the first constructor adheres to the conditions of the custom `@ValidOnlineOrderService` constraint.
+* The newly created `OrderService` object returned by the second constructor adheres to the conditions of the custom `@ValidBatchOrderService` constraint.
 * The set of `CreditCardProcessor` objects returned by `getCreditCardProcessors()` will neither be null nor empty.
-
 * The `Date` object returned by `getNextAvailableDeliveryDate()` will not be null and be in the future.
 
 As with parameter constraints, these return value constraints are not automatically validated upon method invocation but instead an integration layer invoking the validation is required.
+
+*DISCUSSION: I feel unsure about the constructor constraints. Do they make that much sense? I think in most cases it should suffice to enforce a cascaded validation of the newly created instance using `@Valid` (see below).*
 
 *DISCUSSION: Should property constraints (on getter methods) also be handled as method constraints?*
 
@@ -352,28 +365,33 @@ Example xy: Marking parameters and return values for cascaded validation
 
 	public class OrderService {
 
+		@NotNull @Valid
+		private CreditCardProcessor creditCardProcessor;
+
 		@Valid
-		public Order getOrderByPk(@NotNull @Valid OrderPK orderPk) {
-			//...
+		public OrderService(@NotNull @Valid CreditCardProcessor creditCardProcessor) {
+			this.creditCardProcessor = creditCardProcessor;
 		}
+
+		@NotNull @Valid
+		public Order getOrderByPk(@NotNull @Valid OrderPK orderPk) { ... }
 	
-		@NotNull
-		@Valid
-		public Set<Order> getOrdersByCustomer(@NotNull @Valid CustomerPK customerPk) {
-			//...
-		}
+		@NotNull @Valid
+		public Set<Order> getOrdersByCustomer(@NotNull @Valid CustomerPK customerPk) { ... }
 	}
 
 Here the following recursive validations will happen when validating the methods of the `OrderService` class:
 
+* Validation of the constraints on the object passed for the `creditCardProcessor` parameter of the constructor
+* Validation of the constraints on the newly created `OrderService` instance returned by the constructor, i.e. the `@NotNull` constraint on the field `creditCardProcessor` and the constraints on the referenced `CreditCardProcessor` instance (as the field is annotated with `@Valid`).
 * Validation of the constraints on the object passed for the `orderPk` parameter and the returned `Order` object of the `getOrderByPk()` method
 * Validation of the constraints on the object passed for the `customerPk` parameter and the constraints on each object contained within the returned `Set<Order>` of the getOrdersByCustomer() method
 
 Again, solely marking parameters and return values for cascaded validation does not trigger the actual validation.
 
-*DISCUSSION: There were discussions whether to use `@Valid` or a new annotation such as `@ValidParameter`.*
+*DISCUSSION: There were discussions whether to use `@Valid` or a new annotation such as `@ValidParameter`. IMO introducing a new annotation doesn't really make sense, as the `@Valid` annotation is used here in its originally intended sense: marking a (referenced) object for cascaded validation.*
 
-*IMO introducing a new annotation doesn't really make sense, as the `@Valid` annotation is used here in its originally intended sense: marking a (referenced) object for cascaded validation.*
+*DISCUSSION: The entire field of validating the results of constructors needs some more consideration IMO. I'd be interested in any thoughts.*
 
 ### Inheritance hierarchies <a id="inheritance"></a>
 
@@ -386,9 +404,9 @@ TODO: Add a box explaining the rationale behind the Liskov substitution principl
 
 Therefore the following rules with respect to the definition of method level constraints in inheritance hierarchies apply:
 
-* In sub types (be it sub classes or interface implementations) no parameter constraints must be declared on overridden or implemented methods (since this would pose a strengthening of preconditions to be fulfilled by the caller).
+* In sub types (be it sub classes/interfaces or interface implementations) no parameter constraints must be declared on overridden or implemented methods nor may parameters be marked for cascaded validation (since this would pose a strengthening of preconditions to be fulfilled by the caller).
 
-* In sub types (be it sub classes or interface implementations) return value constraints may be declared on overridden or implemented methods. Upon validation, all return value constraints of the method in question are validated, wherever they are declared in the hierarchy (since this only poses possibly a strengthening but no weakening of the method's postconditions guaranteed to the caller).
+* In sub types (be it sub classes/interfaces or interface implementations) return value constraints may be declared on overridden or implemented methods and the return value may be marked for cascaded validation. Upon validation, all return value constraints of the method in question are validated, wherever they are declared in the hierarchy (since this only poses possibly a strengthening but no weakening of the method's postconditions guaranteed to the caller).
 
 A conforming Bean Validation provider must throw a `ConstraintDefinitionException` when discovering that any of these rules are violated.
 
@@ -398,14 +416,17 @@ Example xy: Illegally declared parameter constraints on interface implementation
 
 	public interface OrderService {
 
-		void placeOrder(String customerCode, Item item, int quantity) { //... }
+		void placeOrder(String customerCode, Item item, int quantity) { ... }
 
 	}
 
 	public class DefaultOrderService implements OrderService {
 
 		@Override
-		public void placeOrder(@NotNull @Size(min=3, max=20) String customerCode, @NotNull Item item, @Min(1) int quantity) { //... }
+		public void placeOrder(
+			@NotNull @Size(min=3, max=20) String customerCode,
+			@NotNull Item item,
+			@Min(1) int quantity) { ... }
 
 	}
 
@@ -415,14 +436,17 @@ Example xy: Illegally declared parameter constraints on sub class
 
 	public class OrderService {
 
-		void placeOrder(String customerCode, Item item, int quantity) { //... }
+		void placeOrder(String customerCode, Item item, int quantity) { ... }
 
 	}
 
 	public class DefaultOrderService extends OrderService {
 
 		@Override
-		public void placeOrder(@NotNull @Size(min=3, max=20) String customerCode, @NotNull Item item, @Min(1) int quantity) { //... }
+		public void placeOrder(
+			@NotNull @Size(min=3, max=20) String customerCode,
+			@NotNull Item item,
+			@Min(1) int quantity) { ... }
 
 	}
 
@@ -432,7 +456,7 @@ Example xy: Correctly declared return value constraints on sub class
 
 	public class OrderService {
 
-		Order placeOrder(String customerCode, Item item, int quantity) { //... }
+		Order placeOrder(String customerCode, Item item, int quantity) { ... }
 
 	}
 
@@ -441,7 +465,7 @@ Example xy: Correctly declared return value constraints on sub class
 		@Override
 		@NotNull
 		@Valid
-		public Order placeOrder(String customerCode, Item item, int quantity) { //... }
+		public Order placeOrder(String customerCode, Item item, int quantity) { ... }
 
 	}
 
@@ -657,6 +681,8 @@ The `ValidateGroups` annotation can be specified on type as well as on method le
 It is left to integrators how to handle situations where the annotation is given on several types (be it classes or interfaces) within an inheritance hierarchy.
 
 *DISCUSSION: A better name is to be found. Some proposals from the list: `@Guarded`, `@ValidateMethods`, `@ValidateOnMethodCall`, `@AutoValidating`, `@AutoValidated`, `@ValidateMethodCall`. IMO an adjective would be make a better annotation name.*
+
+TODO: Verify/prototype that integration works with EE JSRs like CDI, JAX-RS, JSF as well as with alternative technologies (Spring Framework, Guice).
 
 ## Extensions to the meta-data API <a id="meta_data"></a>
 
