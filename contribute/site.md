@@ -54,10 +54,9 @@ You should be back to millisecond serving :)
 
 ## Markup samples
 
-You can find two sample files for [.md](/md-sample) and 
-[.html.haml](/haml-sample) syntaxes. Look at them especially the .md file as it 
-shows how a page should be written and how to use syntax highlighting.          
-Don't yell at me on color / style, this work has not been done yet.
+You can find sample files in the Git repository itself for both .md and 
+.html.haml syntaxes. Look at them especially the .md file as it 
+shows how a page should be written and how to use syntax highlighting.
 
 Menus are in `_layout`. When you create a page, give it the right metadata:
 
