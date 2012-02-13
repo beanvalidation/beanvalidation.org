@@ -10,3 +10,4 @@ author: Emmanuel Bernard
 - BVAL-241 [Support for method validation](BVAL-241)
 - BVAL-248 [Introduce an evaluation order for constraints on a single property](BVAL-248)
 - BVAL-259 [Stop validation of composed constraints at first failing constraint](BVAL-259)
+- BVAL-265 [Expose settings defined in XML in the Configuration API (for ConstraintValidatorFactory, MessageInterpolator etc)](BVAL-265)
