@@ -67,6 +67,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 - [BVAL-208](https://hibernate.onjira.com/browse/BVAL-208) Support groups translation when cascading operations (hosted on @Valid or not)
 - [BVAL-248](https://hibernate.onjira.com/browse/BVAL-248) [Introduce an evalutation order for constraints on a single property](/proposals/BVAL-248)
 - [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259) [Stop validation of composed constraints at first failing constraint](/proposals/BVAL-259)
+- [BVAL-268](https://hibernate.onjira.com/browse/BVAL-268) [Align with the EE platform on where to find validation.xml]
 
 ### Should have
 - [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259) Enforce in the spec that @ReportAsSingleViolation does apply validators once one is reporting a failure
