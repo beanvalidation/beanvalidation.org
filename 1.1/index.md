@@ -7,7 +7,7 @@ author: Emmanuel Bernard
 # #{page.title}
 
 Welcome to the first early draft of Bean Validation 1.1. This document is a work
-in progress. Please give us feedback as described [here][feedback]
+in progress.
 
 [feedback]: /contribute
 
@@ -21,8 +21,25 @@ The main area of work for this draft has been:
 
 ## Specification
 
-The specification draft is [available here][spec]. All changes since version 1.0 are marked in 
-color as described [here][changes].
+The specification draft is [available here][spec]. All changes are marked with a different
+color. <span style="background-color:#DDFFDD;">Green for additions</span>, 
+<span style="background-color:#FFFFDD;">yellow for changes</span> and 
+<span style="text-decoration: line-through;background-color: #FFDDDD;">struck through red for removals</span>
+. This will help you see what has changed precisely.
+
+## Feedback
+
+Have feedback? Please talk to us either:
+
+- on our [mailing list][mailing list]
+- in our [issue tracker][issues]
+- or on the Bean Validation [forum][forum]
+
+If you want to go to the next step and contribute, send us an email to the mailing list and read
+[how to contribute][feedback].
+
 
 [spec]: spec/
-[changes]: spec/#d0e265
+[issues]: /issues
+[forum]: https://forum.hibernate.org/viewforum.php?f=26
+[mailing list]: https://lists.jboss.org/mailman/listinfo/beanvalidation-dev
