@@ -266,4 +266,15 @@ body.bp {
   width:50%;
 }
 
+#feed {
+  img {
+    vertical-align:middle;
+    text-decoration:  none;
+  }
+  #feedicon {
+    a:link {
+      text-decoration:  none;
+    }
+  }
+}
 

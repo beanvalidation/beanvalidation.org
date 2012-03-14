@@ -17,6 +17,13 @@ layout: default
             next post
           .nav-link
             %a{:href => page.next_post.url}= page.next_post.title
+#feed
+  %span{:id => 'feedicon'}
+    %a{:href => '/news/news.atom'}
+      %img{:src => '/images/feed-icon-28x28.png', :alt => 'Feed'}
+  &nbsp;
+  %a{:href => '/news/news.atom'}
+    Subscribe to the Feed
 .post
   %h1.title 
     #{page.title}
