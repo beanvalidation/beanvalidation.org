@@ -85,6 +85,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 - [BVAL-217](https://hibernate.onjira.com/browse/BVAL-217) Seperate the notion of message resolver vs message interpolator
 - [BVAL-249](https://hibernate.onjira.com/browse/BVAL-249) Add unwrap method to ConstraintValidatorContext for provider extension
 - [BVAL-252](https://hibernate.onjira.com/browse/BVAL-252) Improve support for the creation of constraint libraries
+- [BVAL-282](https://hibernate.onjira.com/browse/BVAL-282) Make clear whether it's legal to invoke Configuration#buildValidatorFactory() several times
 
 ### Nice to have
 
