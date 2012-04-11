@@ -13,10 +13,16 @@ The recommended approach to contribute to the spec is via
 This is an extremely useful tool to review and comment proposals.
 
 Many specification changes involve API changes as well. In this case, propose a pull 
-request for the [Bean Validation API](https://github.com/beanvalidation/beanvalidation-api) repository as well.
+request for the [Bean Validation API](https://github.com/beanvalidation/beanvalidation-api) repository as well. When working keep in mind the guidelines for writing good javadoc 
+comments. If you need more information refer to [How to Write Doc Comments](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html) or
+Joshua Bloch's "Effective Java". The following are points are worth pointing out explicitly, because the the existing Bean Validation API is not consistent yet:
 
-Want to be a very good citizen? Also work on implementing your proposal on the 
-[reference implementation](https://github.com/hibernate/hibernate-validator) and the [TCK](https://github.com/beanvalidation/beanvalidation-tck) and send a pull request for each. Easy :)
+* use {@code} instead of \<code\>, because it is more readable and {@code} also escapes meta characters
+* @param, @return an @throw don't end with a '.'
+* if referring to other classes and methods use the {@link} 
+* use \<ul\> for enumerations (not '-')
+
+Want to be a very good citizen? Also work on implementing your proposal on the [reference implementation](https://github.com/hibernate/hibernate-validator) and the [TCK](https://github.com/beanvalidation/beanvalidation-tck) and send a pull request for each. Easy :)
 
 ## Pull requests
 
