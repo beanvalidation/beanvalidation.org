@@ -56,6 +56,7 @@ Before going to the JPA EG, let's discuss the situation here.
 
 - should the `Created` groups be renamed?
 - is that correct to sneakily disable @NotNull constraint validation?
+- could we as JPA to validate the object id property once the id has been set (flush time in this case)?
 
     
 [netbeans]: http://netbeans.org/bugzilla/show_bug.cgi?id=197845#c3
