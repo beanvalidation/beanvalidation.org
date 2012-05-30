@@ -40,4 +40,5 @@ The specification is done in the open: both discussions and artifacts.
 Interested? Read all about how to
 
 * [concretely contributing to the specification](specification)
+* [work with the API and TCK sources](coding)
 * [improve this website](site).
