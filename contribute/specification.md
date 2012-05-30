@@ -13,10 +13,12 @@ The recommended approach to contribute to the spec is via
 This is an extremely useful tool to review and comment proposals.
 
 Many specification changes involve API changes as well. In this case, propose a pull 
-request for the [Bean Validation API](https://github.com/beanvalidation/beanvalidation-api) repository as well.
+request for the [Bean Validation API](https://github.com/beanvalidation/beanvalidation-api) 
+repository as well. When doing so, make sure to follow our [coding guidelines](/contribute/coding).
 
 Want to be a very good citizen? Also work on implementing your proposal on the 
-[reference implementation](https://github.com/hibernate/hibernate-validator) and the [TCK](https://github.com/beanvalidation/beanvalidation-tck) and send a pull request for each. Easy :)
+[reference implementation](https://github.com/hibernate/hibernate-validator) and the 
+[TCK](https://github.com/beanvalidation/beanvalidation-tck) and send a pull request for each. Easy :)
 
 ## Pull requests
 
