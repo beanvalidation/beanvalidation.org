@@ -59,9 +59,9 @@ The goal of the Expert Group will be to assess these issues, prioritize them as 
 Priorities are constantly evolving but the expert group as of today has the following priorities.
 
 ### Must have
-- [BVAL-241](https://hibernate.onjira.com/browse/BVAL-241) Method level validation
-- [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238) [Support for container injection in ConstraintValidator](/proposals/BVAL-238)
-- [BVAL-226](https://hibernate.onjira.com/browse/BVAL-226) Clarify whether the static or the runtime type should be considered when creating property paths in case of cascaded validations
+- [BVAL-241](https://hibernate.onjira.com/browse/BVAL-241) <s>Method level validation</s>
+- [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238) <s>Support for container injection in ConstraintValidator</s>
+- [BVAL-226](https://hibernate.onjira.com/browse/BVAL-226) <s>Clarify whether the static or the runtime type should be considered when creating property paths in case of cascaded validations</s>
 - [BVAL-221](https://hibernate.onjira.com/browse/BVAL-221) The constraint violation builder cannot put constraint on a top level map key
 - [BVAL-210](https://hibernate.onjira.com/browse/BVAL-210) Make sure JTA / Java EE plays well with Bean Validation + JPA when exceptions occurs (at least raise the concern upstairs ;) )
 - [BVAL-208](https://hibernate.onjira.com/browse/BVAL-208) Support groups translation when cascading operations (hosted on @Valid or not)
