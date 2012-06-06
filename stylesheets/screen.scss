@@ -146,6 +146,21 @@ body.bp {
 #bv-title {
   text-align:center;
 }
+#bv-two-columns-two-third {
+  //@include container
+  #bv-column-two-third {
+    @include column(14);
+    @include append(3);
+  }
+  #bv-column-one-third {
+    @include column(7, true);
+    //background-color: $h_color*2;
+    ul {
+      list-style-type: none;
+    }
+  }
+}
+
 #bv-two-columns {
   //@include container
   #bv-column-left {
