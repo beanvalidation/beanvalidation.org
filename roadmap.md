@@ -59,8 +59,15 @@ The goal of the Expert Group will be to assess these issues, prioritize them as 
 Priorities are constantly evolving but the expert group as of today has the following priorities.
 
 ### Must have
+
 - [BVAL-241](https://hibernate.onjira.com/browse/BVAL-241) <s>Method level validation</s>
+    - Solve cross-parameter validation
+    - Should method validation methods be defined on j.v.Validator or a
+      dedicated new interface?
 - [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238) <s>Support for container injection in ConstraintValidator</s>
+    - discuss and clarify vf.close() and the usage expectation (ie when to close a VF)
+- [XXX]() Bring back interaction descriptions with Java EE and CDI in the Bean Validation specification
+- [XXX]() Finish renaming of `ConfigurationSource`
 - [BVAL-226](https://hibernate.onjira.com/browse/BVAL-226) <s>Clarify whether the static or the runtime type should be considered when creating property paths in case of cascaded validations</s>
 - [BVAL-221](https://hibernate.onjira.com/browse/BVAL-221) The constraint violation builder cannot put constraint on a top level map key
 - [BVAL-210](https://hibernate.onjira.com/browse/BVAL-210) Make sure JTA / Java EE plays well with Bean Validation + JPA when exceptions occurs (at least raise the concern upstairs ;) )
@@ -85,7 +92,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 - [BVAL-217](https://hibernate.onjira.com/browse/BVAL-217) Seperate the notion of message resolver vs message interpolator
 - [BVAL-249](https://hibernate.onjira.com/browse/BVAL-249) Add unwrap method to ConstraintValidatorContext for provider extension
 - [BVAL-252](https://hibernate.onjira.com/browse/BVAL-252) Improve support for the creation of constraint libraries
-- [BVAL-282](https://hibernate.onjira.com/browse/BVAL-282) Make clear whether it's legal to invoke Configuration#buildValidatorFactory() several times
+- [BVAL-282](https://hibernate.onjira.com/browse/BVAL-282) <s>Make clear whether it's legal to invoke Configuration#buildValidatorFactory() several times</s>
 
 ### Nice to have
 
