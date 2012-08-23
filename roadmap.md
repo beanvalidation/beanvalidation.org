@@ -61,7 +61,8 @@ Priorities are constantly evolving but the expert group as of today has the foll
 ### Must have
 
 - [BVAL-241](https://hibernate.onjira.com/browse/BVAL-241) <s>Method level validation</s>
-    - Solve cross-parameter validation
+    - [BVAL-272](https://hibernate.onjira.com/browse/BVAL-272) Close remaining loops in method validation support
+    - [BVAL-232](https://hibernate.onjira.com/browse/BVAL-232) Solve cross-parameter validation
     - Should method validation methods be defined on j.v.Validator or a
       dedicated new interface?
 - [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238) <s>Support for container injection in ConstraintValidator</s>
@@ -92,6 +93,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 - [BVAL-217](https://hibernate.onjira.com/browse/BVAL-217) Seperate the notion of message resolver vs message interpolator
 - [BVAL-249](https://hibernate.onjira.com/browse/BVAL-249) Add unwrap method to ConstraintValidatorContext for provider extension
 - [BVAL-252](https://hibernate.onjira.com/browse/BVAL-252) Improve support for the creation of constraint libraries
+- [BVAL-251](https://hibernate.onjira.com/browse/BVAL-251) Improve Bean Validation support for modularized environments
 - [BVAL-282](https://hibernate.onjira.com/browse/BVAL-282) <s>Make clear whether it's legal to invoke Configuration#buildValidatorFactory() several times</s>
 
 ### Nice to have
@@ -106,6 +108,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 - [BVAL-191](https://hibernate.onjira.com/browse/BVAL-191) Introduce a addEntityNode() method to the fluent node builder API
 - [BVAL-211](https://hibernate.onjira.com/browse/BVAL-211) Consider making javax.validation.ValidatorContext a self-referential generic type
 - [BVAL-237](https://hibernate.onjira.com/browse/BVAL-237) Expose validated bean via ConstraintValidatorContext
+- [BVAL-304](https://hibernate.onjira.com/browse/BVAL-304) Add OSGi headers in the reference implementation
 
 ### Next revision
 -
