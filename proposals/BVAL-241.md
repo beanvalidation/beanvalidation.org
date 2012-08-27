@@ -530,10 +530,41 @@ The following new methods are suggested on `javax.validation.Validator` (to be a
 	<T> Set<MethodConstraintViolation<T>> validateAllConstructorParameters(
 		Constructor<T> constructor, Object[] parameterValues, Class<?>... groups);
 
-*DISCUSSION: Would a separate interface `MethodValidator` make sense? I personally don't think so, but maybe there are arguments for that.*
 
-> Emmanuel: I have an alternative proposal for the sig that might be interesting
+> Emmanuel: what's the use case of `validateParameter`? We also need a `validateConstructorValue` method (or some related name).
 
+### DISCUSSION: Would a separate interface `MethodValidator` make sense?
+
+The current consensus weighted by the spec lead is that such a segregation by interface
+is preferable. There are two options:
+
+#### Getter approach
+
+    public interface Validator {
+        MethodValidator getMethodValidator();
+    }
+    
+    public interface MethodValidator<T> {
+        <T> Set<MethodConstraintViolation<T>> validateMethodParameter(
+            Method method, T object, Object parameterValue, int parameterIndex, Class<?>... groups);
+    
+        <T> Set<MethodConstraintViolation<T>> validateAllMethodParameters(
+            Method method, T object, Object[] parameterValues, Class<?>... groups);
+    
+        <T> Set<MethodConstraintViolation<T>> validateMethodReturnValue(
+            Method method, T object, Object returnValue, Class<?>... groups);
+    
+        <T> Set<MethodConstraintViolation<T>> validateConstructorParameter(
+             Constructor<T> constructor, Object parameterValue, int parameterIndex, Class<?>... groups);
+    
+        <T> Set<MethodConstraintViolation<T>> validateAllConstructorParameters(
+            Constructor<T> constructor, Object[] parameterValues, Class<?>... groups);
+    
+        <T> Set<MethodConstraintViolation<T>> validateConstructorReturnValue(
+            Constructor<T> constructor, Object returnValue, Class<?>... groups);
+    }
+
+#### Fluent approach
 
     public interface Validator {
     	MethodValidator<T> forMethod(Method method, T object);
@@ -551,8 +582,22 @@ The following new methods are suggested on `javax.validation.Validator` (to be a
 			Object returnValue, Class<?>... groups);
     }
 
+#### Comparisons
 
-> Emmanuel: what's the use case of `validateParameter`? We also need a `validateConstructorValue` method (or some related name).
+The advantage of segregation is to avoid pollution of the main `Validator` interface
+especially if we add more methods in the future.
+
+The getter approach has the benefit of being simple.
+
+The fluent approach let's us factor the various methods between the methods and constructor
+calls and makes names less awkward. It also is consistent with some of the Bean Validation 
+design using fluent APIs.  
+The drawback of of fluent API is that it requires two method calls for a validation:
+
+- one to select the object and method
+- one to validate the parameters / return value
+
+It also creates a temporary object (returned by the first method).
 
 ### Methods for method level validation (to become 4.1.2) <a id="mfm"></a>
 
