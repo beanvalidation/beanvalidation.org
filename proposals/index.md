@@ -13,3 +13,4 @@ author: Emmanuel Bernard
 - BVAL-265 [Expose settings defined in XML in the Configuration API (for ConstraintValidatorFactory, MessageInterpolator etc)](BVAL-265)
 - BVAL-234 [Fix annoyance between JPA and Bean Validation when @Id @GeneratedValue and @NotNull are used](BVAL-234)
 - BVAL-221 [The constraint violation builder cannot put constraint on a top level map key](BVAL-221)
+- BVAL-208 [Support groups translation when cascading operations layout](BVAL-208)
