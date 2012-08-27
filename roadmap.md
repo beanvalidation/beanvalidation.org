@@ -68,7 +68,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 - [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238) <s>Support for container injection in ConstraintValidator</s>
     - discuss and clarify vf.close() and the usage expectation (ie when to close a VF)
 - [XXX]() Bring back interaction descriptions with Java EE and CDI in the Bean Validation specification
-- [XXX]() Finish renaming of `ConfigurationSource`
+- [BVAL-293](https://hibernate.onjira.com/browse/BVAL-293) <s>Finish renaming of `ConfigurationSource`</s>
 - [BVAL-226](https://hibernate.onjira.com/browse/BVAL-226) <s>Clarify whether the static or the runtime type should be considered when creating property paths in case of cascaded validations</s>
 - [BVAL-221](https://hibernate.onjira.com/browse/BVAL-221) The constraint violation builder cannot put constraint on a top level map key
 - [BVAL-210](https://hibernate.onjira.com/browse/BVAL-210) Make sure JTA / Java EE plays well with Bean Validation + JPA when exceptions occurs (at least raise the concern upstairs ;) )
