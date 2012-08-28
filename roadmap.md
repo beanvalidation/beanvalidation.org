@@ -6,11 +6,22 @@ author: Emmanuel Bernard
 
 # #{page.title}
 
+* [Topics](#topics)
+* [Priorities](#priorities)
+ * [Must have](#must-have)
+ * [Should have](#should-have)
+ * [Nice to have](#nice-to-have)
+ * [Next version](#next)
+
+***
+
 Bean Validation standardizes constraint definition, declaration and validation for the Java platform. Its first incarnation has been widely popular amongst the Java community in both SE and EE environments.
 
 Being a version 1.0, Bean Validation stayed on the conservative side feature wise. The community has expressed interest in additional features to enhance the work done in the first version of the specification.
 
-## Topics
+***
+
+## Topics <a id="topics"></a>
 
 The work of the Expert Group will be around the following main topics:
 
@@ -54,30 +65,31 @@ The goal of the Expert Group will be to assess these issues, prioritize them as 
 
 ***
 
-## Priorities
+## Priorities <a id="priorities"></a>
 
 Priorities are constantly evolving but the expert group as of today has the following priorities.
 
-### Must have
+### Must have  <a id="must-have"></a>
 
-- [BVAL-241](https://hibernate.onjira.com/browse/BVAL-241) <s>Method level validation</s>
+- [BVAL-241](https://hibernate.onjira.com/browse/BVAL-241) <s>[Method level validation](/proposals/BVAL-241)</s>
     - [BVAL-272](https://hibernate.onjira.com/browse/BVAL-272) Close remaining loops in method validation support
     - [BVAL-232](https://hibernate.onjira.com/browse/BVAL-232) Solve cross-parameter validation
     - Should method validation methods be defined on j.v.Validator or a
       dedicated new interface?
-- [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238) <s>Support for container injection in ConstraintValidator</s>
+- [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238) <s>[Support for container injection in ConstraintValidator](/proposals/BVAL-238)</s>
     - discuss and clarify vf.close() and the usage expectation (ie when to close a VF)
 - [XXX]() Bring back interaction descriptions with Java EE and CDI in the Bean Validation specification
+- [BVAL-265](https://hibernate.onjira.com/browse/BVAL-265) <s>[Expose settings defined in XML in the Configuration API (for ConstraintValidatorFactory, MessageInterpolator etc)](/proposals/BVAL-265)</s>
 - [BVAL-293](https://hibernate.onjira.com/browse/BVAL-293) <s>Finish renaming of `ConfigurationSource`</s>
 - [BVAL-226](https://hibernate.onjira.com/browse/BVAL-226) <s>Clarify whether the static or the runtime type should be considered when creating property paths in case of cascaded validations</s>
-- [BVAL-221](https://hibernate.onjira.com/browse/BVAL-221) The constraint violation builder cannot put constraint on a top level map key
+- [BVAL-221](https://hibernate.onjira.com/browse/BVAL-221) [The constraint violation builder cannot put constraint on a top level map key](/proposals/BVAL-221)
 - [BVAL-210](https://hibernate.onjira.com/browse/BVAL-210) Make sure JTA / Java EE plays well with Bean Validation + JPA when exceptions occurs (at least raise the concern upstairs ;) )
-- [BVAL-208](https://hibernate.onjira.com/browse/BVAL-208) Support groups translation when cascading operations (hosted on @Valid or not)
+- [BVAL-208](https://hibernate.onjira.com/browse/BVAL-208) [Support groups translation when cascading operations (hosted on @Valid or not)](/proposals/BVAL-208)
 - [BVAL-248](https://hibernate.onjira.com/browse/BVAL-248) [Introduce an evalutation order for constraints on a single property](/proposals/BVAL-248)
 - [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259) [Stop validation of composed constraints at first failing constraint](/proposals/BVAL-259)
 - [BVAL-268](https://hibernate.onjira.com/browse/BVAL-268) [Align with the EE platform on where to find validation.xml]
 
-### Should have
+### Should have <a id="should-have"></a>
 - [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259) Enforce in the spec that @ReportAsSingleViolation does apply validators once one is reporting a failure
 - [BVAL-220](https://hibernate.onjira.com/browse/BVAL-220) Offer stereotypes to skip validation on empty or null
 - [BVAL-240](https://hibernate.onjira.com/browse/BVAL-240) Revisit cross-field validation
@@ -96,7 +108,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 - [BVAL-251](https://hibernate.onjira.com/browse/BVAL-251) Improve Bean Validation support for modularized environments
 - [BVAL-282](https://hibernate.onjira.com/browse/BVAL-282) <s>Make clear whether it's legal to invoke Configuration#buildValidatorFactory() several times</s>
 
-### Nice to have
+### Nice to have <a id="nice-to-have"></a>
 
 - [BVAL-235](https://hibernate.onjira.com/browse/BVAL-235) Support parameterized payload attributes (additional string param on @Payload)
 - [BVAL-233](https://hibernate.onjira.com/browse/BVAL-233) Provide access to contextual info during message interpolation
@@ -110,8 +122,8 @@ Priorities are constantly evolving but the expert group as of today has the foll
 - [BVAL-237](https://hibernate.onjira.com/browse/BVAL-237) Expose validated bean via ConstraintValidatorContext
 - [BVAL-304](https://hibernate.onjira.com/browse/BVAL-304) Add OSGi headers in the reference implementation
 
-### Next revision
+### Next revision  <a id="next"></a>
 -
 
 ### Discuss with JPA's expert group
-- [BVAL-234](https://hibernate.onjira.com/browse/BVAL-234) Ignore @NotNull on JPA's @GeneratedValue properties for pre-persist operations
+- [BVAL-234](https://hibernate.onjira.com/browse/BVAL-234) [Ignore @NotNull on JPA's @GeneratedValue properties for pre-persist operations](/proposals/BVAL-234)
