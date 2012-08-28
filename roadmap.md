@@ -76,6 +76,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
     - [BVAL-232](https://hibernate.onjira.com/browse/BVAL-232) Solve cross-parameter validation
     - Should method validation methods be defined on j.v.Validator or a
       dedicated new interface?
+    - [BVAL-306](https://hibernate.onjira.com/browse/BVAL-306) Clarify interceptor order in method validation triggering
 - [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238) <s>[Support for container injection in ConstraintValidator](/proposals/BVAL-238)</s>
     - discuss and clarify vf.close() and the usage expectation (ie when to close a VF)
 - [XXX]() Bring back interaction descriptions with Java EE and CDI in the Bean Validation specification
