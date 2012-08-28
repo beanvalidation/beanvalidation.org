@@ -8,10 +8,10 @@ author: Emmanuel Bernard
 
 * [Topics](#topics)
 * [Priorities](#priorities)
- * [Must have](#must-have)
- * [Should have](#should-have)
- * [Nice to have](#nice-to-have)
- * [Next version](#next)
+  * [Must have](#must-have)
+  * [Should have](#should-have)
+  * [Nice to have](#nice-to-have)
+  * [Next version](#next)
 
 ***
 

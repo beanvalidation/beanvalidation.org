@@ -10,3 +10,4 @@ RewriteCond %{HTTP_HOST} ^beanvalidation.org$ [OR]
 RewriteCond %{HTTP_HOST} ^test.beanvalidation.org$ [OR]
 RewriteCond %{HTTP_HOST} ^www.beanvalidation.org$
 RewriteRule ^issues$ "https\:\/\/hibernate\.onjira\.com\/browse\/BVAL" [R=302,L]
+RewriteRule ^proposals$ "roadmap" [R=302,L]
