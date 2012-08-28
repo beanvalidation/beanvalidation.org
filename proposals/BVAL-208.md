@@ -27,13 +27,13 @@ We have also contemplated the idea of merging this feature with the annotation u
 method validation. Since method validation also hosts a validation mode, we decided to keep
 them separated.
 
-> Question: should we embed one in the order or use both as elements of 
+> Question: should we embed one in the other or use both as elements of 
 > orthogonal concern?
 > for example `@MethodValidated(mode=PARAMETERS) @ConvertGroup(from=Default.class, to=Basic.class)`
 
 The proposition is as followed.
 
-When an element is annotated with `@Valid`, validation is propagated. Groups as passed as
+When an element is annotated with `@Valid`, validation is propagated. Groups are passed as
 is to the nested elements unless the `@ConvertGroup` annotation is used.
 
 If the group expected to be passed to the nested element validation is defined
@@ -76,11 +76,43 @@ Alternative proposal:
         Class<?>[] to();
     }
 
+## Examples
+
+    public class User {
+        @Valid
+        @ConvvertGroup.List( {
+            @ConvertGroup(from=Default.class, to=BasicPostal.class),
+            @ConvertGroup(from=Complete.class, to=FullPostal.class)
+        } )
+        Set<Address> getAddresses() { ... }
+    }
+    
+    // vs
+    
+    public class User {
+        @Valid
+        @ConvvertGroup( 
+            from={Default.class, Complete.class},
+            to={BasicPostal.class, FullPostal.class}
+        )
+        Set<Address> getAddresses() { ... }
+    }
+
+## Questions and todos
+
 > Question, what should the annotation name be:
 >
 > - `@ConvertGroup`
 > - `@TanslateGroup`
 > - ?
+
+> Open question: can one define a class-level `@ConvertGroup` that would be applied
+> to all @Valid of a given bean?  
+> My gut feeling is that it is not necessary as one use group conversion to 
+> convert the group in one context (the main bean) to a group in
+> another context (the associated bean). I don't see a reason to have the
+> same context across associated beans?  
+> Am I missing a use case?
 
 TODO: describe and study how the group sequence resolution affects / is affected
 by the group conversion.
