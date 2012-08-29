@@ -73,7 +73,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 
 - [BVAL-241](https://hibernate.onjira.com/browse/BVAL-241) <s>[Method level validation](/proposals/BVAL-241)</s>
     - [BVAL-272](https://hibernate.onjira.com/browse/BVAL-272) Close remaining loops in method validation support
-    - [BVAL-232](https://hibernate.onjira.com/browse/BVAL-232) Solve cross-parameter validation
+    - [BVAL-232](https://hibernate.onjira.com/browse/BVAL-232) [Solve cross-parameter validation](/proposals/BVAL-232)
     - Should method validation methods be defined on j.v.Validator or a
       dedicated new interface?
     - [BVAL-306](https://hibernate.onjira.com/browse/BVAL-306) Clarify interceptor order in method validation triggering
