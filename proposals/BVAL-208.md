@@ -80,7 +80,7 @@ Alternative proposal:
 
     public class User {
         @Valid
-        @ConvvertGroup.List( {
+        @ConvertGroup.List( {
             @ConvertGroup(from=Default.class, to=BasicPostal.class),
             @ConvertGroup(from=Complete.class, to=FullPostal.class)
         } )
@@ -91,7 +91,7 @@ Alternative proposal:
     
     public class User {
         @Valid
-        @ConvvertGroup( 
+        @ConvertGroup( 
             from={Default.class, Complete.class},
             to={BasicPostal.class, FullPostal.class}
         )

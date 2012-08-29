@@ -80,6 +80,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 - [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238) <s>[Support for container injection in ConstraintValidator](/proposals/BVAL-238)</s>
     - discuss and clarify vf.close() and the usage expectation (ie when to close a VF)
 - [XXX]() Bring back interaction descriptions with Java EE and CDI in the Bean Validation specification
+- [BVAL-307](https://hibernate.onjira.com/browse/BVAL-307) Decide how CDI and Bean Validation is integrated
 - [BVAL-265](https://hibernate.onjira.com/browse/BVAL-265) <s>[Expose settings defined in XML in the Configuration API (for ConstraintValidatorFactory, MessageInterpolator etc)](/proposals/BVAL-265)</s>
 - [BVAL-293](https://hibernate.onjira.com/browse/BVAL-293) <s>Finish renaming of `ConfigurationSource`</s>
 - [BVAL-226](https://hibernate.onjira.com/browse/BVAL-226) <s>Clarify whether the static or the runtime type should be considered when creating property paths in case of cascaded validations</s>
