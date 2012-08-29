@@ -78,7 +78,7 @@ wish to implement this contract by placing corresponding constraint annotations 
 implementation.
 
 An open question in this situation is what should the behavior be if the
-annotation is being constrained afterwards?
+interface is being constrained afterwards?
 
 ## Give use your feedback!
 
