@@ -77,15 +77,21 @@ preconditions in its documentation. In this case an implementor of that interfac
 wish to implement this contract by placing corresponding constraint annotations on the
 implementation.
 
+An open question in this situation is what should the behavior be if the
+annotation is being constrained afterwards?
+
 ## Give use your feedback!
 
 So what do you think, should such a refinement of parameter constraints be allowed or not?
-Possible alternatives include to allow such a refinement by default or to have some sort
-of switch controlling the behavior (either standardized or provider-specific). As there
-are pro's and con's of either approach, we'd very interested in user feedback on this.
+Possible alternatives:
+
+- allow such a refinement by default
+- have some sort of switch controlling the behavior (either standardized or provider-specific)
+
+As there are pro's and con's of either approach, we'd very interested in user feedback on this.
 
 Let us know what you think by posting a comment directly to this blog, shooting a message
 to the [mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev) or
 participating in this [Doodle vote](www.doodle.com/qp78u6mqzetuas7p). Which use cases
-from your software come do your mind where the possibility to refine parameter constraints
+you have encountered come to mind where the possibility to refine parameter constraints
 may help you?
