@@ -92,6 +92,6 @@ As there are pro's and con's of either approach, we'd very interested in user fe
 
 Let us know what you think by posting a comment directly to this blog, shooting a message
 to the [mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev) or
-participating in this [Doodle vote](www.doodle.com/qp78u6mqzetuas7p). Which use cases
+participating in this [Doodle vote](http://www.doodle.com/qp78u6mqzetuas7p). Which use cases
 you have encountered come to mind where the possibility to refine parameter constraints
 may help you?
