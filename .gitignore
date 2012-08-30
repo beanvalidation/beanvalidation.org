@@ -4,6 +4,7 @@
 .DS_Store
 
 #Awestruct
+/.awestruct
 /.sass-cache
 /_site
 /_tmp
