@@ -7,8 +7,8 @@ Awestruct::Extensions::Pipeline.new do
                                                '/news/index', 
                                                '/news/tags', 
                                                :per_page=>5 )
-  extension Awestruct::Extensions::Atomizer.new( :posts, '/news/news.atom' )
   extension Awestruct::Extensions::Indexifier.new
+  extension Awestruct::Extensions::Atomizer.new( :posts, '/news/news.atom' )
   extension Awestruct::Extensions::Disqus.new
   helper Awestruct::Extensions::Partial
   helper Awestruct::Extensions::GoogleAnalytics
