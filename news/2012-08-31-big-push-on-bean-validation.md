@@ -16,7 +16,7 @@ on:
 - taking decisions to unstuck discussions
 - iterating over the features proposed in the early draft
   (we have had good feedback from the JAX-RS expert group to refine
-  method validation
+  method validation)
 
 The rest of the time will be focused on writing the reference implementation
 and the TCK and refine the various new features.
