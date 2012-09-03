@@ -39,7 +39,7 @@ Any one can think of a better approach?
 #### Bean Validation class
 
     @interface CrossParameterConstraint {
-        public Class<? extends CrossParameterConstraintValidator<?, ?>>[] validatedBy();
+        public Class<? extends CrossParameterConstraintValidator<?>>[] validatedBy();
     }
     
     interface CrossParameterConstraintValidator<A extends Annotation> {
