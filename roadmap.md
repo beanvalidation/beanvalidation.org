@@ -76,6 +76,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 | [BVAL-241](https://hibernate.onjira.com/browse/BVAL-241)  | Method level validation                            | [241](/proposals/BVAL-241) | ![](/images/completed.png)
 | [BVAL-272](https://hibernate.onjira.com/browse/BVAL-272)  | Close remaining loops in method validation support |                                     |
 | [BVAL-232](https://hibernate.onjira.com/browse/BVAL-232)  | Solve cross-parameter validation                   | [232](/proposals/BVAL-232) | 
+| [BVAL-274](https://hibernate.onjira.com/browse/BVAL-274)  | Extend the meta-data API with required convenience methods for method validation | [274](/proposals/BVAL-274) |
 |                                                           | Should method validation methods be defined on j.v.Validator or a dedicated new interface? | |  
 | [BVAL-306](https://hibernate.onjira.com/browse/BVAL-306)  | Clarify interceptor order in method validation triggering | | 
 | [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238)  | Support for container injection in ConstraintValidator | [238](/proposals/BVAL-238) | ![](/images/completed.png) 
