@@ -145,4 +145,11 @@ But it's not 100% in line with the `findConstraints()` API: it should only retur
 that are on the element. Plus what is returned by the API is 
 `ConstraintDescriptor` which cannot differentiate where it comes from (parameter or method).
 
+## Implementation notes
+
+Specify that `ElementDescriptor.hasConstraints()` does not return true for a `MethodDescriptor`
+when:
+
+- method parameters are constrained
+- cross-parameter constraints are declared on the method
 [jira]: https://hibernate.onjira.com/browse/BVAL-274
