@@ -109,7 +109,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 | [BVAL-199](https://hibernate.onjira.com/browse/BVAL-199)  | Offer helper classes to build ConstraintViolationExceptions (and potentially raise them) ||
 | [BVAL-198](https://hibernate.onjira.com/browse/BVAL-198)  | Simplify creation of ConstraintViolationExceptions ||
 | [BVAL-192](https://hibernate.onjira.com/browse/BVAL-192)  | Add 'exclusive' boolean attribute to @DecimalMin/@DecimalMax constraints ||
-| [BVAL-230](https://hibernate.onjira.com/browse/BVAL-230)  | Add support for validating CharSequence types instead of just Strings ||
+| [BVAL-230](https://hibernate.onjira.com/browse/BVAL-230)  | Add support for validating CharSequence types instead of just Strings || ![](/images/completed.png)
 | [BVAL-217](https://hibernate.onjira.com/browse/BVAL-217)  | Seperate the notion of message resolver vs message interpolator ||
 | [BVAL-249](https://hibernate.onjira.com/browse/BVAL-249)  | Add unwrap method to ConstraintValidatorContext for provider extension ||
 | [BVAL-252](https://hibernate.onjira.com/browse/BVAL-252)  | Improve support for the creation of constraint libraries ||
