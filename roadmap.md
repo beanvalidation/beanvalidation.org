@@ -79,6 +79,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 | [BVAL-274](https://hibernate.onjira.com/browse/BVAL-274)  | Extend the meta-data API with required convenience methods for method validation | [274](/proposals/BVAL-274) |
 |                                                           | Should method validation methods be defined on j.v.Validator or a dedicated new interface? | |  
 | [BVAL-306](https://hibernate.onjira.com/browse/BVAL-306)  | Clarify interceptor order in method validation triggering | | 
+| [BVAL-314](https://hibernate.onjira.com/browse/BVAL-314)  | Provide ability to disable validation and customize groups for method/constructor validation | [314](/proposals/BVAL-314/) | 
 | [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238)  | Support for container injection in ConstraintValidator | [238](/proposals/BVAL-238) | ![](/images/completed.png) 
 |                                                           | Discuss and clarify vf.close() and the usage expectation (ie when to close a VF) | | 
 |                                                           | Bring back interaction descriptions with Java EE and CDI in the Bean Validation specification |  
