@@ -1,27 +1,31 @@
 ---
-title: Bean Validation 1.1.0.Alpha1 (early draft 1) (JSR 349)
+title: Bean Validation 1.1 (JSR 349) official drafts
 layout: default
 author: Emmanuel Bernard
 ---
 
 # #{page.title}
 
-Welcome to the first early draft of Bean Validation 1.1. This document is a work
-in progress.
+This pages contains the official drafts published for Bean Validation 1.1.
 
 [feedback]: /contribute
 
 ## Changes
 
-The main area of work for this draft has been:
+The main area of work for this revision are:
 
 - openness of the specification and its process
 - method-level validation (validation of parameters or return values)
 - dependency injection for Bean Validation components
+- integration with Context and Dependency Injection (CDI)
+- group conversion
 
 ## Specification
 
-The specification draft is [available here][spec]. All changes are marked with a different
+[Bean Validation 1.0.0.Beta1 - Public Review Draft 1 - **latest**](spec/1.0.0.beta1/)  
+[Bean Validation 1.0.0.Alpha1 - Early Draft 1](spec/1.0.0.alpha1/)  
+
+All changes are marked with a different
 color. <span style="background-color:#DDFFDD;">Green for additions</span>, 
 <span style="background-color:#FFFFDD;">yellow for changes</span> and 
 <span style="text-decoration: line-through;background-color: #FFDDDD;">struck through red for removals</span>
