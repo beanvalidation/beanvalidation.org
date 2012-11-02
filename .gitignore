@@ -12,3 +12,5 @@
 
 #Editor
 *.tmproj
+*.sublime-workspace
+*.sublime-project

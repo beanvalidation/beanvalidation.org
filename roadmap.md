@@ -75,30 +75,30 @@ Priorities are constantly evolving but the expert group as of today has the foll
 | --------------------------------------------------------- | -------------------------------------------------- | ----------------------------------- | --------: |
 | [BVAL-241](https://hibernate.onjira.com/browse/BVAL-241)  | Method level validation                            | [241](/proposals/BVAL-241) | ![](/images/completed.png)
 | [BVAL-272](https://hibernate.onjira.com/browse/BVAL-272)  | Close remaining loops in method validation support |                                     |
-| [BVAL-232](https://hibernate.onjira.com/browse/BVAL-232)  | Solve cross-parameter validation                   | [232](/proposals/BVAL-232) | 
-| [BVAL-274](https://hibernate.onjira.com/browse/BVAL-274)  | Extend the meta-data API with required convenience methods for method validation | [274](/proposals/BVAL-274) |
+| [BVAL-232](https://hibernate.onjira.com/browse/BVAL-232)  | Solve cross-parameter validation                   | [232](/proposals/BVAL-232) | ![](/images/completed.png)
+| [BVAL-274](https://hibernate.onjira.com/browse/BVAL-274)  | Extend the meta-data API with required convenience methods for method validation | [274](/proposals/BVAL-274) | ![](/images/completed.png)
 |                                                           | Should method validation methods be defined on j.v.Validator or a dedicated new interface? | |  
-| [BVAL-306](https://hibernate.onjira.com/browse/BVAL-306)  | Clarify interceptor order in method validation triggering | | 
+| [BVAL-306](https://hibernate.onjira.com/browse/BVAL-306)  | Clarify interceptor order in method validation triggering | | ![](/images/completed.png)
 | [BVAL-314](https://hibernate.onjira.com/browse/BVAL-314)  | Provide ability to disable validation and customize groups for method/constructor validation | [314](/proposals/BVAL-314/) | 
 | [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238)  | Support for container injection in ConstraintValidator | [238](/proposals/BVAL-238) | ![](/images/completed.png) 
 |                                                           | Discuss and clarify vf.close() and the usage expectation (ie when to close a VF) | | 
 |                                                           | Bring back interaction descriptions with Java EE and CDI in the Bean Validation specification |  
-| [BVAL-307](https://hibernate.onjira.com/browse/BVAL-307)  | Decide how CDI and Bean Validation is integrated   |                                      | 
+| [BVAL-307](https://hibernate.onjira.com/browse/BVAL-307)  | Decide how CDI and Bean Validation is integrated   |                                      | ![](/images/completed.png)
 | [BVAL-265](https://hibernate.onjira.com/browse/BVAL-265)  | Expose settings defined in XML in the Configuration API | [265](/proposals/BVAL-265) |  ![](/images/completed.png) 
 | [BVAL-293](https://hibernate.onjira.com/browse/BVAL-293)  | Finish renaming of `ConfigurationSource`           |                                      | ![](/images/completed.png)
 | [BVAL-226](https://hibernate.onjira.com/browse/BVAL-226)  | Clarify whether the static or the runtime type should be considered when creating property paths in case of cascaded validations | | ![](/images/completed.png)
 | [BVAL-221](https://hibernate.onjira.com/browse/BVAL-221)  | The constraint violation builder cannot put constraint on a top level map key | [221](/proposals/BVAL-221) |
 | [BVAL-210](https://hibernate.onjira.com/browse/BVAL-210)  | Make sure JTA / Java EE plays well with Bean Validation + JPA when exceptions occurs (at least raise the concern upstairs ;) ) | |
-| [BVAL-208](https://hibernate.onjira.com/browse/BVAL-208)  | Support groups translation when cascading operations (hosted on @Valid or not) | [208](/proposals/BVAL-208) |
+| [BVAL-208](https://hibernate.onjira.com/browse/BVAL-208)  | Support groups translation when cascading operations (hosted on @Valid or not) | [208](/proposals/BVAL-208) | ![](/images/completed.png)
 | [BVAL-248](https://hibernate.onjira.com/browse/BVAL-248)  | Introduce an evalutation order for constraints on a single property | [248](/proposals/BVAL-248) |
-| [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259)  | Stop validation of composed constraints at first failing constraint | [259](/proposals/BVAL-259)
+| [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259)  | Stop validation of composed constraints at first failing constraint | [259](/proposals/BVAL-259) | ![](/images/completed.png)
 | [BVAL-268](https://hibernate.onjira.com/browse/BVAL-268)  | Align with the EE platform on where to find validation.xml | |
 
 ### Should have <a id="should-have"></a>
 
 | Issue Id                                                  | Description                                        | Proposal                            | Completed |
 | --------------------------------------------------------- | -------------------------------------------------- | ----------------------------------- | --------: |
-| [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259)  | Enforce in the spec that @ReportAsSingleViolation does apply validators once one is reporting a failure ||
+| [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259)  | Enforce in the spec that @ReportAsSingleViolation does apply validators once one is reporting a failure ||![](/images/completed.png)
 | [BVAL-220](https://hibernate.onjira.com/browse/BVAL-220)  | Offer stereotypes to skip validation on empty or null ||
 | [BVAL-240](https://hibernate.onjira.com/browse/BVAL-240)  | Revisit cross-field validation ||
 | [BVAL-225](https://hibernate.onjira.com/browse/BVAL-225)  | Propose ability to provide default resource bundles (for a constraint definition provider) ||
