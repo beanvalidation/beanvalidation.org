@@ -22,8 +22,8 @@ The main area of work for this revision are:
 
 ## Specification
 
-[Bean Validation 1.0.0.Beta1 - Public Review Draft 1 - **latest**](spec/1.0.0.beta1/)  
-[Bean Validation 1.0.0.Alpha1 - Early Draft 1](spec/1.0.0.alpha1/)  
+[Bean Validation 1.1.0.Beta1 - Public Review Draft 1 - **latest**](spec/1.1.0.beta1/)  
+[Bean Validation 1.1.0.Alpha1 - Early Draft 1](spec/1.1.0.alpha1/)  
 
 All changes are marked with a different
 color. <span style="background-color:#DDFFDD;">Green for additions</span>, 
