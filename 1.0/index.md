@@ -14,7 +14,7 @@ Read the [specification](spec) or browse the [API JavaDocs](http://docs.jboss.or
 
 ## Reference Implementation
 
-Download the latest Reference Implementation (RI): [Hibernate Validator 4.2.0.GA](http://sourceforge.net/projects/hibernate/files/hibernate-validator/4.2.0.Final/).
+Download the latest Reference Implementation (RI): [Hibernate Validator 4.3.0.Final](http://sourceforge.net/projects/hibernate/files/hibernate-validator/4.3.0.Final/).
 
 ## Technology Compatibility Kit
 
