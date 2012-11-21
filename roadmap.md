@@ -93,6 +93,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 | [BVAL-248](https://hibernate.onjira.com/browse/BVAL-248)  | Introduce an evalutation order for constraints on a single property | [248](/proposals/BVAL-248) |
 | [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259)  | Stop validation of composed constraints at first failing constraint | [259](/proposals/BVAL-259) | ![](/images/completed.png)
 | [BVAL-268](https://hibernate.onjira.com/browse/BVAL-268)  | Align with the EE platform on where to find validation.xml | |
+| [BVAL-327](https://hibernate.onjira.com/browse/BVAL-327)  | Discuss whether or not getter should be considered constrained methods | [327](/proposals/BVAL-327) |
 
 ### Should have <a id="should-have"></a>
 
