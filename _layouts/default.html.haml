@@ -12,6 +12,8 @@ layout: base
         [forum](https://forum.hibernate.org/viewforum.php?f=26) |
         [bug tracker](/issues)
     ~ content
+    - if (page.comments == true)
+      = page.disqus_comments
 
   #footer
     .text
