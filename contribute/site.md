@@ -63,6 +63,10 @@ Menus are in `_layout`. When you create a page, give it the right metadata:
 * `title`
 * `author`
 * `layout`
+* `comments` (optional)
+
+When you set the `comments` property to `true`, a disqus comment section 
+is added at the bottom of the page.
 
 Here is an example
 
