@@ -42,3 +42,12 @@ Interested? Read all about how to
 * [concretely contributing to the specification](specification)
 * [work with the API and TCK sources](coding)
 * [improve this website](site).
+
+### License
+
+The content of this specification, API, RI, TCK, website is released under the Apache Software License 2.0.
+
+By submitting a "pull request" or otherwise contributing to this repository, you agree to license your contribution
+under the respective licenses mentioned above.
+
+
