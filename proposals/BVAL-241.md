@@ -2,6 +2,7 @@
 title: Support for method validation
 layout: default
 author: Gunnar Morling
+comments: true
 ---
 
 # #{page.title}

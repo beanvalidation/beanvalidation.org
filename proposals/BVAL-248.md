@@ -2,6 +2,7 @@
 title: Introduce an evaluation order for constraints defined on a single property
 layout: default
 author: Emmanuel Bernard
+comments: true
 ---
 
 # #{page.title}

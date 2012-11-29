@@ -2,6 +2,7 @@
 title: Enforce evaluation of composed constraints stops on first validation error in case of @ReportAsSingleViolation
 layout: default
 author: Hardy Ferentschik
+comments: true
 ---
 
 # #{page.title}

@@ -2,6 +2,7 @@
 title: Support groups translation when cascading operations
 layout: default
 author: Emmanuel Bernard
+comments: true
 ---
 
 # #{page.title}

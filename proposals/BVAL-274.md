@@ -2,6 +2,7 @@
 title: Improve metadata API to be more friendly towards method interceptor integrators
 layout: default
 author: Emmanuel Bernard
+comments: true
 ---
 
 # #{page.title}

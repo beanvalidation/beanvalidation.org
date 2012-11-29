@@ -2,6 +2,7 @@
 title: Support for container injection in ConstraintValidator
 layout: default
 author: Emmanuel Bernard
+comments: true
 ---
 
 # #{page.title}

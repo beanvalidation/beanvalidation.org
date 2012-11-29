@@ -2,6 +2,7 @@
 title: Provide ability to disable validation and customize groups for method/constructor validation
 layout: default
 author: Emmanuel Bernard
+comments: true
 ---
 
 # #{page.title}

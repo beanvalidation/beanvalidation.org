@@ -2,6 +2,7 @@
 title: Determine whether or not getters should be considered when validating methods on interception
 layout: default
 author: Emmanuel Bernard
+comments: true
 ---
 
 # #{page.title}

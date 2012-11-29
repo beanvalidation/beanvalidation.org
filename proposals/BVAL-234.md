@@ -2,6 +2,7 @@
 title: Fix annoyance between JPA and Bean Validation when @Id @GeneratedValue and @NotNull are used
 layout: default
 author: Emmanuel Bernard
+comments: true
 ---
 
 # #{page.title}

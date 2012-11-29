@@ -2,6 +2,7 @@
 title: Expose settings defined in XML in the Configuration API (for ConstraintValidatorFactory, MessageInterpolator etc)
 layout: default
 author: Emmanuel Bernard
+comments: true
 ---
 
 # #{page.title}

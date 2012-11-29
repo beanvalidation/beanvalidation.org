@@ -2,6 +2,7 @@
 title: The constraint violation builder cannot put constraint on a top level map key
 layout: default
 author: Emmanuel Bernard
+comments: true
 ---
 
 # #{page.title}
