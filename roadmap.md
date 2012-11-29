@@ -12,6 +12,7 @@ author: Emmanuel Bernard
   * [Should have](#should-have)
   * [Nice to have](#nice-to-have)
   * [Next version](#next)
+* [Schedule](#schedule)
 
 ***
 
@@ -142,3 +143,14 @@ Priorities are constantly evolving but the expert group as of today has the foll
 ### Next revision  <a id="next"></a>
 
 Nothing so far
+
+## Schedule <a id="schedule"></a>
+
+The specification public review ballot has been passed.
+Future plans are as followed:
+
+- PDF submitted for final specification: mid to end of February
+- Final ballot: End of February
+- Release: mid March
+
+The goal is to stay aligned with [Java EE 7 schedule](http://java.net/projects/javaee-spec/pages/Home)
