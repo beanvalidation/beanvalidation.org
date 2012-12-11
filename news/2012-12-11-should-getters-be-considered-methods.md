@@ -1,5 +1,5 @@
 ---
-title: Should getters be considered methods
+title: Should getters be validated when they are called?
 author: Emmanuel Bernard
 layout: news
 tags: [feedback]
