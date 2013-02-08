@@ -80,7 +80,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 | [BVAL-274](https://hibernate.onjira.com/browse/BVAL-274)  | ![](/images/completed.png) | [274](/proposals/BVAL-274) | Extend the meta-data API with required convenience methods for method validation 
 |                                                           | ![](/images/completed.png) |  | Should method validation methods be defined on j.v.Validator or a dedicated new interface? 
 | [BVAL-306](https://hibernate.onjira.com/browse/BVAL-306)  | ![](/images/completed.png) |  | Clarify interceptor order in method validation triggering
-| [BVAL-314](https://hibernate.onjira.com/browse/BVAL-314)  |  | [314](/proposals/BVAL-314/) | Provide ability to disable validation and customize groups for method/constructor validation 
+| [BVAL-314](https://hibernate.onjira.com/browse/BVAL-314)  | ![](/images/completed.png) | [314](/proposals/BVAL-314/) | Provide ability to disable validation for method/constructor 
 | [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238)  | ![](/images/completed.png) | [238](/proposals/BVAL-238)  | Support for container injection in ConstraintValidator 
 |                                                           | ![](/images/completed.png) |  | Discuss and clarify vf.close() and the usage expectation (ie when to close a VF)
 |                                                           | ![](/images/completed.png) |  | Bring back interaction descriptions with Java EE and CDI in the Bean Validation specification
@@ -94,7 +94,7 @@ Priorities are constantly evolving but the expert group as of today has the foll
 | [BVAL-248](https://hibernate.onjira.com/browse/BVAL-248)  |  | [248](/proposals/BVAL-248) | Introduce an evaluation order for constraints on a single property 
 | [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259)  | ![](/images/completed.png) | [259](/proposals/BVAL-259) | Stop validation of composed constraints at first failing constraint 
 | [BVAL-268](https://hibernate.onjira.com/browse/BVAL-268)  |  |  | Align with the EE platform on where to find validation.xml
-| [BVAL-327](https://hibernate.onjira.com/browse/BVAL-327)  |  | [327](/proposals/BVAL-327) | Discuss whether or not getter should be considered constrained methods 
+| [BVAL-327](https://hibernate.onjira.com/browse/BVAL-327)  | ![](/images/completed.png) | [327](/proposals/BVAL-327) | Discuss whether or not getter should be considered constrained methods 
 
 ### Should have <a id="should-have"></a>
 
@@ -104,16 +104,16 @@ Priorities are constantly evolving but the expert group as of today has the foll
 | [BVAL-220](https://hibernate.onjira.com/browse/BVAL-220)  |  |  | Offer stereotypes to skip validation on empty or null
 | [BVAL-240](https://hibernate.onjira.com/browse/BVAL-240)  |  |  | Revisit cross-field validation
 | [BVAL-225](https://hibernate.onjira.com/browse/BVAL-225)  |  |  | Propose ability to provide default resource bundles (for a constraint definition provider)
-| [BVAL-219](https://hibernate.onjira.com/browse/BVAL-219)  |  |  | Consider interpolating the value in error messages
-| [BVAL-223](https://hibernate.onjira.com/browse/BVAL-223)  |  |  | Add formatter syntax for interpolated messages
+| [BVAL-219](https://hibernate.onjira.com/browse/BVAL-219)  | ![](/images/completed.png) |  | Consider interpolating the value in error messages
+| [BVAL-223](https://hibernate.onjira.com/browse/BVAL-223)  | ![](/images/completed.png)  |  | Add formatter syntax for interpolated messages
 | [BVAL-216](https://hibernate.onjira.com/browse/BVAL-216)  |  |  | Work with the JAXB EG to have a nice Bean Validation integration
 | [BVAL-214](https://hibernate.onjira.com/browse/BVAL-214)  |  |  | Ability to validate an object and a list of changes
 | [BVAL-199](https://hibernate.onjira.com/browse/BVAL-199)  |  |  | Offer helper classes to build ConstraintViolationExceptions (and potentially raise them)
-| [BVAL-198](https://hibernate.onjira.com/browse/BVAL-198)  |  |  | Simplify creation of ConstraintViolationExceptions
-| [BVAL-192](https://hibernate.onjira.com/browse/BVAL-192)  |  |  | Add 'exclusive' boolean attribute to @DecimalMin/@DecimalMax constraints
+| [BVAL-198](https://hibernate.onjira.com/browse/BVAL-198)  | ![](/images/completed.png) |  | Simplify creation of ConstraintViolationExceptions
+| [BVAL-192](https://hibernate.onjira.com/browse/BVAL-192)  | ![](/images/completed.png) |  | Add 'exclusive' boolean attribute to @DecimalMin/@DecimalMax constraints
 | [BVAL-230](https://hibernate.onjira.com/browse/BVAL-230)  | ![](/images/completed.png) |  | Add support for validating CharSequence types instead of just Strings
 | [BVAL-217](https://hibernate.onjira.com/browse/BVAL-217)  |  |  | Separate the notion of message resolver vs message interpolator
-| [BVAL-249](https://hibernate.onjira.com/browse/BVAL-249)  |  |  | Add unwrap method to ConstraintValidatorContext for provider extension
+| [BVAL-249](https://hibernate.onjira.com/browse/BVAL-249)  | ![](/images/completed.png) |  | Add unwrap method to ConstraintValidatorContext for provider extension
 | [BVAL-252](https://hibernate.onjira.com/browse/BVAL-252)  |  |  | Improve support for the creation of constraint libraries
 | [BVAL-251](https://hibernate.onjira.com/browse/BVAL-251)  |  |  | Improve Bean Validation support for modularized environments
 | [BVAL-282](https://hibernate.onjira.com/browse/BVAL-282)  | ![](/images/completed.png) |  | Make clear whether it's legal to invoke Configuration#buildValidatorFactory() several times
