@@ -11,7 +11,8 @@ This pages contains the official drafts published for Bean Validation 1.1.
 ## Specification Drafts
 
 * [Bean Validation 1.1 latest working snapshot](/latest-draft/spec)
-* [Bean Validation 1.1.0.Beta3](spec/1.1.0.beta3/) + [JavaDocs](http://docs.jboss.org/hibernate/beanvalidation/spec/1.1/api/)
+* [Bean Validation 1.1.0.Beta4](spec/1.1.0.beta4/) + [JavaDocs](http://docs.jboss.org/hibernate/beanvalidation/spec/1.1/api/)
+* [Bean Validation 1.1.0.Beta3](spec/1.1.0.beta3/)
 * [Bean Validation 1.1.0.Beta2](spec/1.1.0.beta2/)
 * [Bean Validation 1.1.0.Beta1  - Public Review Draft 1](spec/1.1.0.beta1/)
 * [Bean Validation 1.1.0.Alpha1 - Early Draft 1](spec/1.1.0.alpha1/)  
