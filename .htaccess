@@ -9,7 +9,7 @@ ErrorDocument 404 /404.html
 RewriteCond %{HTTP_HOST} ^beanvalidation.org$ [OR]
 RewriteCond %{HTTP_HOST} ^test.beanvalidation.org$ [OR]
 RewriteCond %{HTTP_HOST} ^www.beanvalidation.org$
-RewriteRule ^issues$ "https\:\/\/hibernate\.onjira\.com\/browse\/BVAL" [R=302,L]
+RewriteRule ^issues$ "https\:\/\/hibernate\.atlassian\.net\/browse\/BVAL" [R=302,L]
 RewriteRule ^proposals$ "/roadmap/" [R=302,L]
 RewriteRule ^proposals/$ "/roadmap/" [R=302,L]
 RewriteRule ^news/2012/08/31/big-push-on-to-bean-validation/$ "/news/2012/08/31/big-push-on-bean-validation/" [R=302,L]
