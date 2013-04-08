@@ -1,40 +1,42 @@
 ---
-title: Bean Validation 1.1 (JSR 349) official drafts
+title: Bean Validation 1.1 (JSR 349)
 layout: default
 author: Emmanuel Bernard
 ---
 
 # #{page.title}
 
-This pages contains the official drafts published for Bean Validation 1.1.
+Find all about Bean Validation 1.1. The specification, the reference implementation,
+the test compatibility kit as well as the main changes from 1.0.
 
-## Specification Drafts
+## What is new since 1.0
 
-* [Bean Validation 1.1 latest working snapshot](/latest-draft/spec)
-* [Bean Validation 1.1.0.CR3 - Final Approval Ballot](spec/1.1.0.cr3/) + [JavaDocs](http://docs.jboss.org/hibernate/beanvalidation/spec/1.1/api/)
-* [Bean Validation 1.1.0.CR2](spec/1.1.0.cr2/)
-* [Bean Validation 1.1.0.CR1 - Proposed Final Draft](spec/1.1.0.cr1/)
-* [Bean Validation 1.1.0.Beta4](spec/1.1.0.beta4/)
-* [Bean Validation 1.1.0.Beta3](spec/1.1.0.beta3/)
-* [Bean Validation 1.1.0.Beta2](spec/1.1.0.beta2/)
-* [Bean Validation 1.1.0.Beta1  - Public Review Draft 1](spec/1.1.0.beta1/)
-* [Bean Validation 1.1.0.Alpha1 - Early Draft 1](spec/1.1.0.alpha1/)  
-
-All changes are marked with a different
-color. <span style="background-color:#DDFFDD;">Green for additions</span>, 
-<span style="background-color:#FFFFDD;">yellow for changes</span> and 
-<span style="text-decoration: line-through;background-color: #FFDDDD;">struck through red for removals</span>
-. This will help you see what has changed precisely.
-
-## Changes
-
-The main area of work for this revision are:
+This version of the specification focused on the following main topics:
 
 - openness of the specification and its process
 - method-level validation (validation of parameters or return values)
 - dependency injection for Bean Validation components
 - integration with Context and Dependency Injection (CDI)
 - group conversion
+- error message interpolation using EL expressions
+
+For more information, check out the [full list of goals and changes](/1.1/changes/).
+
+## Read the specification
+
+You can find the [full specification](/1.1/spec/) or browse the
+[API JavaDocs](http://docs.jboss.org/hibernate/beanvalidation/spec/1.1/api/).
+
+## Get the reference implementation
+
+Hibernate Validator is the reference implementation for Bean Validation.
+Download the known compliant version [Hibernate Validator 5.0.0.Final](http://sourceforge.net/projects/hibernate/files/hibernate-validator/5.0.0.Final/).
+
+## Technology Compatibility Kit
+
+Download the latest Technology Compatibility Kit (TCK) version
+[1.1.0.Final](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.1.0.Final)
+and read the corresponding [TCK documentation](http://docs.jboss.org/hibernate/beanvalidation/tck/1.1/reference/html_single/).
 
 ## Feedback
 
@@ -44,9 +46,12 @@ Do you have feedback? Talk to us:
 - in our [issue tracker][issues]
 - or on the Bean Validation [forum][forum]
 
-If you want to go to the next step and contribute, send us an email to the mailing list and read
-[how to contribute](/contribute).
+If you want to go to the next step and contribute, read [how to contribute](/contribute).
 
+## History
+
+If you are interested in the various drafts that lead to Bean Validation 1.1, check
+out the [history page](/1.1/history/).
 
 [spec]: spec/
 [issues]: /issues
