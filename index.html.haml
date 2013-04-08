@@ -8,22 +8,24 @@ author: Emmanuel Bernard
 #bv-two-columns-two-third
   #bv-column-two-third
     :markdown
-      Welcome to the Bean Validation specification website. You will find information about the stable 
-      version 1.0 as well as version 1.1 currently being worked on.
+      Welcome to the Bean Validation specification website.
   #bv-column-one-third
     :markdown
-      - [1.1 JSR 349 (published drafts)](/1.1/)
-      - [1.0 JSR 303 (stable)](/1.0/)
 
 #bv-two-columns
   #bv-column-left
     :markdown
       ## What is Bean Validation
-      
-      Bean Validation is a Java specification which:
-      
-      * provides a unified way of declaring and defining constraints on an object model.
-      * defines a runtime engine to validate objects
+
+      Bean Validation is a Java specification which
+
+      - lets you express constraints on object models via annotations
+      - lets you write custom constraints in an extensible way
+      - provides the APIs to validate objects and object graphs
+      - provides the APIs to validate parameters and return values of methods
+        and constructors
+      - reports the set of violations (localized)
+      - runs in Java SE but is integrated in Java EE (6 and 7)
       
       <pre>public class User {
           &#64;NotNull &#64;Email 
@@ -33,40 +35,43 @@ author: Emmanuel Bernard
           }
           private String email;
       }
+      
+      public class UserService {
+        public void createUser(&#64;Email email,
+                               &#64;NotNull String name) {
+          }
+      }
       </pre>
       
-      [Learn more...](intro)
+      While you can run validation manually, it is more natural to
+      let other specifications and framework validate data at the right
+      time (user input in presentation frameworks, business service
+      execution by CDI, entity insert or update by JPA).
+
+      In other words, _run once, constraint anywhere_.
+
+      [Learn more and get the specification...](/1.1/)
             
   #bv-column-right
-    :markdown
-      ## Bean Validation 1.1
-      
-      Bean Validation 1.1 is a specification proposal which aims at improving upon the
-      initial version 1.0. Its JCP matricule is [JSR-349](http://jcp.org/en/jsr/detail?id=349). 
-      Like all Red Hat led JSRs, Bean Validation work happens in the open in an open source 
-      fashion. You are encouraged to contribute and make a difference.
-      
-      You can check out the [Bean Validation 1.1 goals](roadmap) or read the 
-      [public draft][1.1].
-      
-      **[Provide feedback or participate...](/contribute)**
+    #hero
+      %span
+        %a{:href=>'/1.1/'} Get Bean Validation 1.1
+    :markdown  
 
-      [1.1]: /1.1/
+      ## [![Feed](/images/feed-icon-28x28.png)](/news/news.atom) Latest news  
 
-#bv-bottom
-  :markdown  
-    ## [![Feed](/images/feed-icon-28x28.png)](/news/news.atom) Latest news  
+      Stay up to date, subscribe to the [news feed](/news/news.atom).
+    #latest-news
+      - for post in site.posts[0,3] do
+        .item
+          %h2 
+            %a{:href=>post.url}= post.title
+          %h3 #{post.date.strftime( '%d %B %Y' )}
+          .body
+            #{summarize( html_to_text( post.content ), 50 )}
+          .tail
+            %a{:href=>post.url} Read more
+      #even-more
+        %a{:href=>'/news'}Even more news!
 
-    Stay up to date, subscribe to the [news feed](/news/news.atom).
-  #latest-news
-    - for post in site.posts[0,4] do
-      .item
-        %h2 
-          %a{:href=>post.url}= post.title
-        %h3 #{post.date.strftime( '%d %B %Y' )}
-        .body
-          #{summarize( html_to_text( post.content ), 50 )}
-        .tail
-          %a{:href=>post.url} Read more
-    #even-more
-      %a{:href=>'/news'}Even more news!
+//#bv-bottom

@@ -293,3 +293,19 @@ body.bp {
   }
 }
 
+#hero {
+  span {
+    padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+    position:relative;
+    width:50%;
+    margin-left: 30%;
+    margin-right: 30%;
+    top:-15px;
+  }
+  a {
+    color: #FFF;
+    text-decoration: none;
+  }
+}
