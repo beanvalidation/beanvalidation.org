@@ -12,6 +12,11 @@ Bean Validation welcomes any contribution and of any sort:
 * proposals
 * contribution
 
+**Bean Validation 1.1 has been recently finished so most of the effort will be
+focused on Hibernate Validator, the reference implementation, where we will
+experiment the features we want to introduce in a next round of the
+specification.**
+
 ## Feedback
 
 Feedback is more than welcome, either by discussing in our  [forum](https://forum.hibernate.org/viewforum.php?f=26) or by opening/commenting an issue in our [bug tracker](/issues).
@@ -24,8 +29,6 @@ Example of feedback:
 ## Proposals
 
 If you think some new feature should be added to Bean Validation. If you want to influence the shape of new Bean Validation features, come join our [development mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev).
-
-You can also join the [JSR 349 expert group](http://www.jcp.org/en/jsr/egnom?id=349) (yes being part of the JCP is open to everyone).
 
 ## Contribution
 
