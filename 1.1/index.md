@@ -6,8 +6,8 @@ author: Emmanuel Bernard
 
 # #{page.title}
 
-Find all about Bean Validation 1.1. The specification, the reference implementation,
-the test compatibility kit as well as the main changes from 1.0.
+Want the specification? [Get it here](/1.1/spec/).
+Want the reference implementation? [Get Hibernate Validator](http://validator.hibernate.org).
 
 ## What is new since 1.0
 
@@ -30,7 +30,7 @@ You can find the [full specification](/1.1/spec/) or browse the
 ## Get the reference implementation
 
 Hibernate Validator is the reference implementation for Bean Validation.
-Download the known compliant version [Hibernate Validator 5.0.0.Final](http://sourceforge.net/projects/hibernate/files/hibernate-validator/5.0.0.Final/).
+Download the known compliant version [Hibernate Validator 5.0.0.Final][hibernate-validator].
 
 ## Technology Compatibility Kit
 
@@ -57,3 +57,4 @@ out the [history page](/1.1/history/).
 [issues]: /issues
 [forum]: https://forum.hibernate.org/viewforum.php?f=26
 [mailing list]: https://lists.jboss.org/mailman/listinfo/beanvalidation-dev
+[hibernate-validator]: http://sourceforge.net/projects/hibernate/files/hibernate-validator/5.0.0.Final/
