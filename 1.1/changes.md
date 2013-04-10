@@ -22,45 +22,48 @@ The expert group and the community focused on a few key goals as well as smaller
 ### Openness <a id="openness"></a>
 
 All of Bean Validation 1.1 work has been done in the open and in an open source
-way. Source code for the API, reference implementation, test compatibility kit
-as well as the specification and the website sources are available in the open.
-All discussions are done in the open in the publicly available development
-mailing list. Road map and proposals are also published on the website.
+way. Source code for the
+[API](https://github.com/beanvalidation/beanvalidation-api/), [reference
+implementation](https://github.com/hibernate/hibernate-validator/), [test
+compatibility kit](https://github.com/beanvalidation/beanvalidation-tck/) as
+well as the
+[specification](https://github.com/beanvalidation/beanvalidation-spec/) and the
+[website sources](https://github.com/beanvalidation/beanvalidation.org/) are
+available in the open.  All discussions are done in the open in the publicly
+available development mailing list. Road map and proposals are also published
+on the website.
 
 In short, everything is available at <http://beanvalidation.org>.
 
 ### Dependency injection and CDI integration <a id="dependency-injection"></a>
 
-Bean Validation uses a few components `MessageInterpolator`, `TraversableResolver`,
+Bean Validation uses a few components: `MessageInterpolator`, `TraversableResolver`,
 `ParameterNameProvider`, `ConstraintValidatorFactory` and `ConstraintValidator`. We
 have standardized how these objects are managed by a container and how these
 objects can benefit from container services. In particular, CDI support within
-Java EE is defined. Note that CDI integration also encompass support for method
+Java EE is defined. Note that CDI integration also encompasses support for method
 validation.
 
 An example of the most common use case is using CDI injection in constraint validator
-implementations
+implementations:
 
-    class ZipCodeValidator implements ConstraintValidator<ZipCode,String> {
+    class ZipCodeValidator implements ConstraintValidator<ZipCode, String> {
 
         @Inject @France
         private ZipCodeChecker checker;
-        private Pattern zipPattern = Pattern.compile("\\d{5}");
         
         public void initialize(ZipCode zipCode) {}
         
         public boolean isValid(String value, ConstraintValidationContext context) {
             if (value==null) return true;
-            Matcher m = p.matcher(value);
-            if (!m.matches()) return false;
-            return checker.isZipCodeValid(zipCode);
+            return checker.isZipCodeValid(value);
         }
     }
 
 ### Method validation <a id="method-validation"></a>
 
-Bean Validation 1.1 allows to put constraints to the parameters and return
-values of arbitrary methods and constructors. That way the Bean Validation API
+Bean Validation 1.1 allows to apply constraints on parameters and return
+values of methods and constructors. That way the Bean Validation API
 can be used to describe and validate the contract applying to a given method or
 constructor, that is:
 
@@ -81,7 +84,7 @@ values this approach has several advantages:
   thus avoiding efforts and inconsistencies between implementation and
   documentation.
 
-Here is an example
+Here is an example:
 
     @RequestScope class Client {
         @Inject AccountService service;
@@ -95,9 +98,9 @@ Here is an example
                 String lastname,
                 @NotNull @Email String email,
                 @Past Date birthDate) {
-            // parameters are validated and an exception 
+            // parameters are automatically validated and an exception 
             // is raised upon failure
-            // business 
+            // Method code focuses on the buiness logic
         }
     }
 
@@ -105,12 +108,12 @@ Here is an example
 ### Group conversion <a id="group-conversion"></a>
 
 The specification offers a way to alter the targeted group when validation
-cascading in happening. This feature is particularly useful to reuse a given
+cascading is happening. This feature is particularly useful to reuse a given
 object (graph) and to avoid leaking groups between various object subgraphs. It
 also makes for more readable constraints.
 
     public class User {
-        @Email String email
+        @Email String email;
         @Strength(group=Complete.class)
         String password;
         @Valid 
@@ -134,7 +137,7 @@ also makes for more readable constraints.
 
 Constraint violation messages can now use EL expressions for a much more
 flexible rendering and string formatting. In particular a formatter object is
-injected in the EL context to convert numbers dates etc. into the locale
+injected in the EL context to convert numbers, dates etc. into the locale
 specific string representation. Likewise, the validated value is also available
 in the EL context.
 

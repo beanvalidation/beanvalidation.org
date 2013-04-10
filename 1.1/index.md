@@ -50,7 +50,7 @@ If you want to go to the next step and contribute, read [how to contribute](/con
 
 ## History
 
-If you are interested in the various drafts that lead to Bean Validation 1.1, check
+If you are interested in the various drafts that led to Bean Validation 1.1, check
 out the [history page](/1.1/history/).
 
 [spec]: spec/
