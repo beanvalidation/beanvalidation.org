@@ -30,12 +30,12 @@ You can find the [full specification](/1.1/spec/) or browse the
 ## Get the reference implementation
 
 Hibernate Validator is the reference implementation for Bean Validation.
-Download the known compliant version [Hibernate Validator 5.0.0.Final][hibernate-validator].
+Download the known compliant version [Hibernate Validator 5.0.1.Final][hibernate-validator].
 
 ## Technology Compatibility Kit
 
 Download the latest Technology Compatibility Kit (TCK) version
-[1.1.0.Final](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.1.0.Final)
+[1.1.1.Final](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.1.1.Final)
 and read the corresponding [TCK documentation](http://docs.jboss.org/hibernate/beanvalidation/tck/1.1/reference/html_single/).
 
 ## Feedback
@@ -57,4 +57,4 @@ out the [history page](/1.1/history/).
 [issues]: /issues
 [forum]: https://forum.hibernate.org/viewforum.php?f=26
 [mailing list]: https://lists.jboss.org/mailman/listinfo/beanvalidation-dev
-[hibernate-validator]: http://sourceforge.net/projects/hibernate/files/hibernate-validator/5.0.0.Final/
+[hibernate-validator]: http://sourceforge.net/projects/hibernate/files/hibernate-validator/5.0.1.Final/
