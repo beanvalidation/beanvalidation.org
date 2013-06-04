@@ -14,3 +14,6 @@
 *.tmproj
 *.sublime-workspace
 *.sublime-project
+
+#Ruby env
+.rvmrc
