@@ -48,7 +48,7 @@ Interested? Read all about how to
 
 ### License
 
-The content of this specification, API, RI, TCK, website is released under the Apache Software License 2.0.
+The content of this specification, API, RI, TCK, JavaDoc, website is released under the Apache Software License 2.0. [Get more information](/licensing/).
 
 By submitting a "pull request" or otherwise contributing to this repository, you agree to license your contribution
 under the respective licenses mentioned above.
