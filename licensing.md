@@ -14,12 +14,12 @@ provided under the [Apache Software License 2.0][asl].
 
 The specification and JavaDoc are additionally available under the *JCP click
 through license*.  To obtain artifacts under this license visit the JCP page for
-[JSR-349 (Bean Validation 1.1](http://jcp.org/en/jsr/detail?id=349) or [JSR-303
-(Bean Validation 1.0](http://jcp.org/en/jsr/detail?id=303). The license can
+[JSR-349 (Bean Validation 1.1)](http://jcp.org/en/jsr/detail?id=349) or [JSR-303
+(Bean Validation 1.0)](http://jcp.org/en/jsr/detail?id=303). The license can
 viewed on the *Download page* for the specification and JavaDoc.
 
 This process is commonly known as
-[dual-licensing](http://en.wikipedia.org/wiki/Multi-licensing).  The Bean
+[dual-licensing](http://en.wikipedia.org/wiki/Multi-licensing). The Bean
 Validation specification is dual-licensed as it allows Red Hat to follow JCP
 rules and provide a liberally licensed version of the specification.
 
