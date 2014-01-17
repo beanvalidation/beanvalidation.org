@@ -12,22 +12,22 @@ Bean Validation welcomes contribution and of any sort:
 * [proposals](#proposals)
 * [contributions](#contributions)
 
-**Bean Validation 1.1 has been recently finished so most of the effort will be
-focused on Hibernate Validator, the reference implementation, where we will
-experiment the features we want to introduce in a next round of the
-specification.**
+----
 
+**Note:**
+
+> The work on Bean Validation 1.1 is completed, so most of the effort will be
+> focused on [Hibernate Validator](http://hibernate.org/validator), the reference implementation, where we will
+> experiment the features we want to introduce in a next round of the
+> specification.**
+
+----
 
 ## <a name="feedback"/>Feedback
 
 Feedback is more than welcome, either by starting a discussion on our 
 [forum](https://forum.hibernate.org/viewforum.php?f=26) or by opening/commenting an issue in 
-our [bug tracker](/issues).
-
-Example of feedback:
-
-* feedback on how you use Bean Validation
-* feedback on limitations or on features you would like improved
+our [bug tracker](https://hibernate.onjira.com/browse/BVAL).
 
 ## <a name="proposals"/>Proposals
 
@@ -37,7 +37,8 @@ of new Bean Validation features, come and join our
 
 ## <a name="contributions"/>Contributions
 
-The specification is done in the open: both discussions and artifacts.
+All specification work is done in the open. This does not only include discussions, but also all code
+and artifacts. Here is a list of all relevant GitHub source repositories:
 
 * [Specification repository](https://github.com/beanvalidation/beanvalidation-spec)
 * [Reference implementation repository](https://github.com/hibernate/hibernate-validator)
@@ -45,7 +46,7 @@ The specification is done in the open: both discussions and artifacts.
 * [TCK repository](https://github.com/beanvalidation/beanvalidation-tck)
 * [This website source](https://github.com/beanvalidation/beanvalidation.org)
 
-Interested? Read all about how to
+Interested? Read all about how to:
 
 * [concretely contributing to the specification](specification)
 * [work with the API and TCK sources](coding)
