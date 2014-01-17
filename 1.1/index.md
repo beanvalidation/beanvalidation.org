@@ -4,10 +4,10 @@ layout: default
 author: Emmanuel Bernard
 ---
 
-# #{page.title}
+[forum]: https://forum.hibernate.org/viewforum.php?f=26
+[mailing list]: https://lists.jboss.org/mailman/listinfo/beanvalidation-dev
 
-Want the specification? [Get it here](/1.1/spec/).
-Want the reference implementation? [Get Hibernate Validator](http://validator.hibernate.org).
+# #{page.title}
 
 ## What is new since 1.0
 
@@ -24,19 +24,8 @@ For more information, check out the [full list of goals and changes](/1.1/change
 
 ## Read the specification
 
-You can find the [full specification](/1.1/spec/) or browse the
+You can read the [full Bean Validation 1.1 specification](/1.1/spec/) or browse the
 [API JavaDocs](http://docs.jboss.org/hibernate/beanvalidation/spec/1.1/api/).
-
-## Get the reference implementation
-
-Hibernate Validator is the reference implementation for Bean Validation.
-Download the known compliant version [Hibernate Validator 5.0.1.Final][hibernate-validator].
-
-## Technology Compatibility Kit
-
-Download the latest Technology Compatibility Kit (TCK) version
-[1.1.1.Final](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.1.1.Final)
-and read the corresponding [TCK documentation](http://docs.jboss.org/hibernate/beanvalidation/tck/1.1/reference/html_single/).
 
 ## Feedback
 
@@ -52,9 +41,3 @@ If you want to go to the next step and contribute, read [how to contribute](/con
 
 If you are interested in the various drafts that led to Bean Validation 1.1, check
 out the [history page](/1.1/history/).
-
-[spec]: spec/
-[issues]: /issues
-[forum]: https://forum.hibernate.org/viewforum.php?f=26
-[mailing list]: https://lists.jboss.org/mailman/listinfo/beanvalidation-dev
-[hibernate-validator]: http://sourceforge.net/projects/hibernate/files/hibernate-validator/5.0.1.Final/

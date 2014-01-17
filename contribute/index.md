@@ -6,31 +6,36 @@ author: Emmanuel Bernard
 
 # #{page.title}
 
-Bean Validation welcomes any contribution and of any sort:
+Bean Validation welcomes contribution and of any sort:
 
-* feedback
-* proposals
-* contribution
+* [feedback](#feedback)
+* [proposals](#proposals)
+* [contributions](#contributions)
 
 **Bean Validation 1.1 has been recently finished so most of the effort will be
 focused on Hibernate Validator, the reference implementation, where we will
 experiment the features we want to introduce in a next round of the
 specification.**
 
-## Feedback
 
-Feedback is more than welcome, either by discussing in our  [forum](https://forum.hibernate.org/viewforum.php?f=26) or by opening/commenting an issue in our [bug tracker](/issues).
+## <a name="feedback"/>Feedback
+
+Feedback is more than welcome, either by starting a discussion on our 
+[forum](https://forum.hibernate.org/viewforum.php?f=26) or by opening/commenting an issue in 
+our [bug tracker](/issues).
 
 Example of feedback:
 
 * feedback on how you use Bean Validation
 * feedback on limitations or on features you would like improved
 
-## Proposals
+## <a name="proposals"/>Proposals
 
-If you think some new feature should be added to Bean Validation. If you want to influence the shape of new Bean Validation features, come join our [development mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev).
+If you think some new feature should be added to Bean Validation or you want to influence the shape 
+of new Bean Validation features, come and join our 
+[development mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev).
 
-## Contribution
+## <a name="contributions"/>Contributions
 
 The specification is done in the open: both discussions and artifacts.
 
@@ -48,9 +53,10 @@ Interested? Read all about how to
 
 ### License
 
-The content of this specification, API, RI, TCK, JavaDoc, website is released under the Apache Software License 2.0. [Get more information](/licensing/).
+The content of this specification, API, RI, TCK, JavaDoc, website is released under the 
+Apache Software License 2.0. [Get more information](/licensing/).
 
-By submitting a "pull request" or otherwise contributing to this repository, you agree to license your contribution
-under the respective licenses mentioned above.
+By submitting a "pull request" or otherwise contributing to this repository, you agree to license 
+your contribution under the respective licenses mentioned above.
 
 
