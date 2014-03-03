@@ -16,4 +16,6 @@
 *.sublime-project
 
 #Ruby env
-.rvmrc
+/.rvmrc
+/.ruby-gemset
+/.ruby-version

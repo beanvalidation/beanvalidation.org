@@ -6,7 +6,7 @@ author: Emmanuel Bernard
 
 # #{page.title}
 
-You can read the [full Bean Validation 1.1 specificationn](/1.1/spec/) or browse its
+You can read the [full Bean Validation 1.1 specification](/1.1/spec/) or browse its
 [API JavaDocs](http://docs.jboss.org/hibernate/beanvalidation/spec/1.1/api/).
 
 ## Changes between BV 1.0 and 1.1
