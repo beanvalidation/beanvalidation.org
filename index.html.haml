@@ -30,14 +30,14 @@ author: Emmanuel Bernard
       }
       
       public class UserService {
-        public void createUser(&#64;Email email,
+        public void createUser(&#64;Email String email,
                                &#64;NotNull String name) {
           }
       }
       </pre>
       
       While you can run validation manually, it is more natural to
-      let other specifications and framework validate data at the right
+      let other specifications and frameworks validate data at the right
       time (user input in presentation frameworks, business service
       execution by CDI, entity insert or update by JPA).
 
