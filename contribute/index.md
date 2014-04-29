@@ -25,14 +25,14 @@ Bean Validation welcomes contribution and of any sort:
 
 ## <a name="feedback"/>Feedback
 
-Feedback is more than welcome, either by starting a discussion on our 
-[forum](https://forum.hibernate.org/viewforum.php?f=26) or by opening/commenting an issue in 
+Feedback is more than welcome, either by starting a discussion on our
+[forum](https://forum.hibernate.org/viewforum.php?f=26) or by opening/commenting an issue in
 our [bug tracker](https://hibernate.onjira.com/browse/BVAL).
 
 ## <a name="proposals"/>Proposals
 
-If you think some new feature should be added to Bean Validation or you want to influence the shape 
-of new Bean Validation features, come and join our 
+If you think some new feature should be added to Bean Validation or you want to influence the shape
+of new Bean Validation features, come and join our
 [development mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev).
 
 ## <a name="contributions"/>Contributions
@@ -54,10 +54,10 @@ Interested? Read all about how to:
 
 ### License
 
-The content of this specification, API, RI, TCK, JavaDoc, website is released under the 
+The content of this specification, API, RI, TCK, JavaDoc, website is released under the
 Apache Software License 2.0. [Get more information](/licensing/).
 
-By submitting a "pull request" or otherwise contributing to this repository, you agree to license 
+By submitting a "pull request" or otherwise contributing to this repository, you agree to license
 your contribution under the respective licenses mentioned above.
 
 
