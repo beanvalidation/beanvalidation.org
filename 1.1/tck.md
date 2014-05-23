@@ -11,7 +11,7 @@ A TCK, or Technology Compatibility Kit, is one of the three required pieces for 
 of tools and tests to verify that an implementation of the technology conforms to the specification. 
 
 The Bean Validation 1.1 TCK is licensed under the Apache Software License 2.0 and hosted in a GitHub 
-[repositoryy](https://github.com/beanvalidation/beanvalidation-tck).
+[repository](https://github.com/beanvalidation/beanvalidation-tck).
 The repository consists of multiple artifacts, containing tooling, documentation and most importantly 
 a set of [Arquillian](http://arquillian.org/) tests. There are also two 
 [setup examples](https://github.com/beanvalidation/beanvalidation-tck/tree/master/setup-examples), 
@@ -22,7 +22,7 @@ You can browse the available TCK releases
 [here](http://repository.jboss.org/nexus/content/groups/public-jboss/org/hibernate/hibernate-validator/).
 
 The latest version used to test Bean Validation 1.1 (JSR 349) is:
-	
+
     <dependency>
         <groupId>org.hibernate.beanvalidation.tck</groupId>
         <artifactId>beanvalidation-tck-tests</artifactId>
