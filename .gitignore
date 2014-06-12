@@ -3,6 +3,9 @@
 #OS
 .DS_Store
 
+#Bundler
+.bin
+
 #Awestruct
 /.awestruct
 /.sass-cache
