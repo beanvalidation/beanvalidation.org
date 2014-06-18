@@ -19,7 +19,7 @@ Download the latest Reference Implementation (RI): [Hibernate Validator 4.3.1.Fi
 
 ## Technology Compatibility Kit
 
-Download the latest Technology Compatibility Kit (TCK) version [1.0.6.GA](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.0.6.GA) and read the corresponding [TCK documentation](http://docs.jboss.org/hibernate/beanvalidation/tck/1.0/reference/html_single/).
+Download the latest Technology Compatibility Kit (TCK) version [1.0.7.GA](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.0.7.GA) and read the corresponding [TCK documentation](http://docs.jboss.org/hibernate/beanvalidation/tck/1.0/reference/html_single/).
 
 ## Certified compatible implementations
 
