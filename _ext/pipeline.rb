@@ -1,5 +1,4 @@
 require 'mytagger'
-require 'google_universal_analytics'
 
 Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Posts.new( '/news', :posts )
@@ -12,6 +11,6 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Atomizer.new( :posts, '/news/news.atom' )
   extension Awestruct::Extensions::Disqus.new
   helper Awestruct::Extensions::Partial
-  helper Awestruct::Extensions::GoogleUniversalAnalytics
+  helper Awestruct::Extensions::GoogleAnalytics
 end
 
