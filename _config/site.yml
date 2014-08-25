@@ -1,4 +1,6 @@
 title: Bean Validation
+# interpolate content of the markup like #{page.title}
+interpolate: true
 
 profiles:
   development:
