@@ -4,15 +4,12 @@
 # delete this file.
 #
 # If you're just getting started, execute this command to install Awestruct and
-# the libraries on which it depends:
-#
-#  rake setup
-#
+# the libraries on which it depends.
 # The setup task installs the necessary libraries according to which Ruby
 # environment you are using. If you want the libraries kept inside the project,
 # execute this command instead:
 #
-#  rake setup[local]
+#  rake setup
 #
 # IMPORTANT: To install gems, you'll need development tools on your machine,
 # which include a C compiler, the Ruby development libraries and some other
@@ -43,13 +40,10 @@
 $awestruct_cmd = nil
 task :default => :preview
 
-desc 'Setup the environment to run Awestruct unsing Bundler'
+desc 'Setup the environment to run Awestruct using Bundler'
 task :setup, [:env] => :init do |task, args|
-  if args[:env] == 'local'
-    system 'bundle install --clean --binstubs=.bin --path=.bundle'
-  else
-    system 'bundle install'
-  end
+  # always install locally
+  system 'bundle install --clean --binstubs=.bin --path=.bundle'
   msg 'Run awestruct `rake`'
   # Don't execute any more tasks, need to reset env
   exit 0
