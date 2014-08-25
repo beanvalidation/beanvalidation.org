@@ -5,6 +5,7 @@
 
 #Bundler
 .bin
+.bundle
 
 #Awestruct
 /.awestruct
