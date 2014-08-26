@@ -83,7 +83,7 @@ task :clean, :all do |task, args|
   if args[:all] == 'all'
     dirs << '_tmp'
     dirs << '.bundle'
-    dirs << '_bin'
+    dirs << '.bin'
   end
   dirs.each do |dir|
     FileUtils.remove_dir dir unless !File.directory? dir
@@ -101,8 +101,8 @@ end
 # Perform initialization steps, such as setting up the PATH
 task :init do
   # Detect using gems local to project
-  if File.exist? '_bin'
-    ENV['PATH'] = "_bin#{File::PATH_SEPARATOR}#{ENV['PATH']}"
+  if File.exist? '.bin'
+    ENV['PATH'] = ".bin#{File::PATH_SEPARATOR}#{ENV['PATH']}"
     ENV['GEM_HOME'] = '.bundle'
   end
 end
