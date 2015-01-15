@@ -30,7 +30,6 @@ have also a left over from Bean Validation 1.1 described below.
 | [BVAL-216](https://hibernate.onjira.com/browse/BVAL-216)  |  |  | Work with the JAXB EG to have a nice Bean Validation integration
 | [BVAL-217](https://hibernate.onjira.com/browse/BVAL-217)  |  |  | Separate the notion of message resolver vs message interpolator
 | [BVAL-220](https://hibernate.onjira.com/browse/BVAL-220)  |  |  | Offer stereotypes to skip validation on empty or null
-| [BVAL-222](https://hibernate.onjira.com/browse/BVAL-222)  |  |  | Add a ALL group to validate all groups instead of DEFAULT or the selected ones
 | [BVAL-225](https://hibernate.onjira.com/browse/BVAL-225)  |  |  | Propose ability to provide default resource bundles (for a constraint definition provider)
 | [BVAL-229](https://hibernate.onjira.com/browse/BVAL-229)  |  |  | Offer a programmatic API to declare constraints on a domain model
 | [BVAL-233](https://hibernate.onjira.com/browse/BVAL-233)  |  |  | Provide access to contextual info during message interpolation
