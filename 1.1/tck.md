@@ -26,15 +26,15 @@ The latest version used to test Bean Validation 1.1 (JSR 349) is:
     <dependency>
         <groupId>org.hibernate.beanvalidation.tck</groupId>
         <artifactId>beanvalidation-tck-tests</artifactId>
-        <version>1.1.3.Final</version>
+        <version>1.1.4.Final</version>
     </dependency>
 
 Distribution bundles are available on the SourceForge
 [File Release System](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck) and come as
-[ZIP](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.1.3.Final/beanvalidation-tck-dist-1.1.3.Final.zip/download)
-or [TGZ](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.1.3.Final/beanvalidation-tck-dist-1.1.3.Final.tar.gz/download)
+[ZIP](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.1.4.Final/beanvalidation-tck-dist-1.1.4.Final.zip/download)
+or [TGZ](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.1.4.Final/beanvalidation-tck-dist-1.1.4.Final.tar.gz/download)
 archive.
-They contain jars, documentation, source code, et al.
+They contain JARs, documentation, source code, et al.
 
 You can find the TCK reference manual also online in three different formats -
 [html](http://docs.jboss.org/hibernate/beanvalidation/tck/1.1/reference/html),
