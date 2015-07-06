@@ -100,7 +100,7 @@ Here is an example:
                 @Past Date birthDate) {
             // parameters are automatically validated and an exception 
             // is raised upon failure
-            // Method code focuses on the buiness logic
+            // Method code focuses on the business logic
         }
     }
 
