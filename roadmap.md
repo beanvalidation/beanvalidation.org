@@ -13,8 +13,16 @@ After feedback they will be ready to be folded back in the specification.
 We encourage you to follow the Hibernate Validator [roadmap](http://hibernate.org/validator/roadmap/). We
 have also a left over from Bean Validation 1.1 described below.
 
-
 ### Next revision  <a id="next"></a>
+
+| Issue Id (JIRA)                                           | Done | Proposal | Description |
+| --------------------------------------------------------- | ---- | -------- | --------------------------- |
+| [BVAL-508](https://hibernate.onjira.com/browse/BVAL-508)  |  |  | Validating elements contained in a container (like collections)
+| [BVAL-499](https://hibernate.onjira.com/browse/BVAL-499)  |  |  | 
+| [BVAL-202](https://hibernate.onjira.com/browse/BVAL-202)  |  |  | 
+| [BVAL-467](https://hibernate.onjira.com/browse/BVAL-467)  |  |  | 
+
+### (Archived) Next revision  <a id="archived"></a>
 
 | Issue Id (JIRA)                                           | Done | Proposal | Description |
 | --------------------------------------------------------- | ---- | -------- | --------------------------- |
