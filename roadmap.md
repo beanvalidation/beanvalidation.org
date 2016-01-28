@@ -31,7 +31,7 @@ have also a left over from Bean Validation 1.1 described below.
 | [BVAL-210](https://hibernate.onjira.com/browse/BVAL-210)  |  |  | Make sure JTA / Java EE plays well with Bean Validation + JPA when exceptions occurs (at least raise the concern upstairs ;) )
 | [BVAL-211](https://hibernate.onjira.com/browse/BVAL-211)  |  |  | Consider making javax.validation.ValidatorContext a self-referential generic type
 | [BVAL-213](https://hibernate.onjira.com/browse/BVAL-213)  |  |  | Convert persistence storage exception into Bean Validation exceptions
-| [BVAL-214](https://hibernate.onjira.com/browse/BVAL-214)  |  |  | Ability to validate an object and a list of changes
+| [BVAL-214](https://hibernate.onjira.com/browse/BVAL-214)  |  | [214](/proposals/BVAL-214) | Ability to validate an object and a list of changes
 | [BVAL-215](https://hibernate.onjira.com/browse/BVAL-215)  |  |  | Make composition more flexible (OR support)
 | [BVAL-216](https://hibernate.onjira.com/browse/BVAL-216)  |  |  | Work with the JAXB EG to have a nice Bean Validation integration
 | [BVAL-217](https://hibernate.onjira.com/browse/BVAL-217)  |  |  | Separate the notion of message resolver vs message interpolator
