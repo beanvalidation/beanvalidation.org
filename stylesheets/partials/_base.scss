@@ -1,20 +1,12 @@
-// Here is where you can define your constants for your application and to configure the blueprint framework.
-// Feel free to delete these if you want keep the defaults:
+@import "patternfly";
 
-$blueprint-grid-columns: 24;
-$blueprint-container-size: 950px;
-$blueprint-grid-margin: 10px;
-
-// Use this to calculate the width based on the total width.
-// Or you can set $blueprint-grid-width to a fixed value and unset $blueprint-container-size -- it will be calculated for you.
-$blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;
-
-$post_nav_color: #999;
-$post_border_color: #CCC;
-$post_date_color: #555;
-$post_comments_border_color: #DDD;
-$post_tail_background_color: #EEE;
-$post_tail_border_color: #BBB;
-
-$pagination_border_color: #999;
-$top_nav_border_color :#999;
+header .navbar.navbar-default {
+    background: #040404!important;
+    border-bottom: 0!important;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border-top: 2px solid #1688c0;
+    font-size: 13px;
+    margin-bottom: 0;
+}

@@ -4,8 +4,6 @@ layout: default
 author: Hardy Ferentschik
 ---
 
-# #{page.title}
-
 A TCK, or Technology Compatibility Kit, is one of the three required pieces for any JSR
 (the other two being the specification document and the reference implementation). The TCK is a set
 of tools and tests to verify that an implementation of the technology conforms to the specification.

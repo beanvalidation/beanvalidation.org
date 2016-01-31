@@ -1,21 +1,30 @@
 ---
 layout: base
 ---
-#layout
-  #primary
-    #header
-      :markdown
-        [home](/) |
-        [spec](/1.1) |
-        [tck](/1.1/tck) |
-        [ri](/1.1/ri) |
-        [certified](/1.1/certified) |
-        [contribute](/contribute) |
-        [licensing](/licensing)
-    ~ content
-    - if (page.comments == true)
-      = page.disqus_comments
+#overview.container
+  #content.clearfix.row
+    #main.col-sm-9.col-md-9.col-lg-9.clearfix
+      %h1 #{page.title}
 
-  #footer
-    .text
-      Copyright (c) Red Hat, Inc., Emmanuel Bernard
+      ~ content
+
+      - if (page.comments == true)
+        = page.disqus_comments
+
+    #sidebar.sidebar.sidebar-right.col-sm-3.col-md-3.col-lg-3{:role=>"complementary"}
+      =partial ('news_feed.html.haml')
+      #latest-news
+        - for post in site.posts[0,3] do
+          .item
+            %h3
+              %a{:href=>post.url}= post.title
+            %h4 #{post.date.strftime( '%d %B %Y' )}
+            .body
+              #{summarize( html_to_text( post.content ), 30 )}
+            .tail
+              %a{:href=>"#{site.base_url}#{post.url}"} Read more
+              %hr
+        #even-more
+          %a{:href=>"#{site.base_url}/news"}Even more news!
+
+%script{:src=>"https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"}

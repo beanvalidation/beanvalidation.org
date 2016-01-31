@@ -4,8 +4,6 @@ layout: default
 author: Emmanuel Bernard
 ---
 
-# #{page.title}
-
 This pages contains the official drafts published for Bean Validation 1.1.
 This page is useful for archaeological purposes and you probably want [the
 final version of the specification](/1.1/).
@@ -22,7 +20,7 @@ final version of the specification](/1.1/).
 * [Bean Validation 1.1.0.Alpha1 - Early Draft 1](spec/1.1.0.alpha1/)  
 
 All changes are marked with a different
-color. <span style="background-color:#DDFFDD;">Green for additions</span>, 
-<span style="background-color:#FFFFDD;">yellow for changes</span> and 
+color. <span style="background-color:#DDFFDD;">Green for additions</span>,
+<span style="background-color:#FFFFDD;">yellow for changes</span> and
 <span style="text-decoration: line-through;background-color: #FFDDDD;">struck through red for removals</span>
 . This will help you see what has changed precisely.

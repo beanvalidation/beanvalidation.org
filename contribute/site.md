@@ -4,8 +4,6 @@ layout: default
 author: Emmanuel Bernard
 ---
 
-# #{page.title}
-
 This website's sources are hosted on GitHub at 
 <https://github.com/beanvalidation/beanvalidation.org> and its pages are written
 in [Markdown](http://daringfireball.net/projects/markdown/) and simple and intuitive
@@ -40,7 +38,7 @@ completely regenerate the site:
 
 ### If serving the site is slow...
 
-On Linux, serving the file may be atrociously slow 
+On Linux, serving the file may be atrociously slow
 (something to do with WEBRick).
 
 Use the following alternative:
@@ -50,12 +48,12 @@ Use the following alternative:
 * In parallel, go to the `~/beanvalidation.org/_site` directory
 * Run `python -m SimpleHTTPServer 4242`
 
-You should be back to millisecond serving :) 
+You should be back to millisecond serving :)
 
 ## Markup samples
 
-You can find sample files in the Git repository itself for both .md and 
-.html.haml syntaxes. Look at them especially the .md file as it 
+You can find sample files in the Git repository itself for both .md and
+.html.haml syntaxes. Look at them especially the .md file as it
 shows how a page should be written and how to use syntax highlighting.
 
 Menus are in `_layout`. When you create a page, give it the right metadata:
@@ -65,7 +63,7 @@ Menus are in `_layout`. When you create a page, give it the right metadata:
 * `layout`
 * `comments` (optional)
 
-When you set the `comments` property to `true`, a disqus comment section 
+When you set the `comments` property to `true`, a disqus comment section
 is added at the bottom of the page.
 
 Here is an example
