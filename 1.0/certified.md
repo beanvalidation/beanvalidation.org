@@ -4,9 +4,6 @@ layout: default
 author: Hardy Ferentschik
 ---
 
-# #{page.title}
-
-
 |                                    | Name                | Version     | URL                             | RI |
 | ---------------------------------- | ------------------- | ----------- | ------------------------------- | -- |
 |![Hibernate](/images/hibernate.gif) | Hibernate Validator | [4.3.1.Final](http://hibernate.org/validator/downloads/) | http://hibernate.org/validator | ![](/images/completed.png)

@@ -3,8 +3,6 @@ title: Licensing
 layout: default
 author: Emmanuel Bernard
 ---
-# #{page.title}
-
 All of our work is freely available under open source licenses.
 
 ## Specification, API, TCK and JavaDoc

@@ -4,8 +4,6 @@ layout: default
 author: Hardy Ferentschik
 ---
 
-# #{page.title}
-
 The reference implementation of Bean Validation is Hibernate Validator. You can download
 the Bean Validation 1.1 compliant version _5.1.1.Final_
 [here](http://sourceforge.net/projects/hibernate/files/hibernate-validator/5.1.1.Final/).

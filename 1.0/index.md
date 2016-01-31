@@ -4,8 +4,6 @@ layout: default
 author: Emmanuel Bernard
 ---
 
-# #{page.title}
-
 Looking for information about Bean Validation 1.0 (JSR 303). Below are pointers to all relevant
 resources.
 

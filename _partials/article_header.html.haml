@@ -1,0 +1,11 @@
+%header
+  %h1.title
+    #{page.title}
+  %span.author
+    by
+    %b #{page.author}
+  %span.date
+    on #{page.date.strftime('%d %b %Y')}
+  %span.tags
+    - page.tags.each do |tag|
+      %a.label.label-info{:href=>tag.primary_page.url} #{tag}

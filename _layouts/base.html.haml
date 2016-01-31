@@ -1,14 +1,51 @@
 %html
   %head
+    %meta{:charset => "UTF-8"}
+    %meta{:"http-equiv" => "X-UA-Compatible", :content => "IE=Edge"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title
-      #{site.title}: #{page.title}
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/screen.css', :media=>'screen, projection' }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/print.css', :media=>'print' }
+      #{site.title}#{page.title ? (" - " + page.title): ""}
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/screen.css", :media=>'screen, projection' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/print.css", :media=>'print' }
     /[if lt IE 8]
-      %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/ie.css', :media=>'screen, projection' }
-    %link{ :rel=>'alternate',  :type=>'application/atom+xml', :href=>'/news/news.atom' }
-  %body.bp
-    #container
-      ~ content
+      %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'#{site.base_url}/stylesheets/ie.css', :media=>'screen, projection' }
+    %link{ :rel=>'alternate',  :type=>'application/atom+xml', :href=>'#{site.base_url}/news/news.atom' }
+  %body
+    %header{:role => "banner"}
+      %nav.navbar.navbar-default.navbar-pf{:role=>"navigation"}
+        .container
+          .navbar-header
+            %button{:type=>"button", :class=>"navbar-toggle", :"data-toggle"=>"collapse", :"data-target"=>".navbar-collapse"}
+            %a{:class=>"navbar-brand", :id=>"logo", :title=>"Bean Validation", :href=>site.base_url}
+              Bean Validation
+            %ul#menu-primary.nav.navbar-nav.navbar-right
+              %li.menu-item.menu-item-type-post_type.menu-item-object-page
+                %a{:href=>"#{site.base_url}"} Home
+              %li.menu-item.menu-item-type-post_type.menu-item-object-page
+                %a{:href=>"#{site.base_url}/news"} News
+              %li.menu-item.menu-item-type-post_type.menu-item-object-page
+                %a{:href=>"#{site.base_url}/1.1"} Specification
+              %li.menu-item.menu-item-type-post_type.menu-item-object-page
+                %a{:href=>"#{site.base_url}/1.1/tck"} TCK
+              %li.menu-item.menu-item-type-post_type.menu-item-object-page
+                %a{:href=>"#{site.base_url}/1.1/certified"} Certified
+              %li.menu-item.menu-item-type-post_type.menu-item-object-page
+                %a{:href=>"#{site.base_url}/contribute"} Contribute
+              %li.menu-item.menu-item-type-post_type.menu-item-object-page
+                %a{:href=>"#{site.base_url}/licensing"} Licensing
 
+    ~ content
+
+
+  %footer{:role=>"contentinfo", :class=>"container", :id=>"widget-footer"}
+    %hr
+    .row
+      .widget.col-md-9.widget_text
+        .textwidget
+          %p Copyright (c) Red Hat, Inc., Emmanuel Bernard
+      .widget.col-md-3.widget_text
+        .textwidget
+          %a{:href=>"http://redhat.com", :id=>"logo-redhat"} Red Hat
+
+- if site.profile == production
   = google_analytics_universal
