@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Main site dependencies
-gem 'awestruct', :git => 'git://github.com/awestruct/awestruct.git', :branch => '0dbfd2ad2061d436b90eca7e3a4d46313fda718f'
+gem 'awestruct', :github => 'awestruct/awestruct'
 
 # use Patternfly for the layout
 gem 'patternfly-sass', '2.9.0'
