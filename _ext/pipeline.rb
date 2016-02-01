@@ -1,7 +1,9 @@
 require 'mytagger'
+require 'sassc'
 require 'bootstrap-sass'
 require 'patternfly-sass'
 require 'font-awesome-sass'
+
 
 Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Posts.new( '/news', :posts )
