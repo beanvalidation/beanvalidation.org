@@ -1,7 +1,6 @@
 GIT
   remote: git://github.com/awestruct/awestruct.git
   revision: 0dbfd2ad2061d436b90eca7e3a4d46313fda718f
-  branch: 0dbfd2ad2061d436b90eca7e3a4d46313fda718f
   specs:
     awestruct (0.5.7.RC3)
       asciidoctor (~> 1.5, >= 1.5.2)
