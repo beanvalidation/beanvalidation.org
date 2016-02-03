@@ -205,6 +205,135 @@ Should we have a BV 1.1 based logic that forces to use a global `@ConstraintsApp
 to enforce strict backward compatibility.
 And a BV 2.0 based logic (driven by the XML version?) would have the right ergonomics as described above?
 
+## Alternative proposal: Consider type-constraints as instance-specific amendment of constraint set (Gunnar)
+
+Currently, constraint meta-data is fixed for a given type by annotating the type's class definition or configuring it in XML.
+This proposal allows to amend that statically defined constraint meta-data with instance-specific meta-data applied to generic parameters declared by the type.
+
+Example:
+
+    public class Tuple<V1, V2> {
+
+        @NotNull
+        private V1 v1;
+
+        @NotNull
+        private V2 v2;
+
+        public V1 getV1() { return v1; }
+        public V2 getV2() { return v2; }
+    }
+
+    public class User {
+
+        @Valid
+        private Tuple<String, @Min(1) Integer> nameAndAge = ...;
+    }
+
+Calling `Validator#validate( new Tuple(...) )` will validate the `@NotNull` constraints statically declared in the `Tuple` class.
+Calling `Validator#validate( new User(...) )` will validate the `@NotNull` constraints *and* the instance-specific `@Min` constraint given for the `V2` type parameter.
+
+**Question:** How to obtain the property value, getter vs. field access?
+
+**Proposal:** Iterate all getters and apply the constraint to all those matching the annotated type (V2); Then iterate all fields and apply to all those matching the annotated type and where no getter for that property has been validated in the first step. I.e. prefer getter over field access.
+
+### Constraints of collection elements
+
+This proposal makes the case of constraints on collection elements (list etc.) very regular.
+
+Example:
+
+    @ValidAddress
+    public class Address {}
+
+    public class User {
+
+        @Valid
+        private List<@Exists Address> addresses;
+    }
+
+This adds the `@Exists` constraint to constraint metadata for `<T>` of the `emails` list (i.e. in addition to the statically defined `@ValidAddress` )
+When validating a `User`, the engine will access `<T>` during cascaded validation (by invoking `List#getIterator()` or similar).
+Then both constraints, `@Exists` and `@ValidAddress` will be applied.
+
+This avoids any assumptions about the type parameter of the collection instance.
+Specifically, it's not guaranteed that the type parameter of the instance actually represents the one we might think (e.g. `<T>` of `List`):
+
+    public interface IdentifiedStringList<I> extends List<String> {
+        I getIdentifier();
+    }
+
+    @Valid
+    private IdentifiedStringList<@Min(1) Long> myLongIdentifiedStringList = ...;
+
+Here the `@Min` constraint must not be applied to the collection elements as it doesn't relate to `<T>` of `List` but `<I>` of `IdentifiedStringList`.
+
+### Obtaining values from containers
+
+Currently cascaded validation applies to bean references and collections (`Collection`, `Map`, arrays).
+This proposal suggests to open that up, allowing to provide support for other cascadable types, e.g. `Optional`:
+
+    @Valid
+    private Optional<@Size(max=20) String> name;
+
+When encountering `@Valid`, we'll look for matching extractor implentations:
+
+    public interface ValueExtractor {}
+
+    public interface SingleValueExtractor<O, I> extends ValueExtractor {
+        I extractValue(O outer);
+    }
+
+    public interface CollectionValueExtractor<O extends Iterable<I>, I> extends ValueExtractor {
+        Iterator<I> extractValues(O outer);
+    }
+
+    public class OptionalValueExtractor<T> implements SingleValueExtractor<Optional<T>, T> {
+        T extractValue(Optional<T> optional) {
+            return optional.get();
+        }
+    }
+
+A conforming implementation provides out-of-the-box extractor implementions for bean references (used by default) and collections.
+
+Representing the `Optional` case in this generic fashion is nice, but two shortcomings need to be addressed:
+
+* There should be no element in the constraint violation path for the wrapped element, only the container itself
+* The explicitly required `@Valid` makes it more verbose
+
+This could be mitigated by letting value extractors make this configurable:
+
+    public interface ValueExtractor {
+        boolean addPathNodeForExtractedValue();
+        boolean autoApply();
+    }
+
+    public class OptionalValueExtractor<T> implements SingleValueExtractor<Optional<T>, T> {
+        T extractValue(Optional<T> optional) {
+            return optional.get();
+        }
+
+        boolean addPathNodeForExtractedValue() {
+            return false;
+        }
+
+        boolean autoApply() {
+            return true;
+        }
+    }
+
+That way, previous example could look like so, i.e. without `@Valid`:
+
+    private Optional<@Size(max=20) String> name;
+
+**Explicitly not supported:** Applying constraints to container types with the intention of targetting the wrapped value.
+I.e. the following would not work:
+
+    // No validator for @Size+String
+    @Size(max=20)
+    private Optional<String> name;
+
+Maybe that's ok, as in most cases there will be a type parameter. For JavaFX with its types such as `IntegerProperty` we could require compatible implementations to provide the required validator implementions e.g. for `@Min` + `IntegerProperty`. Or we ignore that, I've never heard of demand.
 
 ## Attic
 
