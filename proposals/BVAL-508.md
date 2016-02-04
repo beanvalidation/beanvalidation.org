@@ -9,6 +9,7 @@ comments: true
 
 [Link to JIRA ticket][jira]  
 [Related JIRA](https://hibernate.atlassian.net/browse/BVAL-499)  
+[Java generics glossary](/glossary/)  
 
 ## Problem
 
@@ -21,15 +22,21 @@ Examples of containers are:
 
 But today the constraints are applied on the container value itself and not its content.
 
-## Proposition
+## Proposition 1
 
 ### Containers
 
 Bean Validation will offer the notion of container of values to validate.
-Containers can contain one value, or several values.
-Extractors for specific containers can be implemented.
+Containers can contain one value, or several values (`Optional` vs `Collection`).
+A container can contain several types of values: a `Map` contains keys and values for example.
 
-TODO: should we differentiate single and plural?
+Extractors for the specific tuple container and value type can be implemented.
+
+We differentiate single and plural for two reasons:
+
+* we could have different functional rules depending on the case
+* it avoids the unnecessary instantiation of an `Iterator` in the singular case
+
 
     // Draft proposal for the contract
     public interface SingleContainerValueExtractor<CONTAINER,CONTAINED> {
@@ -42,21 +49,20 @@ TODO: should we differentiate single and plural?
     
     // Examples
     
-    //TODO can T remain unspecified? or should it be ? or Object?
-    public class OptionalContainerExtractor<T> implements SingleContainerValueExtractor<Optional<T>,T> {
+    public class OptionalContainerExtractor<T> implements SingleContainerValueExtractor<Optional<@ExtractedValue T>,T> {
         T extractValue(Optional<T> optional) { ... };
     }
 
-Bean Validation will have out of the box support for containers for `Iterable` and `Map`.
+Bean Validation will have out of the box support for containers `Iterable` and `Map`.
 
 TODO: any other Java SE type to consider?
 TODO: should we support JavaFX Property<T>?
 
 Custom container extractors can be provided via:
 
-* property
-* factory
-* service locator
+* property describing the list of FQCN (in the XML configuration file for example)
+* factory builder: offer an API to add extractor classes before building `ValidatorFactory`
+* service locator: use the SL pattern to find the enlistable extractors
 
 TODO: refine how the container implementations are discovered.
 See [Hibernate Validator's feature](http://docs.jboss.org/hibernate/validator/5.2/reference/en-US/html_single/#section-value-handling) 
@@ -69,15 +75,123 @@ A typical example is a property using constraints on type parameters of `TYPE_US
 If constraints are discovered, the unwrapping mechanism is used
 to read contained value(s) and potentially apply constraints on them (see below).
 
-By constraints, we also mean property traversal `@Valid`.
+Does that mean that if we find a type use constraint, there is no need for `@Valid`?
+
+* that would allow us not to require `@Valid` for `Optional<@notNull String>`
+* when constraint annotations are present on the member or method declaration itself,
+  we also enforce the use of containers (assuming the proper use of `@ConstraintsApplyTo`)
 
 Containers of containers are applied recursively if necessary.
 TODO: infinite loops?
 
-#### Which container unwrapper to use?
+#### Which container extractor to use?
 
-The container used is the one corresponding to the most specific super type
-as defined in the BV resolution of constraint validators.
+An extractor is associated to a container type (e.g. `Collection`) and a value type (e.g. the element of the collection).
+For a given container + value type tuple,
+the extractor used is the one targeting the most specific container type that is a supertype of the container.
+Rules used are the same used by the constraint validator selection. TODO: handles interfaces?
+
+Value type is the data returned by the extractor, for example:
+
+* the collection elements
+* the map keys
+* the map values
+
+Depending on where constraints are placed, they will be applied to one or the other value type.
+The following rules apply to link the constraints to the value type and thus the extractor.
+
+An extractor must annotate the type parameter it targets as value type with `@ExtractedValue`.
+
+    // extract the key of a map: constraints on map keys are thus applied
+    class MapKeyExtractor extends ManyContainerValuesExtractor<Map<@ExtractedValue Key,Value>>, Key> {
+    }
+
+`@ExtractedValue` can point to a specific supertype type parameter
+
+    // declare List<T> as the type parameter targeted (index)
+    class IntegerList extends ManyContainerValuesExtractor<@ExtractedValue(typeParameterHost=List.class, typeParameterIndex=0) IntegerList, Integer> {
+    }
+    
+    // declare List<T> as the type parameter targeted (name)
+    // probably a bit brittle
+    class IntegerList extends ManyContainerValuesExtractor<@ExtractedValue(typeParameterHost=List.class, typeParameterName="E") IntegerList, Integer> {
+    }
+
+Note that it is possible that there are no type parameter associated to the extractor.
+The constraints are hosted not on a type parameter but on the field or getter itself in conjunction with `@ConstraintsApplyTo(CONTAINED_VALUES)`.
+See next section for a detailed explanation of `@ConstraintsApplyTo`.
+
+    class SomeContainer { ... }
+    
+    class ExamplePojo {
+        // constraint applies to what's inside SomeContainer
+        @NotNull @ConstraintsApplyTo(CONTAINED_VALUE) SomeContainer foo;
+    }
+    
+    class SomeContainerExtractor extends SingleContainerValueExtractor<@ExtractedValue SomeContainer,Containee> {
+        ...
+    }
+
+In this case the type parameter is identified as an ad-hoc "no type parameter".
+
+We can also enhance the extractor contract to return a generic `Path` object representing how navigation from the container to the value type happens (or is represented).
+TODO: refine the `Path` approach. One specific question is around indexing of List or keys for Maps. Template?
+
+##### Alternative approach: extractors returning `ValueAndPath`
+
+Gunnar proposes an alternative to the extractor.
+This approach does not solve the link between constraints location and the targeted extractor.
+TODO: evolve it to do it :)
+
+    class ValueAndPathNode<O> {
+        Node getPathNode();
+        O getValue();
+    }
+
+    interface SingleValueExtractor<I, 0> {
+        ValueAndPathNode<O> extractValue(I input);
+    }
+
+    interface MultiValueExtractor<I, 0> {
+        Iterator<ValueAndPathNode<O>> extractValues(I input);
+    }
+
+    // default impls
+
+    class MapExtractor implements MultiValueExtractor<Map, Object> {
+        extractValue() {
+          return map key and value alternating; with the right node and value
+        }
+    }
+
+    class ObjectRefExtractor implements SingleValueExtractor<Object, Object> {
+        extractValue(Object v) {
+            return v;
+        }
+    }
+
+    class OptionalRefExtractor implements SingleValueExtractor<Optional, Object> {
+        extractValue(Optional v) {
+            return v.get();
+        }
+    }
+
+    // user-custom extractors
+
+    class ThreeTupleExtractor implements MultiValueExtractor<ThreeTuple, Object> {
+        extractValue() {
+          return iterator with the three elements
+        }
+    }
+
+In this approach, a container offering multiple value types (like `Map`) will have a unique extractor.
+This extractor will return (an iterator of) `Path.Node` + value.
+For example the map extractor will return `2n` elements (for a map of `n`).
+
+Open questions and limitations:
+
+* each navigation imposes the creation of a `ValueAndPathNode` object + the `Path.Node` object (or even `Path` object graph). That's a lot of unnecessary object creation in the validation critical path.
+* the link between a constraint location (which type use location) to which `Path` is undefined: so we don't know which constraint to apply.
 
 ### Constraints applied and containers
 
@@ -99,7 +213,7 @@ Extractors can specify that constraints declared on the container apply to the c
     public class JavaFXPropertyContainerExtractor<T> implements SingleContainerValueExtractor<Property<T>,T> { ... }
     
     // test that the age is at least 5
-    @Min(5) IntegerProperty<Integer> age;
+    @Min(5) IntegerProperty age;
 
 This is useful for JavaFX to force the validation of the contained properties.
 
@@ -112,20 +226,68 @@ One can also force the constraints to apply to the container or the container va
     
     class IntegerList extends ArrayList<Integer> {};
     
-    // the list must have 5 elements at least
+    // each age must be >= at 2
     @ConstraintsApplyTo(CONTAINED_VALUES)
     @Min(2)
     IntegerList ages;
-    
 
 Note that the preferred form is `List<@Min(2) Integer> ages;`.
+
+Here is a scary example
+
+    // each integer must be >= at 2
+    @ConstraintsApplyTo(CONTAINED_VALUES)
+    @Min(2)
+    Optional<@ConstraintsApplyTo(CONTAINED_VALUES) List<Integer>> weirdo;
+
+`@ConstraintApplyTo` can be applied in type use slots.
 
 `@ConstraintApplyTo` offers a way to define at which level nested container resolution stops (if necessary).
 Not by an explicit depth level but rather by its placement.
 
+Let's show some more examples for good measure
+
+    @Size Optional<String> foo; // illegal as @Size does not apply to Optional
+    Optional<@Size String> foo; // legal as @Size applies to String
+    
+    @Min IntegerProperty foo; // legal because the extractor for JavaFX uses @ConstraintsApplyTo(CONTAINED_VALUES)
+    
+    @Size Collection<String> foo;  // The size applies to the collection, not the string since the extractor has the default @ConstraintsApplyTo(CONTAINER) value
+
 TODO: should we offer a per annotation override:
 `@NotNull(validAppliedTo=CONTAINED_VALUE)`.
 The drawback is that old annotations will have to add the new attribute to offer the option.
+
+WARNING: `@ConstraintApplyTo` can only be used on containers that have a single value type.
+How to differentiate different value types otherwise ?
+
+#### `@Valid`
+
+Cascading via `@Valid` should also honor containers.
+
+    Collection<@Valid PlushGiraffe> giraffes;
+    
+    @Valid
+    Collection<PlushGiraffe> giraffes
+
+The first form is the most readable.
+The second form should be supported for backward compatibility reasons for collections and maps
+
+Here are the various questions:
+
+    class Foo {
+       @Valid // cascade all or only the legacy ones? gut feeling is legacy
+       Map<@RegExp(...) String, @Min(4) Integer> bars;
+
+       // clear intent
+       Map<@Valid @RegExp(...) String, @Valid @Min(4) Integer> bars;
+
+       // TODO no place to put the @Valid on the key / value
+       // so we should support legacy Map and decide what to do on random types
+       StringIntegerMap bazs;
+    }
+
+TODO: Find an answer to the `@Valid` questions
 
 #### `@ConstraintsApplyTo` Value for built-in containers
 
@@ -135,6 +297,30 @@ JavaFX `Property<T>` defaults to `CONTAINED_VALUES`.
 
 The default for JavaFX property differs
 because in this community the idiom `IntegerProperty` prevails over `Property<Integer>`.
+
+#### Complex type parameter hierarchies
+
+Complex hierarchies involving multiple levels of generic types are not trivial to solve
+and will require the use of [FasterXML's Classmate](https://github.com/FasterXML/java-classmate)
+or more likely an enhanced version of it.
+
+    interface Map<K,V> { ... }
+    // type parameter names change between subclass and superclass
+    // and the position can be different between the class and the implements / extends clause
+    public class CrazyMap<Last, First> implements Map<First, Last> { ... }
+    
+    public class Example {
+        // String is Map's type parameter V and Long is Map's type parameter K
+        private CrazyMap<@RegExp(...) String, @Min(0) Long> crazyMap = ...;
+    }
+
+In this situation, we need to follow the (annotated) type parameter across two or more levels up the hierarchy chain.
+Note that type parameter names can vary between the subclass definition and the superclass definition.
+
+I've played with Classmate and it does not seem to retain the information in its data even though it solves that problem internally to find the right type.
+We might need to contribute to expose that somehow.
+
+Also I don't think Classmate exposes annotations on type use, so we would need to contribute that or use something else like Jandex or plain Java reflection API.
 
 #### Alternative model (not preferred)
 
@@ -197,9 +383,19 @@ Implementing constraint validation in these general areas would require a very i
 using a powerful bytecode manipulation engine.
 The implications of the locations annotations is unknown.
 
-### Remaining TODOs
+### Drawbacks
 
-Should `@NotNull` be applied on both the container and contained for a single container?
+The logic is less regular than Gunnar's proposal.
+And thus could lock us for future enhancements.
+Where? Dunno.
+
+But it has less far reaching implications in particular around method validation.
+
+### Naming options
+
+`SingleContainerValueExtractor`: `ValidatedValueUnwrapper`, `ValueExtractor`
+
+### Remaining TODOs
 
 Should we have a BV 1.1 based logic that forces to use a global `@ConstraintsApplyTo(CONTAINER)`
 to enforce strict backward compatibility.
