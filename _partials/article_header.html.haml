@@ -1,6 +1,9 @@
 %header
   %h1.title
-    #{page.title}
+    - if page.url.nil?
+      #{page.title}
+    - else
+      %a{:href=>page.url} #{page.title}
   %span.author
     by
     %b #{page.author}
