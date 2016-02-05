@@ -5,8 +5,6 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket](https://hibernate.onjira.com/browse/BVAL-248)
 
 ## Goals
@@ -21,7 +19,7 @@ globally for the subsequent groups if a failure is found.
 
 ## Related issues
 
-A partial solution for this could be provided by making sure `@ReportAsSingleViolation` does not 
+A partial solution for this could be provided by making sure `@ReportAsSingleViolation` does not
 validate the composing constraint if a composed constraint fails. See [BVAL-259][BVAL-259] and
 [BVAL-220][BVAL-220].
 
@@ -44,11 +42,11 @@ A target is a property (field, getter) or a class.
 		@Size(max=50, groups=Cheap.class) // constraint 1a
 		@Pattern(regexp="[a-z]*", groups=Expensive.class)  // constraint 1b
 		private String name;
-		
+
 		@Size(max=20, groups=Cheap.class) // constraint 2a
 		@URL(groups=Expensive.class) // constraint 2b
 		private String email;
-		
+
 		@Size(max=100, groups=Cheap.class) // constraint 3a
 		@Pattern(regexp="[0-9]*", groups=Expensive.class) // constraint 3b
 		private String password;
@@ -56,7 +54,7 @@ A target is a property (field, getter) or a class.
 
 
 The default `@GroupSequence.scope` would be `GLOBAL` which is the current behavior. `PER_TARGET` would mean that sequences are
-applied per target. We stop validating a specific target (property or class) for subsequent groups 
+applied per target. We stop validating a specific target (property or class) for subsequent groups
 of this sequence if a constraint fails on the target itself.
 
 In our example we could get the following constraint failures:
@@ -67,7 +65,7 @@ In our example we could get the following constraint failures:
 
 This solution is not technically as orthogonal than a true salience model (see below).
 In particular, to mix that with partial validation, one has to create one group sequence
-per partial group. Is that a problem in practice? It already reduces the number of 
+per partial group. Is that a problem in practice? It already reduces the number of
 interfaces to create by a whole lot.
 
 Also, one could write a preset of `PER_TARGET` group sequence and reuse it across all the project.
@@ -77,7 +75,7 @@ We can apply the same kind of ordering solution on `@ReportAsSingleViolation`.
 ### Option 2: Add explicit _order_ parameter to constraints
 
 We can't rely on the order annotations are declared in the source file as Java compilers and runtime do not
-guarantee that. We might work around that with annotation processors or ways to read data from the bytecode 
+guarantee that. We might work around that with annotation processors or ways to read data from the bytecode
 but I'd see that as overkill. __Thoughts?__ So we need explicit order numbers defining a proper ordering.
 
 	public class DomainObject {
@@ -104,7 +102,7 @@ Ordering would be an orthogonal concern to groups entirely which is a plus compa
 But numbers are:
 
 - inelegant
-- meaningless per se and not self documented 
+- meaningless per se and not self documented
 - error prone: it's easy to have strange behaviors because someone changes one of the numbers
 - hard to reorder or insert if not properly anticipated - think Basic line numbers (10, 20, 30, 35, 37, 38, 40, 50) :)
 
@@ -130,8 +128,8 @@ Older constraints not defining order will be executed before the other ones.
 
 Questions:
 
-- should number ordering be honored per target only? Or globally? Or should it be configurable? 
-  What about inheritance? If per target, that would probably reduce some of the candidates for bugs. 
+- should number ordering be honored per target only? Or globally? Or should it be configurable?
+  What about inheritance? If per target, that would probably reduce some of the candidates for bugs.
   Inheritance would still be a problem.
 
 Note that global ordering might reduce performance of Bean Validation engines.
@@ -144,7 +142,7 @@ The general idea is to define the sequence of constraints as it should be applie
 	@IsValidBinCodeNumber()
 	@IsCardBannedNumber()
 	@IsValidCardNumber()
-	@ConstraintSequence(value={NotEmpty.class, IsValidBinCodeNumber.class,IsCardBannedNumber.class, IsValidCardNumber.class}, 
+	@ConstraintSequence(value={NotEmpty.class, IsValidBinCodeNumber.class,IsCardBannedNumber.class, IsValidCardNumber.class},
 		                shortCirtcuit=true)
 	private String creditCard;
 
@@ -159,8 +157,8 @@ So in its current form is not usable.
 
 ### Number groups
 
-We can offer number groups to reduce the number of groups a user has to declare. 
-	
+We can offer number groups to reduce the number of groups a user has to declare.
+
 	package javax.validation.groups;
 
 	@GroupSequence({Level1.class, Level2.class, Level3.class, Level4.class, Level5.class, Level6.class, Level7.class, Level8.class, Level9.class, Level10.class})

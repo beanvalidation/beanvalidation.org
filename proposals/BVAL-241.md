@@ -5,8 +5,6 @@ author: Gunnar Morling
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket](https://hibernate.onjira.com/browse/BVAL-241)
 
 ## Contents
@@ -49,7 +47,7 @@ comments: true
 
 ## Goal <a name="goal"></a>
 
-As of version 1.1, the Bean Validation API can not only be used for the validation of invariants applying to JavaBeans, but also to validate constraints applying to the parameters and return values of methods of arbitrary Java types. 
+As of version 1.1, the Bean Validation API can not only be used for the validation of invariants applying to JavaBeans, but also to validate constraints applying to the parameters and return values of methods of arbitrary Java types.
 
 That means that the Bean Validation API can be used to describe and validate the contract applying to a given method, that is
 
@@ -67,7 +65,7 @@ Compared to traditional means of checking the sanity of a method's argument valu
 
 Note: In the following, the term "method level constraint" refers to constraints declared on methods as well as constructors.
 
-Method constraints are defined by adding constraint annotations to method or constructor parameters (parameter constraints) or methods (return value constraints). 
+Method constraints are defined by adding constraint annotations to method or constructor parameters (parameter constraints) or methods (return value constraints).
 
 As with bean constraints, this can happen using either actual Java annotations or using an XML constraint mapping file (see ...). BV providers are free to provide additional means of defining method constraints such as an API-based aproach.
 
@@ -84,7 +82,7 @@ TODO: Should something be specified with respect to `native` methods?
 > interception technology at bay.
 
 ### Defining parameter constraints <a id="parameter"></a>
- 
+
 Parameter constraints are defined by putting constraint annotations to method or constructor parameters.
 
 Example xy: Declaring parameter constraints
@@ -95,7 +93,7 @@ Example xy: Declaring parameter constraints
 			//...
 		}
 
-		public void placeOrder(@NotNull @Size(min=3, max=20) String customerCode, 
+		public void placeOrder(@NotNull @Size(min=3, max=20) String customerCode,
 		                       @NotNull Item item, @Min(1) int quantity) {
 			//...
 		}
@@ -112,7 +110,7 @@ Note that declaring these constraints does not automatically cause their validat
 
 Tip: In order to use constraint annotations for method parameters, their element type must be `ELEMENT_TYPE.METHOD`. All built-in constraints support this element type and it's considered a best practice to do the same for custom constraints also if they are not primarily intended to be used as parameter constraints.
 
-> Emmanuel: is it `METHOD` really or is it more `PARAMETER`? Or both more likely. Likewise, `CONSTRUCTOR` might be considered 
+> Emmanuel: is it `METHOD` really or is it more `PARAMETER`? Or both more likely. Likewise, `CONSTRUCTOR` might be considered
 > as well
 
 #### Cross-parameter constraints ([BVAL-232](https://hibernate.onjira.com/browse/BVAL-232)) <a id="cross_parameter"></a>
@@ -214,7 +212,7 @@ Validator implementations must define a matching `isValid()` method per supporte
 		}
 
 		@DateParameterCheck //from must be before to AND alternativeTo
-		void bookHotel(@NotNull Customer customer, @NotNull Date from, 
+		void bookHotel(@NotNull Customer customer, @NotNull Date from,
 			           @NotNull Date to, @NotNull Date alternativeTo) {
 			//...
 		}
@@ -232,7 +230,7 @@ Validator implementations must define a matching `isValid()` method per supporte
 			return from.before(to);
 		}
 
-		public boolean isValid(Customer customer, Date from, Date to, 
+		public boolean isValid(Customer customer, Date from, Date to,
 			                   Date alternativeTo, ConstraintValidatorContext context) {
 			if(from == null || to == null || alternativeTo == null) {
 				return true;
@@ -366,7 +364,7 @@ As with parameter constraints, these return value constraints are not automatica
 *DISCUSSION: I feel unsure about the constructor constraints. Do they make that much sense? I think in most cases it should suffice to enforce a cascaded validation of the newly created instance using `@Valid` (see below).*
 
 > Emmanuel: I'm asking myself the same question actually but I think the answer is no. An object newly created might not be
-> in a fully "valid" state necessarily. Which also leads to a related question, should we allow to select the group validated 
+> in a fully "valid" state necessarily. Which also leads to a related question, should we allow to select the group validated
 > per parameter / return value.
 
 *DISCUSSION: Should property constraints (on getter methods) also be handled as method constraints?*
@@ -397,7 +395,7 @@ Example xy: Marking parameters and return values for cascaded validation
 
 		@NotNull @Valid
 		public Order getOrderByPk(@NotNull @Valid OrderPK orderPk) { ... }
-	
+
 		@NotNull @Valid
 		public Set<Order> getOrdersByCustomer(@NotNull @Valid CustomerPK customerPk) { ... }
 	}
@@ -500,12 +498,12 @@ The return value constraints in `DefaultOrderService` in example xy are legal, a
 
 ### Groups refinements <a id="groups"></a>
 
-> Emmanuel: should we offer the ability to refine a group? The idea is to use separate groups depending on the 
+> Emmanuel: should we offer the ability to refine a group? The idea is to use separate groups depending on the
 > parameter graph being validated
 
     placeOrder(@TranslateGroup(from=Default.class, to=A.class) @Valid Item item, @Min(0) int quantity)
 
-> When the group translation is applied needs to be discussed and such a feature can be used on all constraints, at least all 
+> When the group translation is applied needs to be discussed and such a feature can be used on all constraints, at least all
 > constraints marked `@Valid`.
 > WDTY?
 
@@ -544,23 +542,23 @@ is preferable. There are two options:
     public interface Validator {
         MethodValidator getMethodValidator();
     }
-    
+
     public interface MethodValidator<T> {
         <T> Set<MethodConstraintViolation<T>> validateMethodParameter(
             Method method, T object, Object parameterValue, int parameterIndex, Class<?>... groups);
-    
+
         <T> Set<MethodConstraintViolation<T>> validateAllMethodParameters(
             Method method, T object, Object[] parameterValues, Class<?>... groups);
-    
+
         <T> Set<MethodConstraintViolation<T>> validateMethodReturnValue(
             Method method, T object, Object returnValue, Class<?>... groups);
-    
+
         <T> Set<MethodConstraintViolation<T>> validateConstructorParameter(
              Constructor<T> constructor, Object parameterValue, int parameterIndex, Class<?>... groups);
-    
+
         <T> Set<MethodConstraintViolation<T>> validateAllConstructorParameters(
             Constructor<T> constructor, Object[] parameterValues, Class<?>... groups);
-    
+
         <T> Set<MethodConstraintViolation<T>> validateConstructorReturnValue(
             Constructor<T> constructor, Object returnValue, Class<?>... groups);
     }
@@ -591,7 +589,7 @@ especially if we add more methods in the future.
 The getter approach has the benefit of being simple.
 
 The fluent approach let's us factor the various methods between the methods and constructor
-calls and makes names less awkward. It also is consistent with some of the Bean Validation 
+calls and makes names less awkward. It also is consistent with some of the Bean Validation
 design using fluent APIs.  
 The drawback of of fluent API is that it requires two method calls for a validation:
 
@@ -689,7 +687,7 @@ TODO: More examples to follow. Define semantics of constructor validation.
 	 * @author Gunnar Morling
 	 */
 	public interface MethodConstraintViolation<T> extends ConstraintViolation<T> {
-	
+
 		/**
 		 * The kind of a {@link MethodConstraintViolation}.
 		 *
@@ -725,8 +723,8 @@ The `getKind()` method returns the `Kind` of the constraint violation, which can
 
 > Emmanuel: Not a big fan of the name `Kind`. Plus, I find it inconsistent to split constructor and method params whereas
 > return values is not differentiated.
-> I'd probably split the two notions in two enums. `Host` for constructor or method and `RootType` (any better name?) 
-> for parameter vs return value 
+> I'd probably split the two notions in two enums. `Host` for constructor or method and `RootType` (any better name?)
+> for parameter vs return value
 >
 > A more radical approach might be to remove parameter name and index as well as root type and move them to a
 > dedicated Path.Node. What do you think?
@@ -767,7 +765,7 @@ Instead method level constraints must be validated by invoking the appropriate m
 * aspect-oriented programming
 * Java proxies
 
-How integrators control whether a validation of method level constraints shall be performed or not for given types is out of scope of this specification. 
+How integrators control whether a validation of method level constraints shall be performed or not for given types is out of scope of this specification.
 
 As it is expected though, that a very common approach will be to leverage annotations for this, the Bean Validation API defines the `javax.validation.ValidateGroups` annotation which can be used by integrators for that purpose. Integrators are encouraged to reuse this annotation instead of creating their own one.
 
@@ -866,7 +864,7 @@ This interface is returned by `BeanDescriptor.getConstraintsForMethod(String, Cl
 
 `getParameterDescriptors` returns a list of `ParameterDescriptor`s representing the method's parameters in their natural order. An empty list will be returned in case the method has no parameters.
 
-`isCascaded` returns `true`, if the represented method's return value is marked for cascaded validation, `false` otherwise. 
+`isCascaded` returns `true`, if the represented method's return value is marked for cascaded validation, `false` otherwise.
 
 ### ConstructorDescriptor (to become 5.6) <a id="constructor_descriptor"></a>
 
@@ -930,7 +928,7 @@ TODO
 
 ## MethodConstraintViolationException (to become 8.2) <a id="mcve"></a>
 
-The method validation mechanism is typically not invoked manually during normal program execution, but rather automatically using a proxy, method interceptor or similar. Typically the program flow shouldn't continue its normal execution in case a parameter or return value constraint is violated which is realized by throwing an exception. 
+The method validation mechanism is typically not invoked manually during normal program execution, but rather automatically using a proxy, method interceptor or similar. Typically the program flow shouldn't continue its normal execution in case a parameter or return value constraint is violated which is realized by throwing an exception.
 
 Bean Validation provides a reference exception for such cases. Frameworks and applications are encouraged to use `MethodConstraintViolationException` as opposed to a custom exception to increase consistency of the Java platform.
 
@@ -940,21 +938,21 @@ Bean Validation provides a reference exception for such cases. Frameworks and ap
 	 * @author Gunnar Morling
 	 */
 	public class MethodConstraintViolationException extends ValidationException {
-	
+
 		private static final long serialVersionUID = 5694703022614920634L;
-		
+
 		private final Set<MethodConstraintViolation<?>> constraintViolations;
-		
+
 		/**
 		 * Creates a new {@link MethodConstraintViolationException}.
 		 *
 		 * @param constraintViolations A set of constraint violations for which this exception shall be created.
 		 */
 		public MethodConstraintViolationException(Set<? extends MethodConstraintViolation<?>> constraintViolations) {
-		
+
 			this( null, constraintViolations );
 		}
-		
+
 		/**
 		 * Creates a new {@link MethodConstraintViolationException}.
 		 *
@@ -963,13 +961,13 @@ Bean Validation provides a reference exception for such cases. Frameworks and ap
 		*/
 		public MethodConstraintViolationException(String message,
 			Set<? extends MethodConstraintViolation<?>> constraintViolations) {
-		
+
 			super( message );
-			this.constraintViolations = constraintViolations == null ? 
-				Collections.<MethodConstraintViolation<?>>emptySet() : 
+			this.constraintViolations = constraintViolations == null ?
+				Collections.<MethodConstraintViolation<?>>emptySet() :
 				Collections .unmodifiableSet( constraintViolations );
 		}
-		
+
 		/**
 		 * Returns the set of constraint violations reported during a validation.
 		 *
@@ -978,7 +976,7 @@ Bean Validation provides a reference exception for such cases. Frameworks and ap
 		public Set<MethodConstraintViolation<?>> getConstraintViolations() {
 			return constraintViolations;
 		}
-	
+
 	}
 
 > Emmanuel: The spec does not define serial version uids, we should probably leave it off.
@@ -1017,13 +1015,13 @@ It might be useful to have the possibility to apply property constraints (define
 
 	@ApplyPropertyConstraintsToSetters
 	public class Foo {
-	
+
 	}
 
 #### Option 2: A property level annotation <a id="property"></a>
 
 	public class Foo {
-	
+
 		@ApplyToSetter
 		@Min(5)
 		public int getBar() { return bar; }

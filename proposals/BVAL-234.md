@@ -5,14 +5,12 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket][jira]  
 See also [NetBeans issue][netbeans]
 
 ## Problem description
 
-Today when a property marked @Id @GeneratedValue is also marked @NotNull, it will fail if the identity generation is post-insert 
+Today when a property marked @Id @GeneratedValue is also marked @NotNull, it will fail if the identity generation is post-insert
 in the database. This can be the case if the underlying table is using column id generation for example.
 
 The id property is thus null when Bean Validation is executed during the pre-persist phase and a constraint
@@ -43,7 +41,7 @@ We could use option 1 but have JPA provide the created group: `javax.persistence
 ### 3. Have JPA disable validation of id properties at pre-persist
 
 JPA could disable validation on id properties if in pre-persist and if the generated value is not created yet.
-Note that we disable all validations - not simply `@NotNull` - as it does not make much sense to execute other 
+Note that we disable all validations - not simply `@NotNull` - as it does not make much sense to execute other
 validations when a property is null.
 
 `TraversableResolver` can be used to solve the problem as `isReachable` can stop the processing of a property.
@@ -59,6 +57,6 @@ Before going to the JPA EG, let's discuss the situation here.
 - is that correct to sneakily disable @NotNull constraint validation?
 - could we as JPA to validate the object id property once the id has been set (flush time in this case)?
 
-    
+
 [netbeans]: http://netbeans.org/bugzilla/show_bug.cgi?id=197845#c3
 [jira]: https://hibernate.onjira.com/browse/BVAL-234

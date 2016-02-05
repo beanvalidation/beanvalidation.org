@@ -5,8 +5,6 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket][jira]  
 
 ## Problem
@@ -38,7 +36,7 @@ implementations to the Bean Validation bootstrap or via the XML deployment descr
 
     /**
      * Decides if constraints of a given method should be validated
-     * 
+     *
      * @author Emmanuel Bernard
      */
     interface MethodValidationActivator {
@@ -49,7 +47,7 @@ implementations to the Bean Validation bootstrap or via the XML deployment descr
     /**
      * Provides the (set of) groups that should be used when validating the
      * given constrained method.
-     * 
+     *
      * @author Emmanuel Bernard
      */
     interface MethodValidationGroupSelector {

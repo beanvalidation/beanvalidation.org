@@ -5,14 +5,12 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket][jira]  
 
 ## Problem
 
 Getters are the vehicle for properties which are handled in Bean Validation 1.0.
-Should we also consider getter calls as regular methods. There are pros and cons for 
+Should we also consider getter calls as regular methods. There are pros and cons for
 both approaches. Let's list them
 
 ## Pros
@@ -43,7 +41,7 @@ While not considered for EE 7, that might very well come in the future.
 
 ## Customization mechanisms
 
-Because the choice is not clear, the consensus is that some customization 
+Because the choice is not clear, the consensus is that some customization
 mechanism should be available, either:
 
 - as proprietary extensions
@@ -104,16 +102,16 @@ Gunnar is on the side of not introducing `@ValidateOnCall` as it can be simulate
 by groups:
 
     public static class Foo {
-    
+
        //doesn't get validated during method validation of Default group
        @NotNull(groups=AllConstraints.class)
        private String getBar() { ... }
-    
+
        //does get validated during method validation
        @NotNull
        private String getBaz() { ... }
     }
-    
+
     //use this e.g. to validate upon entity persisting
     public interface AllConstraints extends Default {}
 

@@ -5,8 +5,6 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket](https://hibernate.onjira.com/browse/BVAL-238)
 
 ## Goal
@@ -16,7 +14,7 @@ Describe CDI and generally any dependency injection integration. Specifically to
 
 ## Lifecycle
 
-When CDI integration is active, instantiation as well as destruction of `ConstraintValidator` objects 
+When CDI integration is active, instantiation as well as destruction of `ConstraintValidator` objects
 must be delegated to the CDI container.
 
 Integration should use CDI's BeanManager SPI to obtain non-contextual instances of `ConstratintValidator` objects.
@@ -33,7 +31,7 @@ The natural integration point is `ConstraintValidatorFactory`. If a custom `Cons
 is provided, it would be hard or impossible to honor CDI behavior as it would have to be done
 **after** the factory has created the object.
 
-In OVal, injection is done after object instantiation. Spring Framework offer an inject method. 
+In OVal, injection is done after object instantiation. Spring Framework offer an inject method.
 Does CDI offer / wants to offer such option?
 
 > The same class mentioned above for CDI instantiation can be used to inject an existing instance. Just skip the call to
@@ -41,7 +39,7 @@ Does CDI offer / wants to offer such option?
 >
 > Pete Muir, 27 October 2011
 
-Even if partial injection is possible, it is probably better to leave instance handling to the custom 
+Even if partial injection is possible, it is probably better to leave instance handling to the custom
 `ConstraintValidatorFactory`. One concern is that a custom implementation would need to look up
 the CDI `BeanManager` and do a lot of work. But the primary use case is an integration point
 for dependency injection solutions so I don't see this as a problem.
@@ -50,9 +48,9 @@ Temporary answer is: yes (ie disabled on custom implementation).
 
 ### Should we specify the lifecycle of `ConstraintValidator` instances?
 
-Today the life cycle of `ConstraintValidator` objects is undefined. 
+Today the life cycle of `ConstraintValidator` objects is undefined.
 
-Should this be defined when CDI integration is activated to always retrieve a 
+Should this be defined when CDI integration is activated to always retrieve a
 `ConstraintValidator` instance from CDI right before it is used?
 Or should we leave Bean Validation providers free to call CDI for
 object instantiation when it pleases?
@@ -61,7 +59,7 @@ I'm tempted to believe we should leave it undefined. CDI components
 can get injections from more restrictive scopes. For example, this would allow
 `ConstraintValidator` instances to get request scoped component injected (eg
 to react to some user specific settings). So the time at which `ConstraintValidator`
-is requested does not matter much. 
+is requested does not matter much.
 
 
 > IMO you should leave it undefined.
@@ -95,7 +93,7 @@ An alternative is to use an untyped version (which should probably be favored):
         .byDefaultProvider()
         .configure()
             // T cdiBeanManager(Object beanManager) //raises an exception if that's not a BeanManager
-            .cdiBeanManager(beanManager) 
+            .cdiBeanManager(beanManager)
          .buildValidatorFactory();
 
 
@@ -105,7 +103,7 @@ vs
         .byDefaultProvider()
         .configure()
             //raises an exception if that's not a BeanManager
-            .addObject(Validation.CDI_BEAN_MANAGER, beanManager) // T addObject(String key, Objet value) 
+            .addObject(Validation.CDI_BEAN_MANAGER, beanManager) // T addObject(String key, Objet value)
          .buildValidatorFactory();
 
 I however feel chagrined that the nicely typed `Configuration` API requires such untyped approach.
@@ -118,7 +116,7 @@ I however feel chagrined that the nicely typed `Configuration` API requires such
 
 CDI exposes `BeanManager` via JNDI in EE, we could use it.
 
-Also CDI 1.1 offers programmatic lookup via the CDI class, see EDR1 spec for details. 
+Also CDI 1.1 offers programmatic lookup via the CDI class, see EDR1 spec for details.
 <http://docs.jboss.org/cdi/spec/1.1.EDR1/html/spi.html#provider>
 
 #### Option 3: Ask EE or the bootstrap to inject a CDI aware `ConstraintValidatorFactory` when creating the `ValidatorFactory` object
@@ -130,15 +128,15 @@ Another idea would be to integrate BV/CDI via a CDI-aware `ConstraintValidatorFa
         .configure()
             .constraintValidatorFactory( new CdiAwareConstraintValidatorFactory( beanManager ) )
         .buildValidatorFactory();
- 
-That way the integration is completely managed by the bootstrapper. `Validator` and `ValidatorFactory` are already 
-built-in beans in CDI so this wouldn't add much complexity. 
+
+That way the integration is completely managed by the bootstrapper. `Validator` and `ValidatorFactory` are already
+built-in beans in CDI so this wouldn't add much complexity.
 The CDI runtime would use this factory whenever a `Validator` or `ValidatorFactory` is retrieved.
 
 Note that today the EE container is responsible for creating `ValidatorFactory` and passing it to the CDI container.
 
 One advantage of this solution is to keep things minimalist and leave the wiring to
-the various DI solution (that's their job after all). Also in a DI environment, 
+the various DI solution (that's their job after all). Also in a DI environment,
 `ValidatorFactory` will likely be built by the DI system and thus passing injected
 `MessageInterpolator`, `TraversableResolver` and `ConstraintValidatorFactory`
 is easy.
@@ -146,13 +144,13 @@ is easy.
 There is a chicken and egg issue between EE, CDI and BV as `ValidatorFactory` needs to be passed to the
 CDI container. Pete Muir thinks that's possible however - **waiting for a proposal from him**.
 
-Note that the Bean Validation bootstrap process needs to provide the data from `validation.xml`. 
+Note that the Bean Validation bootstrap process needs to provide the data from `validation.xml`.
 **we need to make sure Bean Validation has the right APIs for that**.
 
 For SE, CDI today does not have a portable way to boot and inject things but a portable
 extension or something similar might be sufficient but that will be CDI provider specific.
 
-> Pete: option 3 still has my preference over option 4 even in SE 
+> Pete: option 3 still has my preference over option 4 even in SE
 
 #### Option 4: Add a method accepting an `InstanceProvider` implementation in Bean Validation's bootstrap
 
@@ -167,20 +165,20 @@ extension or something similar might be sufficient but that will be CDI provider
         public destroyInstance(Object instance);
     }
 
-The default implementation can be the no-arg constructor we have today. We can either ask CDI to 
+The default implementation can be the no-arg constructor we have today. We can either ask CDI to
 provide a `CDIInstanceProvider` at `ValidatorFactory` creation like in option 3 or make it the
 default implementation if CDI is present according to option 2.
 
 This option works fine as long as we don't require more complex object creation logic.
 
-But it is redundant with `ConstraintValidatorFactory` which should be deprecated. 
+But it is redundant with `ConstraintValidatorFactory` which should be deprecated.
 It also poses the problem of the scope of the instances provided. Should they
 all be dependent or should we give the provider the choice by passing a flag?
 Ann non dependent instances should be released asap by the Bean Validation provider.
 
 #### Option 4 bis: Use the `ServiceLoader` pattern to accept an `InstanceProvider`
 
-Instead of accepting an instance of `InstanceProvider`, we use the 
+Instead of accepting an instance of `InstanceProvider`, we use the
 [`ServiceLoader` pattern](http://docs.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html).
 The benefit is that nothing has to be passed. The first provider returning a non
 null instance would be used.
@@ -198,14 +196,14 @@ Option 1 has many drawbacks and should be avoided.
 
 Option 2 is the easiest solution but puts CDI above other DI technologies. This is not bad per se but that's a point.
 
-Option 3 is quite elegant as it's DI agnostic and most of the time the DI framework 
+Option 3 is quite elegant as it's DI agnostic and most of the time the DI framework
 is responsible for the life cycle of `ValidatorFactory` and can
 interject in the bootstrap process. When `ValidatorFactory` is created manually, we can ask the user to use a
 provider specific `CdiAwareConstraintValidatorFactory`.
 
 My main concern with option 3 is whether or not we (will) need access to CDI's `BeanManager` to handle the
-lifecycle of other objects in the Bean Validation universe. 
-`MessageInterpolator` and `TraversableResolver` could also benefit from CDI. 
+lifecycle of other objects in the Bean Validation universe.
+`MessageInterpolator` and `TraversableResolver` could also benefit from CDI.
 Note that these examples do not create objects, they are objects.
 
 Option 4 tries to address the shortcomings of option 3 by handling object instance manager
@@ -222,16 +220,16 @@ We need to specify that a DI solution should (and must in CDI's case) pass a man
 That way `MessageInterpolator`, and `TraversableResolver` can be managed beans.
 
 The lean approach uses option 3 and leave this work to the DI wiring. Though the integration with CDI
-will be speced by Bean Validation. This option does not require a programmatic API to pass 
+will be speced by Bean Validation. This option does not require a programmatic API to pass
 `MessageInterpolator` and `TraversableResolver` classes.
 
 ### Make sure the interaction contract between Bean Validation and CDI is well defined
 
-Talk to Pete and review discussions between JPA 2.1 and CDI. An example of interaction is defined 
+Talk to Pete and review discussions between JPA 2.1 and CDI. An example of interaction is defined
 [on this page](http://seamframework.org/Documentation/HowDoIDoNoncontextualInjectionForAThirdpartyFramework).
 
 
-Questions: 
+Questions:
 
 - Can a framework provider a producer and have in configured automatically?
 - Should we offer a way to disable the wiring of the producer with an option in `validation.xml`
@@ -246,20 +244,20 @@ Note that `ValidatorFactory` does not have a `close()` method unfortunately :( I
 
 Preliminary answer seems to be yes we need `destroy` and `close` methods.
 
-> Another idea would be to change the contract of ConstraintValidatorFactory and make it completely responsible for 
+> Another idea would be to change the contract of ConstraintValidatorFactory and make it completely responsible for
 > the lifecycle of validator instances:
 
     public interface ConstraintValidatorFactory {
-    
+
         <T extends ConstraintValidator<?,?>> T getInstance(Annotation constraint, Class<T> key);
-    
+
     }
 
 > By passing the constraint the factory would have all required information for creating and initializing validators.
-> It could take care for the lifecycle and enforce the constraints required by the programing model (in case of CDI 
-> for instance a CDI-aware factory would ensure that no singleton-scoped beans are validators etc.). It could also 
+> It could take care for the lifecycle and enforce the constraints required by the programing model (in case of CDI
+> for instance a CDI-aware factory would ensure that no singleton-scoped beans are validators etc.). It could also
 > cache validators per annotation and dispose validators when applicable.
-> 
+>
 > BV providers must not keep references to validators in order to not interfere with the lifecycle management of the
 > factory, i.e. they must invoke getInstance() whenever they need a validator.
 >
@@ -271,7 +269,7 @@ Preliminary answer seems to be yes we need `destroy` and `close` methods.
 
 With option 3 and 4, this problem is naturally handled.
 
-Otherwise, there is not equivalent to `BeanManager` in @Inject, so the only approach for this is to write a custom 
+Otherwise, there is not equivalent to `BeanManager` in @Inject, so the only approach for this is to write a custom
 `ConstraintValidatorFactory` for each @Inject provider.
 
 My answer to the question would then be no at this stage.

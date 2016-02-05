@@ -5,8 +5,6 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA](https://hibernate.onjira.com/browse/BVAL-265)
 
 ## Goals
@@ -14,7 +12,7 @@ comments: true
 While working on the dependency injection (BVAL-238), I need to solve a subproblem. A container needs to know what is in `validation.xml`
 to either:
 
-- plug its `ConstraintValidatorFactory` / `MessageResolver` etc implementation, 
+- plug its `ConstraintValidatorFactory` / `MessageResolver` etc implementation,
 - use the one defined by the user and possibly instantiate these objects as managed objects
 
 There are a few strategies
@@ -59,12 +57,12 @@ The spec would recommend that `getConstraintValidatorFactoryFromXML()` and its s
 
 ## Option 3: Expose the data in `Configuration` as instantiated objects
 
-Same as above except that `Configuration` returns already instantiated objects. But I don't think that's an 
+Same as above except that `Configuration` returns already instantiated objects. But I don't think that's an
 interesting option.
 
 ## Discussion
 
-Which options should be favor? I am tempted by option 2 but the risk is an explosion of `getDefaultXXX()` 
+Which options should be favor? I am tempted by option 2 but the risk is an explosion of `getDefaultXXX()`
 and `getXXXFromXML()` the more we add components to Bean Validation.
 
 What do you think?
