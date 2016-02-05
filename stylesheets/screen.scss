@@ -113,10 +113,23 @@ a.news-link {
 #logo-redhat {
     background: url(../images/redhat-logo.svg) no-repeat;
     display: block;
-    float: right;
     height: 25px;
     text-indent: -9999px;
     width: 78px;
+}
+
+@media (max-width: 767px) {
+  #widget-footer
+  #logo-redhat {
+  }
+
+}
+@media (min-width: 768px) {
+  #widget-footer
+  #logo-redhat {
+    float: right;
+
+  }
 }
 
 .tail {
@@ -128,4 +141,11 @@ a.news-link {
 pre.prettyprint {
   padding: 1em !important;
   border: 1px solid #ccc !important;
+}
+
+// merge asciidoctor's tableblock style with patternfly's table table-striped table-bordered styles
+table {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-bordered;
 }

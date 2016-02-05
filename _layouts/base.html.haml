@@ -42,12 +42,9 @@
   %footer{:role=>"contentinfo", :class=>"container", :id=>"widget-footer"}
     %hr
     .row
-      .widget.col-md-9.widget_text
-        .textwidget
-          %p Copyright (c) Red Hat, Inc., Emmanuel Bernard
-      .widget.col-md-3.widget_text
-        .textwidget
-          %a{:href=>"http://redhat.com", :id=>"logo-redhat"} Red Hat
+      .widget.col-md-12.widget_text
+        Copyright (c) Red Hat, Inc., Emmanuel Bernard
+        %a{:href=>"http://redhat.com", :id=>"logo-redhat"} Red Hat
 
 - if site.profile == production
   = google_analytics_universal
