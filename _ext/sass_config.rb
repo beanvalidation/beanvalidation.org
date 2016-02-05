@@ -16,6 +16,7 @@ module BeanVal
                                                File.join(font_awesome_base, 'fonts'),
                                                File.join(font_awesome_base, 'stylesheets')
                                               ]})
+      
     end
   end
 end
