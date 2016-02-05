@@ -140,58 +140,101 @@ TODO: refine the `Path` approach. One specific question is around indexing of Li
 ##### Alternative approach: extractors returning `ValueAndPath`
 
 Gunnar proposes an alternative to the extractor.
-This approach does not solve the link between constraints location and the targeted extractor.
-TODO: evolve it to do it :)
+This alternative provides:
 
-    class ValueAndPathNode<O> {
-        Node getPathNode();
-        O getValue();
+* one extractor per container type (and not container + value type)
+* the extractor selected is the one matching the most specific super type of the container
+    * only one extractor is executed per container
+
+    interface SingleValueExtractor<I, O> {
+
+        O extractValue(I input);
+
+        // only invoked if invalid; Property name enough as input?
+        // do we even need any input?
+        Path.Node getNode(String property);
     }
 
-    interface SingleValueExtractor<I, 0> {
-        ValueAndPathNode<O> extractValue(I input);
+    interface MultiValueExtractor<I, O> {
+
+        ValueAndNodeIterator<O> extractValues(I input);
+
+        // should it extend Java Iterator?
+        public interface ValueAndNodeIterator<O> {
+
+            boolean hasNext();
+
+            O next();
+
+            // Used to identify the location where constraints should be looked for
+            TypeVariable<?> typeVariable();
+
+            // only invoked if invalid; Property name enough as input?
+            // might need to be Path instead of Path.Node
+            Path.Node getNode(String property);
+        }
     }
 
-    interface MultiValueExtractor<I, 0> {
-        Iterator<ValueAndPathNode<O>> extractValues(I input);
-    }
-
-    // default impls
-
+    // implementation example
     class MapExtractor implements MultiValueExtractor<Map, Object> {
-        extractValue() {
-          return map key and value alternating; with the right node and value
+
+        public ValueAndNodeIterator<Object> extractValues(Map input) {
+            Set<Map.Entry<?, ?>> entrySet = input.entrySet();
+            final Iterator<Map.Entry> iterator = input.entrySet().iterator();
+            final TypeVariable<Class<Map>> k = Map.class.getTypeParameters()[0];
+            final TypeVariable<Class<Map>> v = Map.class.getTypeParameters()[1];
+
+            // returns alternatively key and value for each map entry
+            return new ValueAndNodeIterator<Object>() {
+
+                private boolean atKey = true;
+                private Map.Entry<?, ?> current;
+
+                public boolean hasNext() {
+                    return iterator.hasNext();
+                }
+
+                public Object next() {
+                    if ( atKey ) {
+                        current = iterator.next();
+                        atKey = false;
+                        return current.getKey();
+                    }
+                    else {
+                        atKey = true;
+                        return current.getValue();
+                    }
+                }
+
+                public TypeVariable<?> typeVariable() {
+                    return atKey ? k : v;
+                }
+
+                public Node getNode(String property) {
+                    // TODO Auto-generated method stub
+                    return null;
+                }
+            };
         }
     }
 
-    class ObjectRefExtractor implements SingleValueExtractor<Object, Object> {
-        extractValue(Object v) {
-            return v;
-        }
-    }
-
-    class OptionalRefExtractor implements SingleValueExtractor<Optional, Object> {
-        extractValue(Optional v) {
-            return v.get();
-        }
-    }
-
-    // user-custom extractors
-
-    class ThreeTupleExtractor implements MultiValueExtractor<ThreeTuple, Object> {
-        extractValue() {
-          return iterator with the three elements
-        }
-    }
 
 In this approach, a container offering multiple value types (like `Map`) will have a unique extractor.
-This extractor will return (an iterator of) `Path.Node` + value.
+This extractor will return (an iterator of) the values and offer the ability to compute the `Path.Node`
+and retrieve the `TypeVariable`.
 For example the map extractor will return `2n` elements (for a map of `n`).
+
+The `TypeVariable` is used to know which type parameter this value corresponds to.
+Constraints will be looked on this type parameter - whether on the class itself or its subclasses.
 
 Open questions and limitations:
 
-* each navigation imposes the creation of a `ValueAndPathNode` object + the `Path.Node` object (or even `Path` object graph). That's a lot of unnecessary object creation in the validation critical path.
-* the link between a constraint location (which type use location) to which `Path` is undefined: so we don't know which constraint to apply.
+* is `TypeVariable` both enough and necessary to express the type parameter targeted?
+    * an alternative is to provide an object containing the same info as `@ExtractedValue`: parameter host and parameter index
+    * At first sight, `TypeVariable` does not provide the parameter host information
+* this model makes extractor resolution simpler as a single extractor is present per container
+* but it does not allow extractor composition
+    * a subclass of Collection with special extracting demands will need to reimplement the regular collection extraction logic as well as its custom one in one class
 
 ### Constraints applied and containers
 
