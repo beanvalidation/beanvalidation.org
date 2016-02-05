@@ -5,8 +5,6 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket][jira]  
 
 ## Problem
@@ -30,7 +28,7 @@ calling Bean Validation.
         MethodDescriptor methodDescriptor = bean.getConstraintsForMethod( method.getName(), method.getParameterTypes() );
         return methodDescriptor != null;
     }
-    
+
     public boolean validateMethodParametersWithFullNavigation(Class<?> type, Method method) {
         BeanDescriptor bean = validator.getConstraintsForClass( type );
         MethodDescriptor methodDescriptor = bean.getConstraintsForMethod( method.getName(), method.getParameterTypes() );
@@ -48,7 +46,7 @@ calling Bean Validation.
             return false;
         }
     }
-    
+
     public boolean validateReturnValueWithFullNavigation(Class<?> type, Method method) {
         BeanDescriptor bean = validator.getConstraintsForClass( type );
         MethodDescriptor methodDescriptor = bean.getConstraintsForMethod( method.getName(), method.getParameterTypes() );
@@ -112,7 +110,7 @@ The implementation would then become
             return false;
         }
     }
-    
+
     public boolean validateMethodReturnValueWithMethodDescriptorShortcuts(Class<?> type, Method method) {
         BeanDescriptor bean = validator.getConstraintsForClass( type );
         MethodDescriptor methodDescriptor = bean.getConstraintsForMethod( method.getName(), method.getParameterTypes() );
@@ -143,7 +141,7 @@ An alternative solution is to use the fluent API to find constraints
     }
 
 But it's not 100% in line with the `findConstraints()` API: it should only return constraints
-that are on the element. Plus what is returned by the API is 
+that are on the element. Plus what is returned by the API is
 `ConstraintDescriptor` which cannot differentiate where it comes from (parameter or method).
 
 ## Implementation notes

@@ -5,8 +5,6 @@ author: Hardy Ferentschik
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket](https://hibernate.onjira.com/browse/BVAL-259)
 
 ## Goals
@@ -24,7 +22,7 @@ configurable ([BVAL-220](https://hibernate.onjira.com/browse/BVAL-220))
 Let composed constraint return the message of the first failing constraint ([BVAL-261](https://hibernate.onjira.com/browse/BVAL-261)),
 eg:
 
-    @ReportAsSingleViolation(messageSource=ByOriginatingConstraint) 
+    @ReportAsSingleViolation(messageSource=ByOriginatingConstraint)
 
 ## Solutions
 
@@ -34,8 +32,7 @@ eg:
 
 For example:
 
-    @ReportAsSingleViolation(shortCircuit=true) 
+    @ReportAsSingleViolation(shortCircuit=true)
     @NotNull
     @Constraint(validatedBy=MyValidator)
     public @interface MyConstraint {}
-
