@@ -4,7 +4,10 @@ $navbar-pf-bg-color: transparent;
 $navbar-pf-border-color: transparent;
 $navbar-pf-color: #0099d3;
 $navbar-pf-active-color: inherit;
+$navbar-pf-icon-bar-bg-color: $navbar-pf-color;
+//$navbar-pf-alt-navbar-toggle-icon-bar-hover-bg: $navbar-pf-color;
 @import "patternfly";
+
 
 $overview-top-margin: 40px;
 $jumbotron-margin-bottom: 30px;
