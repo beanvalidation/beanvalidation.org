@@ -166,4 +166,3 @@ def msg(text, level = :info)
     puts "\e[33m#{text}\e[0m"
   end
 end
-

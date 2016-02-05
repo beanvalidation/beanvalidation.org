@@ -1,30 +1,20 @@
 ---
-layout: default
+layout: news_base
 ---
 
-#main.col-sm-9.col-md-9.col-lg-9.clearfix
-  %article.post
-    = partial('article_header.html.haml', { :title => page.title, :author => page.author, :date => page.date,  :tags => page.tags})
-    .body
-      ~ content
-    %footer
-      #post-navigation
-        .post-navigation
-          #post-nav-previous
-            .previous
-              - if page.previous_post
-                &laquo;
-                %a{:href => page.previous_post.url} #{page.previous_post.title}
-          #post-nav-next
-            .next
-              - if page.next_post
-                &raquo;
-                %a{:href => page.next_post.url} #{page.next_post.title}
-      %hr
-        #{page.disqus_comments}
+%article.post
+  = partial('article_header.html.haml', { :title => page.title, :author => page.author, :date => page.date,  :tags => page.tags})
+  .body
+    ~ content
+  %footer
+    #post-navigation
+      .previous
+        - if page.previous_post
+          &laquo;
+          %a{:href => page.previous_post.url} #{page.previous_post.title}
+      .next
+        - if page.next_post
+          &raquo;
+          %a{:href => page.next_post.url} #{page.next_post.title}
 
--# sidebars with full list of articles
-#sidebar.sidebar.sidebar-right.col-sm-3.col-md-3.col-lg-3{:role=>"complementary"}
-  =partial ('news_feed.html.haml')
-  - for post in site.posts
-    %a.news-link{:href => post.url} #{post.title}
+    #{page.disqus_comments}

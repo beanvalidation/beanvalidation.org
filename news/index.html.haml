@@ -1,25 +1,15 @@
 ---
 title: News
-layout: base
+layout: news_base
 author: Emmanuel Bernard
 ---
 
-#overview.container
-  #content.clearfix.row
-    #main.col-sm-9.col-md-9.col-lg-9.clearfix
-      %h1 #{page.title}
+- for post in page.posts
+  %article.post
+    - puts "post=#{post}"
+    = partial('article_header.html.haml', { :title => post.title, :author => post.author, :date => post.date, :tags => post.tags, :url => post.url})
+    .body
+      ~ post.content
+      = post.disqus_comments_link
 
-      - for post in page.posts
-        %article.post
-          = partial('article_header.html.haml', { :title => post.title, :author => post.author, :date => post.date,  :tags => post.tags})
-          .body
-            ~ post.content
-            = post.disqus_comments_link
-          %hr
-      = page.posts.links
-
-    -# sidebars with tag cloud
-    #sidebar.sidebar.sidebar-right.col-sm-3.col-md-3.col-lg-3{:role=>"complementary"}
-      =partial ('news_feed.html.haml')
-      - for post in site.posts
-        %a.news-link{:href => post.url} #{post.title}
+= page.posts.links

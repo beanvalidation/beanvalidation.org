@@ -5,7 +5,6 @@ require 'patternfly-sass'
 require 'font-awesome-sass'
 require 'sass_config'
 
-
 Awestruct::Extensions::Pipeline.new do
   extension BeanVal::SassConfig.new
   extension Awestruct::Extensions::Posts.new( '/news', :posts )
@@ -17,6 +16,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Indexifier.new
   extension Awestruct::Extensions::Atomizer.new( :posts, '/news/news.atom' )
   extension Awestruct::Extensions::Disqus.new
+
   helper Awestruct::Extensions::Partial
   helper Awestruct::Extensions::GoogleAnalytics
 end

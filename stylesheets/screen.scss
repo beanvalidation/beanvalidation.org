@@ -1,12 +1,33 @@
-@import "partials/base";
+// customizing the PatternFly theme
+$font-size-base: 14px;
+$navbar-pf-bg-color: transparent;
+$navbar-pf-border-color: transparent;
+$navbar-pf-color: #0099d3;
+$navbar-pf-active-color: inherit;
+@import "patternfly";
 
+$overview-top-margin: 40px;
+$jumbotron-margin-bottom: 30px;
+
+@mixin border-bottom {
+   border-bottom: 1px solid $gray-lighter;
+}
+
+
+.navbar-pf {
+  border-bottom: 1px solid $gray-lighter;
+}
 
 @media (min-width: 768px) {
-  header+.container {
-    padding-top: 70px;
+  header + .container {
+    margin-top: $overview-top-margin;
   }
+  .jumbotron + .container {
+    margin-top: ( $overview-top-margin - $overview-top-margin );
+  }
+
   .sidebar-right {
-    border-left: 1px solid #eeeeee;
+    border-left: 1px solid $gray-lighter;
   }
   #even-more {
     margin-bottom: 1em;
@@ -14,21 +35,22 @@
 
 }
 
-.home {
-  background-color: #040404 !important;
-}
-
-.jumbotron h1 {
-  background: -webkit-linear-gradient(#5feffe, #208bc9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #3bb1dc;
-  font-size: 32px;
-  font-weight: 100;
-  line-height: 1.2;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  text-align: center;
+.jumbotron {
+  background-image: url(../images/backgrounds/bedge_grunge.png);
+  padding-top: 50px;
+  padding-bottom: 60px;
+  margin-bottom: $jumbotron-margin-bottom;
+  h1, p {
+    font-weight: 100;
+    line-height: 1.2;
+    text-align: center;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 24px;
+  }
 }
 @media (min-width: 480px) {
   .jumbotron h1 {
@@ -39,6 +61,12 @@
   .jumbotron h1 {
     font-size: 52px;
   }
+}
+
+#newsfeed-message {
+  @include border-bottom;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 article.post {
@@ -52,11 +80,10 @@ article.post {
   .body {
     margin-bottom: 2em;
   }
+  @include border-bottom;
   // hide last HR
   &:last-of-type {
-    & > hr {
-      visibility: hidden;
-    }
+    border-bottom: none;
   }
 }
 
