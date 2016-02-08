@@ -152,3 +152,76 @@ table {
   @extend .table-striped;
   @extend .table-bordered;
 }
+
+// asciidoctor admonition blocks
+
+.admonitionblock td.content>.title {
+  line-height:1.45;
+  color:#7a2518;
+  font-weight:400;
+  margin-top:0;
+  margin-bottom:.25em
+}
+
+span.icon>.fa{
+  cursor:default
+}
+
+.admonitionblock>table {
+  border-collapse:separate;
+  border:0;
+  background:none;
+  width:100%
+}
+
+.admonitionblock>table {
+  td.icon { text-align:center;width:80px }
+  td.icon { 
+    img { max-width:none }
+    .title {
+      font-weight:bold;
+      font-family:"Open Sans","DejaVu Sans",sans-serif;
+      text-transform:uppercase;
+    }
+  }
+
+  td.content {
+    padding-left:1.125em;
+    padding-right:1.25em;
+    border-left:1px solid #ddddd8;
+    color:rgba(0,0,0,.6)
+  }
+}
+
+.admonitionblock>table td.content>:last-child>:last-child{
+  margin-bottom:0
+}
+
+.admonitionblock {
+  td.icon [class^="fa icon-"] {
+    font-size:2.5em;
+    cursor:default;
+  }
+
+  td.icon {
+    .icon-note:before {
+      content:"\f05a";
+      color:#19407c;
+    }
+    .icon-tip:before {
+      content:"\f0eb";
+    }
+    .icon-warning:before {
+      content:"\f071";
+      color:#bf6900;
+    }
+    .icon-caution:before {
+      content:"\f06d";
+      color:#bf3400;
+    }
+    .icon-important:before {
+      content:"\f06a";
+      color:#bf0000
+    }
+  }
+}
