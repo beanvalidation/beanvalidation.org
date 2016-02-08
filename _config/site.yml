@@ -12,7 +12,8 @@ asciidoctor:
     idseparator: '-'
     sectanchors: ''
     linkattrs: ''
-    source-highlighter: prettify
+    source-highlighter: coderay
+    coderay-css: style
 
 
 profiles:
