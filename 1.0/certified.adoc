@@ -1,0 +1,23 @@
+---
+title:  Certified Bean Validation 1.0 compatible implementations
+layout: default
+author: Hardy Ferentschik
+---
+
+[cols="1,4,2,5,1"]
+|===
+||Name|Version|URL|RI
+
+|image:/images/hibernate.gif[Hibernate]
+|Hibernate Validator
+|http://hibernate.org/validator/downloads/[4.3.1.Final]
+|http://hibernate.org/validator[]
+|image:/images/completed.png[Completed]
+
+|image:/images/bval.png[Apache BVal]
+|Apache BVal
+|https://bval.apache.org/downloads.html[0.5]
+|http://bval.apache.org[]
+|
+
+|===
