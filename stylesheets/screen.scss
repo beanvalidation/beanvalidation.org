@@ -165,6 +165,18 @@ table {
   @extend .table-bordered;
 }
 
+td.valign-top, td.icon {
+  vertical-align: middle;
+}
+
+p.tableblock {
+  margin: 0;
+  padding: 10px;
+
+  .image {
+  }
+}
+
 // asciidoctor admonition blocks
 
 .admonitionblock td.content>.title {
