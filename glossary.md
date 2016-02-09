@@ -34,3 +34,8 @@ Java Generic terms are copied from [Angelika Langer's glossary](http://www.angel
     interface Comparable <E> { 
         int compareTo( E other); 
     }
+
+**Type use**: Where annotations are placed on the type parameter of a parameterized type of a member or method declaration
+(this is a Bean Validation terminology borrowed from the TargetType's `TYPE_USE` enum value).
+
+    List<@Email String> emails;
