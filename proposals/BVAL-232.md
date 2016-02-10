@@ -5,8 +5,6 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket][jira]  
 
 ## Problem
@@ -40,7 +38,7 @@ Any one can think of a better approach?
     @interface CrossParameterConstraint {
         public Class<? extends CrossParameterConstraintValidator<?>>[] validatedBy();
     }
-    
+
     interface CrossParameterConstraintValidator<A extends Annotation> {
         void initialize(A constraintAnnotation);
         [...]
@@ -63,7 +61,7 @@ constraints from cross-parameter constraints. I'm inclined to not allow it.
         Class<?>[] groups() default {};
         class<? extends Payload>[] payload();
     }
-    
+
     class CheckRetypedPasswordValidator implements
             CrossParameterConstraintValidator<CheckRetypedPasswordParameter> {
         ...
@@ -74,7 +72,7 @@ constraints from cross-parameter constraints. I'm inclined to not allow it.
     class AccountService {
         //cross param constraints
         @CheckRetypedPasswordParameter
-        //return value constraints 
+        //return value constraints
         @Valid @NotNull
         User createUser(@NotEmpty String username, @Email String email, String password, String retypedPassword);
     }
@@ -92,7 +90,7 @@ There has been two leading proposals. The others are described in the
     }
 
 
-A given constraint **cannot host more than one of these generic `CrossParameterConstraintValidator` 
+A given constraint **cannot host more than one of these generic `CrossParameterConstraintValidator`
 implementation** or we would not be able to choose which one to use.
 
 #### Type-safe approach (with annotation processors)

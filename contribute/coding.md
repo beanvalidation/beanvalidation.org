@@ -4,14 +4,12 @@ layout: default
 author: Gunnar Morling
 ---
 
-# #{page.title}
-
 ## API
 
 ### Pull requests
 
-Changes to the Bean Validation API are realized using [pull requests](http://help.github.com/send-pull-requests/) 
-against the [API repository](https://github.com/beanvalidation/beanvalidation-api) on GitHub. 
+Changes to the Bean Validation API are realized using [pull requests](http://help.github.com/send-pull-requests/)
+against the [API repository](https://github.com/beanvalidation/beanvalidation-api) on GitHub.
 Use the [same rules](/contribute/specification) than for submitting a specification change to the spec repository.
 
 ### Coding guidelines
@@ -28,7 +26,7 @@ Obey to the following rules when working on the API sources:
   * Use `@since` to document in which spec revision a type/member was added to the API
   * Refer to [How to Write Doc Comments](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html) and Joshua Bloch's "Effective Java" for more information on writing good comments.
 
-* Use the IntelliJ [code style template](https://community.jboss.org/wiki/ContributingToHibernateValidator#Coding_Guidelines) 
+* Use the IntelliJ [code style template](https://community.jboss.org/wiki/ContributingToHibernateValidator#Coding_Guidelines)
    from the reference implementation to format API sources
 
 ## TCK

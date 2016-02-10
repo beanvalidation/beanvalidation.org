@@ -1,0 +1,14 @@
+%header
+  %h1.title
+    - if page.url.nil?
+      #{page.title}
+    - else
+      %a{:href=>page.url} #{page.title}
+  %span.author
+    by
+    %b #{page.author}
+  %span.date
+    on #{page.date.strftime('%d %b %Y')}
+  %span.tags
+    - page.tags.each do |tag|
+      %a.label.label-info{:href=>tag.primary_page.url} #{tag}

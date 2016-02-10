@@ -1,42 +1,20 @@
 ---
-layout: default
+layout: news_base
 ---
-#post-navigation
-  .post-navigation
-    #post-nav-previous
-      .previous
-        - if page.previous_post
-          .label
-            previous post
-          .nav-link
-            %a{:href => page.previous_post.url}= page.previous_post.title
-    #post-nav-next
-      .next
-        - if page.next_post
-          .label
-            next post
-          .nav-link
-            %a{:href => page.next_post.url}= page.next_post.title
-#feed
-  %span{:id => 'feedicon'}
-    %a{:href => '/news/news.atom'}
-      %img{:src => '/images/feed-icon-28x28.png', :alt => 'Feed'}
-  &nbsp;
-  %a{:href => '/news/news.atom'}
-    Subscribe to the Feed
-.post
-  %h1.title 
-    #{page.title}
-  .byline
-    .author
-      by
-      = page.author
-    .date
-      = page.date.strftime('%d %b %Y')
-    .tags
-      - page.tags.each do |tag|
-        %a{:href=>tag.primary_page.url}
-          = tag
+
+%article.post
+  = partial('article_header.html.haml', { :title => page.title, :author => page.author, :date => page.date,  :tags => page.tags})
   .body
     ~ content
-    = page.disqus_comments
+  %footer
+    #post-navigation
+      .previous
+        - if page.previous_post
+          &laquo;
+          %a{:href => page.previous_post.url} #{page.previous_post.title}
+      .next
+        - if page.next_post
+          &raquo;
+          %a{:href => page.next_post.url} #{page.next_post.title}
+
+    #{page.disqus_comments}

@@ -4,8 +4,6 @@ layout: default
 author: Emmanuel Bernard
 ---
 
-# #{page.title}
-
 The expert group and the community focused on a few key goals as well as smaller issues.
 
 - [Main goals](#goals)
@@ -51,9 +49,9 @@ implementations:
 
         @Inject @France
         private ZipCodeChecker checker;
-        
+
         public void initialize(ZipCode zipCode) {}
-        
+
         public boolean isValid(String value, ConstraintValidationContext context) {
             if (value==null) return true;
             return checker.isZipCodeValid(value);
@@ -90,7 +88,7 @@ Here is an example:
         @Inject AccountService service;
         public void createClient() { service.createUser(...); }
     }
-    
+
     @Dependent class AccountService {
         public User createUser(
                 @NotEmpty String username,
@@ -98,7 +96,7 @@ Here is an example:
                 String lastname,
                 @NotNull @Email String email,
                 @Past Date birthDate) {
-            // parameters are automatically validated and an exception 
+            // parameters are automatically validated and an exception
             // is raised upon failure
             // Method code focuses on the business logic
         }
@@ -116,14 +114,14 @@ also makes for more readable constraints.
         @Email String email;
         @Strength(group=Complete.class)
         String password;
-        @Valid 
+        @Valid
         @ConvertGroup.List( {
             @ConvertGroup(from=Default.class, to=BasicPostal.class),
             @ConvertGroup(from=Complete.class, to=FullPostal.class)
         } )
         Address homeAddress;
     }
-    
+
     class Address {
         @NotNull(group=BasicPostal.class) String street1;
          String street2;
@@ -163,21 +161,21 @@ the design discussions.
 | [BVAL-241](https://hibernate.onjira.com/browse/BVAL-241)  | ![](/images/completed.png) |  [241](/proposals/BVAL-241) | Method level validation
 | [BVAL-272](https://hibernate.onjira.com/browse/BVAL-272)  | ![](/images/completed.png) |  | Close remaining loops in method validation support
 | [BVAL-232](https://hibernate.onjira.com/browse/BVAL-232)  | ![](/images/completed.png) | [232](/proposals/BVAL-232) | Solve cross-parameter validation
-| [BVAL-274](https://hibernate.onjira.com/browse/BVAL-274)  | ![](/images/completed.png) | [274](/proposals/BVAL-274) | Extend the meta-data API with required convenience methods for method validation 
-|                                                           | ![](/images/completed.png) |  | Should method validation methods be defined on j.v.Validator or a dedicated new interface? 
+| [BVAL-274](https://hibernate.onjira.com/browse/BVAL-274)  | ![](/images/completed.png) | [274](/proposals/BVAL-274) | Extend the meta-data API with required convenience methods for method validation
+|                                                           | ![](/images/completed.png) |  | Should method validation methods be defined on j.v.Validator or a dedicated new interface?
 | [BVAL-306](https://hibernate.onjira.com/browse/BVAL-306)  | ![](/images/completed.png) |  | Clarify interceptor order in method validation triggering
-| [BVAL-314](https://hibernate.onjira.com/browse/BVAL-314)  | ![](/images/completed.png) | [314](/proposals/BVAL-314/) | Provide ability to disable validation for method/constructor 
-| [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238)  | ![](/images/completed.png) | [238](/proposals/BVAL-238)  | Support for container injection in ConstraintValidator 
+| [BVAL-314](https://hibernate.onjira.com/browse/BVAL-314)  | ![](/images/completed.png) | [314](/proposals/BVAL-314/) | Provide ability to disable validation for method/constructor
+| [BVAL-238](https://hibernate.onjira.com/browse/BVAL-238)  | ![](/images/completed.png) | [238](/proposals/BVAL-238)  | Support for container injection in ConstraintValidator
 |                                                           | ![](/images/completed.png) |  | Discuss and clarify vf.close() and the usage expectation (ie when to close a VF)
 |                                                           | ![](/images/completed.png) |  | Bring back interaction descriptions with Java EE and CDI in the Bean Validation specification
 | [BVAL-307](https://hibernate.onjira.com/browse/BVAL-307)  | ![](/images/completed.png) |  | Decide how CDI and Bean Validation is integrated
-| [BVAL-265](https://hibernate.onjira.com/browse/BVAL-265)  | ![](/images/completed.png) | [265](/proposals/BVAL-265) | Expose settings defined in XML in the Configuration API 
+| [BVAL-265](https://hibernate.onjira.com/browse/BVAL-265)  | ![](/images/completed.png) | [265](/proposals/BVAL-265) | Expose settings defined in XML in the Configuration API
 | [BVAL-293](https://hibernate.onjira.com/browse/BVAL-293)  | ![](/images/completed.png) |  | Finish renaming of `ConfigurationSource`
 | [BVAL-226](https://hibernate.onjira.com/browse/BVAL-226)  | ![](/images/completed.png) |  | Clarify whether the static or the runtime type should be considered when creating property paths in case of cascaded validations
 | [BVAL-221](https://hibernate.onjira.com/browse/BVAL-221)  | ![](/images/completed.png) | [221](/proposals/BVAL-221) | The constraint violation builder cannot put constraint on a top level map key
-| [BVAL-208](https://hibernate.onjira.com/browse/BVAL-208)  | ![](/images/completed.png) | [208](/proposals/BVAL-208) | Support groups translation when cascading operations (hosted on @Valid or not) 
-| [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259)  | ![](/images/completed.png) | [259](/proposals/BVAL-259) | Stop validation of composed constraints at first failing constraint 
-| [BVAL-327](https://hibernate.onjira.com/browse/BVAL-327)  | ![](/images/completed.png) | [327](/proposals/BVAL-327) | Discuss whether or not getter should be considered constrained methods 
+| [BVAL-208](https://hibernate.onjira.com/browse/BVAL-208)  | ![](/images/completed.png) | [208](/proposals/BVAL-208) | Support groups translation when cascading operations (hosted on @Valid or not)
+| [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259)  | ![](/images/completed.png) | [259](/proposals/BVAL-259) | Stop validation of composed constraints at first failing constraint
+| [BVAL-327](https://hibernate.onjira.com/browse/BVAL-327)  | ![](/images/completed.png) | [327](/proposals/BVAL-327) | Discuss whether or not getter should be considered constrained methods
 | [BVAL-259](https://hibernate.onjira.com/browse/BVAL-259)  | ![](/images/completed.png) | | Enforce in the spec that @ReportAsSingleViolation does apply validators once one is reporting a failure
 | [BVAL-219](https://hibernate.onjira.com/browse/BVAL-219)  | ![](/images/completed.png) |  | Consider interpolating the value in error messages
 | [BVAL-223](https://hibernate.onjira.com/browse/BVAL-223)  | ![](/images/completed.png)  |  | Add formatter syntax for interpolated messages
@@ -188,4 +186,3 @@ the design discussions.
 | [BVAL-282](https://hibernate.onjira.com/browse/BVAL-282)  | ![](/images/completed.png) |  | Make clear whether it's legal to invoke Configuration#buildValidatorFactory() several times
 | [BVAL-191](https://hibernate.onjira.com/browse/BVAL-191)  | ![](/images/completed.png) |  | Introduce a addEntityNode() method to the fluent node builder API
 | [BVAL-304](https://hibernate.onjira.com/browse/BVAL-304)  | ![](/images/completed.png) |  | Add OSGi headers in the reference implementation
-

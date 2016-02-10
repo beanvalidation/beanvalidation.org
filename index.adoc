@@ -1,0 +1,50 @@
+---
+layout: home
+author: Emmanuel Bernard
+title: Bean Validation
+---
+== What is Bean Validation
+
+Bean Validation is a Java specification which
+
+- lets you express constraints on object models via annotations
+- lets you write custom constraints in an extensible way
+- provides the APIs to validate objects and object graphs
+- provides the APIs to validate parameters and return values of methods
+  and constructors
+- reports the set of violations (localized)
+- runs in Java SE but is integrated in Java EE (6 and 7)
+
+[source,java]
+----
+public class User {
+
+    private String email;
+
+    @NotNull @Email
+    public String getEmail() {
+      return email;
+    }
+
+    public void setEmail(String email) {
+      this.email = email;
+    }
+}
+
+public class UserService {
+
+  public void createUser(@Email String email,
+                         @NotNull String name) {
+    ...
+  }
+}
+----
+
+While you can run validation manually, it is more natural to
+let other specifications and frameworks validate data at the right
+time (user input in presentation frameworks, business service
+execution by CDI, entity insert or update by JPA).
+
+In other words, _run once, constrain anywhere_.
+
+http://./1.1/[Learn more and get the specification...]

@@ -5,8 +5,6 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket][jira]  
 
 ## Problem
@@ -28,7 +26,7 @@ We have also contemplated the idea of merging this feature with the annotation u
 method validation. Since method validation also hosts a validation mode, we decided to keep
 them separated.
 
-> Question: should we embed one in the other or use both as elements of 
+> Question: should we embed one in the other or use both as elements of
 > orthogonal concern?
 > for example `@MethodValidated(mode=PARAMETERS) @ConvertGroup(from=Default.class, to=Basic.class)`
 
@@ -87,12 +85,12 @@ Alternative proposal:
         } )
         Set<Address> getAddresses() { ... }
     }
-    
+
     // vs
-    
+
     public class User {
         @Valid
-        @ConvertGroup( 
+        @ConvertGroup(
             from={Default.class, Complete.class},
             to={BasicPostal.class, FullPostal.class}
         )
@@ -109,7 +107,7 @@ Alternative proposal:
 
 > Open question: can one define a class-level `@ConvertGroup` that would be applied
 > to all @Valid of a given bean?  
-> My gut feeling is that it is not necessary as one use group conversion to 
+> My gut feeling is that it is not necessary as one use group conversion to
 > convert the group in one context (the main bean) to a group in
 > another context (the associated bean). I don't see a reason to have the
 > same context across associated beans?  

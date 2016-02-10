@@ -4,8 +4,6 @@ layout: default
 author: Emmanuel Bernard
 ---
 
-# #{page.title}
-
 Bean Validation welcomes contribution and of any sort:
 
 * [feedback](#feedback)
@@ -60,5 +58,3 @@ Apache Software License 2.0. [Get more information](/licensing/).
 
 By submitting a "pull request" or otherwise contributing to this repository, you agree to license
 your contribution under the respective licenses mentioned above.
-
-

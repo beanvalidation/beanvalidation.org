@@ -1,21 +1,12 @@
 ---
 layout: base
 ---
-#layout
-  #primary
-    #header
-      :markdown
-        [home](/) |
-        [spec](/1.1) |
-        [tck](/1.1/tck) |
-        [ri](/1.1/ri) |
-        [certified](/1.1/certified) |
-        [contribute](/contribute) |
-        [licensing](/licensing)
-    ~ content
-    - if (page.comments == true)
-      = page.disqus_comments
+#overview.container
+  #content.clearfix.row
+    #main.col-sm-12.col-md-12.col-lg-12.clearfix
+      %h1 #{page.title}
 
-  #footer
-    .text
-      Copyright (c) Red Hat, Inc., Emmanuel Bernard
+      ~ content
+
+      - if (page.comments == true)
+        = page.disqus_comments

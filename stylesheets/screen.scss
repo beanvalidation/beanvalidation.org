@@ -1,311 +1,154 @@
-// This import applies a global reset to any page that imports this stylesheet.
-@import "blueprint/reset";
+// customizing the PatternFly theme
+$font-size-base: 14px;
+$navbar-pf-bg-color: transparent;
+$navbar-pf-border-color: transparent;
+$navbar-pf-color: #0099d3;
+$navbar-pf-active-color: inherit;
+$navbar-pf-icon-bar-bg-color: $navbar-pf-color;
+//$navbar-pf-alt-navbar-toggle-icon-bar-hover-bg: $navbar-pf-color;
+@import "patternfly";
 
-// To configure blueprint, edit the partials/base.sass file.
-@import "partials/base";
 
-// Import all the default blueprint modules so that we can access their mixins.
-@import "blueprint";
+$overview-top-margin: 40px;
+$jumbotron-margin-bottom: 30px;
 
-// Import the non-default scaffolding module.
-@import "blueprint/scaffolding";
-
-@import "compass/typography/lists";
-
-@import "compass/typography/links/link-colors";
-
-// To generate css equivalent to the blueprint css but with your
-// configuration applied, uncomment:
-// @include blueprint
-
-// If you are doing a lot of stylesheet concatenation, it is suggested
-// that you scope your blueprint styles, so that you can better control
-// what pages use blueprint when stylesheets are concatenated together.
-body.bp {
-  @include blueprint-typography(true);
-  @include blueprint-utilities;
-  @include blueprint-debug;
-  @include blueprint-interaction;
-  // Remove the scaffolding when you're ready to start doing visual design.
-  // Or leave it in if you're happy with how blueprint looks out-of-the-box
+@mixin border-bottom {
+   border-bottom: 1px solid $gray-lighter;
 }
 
-form.bp {
-  @include blueprint-form;
-  // You'll probably want to remove the scaffolding once you start styling your site.
-  @include blueprint-scaffolding; 
+
+.navbar-pf {
+  border-bottom: 1px solid $gray-lighter;
 }
 
-// Page layout can be done using mixins applied to your semantic classes and IDs:
-
-$h_color:#AE5500;
-body.bp {
-  font-size:90%;
-  pre {
-    //margin-top:0em;
-    //margin-bottom:0em;
-    margin:0;
-    padding:0;
-    line-height:1.5em;
-    font-family:"Monaco","Lucida Console","Consolas","Courier New";
-    margin-left:4em;
-    margin-top:1em;
-    margin-bottom:1em;
-    margin-right:4em;
+@media (min-width: 768px) {
+  header + .container {
+    margin-top: $overview-top-margin;
   }
-  p {
-    margin-top:0em;
-    margin-bottom:.5em;
-  }
-  h1 {
-    margin-top:1em;
-    margin-bottom:1em;
-    line-height:1em;
-    font-size:180%;
-	  color:$h_color;
-	  text-align:center;
-  }
-  h2 {
-    margin-top:.75em;
-    margin-bottom:.75em;
-	font-size:150%;
-	color:$h_color;
-  }
-  h3 {
-    margin-top:.5em;
-    margin-bottom:.5em;
-    line-height:1.5em;
-	font-size:120%;
-	color:$h_color;
+  .jumbotron + .container {
+    margin-top: ( $overview-top-margin - $overview-top-margin );
   }
 
-  #container {
-    @include container; 
-  }
-}
-
-#header {
-  clear: both; 
-  text-align:center;
-}
-
-#footer {
-  clear: both; 
-  text-align:center; 
-  margin-top:3em;
-  font-size:70%
-}
-
-//Global error
-#error-404 {
-  @include prepend(4);
-  @include column(16);
-  @include append(4);
-  padding-top: 2em;
-  font-size: 100%;
-}
-
-//Per page specifics
-
-//Home Latest news
-#latest-news {
-  .item {
-    margin-bottom: 1em;
-  }
-  h1, h2 {
-    font-weight: bold;
-  }
-  h1 {
-    font-size: 160%;
-    border-bottom: 1px solid $top_nav_border_color;
-  }
-  h2 {
-    font-size: 120%;
-    margin-bottom: 0px;
-    a {
-      text-decoration: none;
-    }
-  }
-  .tail {
-    border-bottom: 1px solid $post_tail_border_color;
-    padding: .8ex;
-    padding-right: 0px;
-    margin-bottom: 1em;
-    margin-top: 1em;
-    text-align: right;
+  .sidebar-right {
+    border-left: 1px solid $gray-lighter;
   }
   #even-more {
-    display: block;
+    margin-bottom: 1em;
+  }
+
+}
+
+.jumbotron {
+  background-image: url(../images/backgrounds/bedge_grunge.png);
+  padding-top: 50px;
+  padding-bottom: 60px;
+  margin-bottom: $jumbotron-margin-bottom;
+  h1, p {
+    font-weight: 100;
+    line-height: 1.2;
     text-align: center;
-    font-size: 120%;
-    font-weight: bold;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 24px;
+  }
+}
+@media (min-width: 480px) {
+  .jumbotron h1 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .jumbotron h1 {
+    font-size: 52px;
   }
 }
 
-//Bean Validation
-#bv-title {
-  text-align:center;
-}
-#bv-two-columns-two-third {
-  //@include container
-  #bv-column-two-third {
-    @include column(14);
-    @include append(3);
-  }
-  #bv-column-one-third {
-    @include column(7, true);
-    //background-color: $h_color*2;
-    ul {
-      list-style-type: none;
-    }
-  }
-}
-
-#bv-two-columns {
-  //@include container
-  #bv-column-left {
-    @include column(11);
-    @include append(2);
-  }
-  #bv-column-right {
-    @include column(11, true);
-  }
-}
-#bv-bottom {
-  clear:both;
-  margin-top:10px;
-  padding-top:1em;
-}
-
-//News index and posts
-.post {
-  clear:both;
+#newsfeed-message {
+  @include border-bottom;
+  padding-bottom: 1em;
   margin-bottom: 1em;
-  border-bottom: 1px solid $post_border_color;
-  line-height: 1.5em;
-  h1.title {
-    //font-size: 125%;
-    text-align:left;
-    //font-weight: bold;
-    margin-bottom: 0.5em;
-    //margin-top:2em;
-    a {
-      text-decoration: none;
-    }
-  }
-  .byline {
+}
+
+article.post {
+  header {
+    margin-top: 1em;
     margin-bottom: 2em;
-    font-size: 90%;
-    .date {
-      display: inline;
-      color: $post_date_color;
-      margin-left: 1ex;
-    }
-    .author {
-      font-weight: bold;
-      display: inline;
-    }
-    .tags {
-      display: inline;
-      margin-left:1em;
-      a {
-        font-weight: bold;
-        margin-right: 1ex;
-        text-decoration: none;
-      }
+    & > span.tags {
+      margin-left: 1em;
     }
   }
   .body {
     margin-bottom: 2em;
   }
-  .comments {
-    border-top: 1px solid $post_comments_border_color;
-    margin-bottom: 2em;
-  }
-  .tail {
-    background-color: $post_tail_background_color;
-    border: 1px solid $post_tail_border_color;
-    padding: .8ex;
-    margin-bottom: 1em;
-    margin-top: 1em;
+  @include border-bottom;
+  // hide last HR
+  &:last-of-type {
+    border-bottom: none;
   }
 }
+
 .pagination-links {
-  margin-bottom: 1em;
-  a {
-    text-decoration: none;
-  }
-  a, .current-page, .slip {
-    padding: .5ex;
-    margin-right: .5ex;
-  }
-  a.page-link, .current-page, .previous-link, .next-link {
-    border: 1px solid $pagination_border_color;
-  }
+  margin-top: 2em;
+  text-align: center;
   .current-page {
-    font-weight: bold;
+    @extend .label;
+    @extend .label-default;
   }
-}
-.post-navigation {
-  margin-top:2em;
-  line-height: 1.4em;
-  margin-bottom: 2em;
-  float:left;
-  width:100%;
-  .next, .previous {
-    color: $post_nav_color;
-    margin-bottom: 1em;
-    display:inline;
-    .label {
-      font-weight: bold;
-      display:inline;
-      margin-right:1em;
-    }
-    .nav-link {
-      display:inline;
-    }
-    a {
-      text-decoration: none;
-      padding: 0px;
-    }
+  .page-link, .previous-link, .next-link {
+    @extend .label;
+    @extend .label-info;
+  }
+  .skip {
+    padding: 0.5em;
+    margin: 0.25em;
   }
 }
 
-#post-nav-previous {
-  float:left;
-  width:50%;
+a.news-link {
+  display: block;
+  margin-bottom: 0.5em;
 }
 
-#post-nav-next {
-  float:right;
-  width:50%;
+#widget-footer
+#logo-redhat {
+    background: url(../images/redhat-logo.svg) no-repeat;
+    display: block;
+    height: 25px;
+    text-indent: -9999px;
+    width: 78px;
 }
 
-#feed {
-  img {
-    vertical-align:middle;
-    text-decoration:  none;
+@media (max-width: 767px) {
+  #widget-footer
+  #logo-redhat {
   }
-  #feedicon {
-    a:link {
-      text-decoration:  none;
-    }
+
+}
+@media (min-width: 768px) {
+  #widget-footer
+  #logo-redhat {
+    float: right;
+
   }
 }
 
-#hero {
-  span {
-    padding: 10px 15px;
-    background: #4479BA;
-    color: #FFF;
-    position:relative;
-    width:50%;
-    margin-left: 30%;
-    margin-right: 30%;
-    top:-15px;
-  }
-  a {
-    color: #FFF;
-    text-decoration: none;
-  }
+.tail {
+  margin-top: 1em;
+  text-align: right;
+}
+
+// make sure prettyprint does not override those rules
+pre.prettyprint {
+  padding: 1em !important;
+  border: 1px solid #ccc !important;
+}
+
+// merge asciidoctor's tableblock style with patternfly's table table-striped table-bordered styles
+table {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-bordered;
 }

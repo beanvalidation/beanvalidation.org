@@ -2,6 +2,19 @@ title: Bean Validation
 # interpolate content of the markup like #{page.title}
 interpolate: true
 
+asciidoctor:
+  :safe: safe
+  :attributes:
+    experimental: true
+    imagesdir: .@
+    icons: font
+    idprefix: ''
+    idseparator: '-'
+    sectanchors: ''
+    linkattrs: ''
+    source-highlighter: prettify
+
+
 profiles:
   development:
     disqus_developer: true

@@ -5,8 +5,6 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket][jira]  
 
 ## Problem
@@ -78,13 +76,13 @@ which could be backward incompatible if people select the intermediate return ty
 #### Adding the methods to existing return type (2)
 
 The alternative would be to add `inIterable()` etc to `NodeBuilderDefinedContext`.
-But that would break the contextual and safety of the API as this interface is 
+But that would break the contextual and safety of the API as this interface is
 also returned by `atKey` and `atIndex`.
 
     interface ConstraintViolationBuilder {
 
         NodeBuilderDefinedContext addNode(String name);
-        
+
         ConstraintValidatorContext addConstraintViolation();
 
         /**
@@ -125,8 +123,8 @@ also returned by `atKey` and `atIndex`.
 
 #### Make `NodeBuilderCustomizableContext` a subinterface of the existing return type (3)
 
-Another approach would be to make `NodeBuilderCustomizableContext` a sub insterface of 
-`NodeBuilderDefinedContext`. 
+Another approach would be to make `NodeBuilderCustomizableContext` a sub insterface of
+`NodeBuilderDefinedContext`.
 
 Question: would that be backward compatible? That sounds like the best approach.
 
