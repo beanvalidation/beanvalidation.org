@@ -89,6 +89,7 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.6.4)
+    rake (10.5.0)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -121,5 +122,10 @@ DEPENDENCIES
   guard
   guard-livereload
   patternfly-sass (= 2.9.0)
+  rake
   rdiscount (~> 2.0.7)
+  sass (>= 3.3.0)
   sassc (~> 1.8)
+
+BUNDLED WITH
+   1.11.2
