@@ -446,6 +446,14 @@ And a BV 2.0 based logic (driven by the XML version?) would have the right ergon
 
 ## Alternative proposal: Consider type-constraints as instance-specific amendment of constraint set (Gunnar)
 
+**TL,DR** The two proposals have converged more or less in the course of the discussion;
+Essentially this proposal is a generalization of the more explicit approach which considers specific container types (lists, maps etc.) only.
+Instead of supporting only some explicitly "known" container types, this proposal seeks to generalize that for any generic container type, e.g. a custom `Tuple` type.
+
+Admittedly, the number of such container types is rather limited and we cover the largest part by the spec'ed support for list et al. in the other proposal. And cases like Tuple could be addressed by a custom extractor. So I'd be fine without this feature, as most cases are covered by default and we are extensible for others; We still could spec such generalization later on if we think it makes sense.
+
+### Motivation
+
 Currently, constraint meta-data is fixed for a given type by annotating the type's class definition or configuring it in XML.
 This proposal allows to amend that statically defined constraint meta-data with instance-specific meta-data applied to generic parameters declared by the type.
 
@@ -515,29 +523,14 @@ This proposal suggests to open that up, allowing to provide support for other ca
     @Valid
     private Optional<@Size(max=20) String> name;
 
-When encountering `@Valid`, we'll look for matching extractor implentations:
+When encountering `@Valid`, we'll look for matching extractor implentations.
+See Emmanuel's original proposal and my alternative above for extractor contracts.
 
-    public interface ValueExtractor {}
-
-    public interface SingleValueExtractor<O, I> extends ValueExtractor {
-        I extractValue(O outer);
-    }
-
-    public interface CollectionValueExtractor<O extends Iterable<I>, I> extends ValueExtractor {
-        Iterator<I> extractValues(O outer);
-    }
-
-    public class OptionalValueExtractor<T> implements SingleValueExtractor<Optional<T>, T> {
-        T extractValue(Optional<T> optional) {
-            return optional.get();
-        }
-    }
-
-A conforming implementation provides out-of-the-box extractor implementions for bean references (used by default) and collections.
+A conforming implementation provides out-of-the-box extractor implementations for bean references (used by default) and collections.
 
 Representing the `Optional` case in this generic fashion is nice, but two shortcomings need to be addressed:
 
-* There should be no element in the constraint violation path for the wrapped element, only the container itself
+* There should be no element in the constraint violation path for the wrapped element, only the container itself (this depends on the container type; For `Optional`, suppressing makes sense, but for `List` not)
 * The explicitly required `@Valid` makes it more verbose
 
 This could be mitigated by letting value extractors make this configurable:
@@ -565,6 +558,42 @@ That way, previous example could look like so, i.e. without `@Valid`:
 
     private Optional<@Size(max=20) String> name;
 
+#### Alternative for @Valid suggested by Emmanuel
+
+If a member, parameter or return value declaration presents an annotated type use, then @Valid is implied for that declaration. @Valid is permitted but redundant in this case.
+
+    public class Foo {
+        Bar<@NotNull Baz> baz;
+        // equivalent to
+        @Valid
+     Bar<@NotNull Baz> baz2;
+    }
+
+    public class Foo {
+        @Valid //optional
+        Buz<String, @Min(5) Integer> num;
+
+        // validates Buz as there is an optional @Valid here
+        // inside buz, cascade validation to @Foo
+        Buz<@Valid Foo, Integer> num;
+    }
+
+Note that this model, while regular, is not the behavior of Collection and Map:
+
+* `@Valid Collection<Foo>` is equivalent to `@Valid Collection<@Valid Foo>`
+* `@Valid Map<Foo, Bar>` is equivalent to `@Valid Collection<Foo, @Valid Bar>`
+
+TODO:
+
+Should we consider the former form as legacy and deprecated?
+
+* New code would write it as `Collection<@Valid Foo>` or `@Valid Collection<@Valid Foo>` for the verbose.
+* New code would write it as `Map<Foo, @Valid Bar>` or @Valid Collection<@Valid Foo>` for the verbose.
+* What should `@Valid Map<@Valid Foo, Bar>` do ?
+* How to disable that implicit `@Valid`, e.g. if I don't want cascaded validation of `Bar<@NotNull Baz> baz`?
+
+#### Misc.
+
 **Explicitly not supported:** Applying constraints to container types with the intention of targetting the wrapped value.
 I.e. the following would not work:
 
@@ -573,6 +602,8 @@ I.e. the following would not work:
     private Optional<String> name;
 
 Maybe that's ok, as in most cases there will be a type parameter. For JavaFX with its types such as `IntegerProperty` we could require compatible implementations to provide the required validator implementions e.g. for `@Min` + `IntegerProperty`. Or we ignore that, I've never heard of demand.
+
+TODO: Gauge demand for JavaFX support
 
 ## Attic
 
