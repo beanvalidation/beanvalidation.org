@@ -19,6 +19,9 @@ asciidoctor:
 profiles:
   development:
     disqus_developer: true
+  staging:
+    disqus_developer: true
+    base_url: http://staging.beanvalidation.org/
   production:
     base_url: http://beanvalidation.org/
     deploy:
