@@ -20,7 +20,7 @@ title: Home
             .body
               #{summarize( html_to_text( post.content ), 30 )}
             .tail
-              %a{:href=>"#{site.base_url}#{post.url}"} Read more
+              %a{:href=>"#{relative( post.url ) }"} Read more
               %hr
         #even-more
-          %a{:href=>"#{site.base_url}/news"}Even more news!
+          %a{:href=>"#{relative('/news')}"}Even more news!

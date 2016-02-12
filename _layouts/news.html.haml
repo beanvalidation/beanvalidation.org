@@ -11,10 +11,10 @@ layout: news_base
       .previous
         - if page.previous_post
           &laquo;
-          %a{:href => page.previous_post.url} #{page.previous_post.title}
+          %a{:href => relative(page.previous_post.url)} #{page.previous_post.title}
       .next
         - if page.next_post
           &raquo;
-          %a{:href => page.next_post.url} #{page.next_post.title}
+          %a{:href => relative(page.next_post.url)} #{page.next_post.title}
 
     #{page.disqus_comments}

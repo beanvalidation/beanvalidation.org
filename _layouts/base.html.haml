@@ -5,11 +5,11 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title
       #{site.title} - #{(page.url == "/") ? "Home" : (page.title)}
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/screen.css", :media=>'screen, projection' }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/print.css", :media=>'print' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{relative("/stylesheets/screen.css")}", :media=>'screen, projection' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{relative("/stylesheets/print.css")}", :media=>'print' }
     /[if lt IE 8]
-      %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'#{site.base_url}/stylesheets/ie.css', :media=>'screen, projection' }
-    %link{ :rel=>'alternate',  :type=>'application/atom+xml', :href=>'#{site.base_url}/news/news.atom' }
+      %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{relative("/stylesheets/ie.css")}", :media=>'screen, projection' }
+    %link{ :rel=>'alternate',  :type=>'application/atom+xml', :href=>"#{relative('/news/news.atom' )}" }
     %script{:src=>"//code.jquery.com/jquery-2.1.4.min.js"}
     %script{:src=>"/javascripts/patternfly.js"}
     %script{:src=>"/javascripts/bootstrap.js"}
@@ -23,26 +23,26 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a{:class=>"navbar-brand", :id=>"logo", :title=>"Bean Validation", :href=>site.base_url}
+          %a{:class=>"navbar-brand", :id=>"logo", :title=>"Bean Validation", :href=>"#{relative('/')}"}
             Bean Validation
         .collapse.navbar-collapse.navbar-collapse-1
           %ul#meny-primary.nav.navbar-nav.navbar-primary.navbar-right
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
-              %a{:href=>"#{site.base_url}"} Home
+              %a{:href=>"#{relative('/')}"} Home
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
-              %a{:href=>"#{site.base_url}/news"} News
+              %a{:href=>"#{relative('/news')}"} News
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
-              %a{:href=>"#{site.base_url}/1.1"} Specification
+              %a{:href=>"#{relative('/1.1')}"} Specification
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
-              %a{:href=>"#{site.base_url}/1.1/tck"} TCK
+              %a{:href=>"#{relative('/1.1/tck')}"} TCK
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
-              %a{:href=>"#{site.base_url}/1.1/ri"} RI
+              %a{:href=>"#{relative('/1.1/ri')}"} RI
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
-              %a{:href=>"#{site.base_url}/1.1/certified"} Certified
+              %a{:href=>"#{relative('/1.1/certified')}"} Certified
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
-              %a{:href=>"#{site.base_url}/contribute"} Contribute
+              %a{:href=>"#{relative('/contribute')}"} Contribute
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
-              %a{:href=>"#{site.base_url}/licensing"} Licensing
+              %a{:href=>"#{relative('/licensing')}"} Licensing
 
     ~ content
 

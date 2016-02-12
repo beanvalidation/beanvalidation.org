@@ -1,4 +1,5 @@
 require 'mytagger'
+require 'relative'
 require 'sassc'
 require 'bootstrap-sass'
 require 'patternfly-sass'
@@ -20,5 +21,6 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Disqus.new
 
   helper Awestruct::Extensions::Partial
+  helper Awestruct::Extensions::Relative
   helper Awestruct::Extensions::GoogleAnalytics
 end

@@ -1,10 +1,10 @@
 #newsfeed
   %h2
-    %a{:href=>"#{site.base_url}/news/news.atom"}<
-      %img{:src=>"#{site.base_url}/images/feed-icon-28x28.png", :alt=>"atom feed"}
-    %a{:href=>"#{site.base_url}/news/news.atom"}
+    %a{:href=>"#{relative('/news/news.atom')}"}<
+      %img{:src=>"#{relative('/images/feed-icon-28x28.png')}", :alt=>"atom feed"}
+    %a{:href=>"#{relative('/news/news.atom')}"}
       Latest news
   #newsfeed-message
     Stay up to date, subscribe to the&nbsp;
-    %a{:href=>"#{site.base_url}/news/news.atom"}>< news feed
+    %a{:href=>"#{relative('/news/news.atom')}"}>< news feed
     \.
