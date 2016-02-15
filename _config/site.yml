@@ -24,9 +24,6 @@ profiles:
     base_url: http://staging.beanvalidation.org/
   production:
     base_url: http://beanvalidation.org/
-    deploy:
-      host: beanvalidation.org
-      path: ~/public_html/topdomain-beanvalidation-org
 
 google_analytics:
   account: UA-24703879-1
