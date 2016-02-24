@@ -5,8 +5,6 @@ author: Emmanuel Bernard
 comments: true
 ---
 
-# #{page.title}
-
 [Link to JIRA ticket][jira]  
 [Related JIRA](https://hibernate.atlassian.net/browse/BVAL-499)  
 [Java generics glossary](/glossary/)  
