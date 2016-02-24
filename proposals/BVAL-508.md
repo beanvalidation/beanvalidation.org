@@ -605,6 +605,29 @@ Maybe that's ok, as in most cases there will be a type parameter. For JavaFX wit
 
 TODO: Gauge demand for JavaFX support
 
+#### Questions to address
+
+* does not propagate to method validation (i.e not on type parameter in the definition
+* getter vs field issue
+* Look of constraint on type use of all types to avoid `@Valid`
+* use dynamic constraint declaration when no extractor exists, use the extractor otherwise
+   * all or nothing ? i.e. use both? Probably confusing
+   but what about
+
+
+    public interface IdentifiedStringList<I> extends List<String> {
+        I getIdentifier();
+    }
+    And its usage:
+
+    @Valid
+    private IdentifiedStringList<@Min(1) Long> myLongIdentifiedStringList = ...;
+
+I guess it needs an extractor
+
+* if collection is to ue generic proposal, clarify how: as both, extractor first?
+
+
 ## Attic
 
 ### Type use annotations vs enlisting unwrapping logic
@@ -641,12 +664,12 @@ What to validate for: `@Min(23)` `List<IntegerProperty> bar`? `List` vs. `Intege
 What about `Optional<Optional<String>>`? Should we unwrap recursively?
 
 
-## Generic mechanism vs special cases
+### Generic mechanism vs special cases
 
 Should collections, optional, javafx properties be all handled by a unified model
 or should they be specific?
 
-## Generic container notion
+### Generic container notion
 
 Offer an service provider offering a way to consider and navigate the element(s) of a container.
 Container, Optional and Property will be provided as is but other container can be generalized.
