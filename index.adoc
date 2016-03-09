@@ -47,4 +47,4 @@ execution by CDI, entity insert or update by JPA).
 
 In other words, _run once, constrain anywhere_.
 
-http://./1.1/[Learn more and get the specification...]
+link:/1.1/[Learn more and get the specification...]

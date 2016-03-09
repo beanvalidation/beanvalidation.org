@@ -33,4 +33,4 @@ Do you have feedback? Talk to us:
 - in our https://hibernate.onjira.com/browse/BVAL[issue tracker]
 - or on the https://forum.hibernate.org/viewforum.php?f=26[Bean Validation forum]
 
-If you want to take the next step and contribute, read http://./contribute[how to contribute].
+If you want to take the next step and contribute, read link:/contribute[how to contribute].
