@@ -4,23 +4,14 @@ layout: default
 author: Emmanuel Bernard
 ---
 
-Bean Validation welcomes contribution and of any sort:
+Bean Validation 2.0 is currently under active development, so come and join to make the new revision happen!
+
+We welcome your contributions of any sort:
 
 * [feedback](#feedback)
 * [proposals](#proposals)
 * [contributions](#contributions)
-
-----
-
-**Note:**
-
-> The work on Bean Validation 1.1 is completed, so most of the effort will be
-> focused on [Hibernate Validator](http://hibernate.org/validator), the reference implementation, where we will
-> experiment the features we want to introduce in a next round of the
-> specification.**
-
-----
-
+* [joining the EG](#joining_eg)
 
 ## <a name="feedback"></a>Feedback
 
@@ -50,6 +41,12 @@ Interested? Read all about how to:
 * [concretely contributing to the specification](specification)
 * [work with the API and TCK sources](coding)
 * [improve this website](site).
+
+## <a name="joining_eg"></a>Joining the EG
+
+Bean Validation 2.0 operates under the [2.10 rules](https://jcp.org/en/resources/2.10) of the JCP (Java Community Process).
+
+If you either are or represent a Full member of the JCP, you may become a member of the JSR 380 expert group. If you are an Associate Member of the JCP, you may become an officially recognized contributor of this JSR. [Nominate yourself](https://www.jcp.org/en/jsr/egnom?id=380) to get started.
 
 ### License
 
