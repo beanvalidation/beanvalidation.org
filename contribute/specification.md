@@ -4,7 +4,7 @@ layout: default
 author: Emmanuel Bernard
 ---
 
-The specification proper is written in Docbook, an XML based documentation.
+The specification proper is written in [AsciiDoc](http://www.methods.co.nz/asciidoc/), a mark-up language geared towards good source readability as well as nice rendering.
 
 The recommended approach to contribute to the spec is via
 [GitHub pull requests](http://help.github.com/send-pull-requests/).
@@ -30,11 +30,6 @@ When doing a pull request, make sure to:
 * rebase your work rather than merge, non linear histories are annoying
 * respect the style (coding, number of columns per line etc)
 
-## Recommended tools to edit the Docbook specification
+## Recommended tools to edit the AsciiDoc specification
 
-By decreasing order of preference:
-
-1. [XMLMind XML Editor](http://www.xmlmind.com/xmleditor/)
-2. Any XML editor
-
-Make sure to not go beyond 80 columns per line.
+Refer to the [tips on asciidoctor.org](http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/) for AsciiDoc tooling including live previews.
