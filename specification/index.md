@@ -14,6 +14,11 @@ We'll also address other features further improving usefulness and usability of 
 The JSR proposal can be found at [jcp.org](https://www.jcp.org/en/jsr/detail?id=380).
 The latest draft version of Bean Validation 2.0 can be found [here](/latest-draft/spec/).
 
+### Active Proposals
+
+Changes to the specification are usually done via [proposals](/proposals/) for specific issues, investigating different alternatives and approaches.
+Feedback welcome!
+
 ## Bean Validation 1.1
 
 Bean Validation 1.1 ([JSR 349](https://www.jcp.org/en/jsr/detail?id=349)) was finished in 2013 and is part of Java EE 7.
