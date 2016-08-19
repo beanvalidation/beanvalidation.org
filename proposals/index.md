@@ -12,5 +12,6 @@ Also check out the [BVAL JIRA project](https://hibernate.atlassian.net/projects/
 | --------------------------------------------------------- | ---- | -------- | --------------------------- |
 | [BVAL-508](https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-508)  |  | [508](/proposals/BVAL-508) | Validating elements contained in a container (like collections)
 | [BVAL-214](https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-214)  |  | [214](/proposals/BVAL-214) | Ability to validate an object and a list of changes
+| [BVAL-498](https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-498)  |  | [498](/proposals/BVAL-498) | Obtain parameter names through reflection
 | ... |  |  | 
 | ... |  |  | 

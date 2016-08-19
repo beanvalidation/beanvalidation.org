@@ -16,4 +16,4 @@ In Java 8, parameter name retrieval was added to the reflection API eventually.
 
 == Proposition
 
-Mandate that the default implementation of `ParameterNameProvider` of conforming BV providers delegates to `Executable#getParameters()`/ `Parameter#getName()`. If the validated method has been compiled without the compiler option _-parameters_, the the same names as with BV 1.1 will be returned, i.e. `arg0`, `arg1` etc. If parameter names have been enabled by means of that option, the actual parameter names as contained in the source code will be returned.
+Mandate that the default implementation of `ParameterNameProvider` of conforming BV providers delegates to `Executable#getParameters()`/ `Parameter#getName()`. If the validated method has been compiled without the compiler option _-parameters_, then the same names as with BV 1.1 will be returned, i.e. `arg0`, `arg1` etc. If parameter names have been enabled by means of that option, the actual parameter names as contained in the source code will be returned.
