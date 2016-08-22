@@ -21,7 +21,8 @@ Obey to the following rules when working on the API sources:
   * Provide package-level documentation when adding new packages
   * Use `{@code}` instead of `<code>`, because it is more readable and `{@code}` also escapes meta characters
   * `@param`, `@return` and `@throw` don't end with a '.'
-  * If referring to other classes and methods use `{@link}`
+  * If referring to other classes and methods use `{@link}`. Use `{@link}` only once in a block. For additional 
+  references to the same source use `{@code}` instead of `{@link}`.
   * Use `<ul/>` instead of '-' for enumerations
   * Use `@since` to document in which spec revision a type/member was added to the API
   * Refer to [How to Write Doc Comments](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html) and Joshua Bloch's "Effective Java" for more information on writing good comments.
