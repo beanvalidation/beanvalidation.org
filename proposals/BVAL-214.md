@@ -16,7 +16,7 @@ When validating user input from a UI which is bound to the data model it is desi
 This prevents the model from being tainted with invalid values.
 For single properties there is `Validator#validateValue()` for this purpose, but an equivalent solution for class-level constraints is lacking today.
 
-## Proposition
+## Proposition 1
 
 Provide a new method `Validator#validateValues()` similar to the existing `validateValue()` which takes several property values and validates them as if they were the actual values of the given bean types.
 
@@ -195,3 +195,23 @@ Values passed to `validateValues()` could also be exposed through a proxy, but i
 
 * Not all beans can be proxied
 * Solution is not transparent to class-level constraint validators, they must not access fields directly, so we'd still need a vehicle for field constraints
+
+## Proposition 2
+
+This proposition is based on **Proposition 1** but changes some parts of the API.
+
+Since we depend on java 8 I think it would make sense to use `Supplier` to create the bean mocks for validation. This can look like this:
+
+    BeanValidator<ContactDataModel> contactValidator = BeanValidator.build(ContactDataModel.class);
+    contactValidator.withProperty("city", () -> cityField.getText()).
+        withProperty("zipCode", () -> zipCodeField.getText());
+
+In this example the `contactValidator` can use several times to validate the input in the UI since the values are not definied at creation of the `BeanValidator` instance but a `Supplier` is used to provide the value at runtime.
+
+In addition I think that it will be important to have a better feedback for the violations that are based on a UI field. If you have a violation based on the text of the `cityField` you normally want to mark that field in the UI. I think a `Consumer` can really help here:
+
+    contactValidator.withProperty("city", () -> cityField.getText(), v -> markCityField(v));
+    
+By doing so you will always get the set of violations that is based on the value in the city field. The 3 param of the method is defined as a `Consumer<Set<ConstraintViolation<String>>>` that will automatically called after each validation. If no violation was created based on the constraints of the `city` property an empty set will be passed to the `Consumer`. Otherwise the set will contain all the `ConstraintViolation` instances that were created based on the constraints of the `city` property.
+
+You can find a first idea of such an interface and 2 view controller examples here: https://github.com/guigarage/validation-playground/tree/master/src/main/java/com/guigarage/dynamicvalidation
