@@ -206,12 +206,87 @@ Since we depend on java 8 I think it would make sense to use `Supplier` to creat
     contactValidator.withProperty("city", () -> cityField.getText()).
         withProperty("zipCode", () -> zipCodeField.getText());
 
-In this example the `contactValidator` can use several times to validate the input in the UI since the values are not definied at creation of the `BeanValidator` instance but a `Supplier` is used to provide the value at runtime.
+In this example the `contactValidator` can use several times to validate the input in the UI since the values are not definied at creation of the `BeanValidator` instance but a `Supplier` is used to provide the value at runtime. By doing so the `BeanValidator` can be defined as:
+
+    public interface BeanValidator<T> {
+    
+        <V> BeanValidator<T> withProperty(String propertyName, Supplier<V> valueSupplier);
+    
+        Set<ConstraintViolation<T>> validate(Class<?>... groups);
+    
+        Set<ConstraintViolation<T>> validate(T baseBean, Class<?>... groups);
+    
+        static <U> BeanValidator<U> build(Class<U> beanClass) {
+            return ...;
+        }
+    }
+
+As you can see the interface provides 2 methods to validate a bean. In the second method a predefined bean can be passed. This bean will be mutated / cloned based on the configuration of the `BeanValidator`.
+
+If you want to define a hierarchy of beans and validate them you need at least one additional method:
+
+    <U> BeanValidator<T> withBeanValidator(String propertyName, BeanValidator<U> propertyValidator);
+
+By using this methods it will be quite easy to provide a structured mock for a bean type:
+
+    BeanValidator<ContactDataModel> contactValidator = BeanValidator.build(ContactDataModel.class);
+        contactValidator.withProperty("city", () -> cityField.getText()).
+                withProperty("zipCode", () -> zipCodeField.getText());
+
+    BeanValidator<SampleDataModel> validator = BeanValidator.build(SampleDataModel.class);
+        validator.withProperty("name", () -> nameField.getText());
+        validator.withBeanValidator("contact", contactValidator);
 
 In addition I think that it will be important to have a better feedback for the violations that are based on a UI field. If you have a violation based on the text of the `cityField` you normally want to mark that field in the UI. I think a `Consumer` can really help here:
 
     contactValidator.withProperty("city", () -> cityField.getText(), v -> markCityField(v));
     
 By doing so you will always get the set of violations that is based on the value in the city field. The 3 param of the method is defined as a `Consumer<Set<ConstraintViolation<String>>>` that will automatically called after each validation. If no violation was created based on the constraints of the `city` property an empty set will be passed to the `Consumer`. Otherwise the set will contain all the `ConstraintViolation` instances that were created based on the constraints of the `city` property.
+
+It's quite easy to create helper methods for the consumer and the supplier in application code:
+ 
+    private Supplier<String> provideText(final TextField textField) {
+         return () -> textField.getText();
+     }
+ 
+     private Consumer<Set<ConstraintViolation<String>>> markTextField(final TextField field) {
+         return v -> {
+             if (v.isEmpty()) {
+                 field.getStyleClass().remove("error-class");
+             } else {
+                 //TODO: show error at textfield based on violations
+                 field.getStyleClass().add("error-class");
+             }
+         };
+     }
+     
+     //Create BeanValidator:
+     BeanValidator<ContactDataModel> contactValidator = BeanValidator.build(ContactDataModel.class);
+             contactValidator.withProperty("city", provideText(cityField), markTextField(cityField)).
+                     withProperty("zipCode", provideText(zipCodeField), markTextField(zipCodeField));
+     
+     BeanValidator<SampleDataModel> validator = BeanValidator.build(SampleDataModel.class);
+             validator.withProperty("name", provideText(nameField), markTextField(nameField));
+             validator.withBeanValidator("contact", contactValidator);
+     
+After all this changes the `BeanValidator` interface might look like this:
+
+    public interface BeanValidator<T> {
+    
+        <V> BeanValidator<T> withProperty(String propertyName, Supplier<V> valueSupplier);
+    
+        <V> BeanValidator<T> withProperty(String propertyName, Supplier<V> valueSupplier, Consumer<Set<ConstraintViolation<V>>> propertyViolationConsumer);
+    
+        <U> BeanValidator<T> withBeanValidator(String propertyName, BeanValidator<U> propertyValidator);
+    
+        Set<ConstraintViolation<T>> validate(Class<?>... groups);
+    
+        Set<ConstraintViolation<T>> validate(T baseBean, Class<?>... groups);
+    
+        static <U> BeanValidator<U> build(Class<U> beanClass) {
+            return null;
+        }
+    }
+
 
 You can find a first idea of such an interface and 2 view controller examples here: https://github.com/guigarage/validation-playground/tree/master/src/main/java/com/guigarage/dynamicvalidation
