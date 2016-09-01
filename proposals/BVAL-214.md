@@ -1,7 +1,7 @@
 ---
 title: Validate a list of changes without applying them to the actual object
 layout: default
-author: Gunnar Morling
+author: Gunnar Morling, Hendrik Ebbers
 comments: true
 ---
 
