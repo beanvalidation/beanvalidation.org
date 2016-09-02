@@ -1,0 +1,72 @@
+= BVAL-496 Support for new date/time types (JSR 310)
+Gunnar Morling
+:awestruct-layout: default
+:toc:
+:numbered:
+:awestruct-comments: true
+
+https://hibernate.atlassian.net/browse/BVAL-496[Related JIRA]
+
+== Problem
+
+1. Java 8 comes with a whole new set of date/time related types, located in the https://docs.oracle.com/javase/8/docs/api/index.html?java/time/package-summary.html[java.time] package. Those should be supported with `@Past` and `@Future`.
+1. The time and time zone to compare to during validation are currently fixed to the JVM's (default) values. This should be made more flexible, so validation can be done for another time and/or time zone than the JVM's values.
+Use cases: use a different time for testing, obtain the TZ from the currently logged in user, use the logical time of a batch job
+
+== Proposition
+
+=== Mandate `@Past`/`@Future` support for more types
+
+* `java.time.Instant` (trivial, it's a fixed instant on the timeline)
+* `java.time.ZonedDateTime`, `java.time.OffsetDateTime` (also represent one specific instant on the timeline)
+
+Past/future semantics of these can be determined by comparing to the current instant on the timeline (currently that's the JVM's time, see further below for a proposal to make this more flexible).
+
+Besides these types representing an instant on the timeline, JSR 310 also defines data types which represent a date-time without a TZ:
+
+* `LocalDateTime` (could e.g. represent the date-time "2007-12-03T10:15:30")
+* `LocalDate` (could represent a person's birthday)
+* `Year`
+
+Past/future semantics of these *cannot* be determined by comparing to the current instant timeline. For instance, e.g. two persons in Australia and Europe may answer differently when being asked at the very same instant "Is 2017-01-01 in the future?". Instead, past/future semantics can only be determined relative to another such local date-time.
+
+Proposal: Obtain the date-time representing the local "now" using the JVM's time and default TZ (see further below for a proposal to make this more flexible). E.g. if the JVM's time is "2007-12-03T10:15:30+01:00 Europe/Paris", the `LocalDateTime` "2007-12-03T10:15:30" will be used to determine past/future semantics for these local date-times.
+
+=== Make current time and timezone customizable
+
+To address problem 2., add a new SPI which returns the time and time zone to be used by the validation engine for validating `@Past` and `@Future` constraints:
+
+    package javax.validation.spi;
+
+    import java.time.ZonedDateTime;
+
+    public interface TimeProvider {
+
+        // ZDT is a date-time with a time-zone in the ISO-8601 calendar system,
+        // such as 2007-12-03T10:15:30+01:00 Europe/Paris
+        ZonedDateTime getCurrentTime();
+    }
+
+BV implementations must use a default `TimeProvider` which returns the current date-time in the default time zone (typically obtained via `ZonedDateTime#now()`).
+
+When bootstrapping a validator factory or validator, an alternative time provider can be passed
+
+* via `Configuration` (also exposes the default time provider)
+* via `ValidatorContext`
+* using XML
+
+E.g.
+
+    Validator validator = Validation.byDefaultProvider()
+        .configure()
+        .timeProvider( myTimeProvider() )
+        .buildValidatorFactory()
+        .getValidator();
+
+Similar to message interpolators etc., custom time providers are CDI-enabled if CDI is present, allowing to inject needed contextual information such as the current requests locale.
+
+== Questions
+
+1. Proposal 2. assumes that the current time + TZ can be obtained in a rather global fashion, i.e. the logical time of a currently running batch job or the TZ from the currently logged in user's profile etc.
+Is there need to make this more contextual, i.e. expose the validated bean or similar? I can't see a use case for this atm.
+1. Are there other types in the JSR 310 API which should be supported?

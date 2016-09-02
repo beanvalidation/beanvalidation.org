@@ -5,9 +5,6 @@ author: Gunnar Morling, Hendrik Ebbers
 comments: true
 ---
 
-# #{page.title}
-
-[Link to JIRA ticket][jira]  
 [Related JIRA](https://hibernate.atlassian.net/browse/BVAL-214)  
 
 ## Problem
