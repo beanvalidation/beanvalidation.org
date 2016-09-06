@@ -106,12 +106,15 @@ For a given container + value type tuple,
 the extractor used is the one targeting the most specific container type that is a supertype of the container.
 Rules used are the same used by the constraint validator selection.
 
-Value type is the data returned by the extractor, for example:
 TODO: handles interfaces?
 
-* the collection elements
-* the map keys
-* the map values
+Value type is the data type returned by the extractor, for example:
+
+* the collection elements type
+* the map keys type
+* the map values type
+
+Container type and value type are not discovered per instance but per declaration site: in other words, extractor usage can be computed statically (assuming the list of extractor known).
 
 Depending on where constraints are placed, they will be applied to one or the other value type.
 The following rules apply to link the constraints to the value type and thus the extractor.
