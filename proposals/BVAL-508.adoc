@@ -88,7 +88,16 @@ Does that mean that if we find a type use constraint, there is no need for `@Val
 
 Containers of containers are applied recursively if necessary.
 
-IMPORTANT: TODO: infinite loops?
+[IMPORTANT]
+.TODO: infinite loops?
+====
+I don't think there is an issue of infinite loop.
+At runtime, we can stop when we encounter the same container instance for the second time.
+This is how we do it in Bean Validation today.
+
+For the metadata build up, I don't think we end up in an infinite loop.
+The container declarations remain written in the code and thus cannot infinitely loop.
+====
 
 ==== Which container extractor to use?
 
