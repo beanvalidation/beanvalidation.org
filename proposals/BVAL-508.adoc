@@ -133,7 +133,7 @@ class MapKeyExtractor extends ManyContainerValuesExtractor<Map<@ExtractedValue K
 [source,java]
 ----
 // declare List<T> as the type parameter targeted (index)
-class IntegerList extends ManyContainerValuesExtractor<@ExtractedValue(typeParameterHost=List.class, typeParameterIndex=0) IntegerList, Integer> {
+class IntegerListExtractor extends ManyContainerValuesExtractor<@ExtractedValue(typeParameterHost=List.class, typeParameterIndex=0) IntegerList, Integer> {
 }
 
 // declare List<T> as the type parameter targeted (name)
@@ -578,7 +578,7 @@ public class User {
 }
 ----
 
-This adds the `@Exists` constraint to constraint metadata for `<T>` of the `emails` list (i.e. in addition to the statically defined `@ValidAddress` ).
+This adds the `@Exists` constraint to constraint metadata for `<T>` of the `addresses` list (i.e. in addition to the statically defined `@ValidAddress` ).
 When validating a `User`, the engine will access `<T>` during cascaded validation (by invoking `List#getIterator()` or similar).
 Then both constraints, `@Exists` and `@ValidAddress` will be applied.
 
@@ -659,7 +659,7 @@ public class Foo {
     Bar<@NotNull Baz> baz;
     // equivalent to
     @Valid
- Bar<@NotNull Baz> baz2;
+    Bar<@NotNull Baz> baz2;
 }
 
 public class Foo {
