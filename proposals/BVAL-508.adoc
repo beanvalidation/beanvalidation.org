@@ -11,7 +11,7 @@ link:/glossary/[Java generics glossary]
 
 == Problem
 
-It is useful to be able to apply constrains on elements contained in a so called _container_.
+It is useful to be able to apply constraints on elements contained in a so called _container_.
 Examples of containers are:
 
 * `Collection`
@@ -106,7 +106,7 @@ For a given container + value type tuple,
 the extractor used is the one targeting the most specific container type that is a supertype of the container.
 Rules used are the same used by the constraint validator selection.
 
-TODO: handles interfaces?
+IMPORTANT: TODO: handles interfaces?
 
 Value type is the data type returned by the extractor, for example:
 
@@ -114,7 +114,7 @@ Value type is the data type returned by the extractor, for example:
 * the map keys type
 * the map values type
 
-Container type and value type are not discovered per instance but per declaration site: in other words, extractor usage can be computed statically (assuming the list of extractor known).
+Container type and value type are not discovered per instance but per declaration site: in other words, extractor usage can be computed statically (assuming the list of extractors known).
 
 Depending on where constraints are placed, they will be applied to one or the other value type.
 The following rules apply to link the constraints to the value type and thus the extractor.
@@ -438,7 +438,7 @@ In particular for JavaFX.
 @Size(5) StringProperty<String> name;
 ----
 
-In case the container and the contained values are both supported by a give constraint,
+In case the container and the contained values are both supported by a given constraint,
 `@ConstraintsApplyTo` becomes mandatory.
 
 This model is fully deterministic but:
@@ -452,7 +452,7 @@ I propose not to apply it and use the extractor level `@ConstraintsApplyTo(CONTA
 
 [source,java]
 ----
-// @NoNull is applied on a type parameter
+// @NotNull is applied on a type parameter
 class CustList extends List<@NotNull Customer> {
 }
 ----
@@ -667,7 +667,7 @@ public class Foo {
     Buz<String, @Min(5) Integer> num;
 
     // validates Buz as there is an optional @Valid here
-    // inside buz, cascade validation to @Foo
+    // inside Buz, cascade validation to @Foo
     Buz<@Valid Foo, Integer> num;
 }
 ----
@@ -706,11 +706,11 @@ IMPORTANT: TODO: Gauge demand for JavaFX support
 
 ==== Questions to address
 
-* does not propagate to method validation (i.e not on type parameter in the definition
+* does not propagate to method validation (i.e not on type parameter in the definition)
 * getter vs field issue
 * Look of constraint on type use of all types to avoid `@Valid`
 * use dynamic constraint declaration when no extractor exists, use the extractor otherwise
-** all or nothing ? i.e. use both? Probably confusing
+** all or nothing? i.e. use both? Probably confusing
    but what about
 
 
@@ -783,7 +783,7 @@ or should they be specific?
 
 === Generic container notion
 
-Offer an service provider offering a way to consider and navigate the element(s) of a container.
+Offer a service provider offering a way to consider and navigate the element(s) of a container.
 Container, Optional and Property will be provided as is but other container can be generalized.
 
 BTW: Container can be anything Iterable.
