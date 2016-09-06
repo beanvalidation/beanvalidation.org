@@ -82,7 +82,7 @@ to read contained value(s) and potentially apply constraints on them (see below)
 
 Does that mean that if we find a type use constraint, there is no need for `@Valid`?
 
-* that would allow us not to require `@Valid` for `Optional<@notNull String>`
+* that would allow us not to require `@Valid` for `Optional<@NotNull String>`
 * when constraint annotations are present on the member or method declaration itself,
   we also enforce the use of containers (assuming the proper use of `@ConstraintsApplyTo`)
 
@@ -95,9 +95,10 @@ IMPORTANT: TODO: infinite loops?
 An extractor is associated to a container type (e.g. `Collection`) and a value type (e.g. the element of the collection).
 For a given container + value type tuple,
 the extractor used is the one targeting the most specific container type that is a supertype of the container.
-Rules used are the same used by the constraint validator selection. TODO: handles interfaces?
+Rules used are the same used by the constraint validator selection.
 
 Value type is the data returned by the extractor, for example:
+TODO: handles interfaces?
 
 * the collection elements
 * the map keys
