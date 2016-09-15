@@ -1,4 +1,4 @@
-# How to build beanvalidation.org
+b# How to build beanvalidation.org
 
 A bit of Git, a bit of Ruby and you will get your local beanvalidation.org served.
 
