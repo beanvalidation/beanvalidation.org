@@ -1,0 +1,30 @@
+—
+title: Bean Validation 2.0 proposals
+layout: default
+
+== author: Gunnar Morling
+
+This page contains a list of proposals of changes to be included into the Bean Validation 2.0 specification.
+Feedback is very welcome on our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list].
+Also check out the https://hibernate.atlassian.net/projects/BVAL/summary[BVAL JIRA project] for issues which are considered for inclusion in Bean Validation 2.0 but don't have a proposal yet.
+
+|===
+|Issue Id (JIRA) |Done |Proposal |Description 
+
+//|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-208[BVAL-208] | |link:/proposals/BVAL-208[208] |Support groups translation when cascading operations
+|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-214[BVAL-214] | |link:/proposals/BVAL-214[214] |Ability to validate an object and a list of changes
+//|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-221[BVAL-221] | |link:/proposals/BVAL-221[221] |The constraint violation builder cannot put constraint on a top level map key
+//|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-232[BVAL-232] | |link:/proposals/BVAL-232[232] |Support cross-parameter constraints
+|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-234[BVAL-234] | |link:/proposals/BVAL-234[234] |Fix annoyance between JPA and Bean Validation when @Id @GeneratedValue and @NotNull are used
+//|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-238[BVAL-238] | |link:/proposals/BVAL-238[238] |Support for container injection in ConstraintValidator
+//|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-241[BVAL-241] | |link:/proposals/BVAL-241[241] |Support for method validation
+|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-248[BVAL-248] | |link:/proposals/BVAL-248[248] |Introduce an evaluation order for constraints defined on a single property
+//|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-259[BVAL-259] | |link:/proposals/BVAL-259[259] |Enforce evaluation of composed constraints stops on first validation error in case of @ReportAsSingleViolation
+//|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-265[BVAL-265] | |link:/proposals/BVAL-265[265] |Expose settings defined in XML in the Configuration API (for ConstraintValidatorFactory, MessageInterpolator etc)
+//|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-274[BVAL-274] | |link:/proposals/BVAL-274[274] |Improve metadata API to be more friendly towards method interceptor integrators
+//|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-314[BVAL-314] | |link:/proposals/BVAL-314[314] |Provide ability to disable validation and customize groups for method/constructor validation
+//|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-327[BVAL-327] | |link:/proposals/BVAL-327[327] |Determine whether or not getters should be considered when validating methods on interception
+|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-496[BVAL-496] | |link:/proposals/BVAL-496[496] |Support for new date/time types (JSR 310)
+|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-498[BVAL-498] | |link:/proposals/BVAL-498[498] |Obtain parameter names through reflection
+|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-508[BVAL-508] | |link:/proposals/BVAL-508[508] |Validating elements contained in a container (like collections)
+|===
