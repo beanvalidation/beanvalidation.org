@@ -1,9 +1,9 @@
-—
-title: Introduce an evaluation order for constraints defined on a single property
-layout: default
-author: Emmanuel Bernard
-
-== comments: true
+= Introduce an evaluation order for constraints defined on a single property
+Emmanuel Bernard
+:awestruct-layout: default
+:toc:
+:numbered:
+:awestruct-comments: true
 
 https://hibernate.onjira.com/browse/BVAL-248[Link to JIRA ticket]
 

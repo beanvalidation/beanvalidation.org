@@ -1,8 +1,6 @@
-—
-title: Bean Validation 2.0 proposals
-layout: default
-
-== author: Gunnar Morling
+= Bean Validation 2.0 proposals
+Gunnar Morling
+:awestruct-layout: default
 
 This page contains a list of proposals of changes to be included into the Bean Validation 2.0 specification.
 Feedback is very welcome on our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list].

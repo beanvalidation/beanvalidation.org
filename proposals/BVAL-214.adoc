@@ -1,9 +1,9 @@
-—
-title: Validate a list of changes without applying them to the actual object
-layout: default
-author: Gunnar Morling
-
-== comments: true
+= Validate a list of changes without applying them to the actual object
+Gunnar Morling
+:awestruct-layout: default
+:toc:
+:numbered:
+:awestruct-comments: true
 
 https://hibernate.atlassian.net/browse/BVAL-214[Related JIRA] 
 
