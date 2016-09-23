@@ -1,5 +1,5 @@
 = BVAL-496 Support for new date/time types (JSR 310)
-Gunnar Morling
+Gunnar Morling, Michael Nascimento Santos, Stephen Colebourne
 :awestruct-layout: default
 :toc:
 :numbered:
@@ -15,43 +15,56 @@ Use cases: use a different time for testing, obtain the TZ from the currently lo
 
 == Proposition
 
-=== Mandate `@Past`/`@Future` support for more types
+=== Mandate `@Past`/`@Future` support for `TemporalAccessors`
 
-* `java.time.Instant` (trivial, it's a fixed instant on the timeline)
-* `java.time.ZonedDateTime`, `java.time.OffsetDateTime` (also represent one specific instant on the timeline)
+JSR-310 design intentionally encouraged end users to choose concrete types for every day programming, but ensured there were  interfaces and classes that allowed third-party implementations to be  treated as first-class citizens within the framework. Building on that premise and the different use cases that lead to the creation of the several `java.time.temporal.TemporalAccessor` implementations in Java SE itself (and some in related projects such as https://github.com/ThreeTen/threeten-extra[ThreeTen-Extra]), basic support should be designed around the following requirements for the type:
 
-Past/future semantics of these can be determined by comparing to the current instant on the timeline (currently that's the JVM's time, see further below for a proposal to make this more flexible).
+* It implements `java.time.temporal.TemporalAccessor`
+* It implements `java.lang.Comparable` using a parameter `T` for which the type is assignable
+* It has a static method called `now` with a sole parameter whose type is `java.time.Clock`
 
-Besides these types representing an instant on the timeline, JSR 310 also defines data types which represent a date-time without a TZ:
+So, for any type `TA` that matches the above rules, `@Past` can be validated with code similar to:
 
-* `LocalDateTime` (could e.g. represent the date-time "2007-12-03T10:15:30")
-* `LocalDate` (could represent a person's birthday)
-* `Year`
+    //ClockProvider is documented below
+    Clock clock = clockProvider.getClock();
+    //TA is TemporalAccessor & Comparable
+    //Code for obtaining now static factory omitted
+    TA now = now.invoke(clock);
+    return t.compareTo(now) < 0;
 
-Past/future semantics of these *cannot* be determined by comparing to the current instant timeline. For instance, e.g. two persons in Australia and Europe may answer differently when being asked at the very same instant "Is 2017-01-01 in the future?". Instead, past/future semantics can only be determined relative to another such local date-time.
+This set of requirements makes the following Java SE types supported:
 
-Proposal: Obtain the date-time representing the local "now" using the JVM's time and default TZ (see further below for a proposal to make this more flexible). E.g. if the JVM's time is "2007-12-03T10:15:30+01:00 Europe/Paris", the `LocalDateTime` "2007-12-03T10:15:30" will be used to determine past/future semantics for these local date-times.
+* Specific points in the timeline: `java.time.Instant`, `java.time.OffsetDateTime`, `java.time.ZonedDateTime`
+* Wall-clock-like types: `java.time.LocalDate`, `java.time.LocalDateTime`, `java.time.LocalTime`
+* Other partial types: `java.time.MonthDay`, `java.time.OffsetTime`, `java.time.Year`, `java.time.YearMonth`
+* Non-ISO calendar types: `java.time.chrono.HirajDate`, `java.time.chrono.JapaneseDate`, `java.time.chrono.MinguoDate`, `java.time.chrono.ThaiBuddhistDate`
 
-=== Make current time and timezone customizable
+These rules would make the following Threeten-Extra types supported:
 
-To address problem 2., add a new SPI which returns the time and time zone to be used by the validation engine for validating `@Past` and `@Future` constraints:
+* Partial types: `org.threeten.extra.DayOfMonth`, `org.threeten.extra.DayOfYear`, `org.threeten.extra.YearWeek`, `org.threeten.extra.YearQuarter`
 
+==== Working around limitations in `ConstraintValidator` that prevent the above strategy
+
+=== Make current instant customizable
+
+To make the current instant customizable, a new SPI which returns `java.time.Clock` to be used by the validation engine for validating `@Past` and `@Future` constraints should be added:
+
+[source,java]
+----
     package javax.validation.spi;
-
-    import java.time.ZonedDateTime;
-
-    public interface TimeProvider {
-
-        // ZDT is a date-time with a time-zone in the ISO-8601 calendar system,
-        // such as 2007-12-03T10:15:30+01:00 Europe/Paris
-        ZonedDateTime getCurrentTime();
+        
+    import java.time.Clock;
+        
+    public interface ClockProvider {
+        Clock getClock();
     }
+----
 
-BV implementations must use a default `TimeProvider` which returns the current date-time in the default time zone (typically obtained via `ZonedDateTime#now()`).
+BV implementations must use a default `ClockProvider` which always returns `java.time.Clock.systemDefault()`.
 
-When bootstrapping a validator factory or validator, an alternative time provider can be passed
+When bootstrapping a validator factory or validator, an alternative clock provider can be passed
 
-* via `Configuration` (also exposes the default time provider)
+* via `Configuration` (also exposes the default clock provider)
 * via `ValidatorContext`
 * using XML
 
@@ -59,14 +72,26 @@ E.g.
 
     Validator validator = Validation.byDefaultProvider()
         .configure()
-        .timeProvider( myTimeProvider() )
+        .clockProvider( myClockProvider() )
         .buildValidatorFactory()
         .getValidator();
 
-Similar to message interpolators etc., custom time providers are CDI-enabled if CDI is present, allowing to inject needed contextual information such as the current requests locale.
+Similar to message interpolators etc., custom clock providers are CDI-enabled if CDI is present, allowing to inject needed contextual information such as the current requests locale.
+
+=== Extending `@Past`/`@Future` to support `nowIsValid`
+
+In many valid use cases, these constraints should consider the current date/time, called now in JSR-310, as valid, especially when it comes to `@Future`. Therefore, both annotations should be changed to include a new attribute, `nowIsValid` (maybe `nowAsValid`), whose default is `false` in order to maintain backwards compatibility.
+
+If the attribute is `true`, a return equals to `0` from `compareTo` will cause the constraint to be considered satisfied.
+
+=== "Simple" `TemporalAmount` implementations support
+
+=== `Duration` support
+
+=== `Period` support
 
 == Questions
 
 1. Proposal 2. assumes that the current time + TZ can be obtained in a rather global fashion, i.e. the logical time of a currently running batch job or the TZ from the currently logged in user's profile etc.
 Is there need to make this more contextual, i.e. expose the validated bean or similar? I can't see a use case for this atm.
-1. Are there other types in the JSR 310 API which should be supported?
+1. One of the most common scenarios with date/time types (applies to ranges of all types though) is to have a start and end property for which start must be (sometimes equal or) greater than now and end must be (sometimes equal or) greater than start. Are we not supporting this somehow?
