@@ -5,7 +5,7 @@ Emmanuel Bernard
 :numbered:
 :awestruct-comments: true
 
-https://hibernate.onjira.com/browse/BVAL-234[Link to JIRA ticket]
+https://hibernate.atlassian.net/browse/BVAL-234[Link to JIRA ticket]
 See also http://netbeans.org/bugzilla/show_bug.cgi?id=197845#c3[NetBeans issue]
 
 == Problem description

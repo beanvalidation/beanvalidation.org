@@ -5,7 +5,7 @@ Emmanuel Bernard
 :numbered:
 :awestruct-comments: true
 
-https://hibernate.onjira.com/browse/BVAL-248[Link to JIRA ticket]
+https://hibernate.atlassian.net/browse/BVAL-248[Link to JIRA ticket]
 
 == Goals
 
@@ -20,8 +20,8 @@ globally for the subsequent groups if a failure is found.
 == Related issues
 
 A partial solution for this could be provided by making sure `@ReportAsSingleViolation` does not
-validate the composing constraint if a composed constraint fails. See https://hibernate.onjira.com/browse/BVAL-259[BVAL-259] and
-https://hibernate.onjira.com/browse/BVAL-220[BVAL-220].
+validate the composing constraint if a composed constraint fails. See https://hibernate.atlassian.net/browse/BVAL-259[BVAL-259] and
+https://hibernate.atlassian.net/browse/BVAL-220[BVAL-220].
 
 == Solutions
 

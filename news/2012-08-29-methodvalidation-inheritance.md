@@ -12,7 +12,7 @@ As you know, the largest new feature will be
 of method parameters and return values using constraint annotations. Bean Validation 1.1
 [early draft 1](http://beanvalidation.org/news/2012/03/13/release-1-1-edr1/) lays the
 ground for this, and right now we're tackling some
-[advanced questions](https://hibernate.onjira.com/browse/BVAL-272) still open in that area
+[advanced questions](https://hibernate.atlassian.net/browse/BVAL-272) still open in that area
 (btw. if you haven't yet tried out the
 [reference implementation](http://in.relation.to/Bloggers/FirstAlphaReleaseOfHibernateValidator5)
 of ED1, this is the perfect time to do so and give us your feedback).

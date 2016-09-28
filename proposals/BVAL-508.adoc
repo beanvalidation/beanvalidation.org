@@ -5,7 +5,7 @@ Emmanuel Bernard
 :numbered:
 :awestruct-comments: true
 
-https://hibernate.onjira.com/browse/BVAL-508[JIRA] +
+https://hibernate.atlassian.net/browse/BVAL-508[JIRA] +
 https://hibernate.atlassian.net/browse/BVAL-499[Related JIRA] +
 link:/glossary/[Java generics glossary]
 

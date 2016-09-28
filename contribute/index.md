@@ -17,7 +17,7 @@ We welcome your contributions of any sort:
 
 Feedback is more than welcome, either by starting a discussion on our
 [forum](https://forum.hibernate.org/viewforum.php?f=26) or by opening/commenting an issue in
-our [bug tracker](https://hibernate.onjira.com/browse/BVAL).
+our [bug tracker](https://hibernate.atlassian.net/browse/BVAL).
 
 ## <a name="proposals"></a>Proposals
 

@@ -26,7 +26,7 @@ When doing a pull request, make sure to:
 
 * rebase your work off the latest master
 * name your topic branch by the issue number
-  (like [BVAL-42](https://hibernate.onjira.com/browse/BVAL-42))
+  (like [BVAL-42](https://hibernate.atlassian.net/browse/BVAL-42))
 * rebase your work rather than merge, non linear histories are annoying
 * respect the style (coding, number of columns per line etc)
 
