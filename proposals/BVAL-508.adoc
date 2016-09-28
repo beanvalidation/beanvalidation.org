@@ -54,6 +54,8 @@ public class OptionalContainerExtractor<T> implements SingleContainerValueExtrac
 }
 ----
 
+> GM: What's the purpose of the CONTAINED parameter? Or put in another way, when would an extractor not implement it with another type parameter as you did here with `T`?
+
 Bean Validation will have out of the box support for containers `Iterable` and `Map`.
 
 [IMPORTANT]
@@ -83,6 +85,9 @@ to read contained value(s) and potentially apply constraints on them (see below)
 Does that mean that if we find a type use constraint, there is no need for `@Valid`?
 
 * that would allow us not to require `@Valid` for `Optional<@NotNull String>`
+
+> GM: What about `Optional<@NotNull PandaBear>`? Should the presence of `@NotNull` alone trigger cascaded validation of the contained value? This doesn't seem right to me.
+
 * when constraint annotations are present on the member or method declaration itself,
   we also enforce the use of containers (assuming the proper use of `@ConstraintsApplyTo`)
 
@@ -124,7 +129,7 @@ An extractor must annotate the type parameter it targets as value type with `@Ex
 [source,java]
 ----
 // extract the key of a map: constraints on map keys are thus applied
-class MapKeyExtractor extends ManyContainerValuesExtractor<Map<@ExtractedValue Key,Value>>, Key> {
+class MapKeyExtractor<Key, Value> extends ManyContainerValuesExtractor<Map<@ExtractedValue Key, Value>, Key> {
 }
 ----
 
@@ -368,6 +373,9 @@ Collection<PlushGiraffe> giraffes
 
 The first form is the most readable.
 The second form should be supported for backward compatibility reasons for collections and maps
+
+> GM: There is a subtle difference between the two. The first one clearly only applies to the elements of the collection.
+> The second though affects elements of the collection (as "hard-coded" into the spec) and any other constraints on properties if the collection is of a specific type such as `MyFancyCollection`.
 
 Here are the various questions:
 
