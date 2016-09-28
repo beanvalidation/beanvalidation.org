@@ -23,3 +23,7 @@
 /.rvmrc
 /.ruby-gemset
 /.ruby-version
+
+#Eclipse
+.project
+.settings
