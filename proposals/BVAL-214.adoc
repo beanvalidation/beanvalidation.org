@@ -211,6 +211,10 @@ Values passed to `validateValues()` could also be exposed through a proxy, but i
 * Not all beans can be proxied
 * Solution is not transparent to class-level constraint validators, they must not access fields directly, so we'd still need a vehicle for field constraints
 
+### Misc. questions
+
+* Should cascaded validation be supported? We don't know the runtime type of an associated element prior to its instantiation, hence we cannot determine the constraints to apply.
+
 ## Proposition 2
 
 This proposition is based on **Proposition 1** but changes some parts of the API.
