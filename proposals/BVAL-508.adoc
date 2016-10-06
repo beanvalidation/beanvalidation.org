@@ -170,12 +170,14 @@ In this case the type parameter is identified as an ad-hoc "no type parameter".
 
 We can also enhance the extractor contract to return a generic `Path` object representing how navigation from the container to the value type happens (or is represented).
 
-IMPORTANT: TODO: refine the `Path` approach. One specific question is around indexing of List or keys for Maps. Template?
+IMPORTANT: TODO: refine the `Path` approach:
+
+* Indexing of List or keys for Maps. Template?
+* What `Kind` should nodes for type use constraints have? Should there be a new `Node.Kind`?
 
 ===== Alternative approach: extractors returning `ValueAndPath`
 
-Gunnar proposes an alternative to the extractor.
-This alternative provides:
+Gunnar proposes an alternative to the extractor.  This alternative provides:
 
 * one extractor per container type (and not container + value type)
 * the extractor selected is the one matching the most specific super type of the container
