@@ -23,7 +23,7 @@ our [bug tracker](https://hibernate.atlassian.net/browse/BVAL).
 
 If you think some new feature should be added to Bean Validation or you want to influence the shape
 of new Bean Validation features, come and join our
-[development mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev).
+[development mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev). In addition you can have a look at the current proposals discussions [here](/proposals/).
 
 ## <a name="contributions"></a>Contributions
 
