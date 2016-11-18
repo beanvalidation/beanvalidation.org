@@ -35,6 +35,14 @@ We differentiate single and plural for two reasons:
 * we could have different functional rules depending on the case
 * it avoids the unnecessary instantiation of an `Iterator` in the singular case
 
+[NOTE]
+.On the differentiation of single and plural
+====
+Some fine the separation of single and plural an overhead.
+While Bean Validation design is very sensitive to performance waste in the hot spots,
+let's re-discuss that point once we have a RI prototype and can do some tests.
+====
+
 
 [source,java]
 ----
@@ -56,7 +64,7 @@ public class OptionalContainerExtractor<T> implements SingleContainerValueExtrac
 
 > GM: What's the purpose of the CONTAINED parameter? Or put in another way, when would an extractor not implement it with another type parameter as you did here with `T`?
 
-Bean Validation will have out of the box support for containers `Iterable` and `Map`.
+Bean Validation will have out of the box support for containers `Iterable`, `Map` and `Optional`.
 
 [IMPORTANT]
 .TODO
