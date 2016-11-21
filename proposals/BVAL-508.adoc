@@ -345,9 +345,9 @@ Here is a scary example
 Optional<@ConstraintsApplyTo(CONTAINED_VALUES) List<Integer>> weirdo;
 ----
 
-`@ConstraintApplyTo` can be applied in type use slots.
+`@ConstraintsApplyTo` can be applied in type use slots.
 
-`@ConstraintApplyTo` offers a way to define at which level nested container resolution stops (if necessary).
+`@ConstraintsApplyTo` offers a way to define at which level nested container resolution stops (if necessary).
 Not by an explicit depth level but rather by its placement.
 
 Let's show some more examples for good measure
@@ -366,7 +366,7 @@ IMPORTANT: TODO: should we offer a per annotation override:
 `@NotNull(validAppliedTo=CONTAINED_VALUE)`.
 The drawback is that old annotations will have to add the new attribute to offer the option.
 
-WARNING: `@ConstraintApplyTo` can only be used on containers that have a single value type.
+WARNING: `@ConstraintsApplyTo` can only be used on containers that have a single value type.
 How to differentiate different value types otherwise ?
 
 ==== `@Valid`
