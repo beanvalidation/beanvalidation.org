@@ -1,0 +1,57 @@
+= Survey - Where do you use constraints on parameterized type?
+Emmanuel Bernard
+:awestruct-layout: news
+:awestruct-tags: [ "feedback" ]
+
+For Bean Validation 2, we are working on the support for `Collection<@Email String>`, `Optional<@Min(3) Integer>` etc.
+This has been a very common request and with Java 8 type use support, we can how achieve this.
+However, we need your feedback on how you would use such feature.
+
+== Some context
+
+We have support not only for collections, `Optional`, Java FX properties but also for what we call custom parameterized containers.
+We are wondering a few things about custom parameterized containers, namely how common they are.
+This will affect the trade-offs we want to make on the design of that feature.
+
+=== What is a _container_?
+
+A container is a type that wraps and exposes one or several values.
+The values is what you want to apply your constraints on.
+And the container is parameterized because at use site, you can declare what type it actually contains.
+For a `Set<@Email String>`, we want to make sure every string in the set is an email.
+
+Another less obvious example is a tuple class.
+
+[source,java]
+----
+public class Pair<V1,V2> {
+    V1 getV1() { ... }
+    V2 getV2(); { ... }
+}
+
+public class Address {
+    // street1 is mandatory, street2 is optional
+    // represented via a Pair object
+    Pair<@NotNull @Size(max=250) String, @Size(max=250) String> streetFields;
+}
+----
+
+Other examples are:
+
+* a tree structure containing specific object types
+* Guava's Multimap (or any multimap for that matter)
+
+== Questions
+
+We are wondering which type of parameterized containers you have in your code base
+and how likely you are going to apply constrains on their contained value.
+The form is a list of short questions that will help us get a better picture.
+
+Here is the link:https://docs.google.com/forms/d/e/1FAIpQLSc-s7fSYXiPSuZ0NaT0_-0jBx9TaxrZ-QiLRg_eVRxgrISjrw/viewform[link to the form in a separate page]
+or use it directly embedded below.
+
+++++
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc-s7fSYXiPSuZ0NaT0_-0jBx9TaxrZ-QiLRg_eVRxgrISjrw/viewform?embedded=true" width="760" height="2800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+++++
+
+Many thanks!
