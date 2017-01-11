@@ -11,8 +11,11 @@ Bean Validation 2.0 (JSR 380) is currently under development.
 It's planned to be part of Java EE 8 (can of course be used with plain Java SE as the previous releases) and will primarly focus on leveraging the language features introduced in Java SE 8 for the purposes of validation.
 We'll also address other features further improving usefulness and usability of Bean Validation as requested by the community and as time allows.
 
-The JSR proposal can be found at [jcp.org](https://www.jcp.org/en/jsr/detail?id=380).
-The latest draft version of Bean Validation 2.0 can be found [here](/latest-draft/spec/).
+### Resources
+
+* [Proposal for JSR 380](https://www.jcp.org/en/jsr/detail?id=380)
+* [Latest draft](/latest-draft/spec/)
+* [Changes to 1.1](https://github.com/beanvalidation/beanvalidation-spec/compare/5df58e169cbf8b70544bef3a9e7d2e25dd3a5e99...spec-full) (Asciidoc diff on GitHub)
 
 ### Active Proposals
 
