@@ -253,3 +253,13 @@ span.icon>.fa{
     }
   }
 }
+
+.navbar-pf .navbar-nav > li > a {
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.navbar-pf .navbar-primary > li > a.glow {
+  color: #c12110;
+  text-shadow: 0 0 15px #2f0804;
+}

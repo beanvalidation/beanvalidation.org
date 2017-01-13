@@ -28,8 +28,6 @@
         .collapse.navbar-collapse.navbar-collapse-1
           %ul#meny-primary.nav.navbar-nav.navbar-primary.navbar-right
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
-              %a{:href=>"#{relative('/')}"} Home
-            %li.menu-item.menu-item-type-post_type.menu-item-object-page
               %a{:href=>"#{relative('/news')}"} News
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
               %a{:href=>"#{relative('/specification')}"} Specification
@@ -43,7 +41,8 @@
               %a{:href=>"#{relative('/contribute')}"} Contribute
             %li.menu-item.menu-item-type-post_type.menu-item-object-page
               %a{:href=>"#{relative('/licensing')}"} Licensing
-
+            %li.menu-item.menu-item-type-post_type.menu-item-object-page
+              %a.glow{:href=>"#{relative('/latest-draft/spec/')}"} Latest BV 2.0 draft
     ~ content
 
 
