@@ -54,7 +54,28 @@ $jumbotron-margin-bottom: 30px;
   p {
     font-size: 24px;
   }
+
+  .btn-spec-11 {
+    background-color: #64ba5b;
+    border-color: #63b55b;
+    color: #fff;
+    &:hover {
+      background-color: #3f9c35;
+      border-color: #37892f;
+    }
+  }
+
+  .btn-spec-20 {
+    background-color: #ee9c4a;
+    border-color: #f6902a;
+    color: #fff;
+    &:hover {
+      background-color: #ec7a08;
+      border-color: #d36d07;
+    }
+  }
 }
+
 @media (min-width: 480px) {
   .jumbotron h1 {
     font-size: 40px;
