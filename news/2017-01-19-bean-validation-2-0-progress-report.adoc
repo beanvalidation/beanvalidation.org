@@ -17,7 +17,7 @@ This also gives us very good connections to the EGs of other specs such as JAX-R
 
 == First changes
 
-With the first EG members on board, we didn't loose time and began with the work on the new spec revision.
+With the first EG members on board, we didn't lose time and began with the work on the new spec revision.
 One of the initial actions was to convert the spec document from DocBook into the fabulous http://asciidoc.org/[AsciiDoc] format.
 Using AsciiDoc comes with many advantages which make working on the spec a much more enjoyable experience:
 
@@ -82,7 +82,7 @@ List<@NotNull @Email String> emails;
 ----
 Putting the constraints to the `String` type argument makes it apparent that they should not be applied to the list object itself, but rather to each contained element.
 
-Similarly, it's possible to put constraints to the elements of an array:
+Similarly, it's possible to apply constraints to the elements of an array:
 
 [source,java]
 ----
@@ -215,7 +215,7 @@ We are also https://java.net/projects/jax-rs-spec/lists/users/archive/2017-01/me
 This list of issues is not cast in stone, so if there is anything close to your heart, please speak up and let us know about your ideas.
 
 One more thing I'm really excited about is that Bean Validation will eventually get its own logo.
-Many thanks to Hendrik Ebbers who got in touch with a designer who already created this awesome draft:
+Many thanks to Hendrik Ebbers for getting in touch with a designer who already created this awesome draft:
 
 image::/images/bv_logo_scribble.jpg["Bean Validation logo draft",align="center",width="350"]
 
