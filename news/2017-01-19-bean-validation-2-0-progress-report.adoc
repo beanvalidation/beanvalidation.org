@@ -3,7 +3,7 @@ Gunnar Morling
 :awestruct-layout: news
 :awestruct-tags: [ "news", "progress-report" ]
 
-It has been a few months since we've kicked of the work on Bean Validation 2.0 (https://www.jcp.org/en/jsr/detail?id=380[JSR 380]).
+It has been a few months since we've kicked off the work on Bean Validation 2.0 (https://www.jcp.org/en/jsr/detail?id=380[JSR 380]).
 We have made some good progress, so I'd like to give you a quick update on what has been achieved so far and what the next steps will be.
 This is planned to be the first post of a regular blog series with JSR 380 status updates.
 
@@ -35,7 +35,7 @@ Java 8 comes with a variety of improvements to the language (e.g. Lambda express
 but also many useful additions to the class library.
 
 One prominent example of the latter is the new date and time API (https://www.jcp.org/en/jsr/detail?id=310[JSR 310]).
-Types such as `Instant`, `LocalDate` or `ZonedDateTime` are supported by the `@Past` and `@Future` constraints now (https://hibernate.atlassian.net/browse/BVAL-496[BVAL-496]):
+Types such as `Instant`, `LocalDate` or `ZonedDateTime` are now supported by the `@Past` and `@Future` constraints (https://hibernate.atlassian.net/browse/BVAL-496[BVAL-496]):
 
 [source,java]
 ----
@@ -43,7 +43,7 @@ Types such as `Instant`, `LocalDate` or `ZonedDateTime` are supported by the `@P
 private LocalDate deliveryDate;
 ----
 
-`@Past` and `@Future` also have a new attribute `orPresent()` now:
+`@Past` and `@Future` now also have a new attribute `orPresent()`:
 
 [source,java]
 ----
@@ -143,7 +143,8 @@ allowing providers of container types to bundle corresponding extractors with th
 Validation of container elements is by far the most complex feature and we'd like to gather some more feedback on it before committing to it.
 Hence its current proposal is added as http://beanvalidation.org/latest-draft/spec/#appendix-value-extraction[an appendix] to the spec draft.
 We are eager to learn about your thoughts and feedback in general, but it's especially important for this issue due to its complexity.
-So if you have any ideas around it, please make sure to let us know, e.g. by commenting below.
+We've compiled a list of http://beanvalidation.org/latest-draft/spec/#_open_questions[open questions] around this proposal.
+If you have thoughts on any of those, please make sure to let us know, e.g. by commenting below.
 
 == Other improvements
 
@@ -218,7 +219,7 @@ Many thanks to Hendrik Ebbers who got in touch with a designer who already creat
 
 image::/images/bv_logo_scribble.jpg["Bean Validation logo draft",align="center",width="350"]
 
-Could there be a better representation of Bean Validation thank Duke validating a bean?
+Could there be a better representation of Bean Validation than Duke validating a bean?
 This work should be finalized very soon.
 
 == Outreach
