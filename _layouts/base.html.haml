@@ -51,5 +51,5 @@
         Copyright (c) Red Hat, Inc., Emmanuel Bernard
         %a{:href=>"http://redhat.com", :id=>"logo-redhat"} Red Hat
 
-- if site.profile == production
-  = google_analytics_universal
+  - if site.enable_google_analytics
+    = google_analytics_universal

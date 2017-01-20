@@ -19,11 +19,14 @@ asciidoctor:
 profiles:
   development:
     disqus_developer: true
+    enable_google_analytics: false
   staging:
     disqus_developer: true
     base_url: http://staging.beanvalidation.org/
+    enable_google_analytics: false
   production:
     base_url: http://beanvalidation.org/
+    enable_google_analytics: true
 
 google_analytics:
   account: UA-24703879-1
