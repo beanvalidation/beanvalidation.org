@@ -71,7 +71,7 @@ Validator validator = Validation.byDefaultProvider()
     .getValidator();
 ----
 
-== Validation of container elements
+== Validation of `Collection`, `Optional` and other containers
 
 Looking at language changes in Java 8, the newly allowed locations for annotations (https://docs.oracle.com/javase/tutorial/java/annotations/type_annotations.html[type annotations]) prove themselves a very useful feature for Bean Validation.
 By putting constraints to type arguments of parameterized types, it finally gets possible to apply constraints to the elements of collections in a concise and intuitive way (https://hibernate.atlassian.net/browse/BVAL-508[BVAL-508]):
@@ -137,14 +137,16 @@ allowing to use type argument constraints with custom collection types such as t
 ListMultimap<@Valid Customer, @Email String> emailsByCustomer;
 ----
 
-We consider to detect custom extractors using the http://docs.oracle.com/javase/8/docs/api/index.html?java/util/ServiceLoader.html[service loader mechanism],
+We are considering to detect custom extractors using the http://docs.oracle.com/javase/8/docs/api/index.html?java/util/ServiceLoader.html[service loader mechanism],
 allowing providers of container types to bundle corresponding extractors with their library and making them automatically available to you.
 
 Validation of container elements is by far the most complex feature and we'd like to gather some more feedback on it before committing to it.
-Hence its current proposal is added as http://beanvalidation.org/latest-draft/spec/#appendix-value-extraction[an appendix] to the spec draft.
+Hence its current proposal is added as link:http://beanvalidation.org/latest-draft/spec/#appendix-value-extraction[an appendix] to the spec draft.
 We are eager to learn about your thoughts and feedback in general, but it's especially important for this issue due to its complexity.
-We've compiled a list of http://beanvalidation.org/latest-draft/spec/#_open_questions[open questions] around this proposal.
+
+We've compiled a list of link:http://beanvalidation.org/latest-draft/spec/#_open_questions[open questions] around this proposal.
 If you have thoughts on any of those, please make sure to let us know, e.g. by commenting below.
+The snapshot builds of the reference implementation (Maven GAV `org.hibernate:hibernate-validator:6.0.0-SNAPSHOT`) already implement the current proposal, so you can get it from the https://repository.jboss.org/nexus/content/repositories/public/[JBoss Maven repo] in order to play with that feature.
 
 == Other improvements
 
@@ -185,8 +187,7 @@ Provided you have enabled reflective parameter name access during compilation (u
 
 == Next steps
 
-We are currently working on picking up some loose ends around the proposal for container element validation.
-Once that is done, we feel it is the right time to put out an Alpha1 release of Bean Validation 2.0 and post it for Early Draft Review to the JCP.
+With all these things in place, we feel it is the right time to put out an Alpha1 release of Bean Validation 2.0 and will post it for Early Draft Review to the JCP within the next days.
 This should get the discussed changes into the hands of more people out there and will let us improve and hone the features added so far.
 
 In parallel we'll continue with some other features from the backlog.
@@ -213,14 +214,6 @@ The feedback when https://twitter.com/gunnarmorling/status/819631488358563840[sh
 We are also https://java.net/projects/jax-rs-spec/lists/users/archive/2017-01/message/4[working] with the expert group for JAX-RS 2.1 (https://www.jcp.org/en/jsr/detail?id=370[JSR 370]) to further improve integration of the two specs, e.g. in the https://java.net/jira/browse/JAX_RS_SPEC-539[field of I18N].
 
 This list of issues is not cast in stone, so if there is anything close to your heart, please speak up and let us know about your ideas.
-
-One more thing I'm really excited about is that Bean Validation will eventually get its own logo.
-Many thanks to Hendrik Ebbers for getting in touch with a designer who already created this awesome draft:
-
-image::/images/bv_logo_scribble.jpg["Bean Validation logo draft",align="center",width="350"]
-
-Could there be a better representation of Bean Validation than Duke validating a bean?
-This work should be finalized very soon.
 
 == Outreach
 
