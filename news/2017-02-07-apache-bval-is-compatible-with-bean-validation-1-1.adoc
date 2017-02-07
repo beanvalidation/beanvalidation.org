@@ -1,0 +1,17 @@
+= Apache BVal certified as Bean Validation 1.1 implementation
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "news", "certification" ]
+
+While the work on Bean Validation 2.0 is link:/news/2017/01/19/bean-validation-2-0-progress-report/[well underway],
+I've some good news to share on Bean Validation 1.1 today:
+http://bval.apache.org/[Apache BVal] has been certified as a compliant implementation of the link:/1.1/[Bean Validation 1.1] spec!
+
+Thanks to the great work of the friendly folks working on Apache BVal and TomEE, it has passed the TCK quite a while ago, so this announcement is long overdue.
+The tested version is http://bval.apache.org/downloads.html#apache-bval-112-released-nov-3-2016[Apache BVal 1.1.2],
+using the Bean Validation API signatures from http://mvnrepository.com/artifact/org.apache.tomee/javaee-api/7.0-1[org.apache.tomee:javaee-api:7.0-1] and
+version 1.1.4.Final of the http://docs.jboss.org/hibernate/beanvalidation/tck/1.1/reference/html_single/[Bean Validation TCK].
+
+The list of link:/1.1/certified/[certified implementations] has been updated accordingly.
+
+Congrats to the BVal team!
