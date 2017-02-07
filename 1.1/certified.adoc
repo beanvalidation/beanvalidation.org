@@ -10,7 +10,12 @@ author: Hardy Ferentschik
 
 |image:/images/hibernate.gif[Hibernate]|Hibernate Validator
 |http://hibernate.org/validator/downloads/[5.1.1.Final]
-|http://hibernate.org/validator[]
+|http://hibernate.org/validator/[]
 |image:/images/completed.png[Completed]
+
+|image:/images/bval-bean-small.png[Apache]|Apache BVal
+|http://bval.apache.org/downloads.html/[1.1.2]
+|http://bval.apache.org/[]
+|
 
 |===
