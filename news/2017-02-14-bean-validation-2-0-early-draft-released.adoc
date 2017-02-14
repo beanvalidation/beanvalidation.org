@@ -16,7 +16,7 @@ The updated API can be downloaded from https://jcp.org/aboutJava/communityproces
 The main theme of Bean Validation 2.0 is support for and taking advantage of Java 8.
 This concerns new language features such as type use annotations as well as library additions.
 
-An example of the latter is the support for new Java 8 date and time API (JSR 310).
+An example of the latter is the support for the new Java 8 date and time API (JSR 310).
 You can now use `@Past` and `@Future` on `javax.time` types such as `Instant`, `LocalDate` etc.:
 
 [source,java]
