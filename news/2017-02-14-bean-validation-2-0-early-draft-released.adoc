@@ -82,10 +82,11 @@ or the link:/2.0/spec/2.0.0.alpha1/#_what_s_new_in_2_0[specification document] i
 
 == What's next?
 
-The next step will be to bring the Bean Validation reference implementation, http://hibernate.org/validator/[Hibernate Validator], on par with the Early Draft 1.
-Most of the work for this has been done, so you can expect the first Alpha release of Hibernate Validator later this week.
+The next step will be to bring the Bean Validation reference implementation, http://hibernate.org/validator/[Hibernate Validator], up to par with the Early Draft 1.
+Most of the work for this has been done already, so you can expect the first Alpha release of Hibernate Validator 6 later this week.
+This will allow you to play around with all the new features and explore them in more depth.
 
-This release will add some features on top of what has been added to the spec so far, e.g. support for defining constraints using Lambda expressions.
+This release will add some features on top of what is in spec so far, e.g. support for defining constraints using Lambda expressions.
 We felt it'd be good to gain some experience with this and some other features by putting an implementation into the hands of users before adding them to the spec.
 More details on that once the reference implementation is out.
 
