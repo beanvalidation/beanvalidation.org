@@ -1,0 +1,114 @@
+= Bean Validation 2.0 Early Draft 1 is Out
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "release" ]
+
+I'm very happy to announce the first Early Draft Review of https://www.jcp.org/en/jsr/detail?id=380[JSR 380], Bean Validation 2.0!
+
+This Early Draft comprises all the spec changes done so far and it's a great opportunity for us to get feedback from the community at large.
+You can read the spec draft either directly link:/2.0/spec/2.0.0.alpha1/[on this website] or download it https://jcp.org/aboutJava/communityprocess/edr/jsr380/index.html[from jcp.org].
+A GitHub diff showing all the changes to the spec's AsciiDoc document done so far (sans some typo and style fixes) is available https://github.com/beanvalidation/beanvalidation-spec/compare/2a9d0ce21856386a8bf9a1d9e963ebffc049604a...9bfd5a34ca6c10d2a8a7b512b174aae7362259f0[here].
+
+The updated API can be downloaded from https://jcp.org/aboutJava/communityprocess/edr/jsr380/index.html[from jcp.org] or fetched from Maven Central using the coordinates _javax.validation:validation-api:2.0.0.Alpha1_.
+
+== What's New?
+
+The main theme of Bean Validation 2.0 is support for and taking advantage of Java 8.
+This concerns new language features such as type use annotations as well as library additions.
+
+An example of the latter is the support for new Java 8 date and time API (JSR 310).
+You can now use `@Past` and `@Future` on `javax.time` types such as `Instant`, `LocalDate` etc.:
+
+[source,java]
+----
+@Future
+private LocalDate deliveryDate;
+----
+
+For types that don't represent a specific instant but rather an interval of time,
+you can configure that the current month, year etc. should be considered valid, too,
+using the new attribute `orPresent()`:
+
+[source,java]
+----
+@Past(orPresent=true)
+private final Year inceptionYear = Year.of( 2017 );
+----
+
+An example where Bean Validation benefits from new language features in Java 8
+is the new mechanism for validating the elements of `Collection`, `Optional` and other container types.
+By annotating type arguments of generic types you can now put constraints to the container elements
+(as opposed to the container itself):
+
+[source,java]
+----
+List<@NotNull @Email String> emails;
+----
+
+Also cascaded validation (`@Valid`) gets more powerful with that.
+E.g. you can now perform a cascaded validation of map keys _and_ map values (only values were supported before):
+
+[source,java]
+----
+Map<@Valid Customer, @Valid Address> primaryAddressByCustomer;
+----
+
+Another use case for this is validation of values wrapped in a `java.util.Optional`:
+
+[source,java]
+----
+Optional<@Past LocalDate> getRegistrationDate();
+----
+
+We've baked in support for type argument constraints on types such as `Iterable`, `Map`, `Optional` and some more,
+but this isn't a fixed list.
+You can plug in custom implementations of the `ValueExtractor` contract
+which will allow you to put type argument constraints to other collection types (e.g. Google Guava's `Multimap`)
+or even collection classes from other JVM languages such as Ceylon.
+
+== What else?
+
+Support for JSR 310 and type argument constraints are just two of the new features.
+Some other changes are:
+
+* All constraints and a few other Bean Validation annotations are repeatable
+* Method parameter names to be shown in error messages are obtained using reflection (if enabled)
+* `ConstraintValidator#initialize()` is a default method,
+simplifying the implementation of constraint validators which don't need to access the annotation state
+* `ValidatorFactory` extends `AutoCloseable`, allowing to use it in `try-with-resources` blocks
+
+To learn more about the changes we've done so far, either check out our link:/news/2017/01/19/bean-validation-2-0-progress-report/[progress report] from a few weeks ago
+or the link:/2.0/spec/2.0.0.alpha1/#_what_s_new_in_2_0[specification document] itself.
+
+== What's next?
+
+The next step will be to bring the Bean Validation reference implementation, http://hibernate.org/validator/[Hibernate Validator], on par with the Early Draft 1.
+Most of the work for this has been done, so you can expect the first Alpha release of Hibernate Validator later this week.
+
+This release will add some features on top of what has been added to the spec so far, e.g. support for defining constraints using Lambda expressions.
+We felt it'd be good to gain some experience with this and some other features by putting an implementation into the hands of users before adding them to the spec.
+More details on that once the reference implementation is out.
+
+In terms of spec changes, some of the next features we are planning to work on are:
+
+* Adding some new constraints as per our link:/news/2016/09/15/which-constraints-to-add/[recent survey], e.g. `@Email`, `@NotEmpty`, `@NotBlank`
+* Ability to validate an object and a list of changes (https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-214[BVAL-214]) which would be useful for validating class-level constraints in UI use cases
+* Separating the message interpolation algorithm from the retrieval of messages from resource bundles (https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-217[BVAL-217])
+
+== What can you do to help?
+
+Glad you asked :)
+
+As in its previous versions, Bean Validation 2.0 is developed fully in the open.
+So we count on your feedback on the Early Draft as well as any other ideas or suggestions you may have around Bean Validation.
+One area where we are looking for feedback specifically is the proposal for link:/2.0/spec/2.0.0.alpha1/#appendix-value-extraction[container value validation].
+There is a link:/2.0/spec/2.0.0.alpha1/#_open_questions[list of open questions] towards the end of that section.
+If you have thoughts on any of those, please let us know.
+
+To get a discussion started, just post a comment below, send a message to our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list] or post in the https://forum.hibernate.org/viewforum.php?f=26[Bean Validation forum].
+If you find a bug or have a specific feature request, please raise them in the https://hibernate.atlassian.net/projects/BVAL/summary[issue tracker].
+
+And as Bean Validation is a true open source project, contributing e.g. in form of patches is easy, too.
+Check out the link:/contribute[contribution guide] to learn more.
+
+Finally, let me say a big thank you to everyone involved with making the Early Draft happen; your work is much appreciated!
