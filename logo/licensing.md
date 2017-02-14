@@ -1,5 +1,5 @@
 ---
-title: Licensing of the beanvalidation logo
+title: Licensing of the Bean Validation logo
 author: Hendrik Ebbers
 ---
 
