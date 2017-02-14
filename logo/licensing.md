@@ -1,6 +1,7 @@
 ---
 title: Licensing of the Bean Validation logo
 author: Hendrik Ebbers
+licence-type: 2-clause BSD license
 ---
 
 Copyright 2017 Hendrik Ebbers (http://www.guigarage.com/about)
