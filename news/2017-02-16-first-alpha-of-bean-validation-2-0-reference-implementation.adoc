@@ -1,0 +1,31 @@
+= First Alpha of Bean Validation 2.0 Reference Implementation Available
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "release" ]
+
+A few days after the release of the link:/news/2017/02/14/bean-validation-2-0-early-draft-released/[Bean Validation 2.0 Early Draft 1]
+there is now also a http://in.relation.to/2017/02/16/hibernate-validator-600-alpha1-out/[first version of the reference implementation] available.
+
+If you are using Apache Maven, add the following dependency to your _pom.xml_ to give it a test ride:
+
+[source,java]
+----
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>6.0.0.Alpha1</version>
+</dependency>
+----
+
+The 6.0.0.Alpha1 release provides all the functionality of the http://beanvalidation.org/2.0/spec/2.0.0.alpha1/[Early Draft 1].
+In addition there is support for
+
+* nested type argument constraints, e.g. `Map<String, Size(min=1) List<@NotNull Item>> itemsByCategory`;
+this addresses link:/2.0/spec/2.0.0.alpha1/#_open_questions[open question #1] from the proposal for the validation of container elements
+* definition of constraints using Lambda expressions and method references
+* validation of `java.time.Duration` via two new constraints, `@DurationMin` and `@DurationMax`
+
+If you think those things should be added to the spec, please let us know.
+Your feedback on these features as well as all the other Early Draft 1 additions will be much appreciated!
+
+Check out the original http://in.relation.to/2017/02/16/hibernate-validator-600-alpha1-out/[Hibernate Validator release announcement] for all the details.
