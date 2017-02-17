@@ -15,9 +15,10 @@ We'll also address other features further improving usefulness and usability of 
 
 * [Proposal for JSR 380](https://www.jcp.org/en/jsr/detail?id=380)
 * [Latest draft](/latest-draft/spec/)
-* Changes to 1.1 (Asciidoc diffs on GitHub)
-  - [Diff without typo fixes done for 1.1](https://github.com/beanvalidation/beanvalidation-spec/compare/2a9d0ce21856386a8bf9a1d9e963ebffc049604a...spec-full) (based on the [1.1-full-spec-diff](https://github.com/beanvalidation/beanvalidation-spec/tree/1.1-full-spec-diff) branch); recommended for reviewing Bean Validation 2.0 changes
-  - [Full diff](https://github.com/beanvalidation/beanvalidation-spec/compare/8916b9637206e20590c131c04ca91a06788b3d37...spec-full)
+* Changes to 1.1
+  - [HTML diff](/2.0/spec/2.0.0.alpha1/diff/)
+  - [Diff without typo fixes done for 1.1](https://github.com/beanvalidation/beanvalidation-spec/compare/2a9d0ce21856386a8bf9a1d9e963ebffc049604a...spec-full) - Asciidoc diff on GitHub based on the [1.1-full-spec-diff](https://github.com/beanvalidation/beanvalidation-spec/tree/1.1-full-spec-diff) branch; recommended for reviewing Bean Validation 2.0 changes
+  - [Full diff](https://github.com/beanvalidation/beanvalidation-spec/compare/8916b9637206e20590c131c04ca91a06788b3d37...spec-full) - Asciidoc diff
 
 ### Active Proposals
 
