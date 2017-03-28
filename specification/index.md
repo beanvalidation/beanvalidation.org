@@ -32,9 +32,9 @@ Feedback welcome!**
 
 * [Early Draft 2](/2.0/spec/2.0.0.alpha2/)
 * Changes to Early Draft 1
-  - [HTML diff](/2.0/spec/2.0.0.alpha2/diff-ed1/)
+  - [HTML diff](/2.0/spec/2.0.0.alpha2/diff/diff-to-2.0-ed1.html)
 * Changes to 1.1
-  - [HTML diff](/2.0/spec/2.0.0.alpha2/diff-1.1/)
+  - [HTML diff](/2.0/spec/2.0.0.alpha2/diff/diff-to-1.1.html)
 
 #### Early Draft 1
 
