@@ -1,0 +1,57 @@
+= Bean Validation 2.0 Alpha2 is out
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "release" ]
+
+I'm happy to announce the release of the Alpha2 release of the Bean Validation 2 API and specification.
+
+This release contains several improvements and clarifications around the http://beanvalidation.org/2.0/spec/2.0.0.alpha2/#appendix-value-extraction[validation of container elements] (think `List<@Email String>`):
+
+* Custom value extractors can now be passed in when bootstrapping a validator factory or validator (via API or XML)
+* Value extractors are detected via the Java service loader mechanism
+(e.g. allowing libraries to ship their own extractors for custom collection types)
+* Property paths for constraint violations on container elements will now contain a node of the new type `CONTAINER_ELEMENT`
+* Container element constraints can be specified in XML mapping descriptors
+
+There are also some new constraints, as per the community feedback on the link:/news/2016/09/15/which-constraints-to-add/[survey we did last year]:
+
+* `@NotEmpty`, `@NotBlank`
+* `@Email`
+* `@Positive`, `@Negative`
+
+The first three have been part of the reference implementation for a long time
+and have been promoted to the spec due to their frequent usage.
+The latter two are new constraints which address the very common use case of
+mandating that a numeric value should be positive or negative.
+It's configurable via the `strict()` attribute whether 0 should be considered as valid or not.
+
+You can find the complete list of addressed issues https://hibernate.atlassian.net/issues/?jql=project%20%3D%20BVAL%20AND%20fixVersion%20%3D%202.0.0.Alpha2[in JIRA].
+The spec text of the Alpha2 release is published http://beanvalidation.org/2.0/spec/2.0.0.alpha2/[here].
+The GAV coordinates of the API JAR are http://search.maven.org/#artifactdetails%7Cjavax.validation%7Cvalidation-api%7C2.0.0.Alpha2%7Cjar[javax.validation:validation-api:2.0.0.Alpha2].
+
+== TCK update
+
+Together with the spec we also released a new version of the Bean Validation TCK for testing the new features.
+Its coordinates are `org.hibernate.beanvalidation.tck:beanvalidation-tck-tests:2.0.0.Alpha3` (it should be synced to Maven Central soon).
+
+If you are wondering why the TCK is at Alpha3 already, that's because of a glitch with the Alpha2 release which wouldn't allow to run the TCK in a container.
+Hence we released the Alpha3 version right after that.
+
+== Trying it out yourself
+
+In order to try out the latest Bean Validation features, grab this week's release of
+the reference implementation, Hibernate Validator 6 Alpha2.
+
+It supports the Alpha2 version of the spec and some things more.
+Refer to the http://in.relation.to/2017/03/30/hibernate-validator-600-alpha2-out/[announcement post] for all the details.
+Please give it a try and let us know about your thoughts on these changes as well as any other things related to Bean Validation.
+
+We are now working towards the Public Draft of the spec (to be expected in April).
+The Public Draft will mostly polish the work done so far.
+Most prominently, the container element validation feature,
+which currently is http://beanvalidation.org/2.0/spec/2.0.0.alpha2/#appendix-value-extraction[an appendix] to the spec,
+will be incorporated in the actual specification sections.
+
+We've also planned to address some other feature requests, like http://beanvalidation.org/2.0/spec/2.0.0.alpha2/#appendix-value-extraction[splitting up] the notion of message interpolation and retrieving message bundles.
+If there are other things you'd like to see addressed in Bean Validation 2.0,
+please http://lists.jboss.org/pipermail/beanvalidation-dev/[get in touch] quickly, the clock is ticking :)
