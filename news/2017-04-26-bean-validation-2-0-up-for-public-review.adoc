@@ -1,0 +1,89 @@
+= Bean Validation 2.0 is up for Public Review
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "release" ]
+
+It's with great pleasure that I'm announcing that Bean Validation 2.0 (https://www.jcp.org/en/jsr/detail?id=380[JSR 380]) is entering the Public Review phase!
+
+You can read the Public Review Draft right here link:/2.0/spec/2.0.0.beta1/[on this website] or download it https://jcp.org/aboutJava/communityprocess/pr/jsr380/index.html[from jcp.org].
+We are also publishing HTML diffs, making it very easy for you to track the changes link:/2.0/spec/2.0.0.beta1/diff/diff-to-1.1/[since Bean Validation 1.1] and link:/2.0/spec/2.0.0.beta1/diff/diff-to-2.0-alpha2/[since the previous 2.0 release] (Alpha2).
+
+The updated API is deployed to Maven Central, its coordinates are _javax.validation:validation-api:2.0.0.Beta1_.
+Alternatively, it's part of the ZIP that can be downloaded from https://jcp.org/aboutJava/communityprocess/pr/jsr380/index.html[from jcp.org].
+
+A huge thank you goes to everyone in the expert group and in the wider community who helped to make this release happen!
+Whether it's discussions on the mailing list, reviewing pull requests, sending in your own patches or lobbying for the new spec revision - it's your contributions that make the difference.
+
+== What's New?
+
+Since the Alpha2 release, we've mainly focused on consolidating the container element validation feature (think `List<@Email String> emails`);
+the previous appendix describing this feature has been removed and its contents have been merged into the actual specification chapters.
+
+The related chapters and sections in the spec are:
+
+* 4. link:/2.0/spec/2.0.0.beta1/#valueextractordefinition[Value extractor definition]
+* 5.5. link:/2.0/spec/2.0.0.beta1/#constraintdeclarationvalidationprocess-containerelementconstraints[Container element constraints]
+* 5.7.5. link:/2.0/spec/2.0.0.beta1/#constraintdeclarationvalidationprocess-validationroutine-valueextractorresolution[Value extractor resolution]
+* 6.2. link:/2.0/spec/2.0.0.beta1/#validationapi-constraintviolation[ConstraintViolation] (changes around property paths in `ConstraintViolation` objects)
+* 7.11. link:/2.0/spec/2.0.0.beta1/#constraintmetadata-containerdescriptor[ContainerDescriptor and ContainerElementTypeDescriptor] (metadata API extensions)
+* 9.1.1. link:/2.0/spec/2.0.0.beta1/#xml-mapping-constraintdeclarationinxml[Constraint declaration in XML]
+* 10.5. link:/2.0/spec/2.0.0.beta1/#exception-valueextractordefinition[ValueExtractorDefinitionException]
+* 10.6. link:/2.0/spec/2.0.0.beta1/#exception-valueextractordeclaration[ValueExtractorDeclarationException]
+
+Note that we have decided to remove the support for container element validation of arrays which had been part of the previous proposal.
+
+http://lists.jboss.org/pipermail/beanvalidation-dev/2017-April/001273.html[As we found out], there's an ambiguity when type annotations are used on an element like a field of a Java bean:
+in this case it isn't clear whether the annotation applies to the declaration itself (i.e. the array) or the component type of the array (i.e. the array elements).
+We felt that it is better to play it safe and let Bean Validation implementations experiment with this first and bring back array support later on.
+The names and semantics used in the spec and API should be generic enough so that they should suit for the array case, too, should we decide to add it down the road.
+
+Together with the Java EE expert group we've also worked on a clarification regarding the location of the Bean Validation deployment descriptor.
+The Bean Validation spec only ever meant to support _META-INF/validation.xml_ for this, but the Java EE spec unfortunately mentioned _WEB-INF/validation.xml_ for web modules.
+While this has never been supported by the Bean Validation reference implementation and most application servers,
+a community member thankfully brought the inconsistency between the specs to our attention recently.
+The issue has been fixed by having the Java EE spec refer to Bean Validation for the descriptor location, which clearly says that it always is _META-INF/validation.xml_.
+Servers which happen to support the alternative location, should phase out support for this, e.g. by raising a warning when detecting its usage and recommending to use the standardized location.
+
+The complete list of changes in the Beta1 release can be found in the link:/2.0/spec/2.0.0.beta1/diff/diff-to-2.0-alpha2/#changelog[change log].
+
+To learn more about all the new features we've added to Bean Validation 2 so far, check out the link:/news/2017/01/19/bean-validation-2-0-progress-report/[previous posts] link:/news/2017/02/14/bean-validation-2-0-early-draft-released/[in this blog],
+the link:/2.0/spec/2.0.0.alpha1/#_what_s_new_in_2_0[What's new] section in the spec draft or simply the link:/2.0/spec/2.0.0.beta1/diff/diff-to-1.1/[full HTML diff] with all the changes.
+
+Another helpful resource may be https://speakerdeck.com/gunnarmorling/bean-validation-2-dot-0-support-fur-java-8-und-mehr[the slides] of a (German) presentation on Bean Validation 2.0 I recently did at JavaLand.
+
+== What's next?
+
+Currently we're focusing on updating the reference implementation to the latest spec changes.
+You can expect a new release of http://hibernate.org/validator/[Hibernate Validator 6] some time next week.
+This will let you experiment with all the new features and explore them in more depth.
+
+We are also planning to pick up some remaining loose ends around container element validation and - if we get to it -
+the separation of the message interpolation algorithm from the retrieval of messages from resource bundles (https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-217[BVAL-217]).
+
+There is a https://hibernate.atlassian.net/issues/?jql=statusCategory%20%3D%20new%20AND%20project%20%3D%2010090%20AND%20fixVersion%20%3D%2028800%20ORDER%20BY%20priority%20DESC%2C%20key%20ASC[couple of issues] assigned to the Beta2 release already.
+If you think something else should really be in there, please let us know as soon as possible!
+
+Apart from work on the spec itself and the reference implementation there is also the TCK
+(the test suite all implementations need to run in order to ensure their compatibility).
+There are quite a few tests to add for the recently added features.
+We already got many within the Hibernate Validator's test suite, so we can simply move over those.
+But there also some new tests to be written.
+
+The Public Review runs until May 26th, followed by Public Review Ballot (the voting by the JCP executive committee) until June 12th.
+If all goes well, we'll release the Proposed Final Draft soon after that, followed by the submission to the Final Approval Ballot in July, aligning with the overall schedule for https://www.jcp.org/en/jsr/detail?id=366[Java EE 8].
+
+== What can you do to help?
+
+Reviewing the spec changes (all or part of them) would be super-awesome!
+There is a very handy link:/2.0/spec/2.0.0.beta1/diff/diff-to-1.1/[HTML diff] (did I mention it before?) which makes it easy to spot all the changes since Bean Validation 1.1.
+
+Another thing you can do is to try out the reference implementation in your applications (ideally the new version to be released next week).
+Do the new features work as intended? Is anything missing, not behaving as described in the spec or generally just not working as you think it should?
+Then please tell us.
+The more feedback we get, the better.
+
+To post your feedback, just add a comment below, send a message to our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list] or post in the https://forum.hibernate.org/viewforum.php?f=26[Bean Validation forum].
+If you find a bug or have a specific feature request, please raise it in the https://hibernate.atlassian.net/projects/BVAL/summary[issue tracker].
+
+Everything in Bean Validation is open source, so you also can send in actual patches: to the API, the spec document or the TCK.
+If you are interested, you can find out all the details to get started in the link:/contribute[contribution guide].
