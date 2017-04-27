@@ -69,7 +69,7 @@ There are quite a few tests to add for the recently added features.
 We already got many within the Hibernate Validator's test suite, so we can simply move over those.
 But there also some new tests to be written.
 
-The Public Review runs until May 26th, followed by Public Review Ballot (the voting by the JCP executive committee) until June 12th.
+The Public Review runs until May 27th, followed by Public Review Ballot (the voting by the JCP executive committee) until June 12th.
 If all goes well, we'll release the Proposed Final Draft soon after that, followed by the submission to the Final Approval Ballot in July, aligning with the overall schedule for https://www.jcp.org/en/jsr/detail?id=366[Java EE 8].
 
 == What can you do to help?
