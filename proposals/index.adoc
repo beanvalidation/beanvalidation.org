@@ -24,5 +24,5 @@ Also check out the https://hibernate.atlassian.net/projects/BVAL/summary[BVAL JI
 //|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-327[BVAL-327] | |link:/proposals/BVAL-327[327] |Determine whether or not getters should be considered when validating methods on interception
 |https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-496[BVAL-496] | |link:/proposals/BVAL-496[496] |Support for new date/time types (JSR 310)
 |https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-498[BVAL-498] | |link:/proposals/BVAL-498[498] |Obtain parameter names through reflection
-|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-508[BVAL-508] | |link:/proposals/BVAL-508[508] | link:/proposals/BVAL-508-appendix[Appendix to the Early Draft] |Validating elements contained in a container (like collections)
+|https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-508[BVAL-508] | |link:/proposals/BVAL-508[508]; link:/proposals/BVAL-508-appendix[Appendix to the Early Draft] |Validating elements contained in a container (like collections)
 |===
