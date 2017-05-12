@@ -1,0 +1,23 @@
+= Survey - Behavior of @Positive and @Negative constraints
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "feedback" ]
+
+Based on our link:/news/2016/09/15/which-constraints-to-add/[previous survey] we've recently added the new constraints `@Positive` and `@Negative` to the Bean Validation spec.
+Now we've had an http://lists.jboss.org/pipermail/beanvalidation-dev/2017-May/001309.html[interesting discussion] on some details of those constraints,
+e.g. should 0 (zero) be considered as a valid value by default?
+I.e. what's the more common use case, to consider 0 as valid or not?
+
+So we thought let's make another survey to gauge the community feedback on those issues.
+You'd help us very much by answering the two questions below, you won't need more than a minute.
+
+If you have any other thoughts you'd like to share, either add an answer to the free-text question or post a comment below.
+The survey will be open until the end of next week.
+
+Thanks a lot for your help!
+
+++++
+<div style="text-align: center">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJR1k6NdMjjV3xj8dPA4AMIqP5LZBdq_FKmqmKWLU_KX2few/viewform?embedded=true" width="760" height="1300" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+</div>
+++++
