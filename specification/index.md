@@ -28,7 +28,15 @@ Feedback welcome!**
   - [Full diff](https://github.com/beanvalidation/beanvalidation-spec/compare/8916b9637206e20590c131c04ca91a06788b3d37...spec-full) - Asciidoc diff
   - [API diff (generated using japicmp)](http://ci.hibernate.org/view/Validator/job/beanvalidation-api-master/ws/target/japicmp/default-cli.html)
 
-#### Beta1 (Public Review Draft 1)
+#### Beta2 (Public Review Draft 1)
+
+* [Beta2](/2.0/spec/2.0.0.beta2/)
+* Changes to Beta1
+  - [HTML diff](/2.0/spec/2.0.0.beta2/diff/diff-to-2.0-beta1/)
+* Changes to 1.1
+  - [HTML diff](/2.0/spec/2.0.0.beta2/diff/diff-to-1.1/)
+
+#### Beta1
 
 * [Beta1](/2.0/spec/2.0.0.beta1/)
 * Changes to Alpha2
