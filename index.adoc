@@ -13,7 +13,7 @@ Bean Validation is a Java specification which
 - provides the APIs to validate parameters and return values of methods
   and constructors
 - reports the set of violations (localized)
-- runs in Java SE but is integrated in Java EE (6 and 7)
+- runs in Java SE but is integrated in Java EE (6 and 7; Bean Validation 2.0 is planned to be part of Java EE 8)
 
 [source,java]
 ----

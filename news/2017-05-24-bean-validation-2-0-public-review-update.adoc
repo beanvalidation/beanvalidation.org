@@ -1,0 +1,108 @@
+= Update to the Bean Validation 2.0 Public Review Draft
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "release" ]
+
+While the Bean Validation 2.0 spec (https://www.jcp.org/en/jsr/detail?id=380[JSR 380]) has been link:/news/2017/04/26/bean-validation-2-0-up-for-public-review/[put up for Public Review] last month,
+we've continued to address some more outstanding issues, added some clarifications etc.
+
+Of course we wanted to get out these improvements as quickly as possible,
+so we've published an update to the Public Review draft
+(the JCP rules https://jcp.org/en/procedures/jcp2#3.4.4[explicitly foresee] the possibility of updates during the Public Review phase).
+The updated draft can be found link:/2.0/spec/2.0.0.beta2/[here on beanvalidation.org] or you can download it https://jcp.org/aboutJava/communityprocess/pr/jsr380/index.html[from jcp.org].
+
+As always the updated API is deployed to Maven Central, using the GAV coordinates are _javax.validation:validation-api:2.0.0.Beta2_.
+Alternatively, it's part of the ZIP that can be downloaded from https://jcp.org/aboutJava/communityprocess/pr/jsr380/index.html[from jcp.org].
+
+== What has changed since the original Public Review Draft?
+
+link:/2.0/spec/2.0.0.beta2/#valueextractordefinition[Value extractors] got more flexible and can extract values from non-generic wrapper types now.
+
+This allows to put all the constraints for numeric types (e.g. `@Min`, `@Max`, `@DecimalMin`, `@DecimalMax` etc.) to the optional numeric wrapper types in Java 8: `OptionalInt`, `OptionalLong` and `OptionalDouble` (https://hibernate.atlassian.net/browse/BVAL-579[BVAL-579]).
+Also other JVM languages with their own numeric types benefit from that, as one can define value extractors for such types and apply all existing numeric constraints to them.
+The key to this is the link:/2.0/spec/2.0.0.beta2/#valueextractordefinition-extractedvalue[new attribute] `@ExtractedValue#type()` which allows to specify the type of the wrapped element for extractors of non-generic types.
+
+Another improvement related to constraints on the elements of (generic) containers is the possibility to build property paths leading to a container element using the node builder API exposed via `ConstraintValidatorContext` (https://hibernate.atlassian.net/browse/BVAL-592[BVAL-592]).
+For instance this will let you declare the container type and type argument index of a container element from within a custom class-level constraint validator.
+
+The following validator for the `ValidUser` constraint will ensure that an entry for the `WORK` key is in the addresses map if the user's type is `EMPLOYEE`.
+If not, it will create a property path pointing to the map's value, with the container type (`Map.class`) and type argument index (1, representing the `V` type parameter, as it's about the map value):
+
+[source,java]
+----
+@ValidUser
+public class User {
+
+    private UserType type;
+    private Map<AddressType, Address> addressesByType;
+
+    // getters, setters etc. ...
+}
+----
+
+[source,java]
+----
+@Constraint(validatedBy=UserValidator.class)
+public @interface ValidUser {
+    // constraint attributes ...
+}
+----
+
+[source,java]
+----
+public class UserValidator implements ConstraintValidator<ValidUser, User> {
+
+    @Override
+    public boolean isValid(User user, ConstraintValidatorContext context) {
+        context.disableDefaultConstraintViolation();
+
+        if ( user.getType() == UserType.EMPLOYEE &&
+                user.getAddressesByType().get( AddressType.WORK ) == null ) {
+            context.buildConstraintViolationWithTemplate( "Work address needed for employee" )
+                .addContainerElementNode( "addressesByType", Map.class, 1 )
+                    .inIterable()
+                        .atKey( AddressType.WORK )
+                .addConstraintViolation();
+
+            return false;
+        }
+
+        return true;
+    }
+}
+----
+
+One further improvement to mention is that the specification now recommends the module name "java.validation" (https://hibernate.atlassian.net/browse/BVAL-517[BVAL-517]),
+should Bean Validation providers wish to distribute the API as a module for the Java Platform Module System (JPMS) as currently developed under https://www.jcp.org/en/jsr/detail?id=376[JSR 376].
+This could be used within a _module-info.java_ descriptor or via the manifest entry "Automatic-Module-Name" when preparing the module to be used as an automatic module.
+
+Note that this is a non-binding recommendation as of Bean Validation 2.0.
+A mandatory module name (which could be "java.validation" or something else) -- and potentially other requirements relating to the module system --
+will be mandated in a future revision of the spec,
+once the module module system has been finalized and best practices around modules have emerged.
+
+The complete list of all issues can be found in the https://hibernate.atlassian.net/secure/ReleaseNote.jspa?projectId=10090&version=28800[release notes].
+There are also HTML diffs which highlight what has changed since the link:/2.0/spec/2.0.0.beta2/diff/diff-to-2.0-beta1/[original Public Review Draft] (2.0.0.Beta1)
+and since link:/2.0/spec/2.0.0.beta2/diff/diff-to-1.1/[Bean Validation 1.1].
+
+== New releases of reference implementation and TCK
+
+Together with the specification we've also released a corresponding version of the reference implementation Hibernate Validator 6.
+Refer to the http://in.relation.to/2017/05/24/hibernate-validator-600-beta2-out/[announcement blog post] for more details.
+This release lets you try out all the new features added in Bean Validation 2.0.
+
+Also the TCK (test compatibility kit) has been updated and released.
+You can learn more in the http://docs.jboss.org/hibernate/beanvalidation/tck/2.0/reference/html_single/[TCK documentation] and the https://hibernate.atlassian.net/secure/ReleaseNote.jspa?projectId=10100&version=29100[release notes].
+
+== What can you do to help?
+
+The Public Review phase still runs for a few more days, followed by the Public Review Ballot (the voting by the JCP executive committee) until June 12th.
+So it's the perfect time for reviewing the link:/2.0/spec/2.0.0.beta1/diff/diff-to-1.1/[spec changes], we are very curious about your feedback.
+Also it'd be of great help if you tried out the reference implementation in your applications and let us know how it works.
+Any feedback is appreciated!
+
+To post your feedback, just add a comment below, send a message to our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list] or post in the https://forum.hibernate.org/viewforum.php?f=26[Bean Validation forum].
+If you find a bug or have a specific feature request, please raise it in the https://hibernate.atlassian.net/projects/BVAL/summary[issue tracker].
+
+Everything in Bean Validation is open source, so you also can send in actual patches: to the API, the spec document or the TCK.
+If you are interested, you can find out all the details to get started in the link:/contribute[contribution guide].
