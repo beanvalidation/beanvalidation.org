@@ -341,6 +341,7 @@ function cdopchideExtracts()
 </head>
 <body onload="cdopcDoOnLoad();" style="margin-top:0px;margin-left:0px;margin-right:0px;" class="article toc2 toc-left">
 
+
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
@@ -885,7 +886,7 @@ and re-render the HTML.
 <div class="details">
 <span id="author" class="author"><a name="cdfirstchange"></a><span class="rcl-da">Gunnar</span> <span class="rcl-da">Morling</span></span><br>
 <span id="revnumber"><span class="rcl-da">version</span> <span class="rcl-da">2.0.0-</span><span class="rcl-da">SNAPSHOT</span><span class="rcl-da">,</span></span>
-<span id="revdate"><span class="rcl-da">2017-06-16</span></span>
+<span id="revdate"><span class="rcl-da">2017-06-21</span></span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1418,7 +1419,7 @@ This specification is the result of the collaborative work of the members of the
 <div class="sect2">
 <h3 id="introduction-requirements"><a class="anchor" href="#introduction-requirements"></a>1.3. Required Java version</h3>
 <div class="paragraph">
-<p>The specification uses Java <span class="rcl-da">8.0</span><span class="rcl-dd">6.0 </span> language features. There is no requirement that implementations be compatible with Java language versions prior to <span class="rcl-da">8.0</span><span class="rcl-dd">6.0</span>.</p>
+<p>The specification uses Java <span class="rcl-da">8</span><span class="rcl-dd">6.0 </span> language features. There is no requirement that implementations be compatible with Java language versions prior to <span class="rcl-da">8</span><span class="rcl-dd">6.0</span>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1508,7 +1509,7 @@ This specification is the result of the collaborative work of the members of the
 <span class="rcl-da">fine-grained</span> <span class="rcl-da">control</span> <span class="rcl-da">over</span> <span class="rcl-da">the</span> <span class="rcl-da">current</span> <span class="rcl-da">time</span> <span class="rcl-da">and</span> <span class="rcl-da">time</span> <span class="rcl-da">zone</span> <span class="rcl-da">used</span> <span class="rcl-da">for</span> <span class="rcl-da">validation</span> <span class="rcl-da">(</span><span class="rcl-da">see</span> <a href="#constraintsdefinitionimplementation-validationimplementation-temporalvalidators"><span class="rcl-da">Implementation</span> <span class="rcl-da">of</span> <span class="rcl-da">temporal</span> <span class="rcl-da">constraint</span> <span class="rcl-da">validators</span></a><span class="rcl-da">)</span></p>
 </li>
 <li>
-<p><span class="rcl-da">New</span> <span class="rcl-da">built-in</span> <span class="rcl-da">constraints</span><span class="rcl-da">,</span> <span class="rcl-da">e</span><span class="rcl-da">.</span><span class="rcl-da">g</span><span class="rcl-da">.</span> <code><span class="rcl-da">@</span><span class="rcl-da">Email</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">@</span><span class="rcl-da">NotEmpty</span></code> <span class="rcl-da">and</span> <code><span class="rcl-da">@</span><span class="rcl-da">NotBlank</span></code> <span class="rcl-da">(</span><span class="rcl-da">see</span> <a href="#builtinconstraints"><span class="rcl-da">Built-in</span> <span class="rcl-da">Constraint</span> <span class="rcl-da">definitions</span></a><span class="rcl-da">)</span></p>
+<p><span class="rcl-da">New</span> <span class="rcl-da">built-in</span> <span class="rcl-da">constraints</span><span class="rcl-da">,</span> <span class="rcl-da">e</span><span class="rcl-da">.</span><span class="rcl-da">g</span><span class="rcl-da">.</span> <code><span class="rcl-da">@</span><span class="rcl-da">Email</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">@</span><span class="rcl-da">NotEmpty</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">@</span><span class="rcl-da">NotBlank</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">@</span><span class="rcl-da">Positive</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">@</span><span class="rcl-da">PositiveOrZero</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">@</span><span class="rcl-da">Negative</span></code> <span class="rcl-da">and</span> <code><span class="rcl-da">@</span><span class="rcl-da">NegativeOrZero</span></code> <span class="rcl-da">(</span><span class="rcl-da">see</span> <a href="#builtinconstraints"><span class="rcl-da">Built-in</span> <span class="rcl-da">Constraint</span> <span class="rcl-da">definitions</span></a><span class="rcl-da">)</span></p>
 </li>
 <li>
 <p><span class="rcl-da">All</span> <span class="rcl-da">built-in</span> <span class="rcl-da">constraints</span> <span class="rcl-da">are</span> <span class="rcl-da">marked</span> <span class="rcl-da">as</span> <span class="rcl-da">repeatable</span> <span class="rcl-da">now</span></p>
@@ -1603,7 +1604,7 @@ This specification is the result of the collaborative work of the members of the
 <h2 id="constraintsdefinitionimplementation"><a class="anchor" href="#constraintsdefinitionimplementation"></a>3. Constraint <span class="rcl-da">definition</span><span class="rcl-dd">Definition </span></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Constraints are defined by the combination of a constraint annotation and a list of constraint validation implementations. The constraint annotation is applied on types, fields, methods, constructors, parameters or other constraint annotations in case of composition.</p>
+<p>Constraints are defined by the combination of a constraint annotation and a list of constraint validation implementations. The constraint annotation is applied on types, fields, methods, constructors, parameters<span class="rcl-da">,</span> <span class="rcl-da">container</span> <span class="rcl-da">elements</span> or other constraint annotations in case of composition.</p>
 </div>
 <div class="paragraph">
 <p>Unless stated otherwise the default package name for the Bean Validation APIs is <code class="classname">javax.validation</code>.</p>
@@ -1708,10 +1709,10 @@ This specification is the result of the collaborative work of the members of the
 <p><code>METHOD</code> for constrained getters and constrained method return values</p>
 </li>
 <li>
-<p><code class="classname">CONSTRUCTOR</code> for constrained constructor return values</p>
+<p><code>CONSTRUCTOR</code> for constrained constructor return values</p>
 </li>
 <li>
-<p><code class="classname">PARAMETER</code> for constrained method and constructor parameters</p>
+<p><code>PARAMETER</code> for constrained method and constructor parameters</p>
 </li>
 <li>
 <p><code>TYPE</code> for constrained beans</p>
@@ -1838,9 +1839,7 @@ This specification is the result of the collaborative work of the members of the
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="JAVA"><span class="keyword"><span class="rcl-da">package</span></span> <span class="namespace"><span class="rcl-da">javax</span><span class="rcl-da">.</span><span class="rcl-da">validation</span></span><span class="rcl-da">;</span>
-
-<span class="comment">/**
+<pre class="CodeRay highlight"><code data-lang="JAVA"><span class="comment">/**
  * Payload type that can be attached to a given
  * constraint declaration.
  * &lt;p<span class="rcl-da">&gt;</span><span class="rcl-dd">/&gt; </span>
@@ -1857,7 +1856,10 @@ This specification is the result of the collaborative work of the members of the
 </div>
 </div>
 <div class="paragraph">
-<p>Payloads are typically used by validation clients to associate some metadata information with a given constraint declaration. Payloads are typically non-portable. Describing payloads as interface extensions as opposed to a string-based approach allows an easier and more type-safe approach.</p>
+<p>Payloads are typically used by validation clients to associate some metadata information with a given constraint declaration.<span class="rcl-dd">Payloads </span><span class="rcl-dd">are </span><span class="rcl-dd">typically </span><span class="rcl-dd">non-portable</span><span class="rcl-dd">. </span>
+Describing payloads as interface extensions as opposed to a string-based approach allows an easier and more type-safe approach.
+<span class="rcl-da">Payloads</span> <span class="rcl-da">are</span> <span class="rcl-da">typically</span> <span class="rcl-da">non-portable</span><span class="rcl-da">.</span>
+<span class="rcl-da">An</span> <span class="rcl-da">exception</span> <span class="rcl-da">are</span> <span class="rcl-da">the</span> <code><span class="rcl-da">Unwrapping</span><span class="rcl-da">.</span><span class="rcl-da">Skip</span></code> <span class="rcl-da">and</span> <code><span class="rcl-da">Unwrapping</span><span class="rcl-da">.</span><span class="rcl-da">Unwrap</span></code> <span class="rcl-da">payload</span> <span class="rcl-da">types</span> <span class="rcl-da">which</span> <span class="rcl-da">are</span> <span class="rcl-da">defined</span> <span class="rcl-da">by</span> <span class="rcl-da">this</span> <span class="rcl-da">specification</span> <span class="rcl-da">(</span><span class="rcl-da">see</span> <a href="#constraintdeclarationvalidationprocess-containerelementconstraints-implicitunwrapping"><span class="rcl-da">Implicit</span> <span class="rcl-da">unwrapping</span> <span class="rcl-da">of</span> <span class="rcl-da">containers</span></a><span class="rcl-da">).</span></p>
 </div>
 <div class="paragraph">
 <p>One use case for payload shown in <a href="#example-payload">Use of payload to associate severity to a constraint</a> is to associate a severity to a constraint. This severity can be exploited by a presentation framework to adjust how a constraint failure is displayed.</p>
@@ -2891,7 +2893,7 @@ Such an attribute is annotated with <span class="rcl-da">one</span><span class="
     [...]
 }
 
-<span class="comment">//Collection uses generics and unbounded windcard type</span>
+<span class="comment">//Collection uses generics and unbounded <span class="rcl-da">wildcard</span><span class="rcl-dd">windcard </span> type</span>
 <span class="directive">public</span> <span class="type">class</span> <span class="class">SizeValidatorForCollection</span> <span class="directive">implements</span> ConstraintValidator&lt;Size, <span class="predefined-type">Collection</span>&lt;?&gt;&gt; {
     [...]
 }
@@ -3834,13 +3836,13 @@ Such an attribute is annotated with <span class="rcl-da">one</span><span class="
 </div>
 <div class="paragraph">
 <p><span class="rcl-da">It</span> <span class="rcl-da">also</span> allows redefinition of the default constraint message generated when a constraint is not valid. <span class="tck-testable">By default, each invalid constraint leads to the generation of one error object represented by a <code class="classname">ConstraintViolation</code> object.
-This object is built from the default constraint message template as defined by the constraint declaration and the context in which the constraint declaration is placed (bean, property, executable parameter, cross-parameter or executable return value).</span></p>
+This object is built from the default constraint message template as defined by the constraint declaration and the context in which the constraint declaration is placed (bean, property, executable parameter, cross-parameter<span class="rcl-da">,</span><span class="rcl-dd">or </span> executable return value <span class="rcl-da">or</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span>).</span></p>
 </div>
 <div class="paragraph">
 <p><span class="tck-testable">The <code class="classname">ConstraintValidatorContext</code> methods let the constraint implementation disable the default <code class="classname">ConstraintViolation</code> generation and create one or more custom ones.</span> <span class="tck-testable">The non-interpolated message passed as a parameter is used to build the <code class="classname">ConstraintViolation</code> message (the message interpolation operation is applied to it).</span></p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">By default, the <code class="classname">Path</code> exposed on the <code class="classname">ConstraintViolation</code> represents the path to the bean, property, parameter, cross-parameter or return value hosting the constraint (see <a href="#validationapi-constraintviolation">ConstraintViolation</a> for more information).</span> <span class="tck-testable">You can point it to a subpath of this default path by using the constraint violation builder fluent API.</span></p>
+<p><span class="tck-testable">By default, the <code class="classname">Path</code> exposed on the <code class="classname">ConstraintViolation</code> represents the path to the bean, property, parameter, cross-parameter<span class="rcl-da">,</span><span class="rcl-dd">or </span> return value <span class="rcl-da">or</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> hosting the constraint (see <a href="#validationapi-constraintviolation">ConstraintViolation</a> for more information).</span> <span class="tck-testable">You can point it to a subpath of this default path by using the constraint violation builder fluent API.</span></p>
 </div>
 <div class="paragraph">
 <p><a href="#example-constraintsdefinitionimplementation-validationimplementation-errorbuilder">Using the fluent API to build custom constraint violations</a> shows a few examples.</p>
@@ -3910,7 +3912,7 @@ context.buildConstraintViolationWithTemplate( <span class="string"><span class="
 <span class="comment">//Cross-parameter constraint on method createUser(String password, String passwordRepeat)</span>
 <span class="comment">//Build a constraint violation on the default path + "passwordRepeat"</span>
 context.buildConstraintViolationWithTemplate(<span class="string"><span class="delimiter">"</span><span class="content">Passwords do not match</span><span class="delimiter">"</span></span>)
-            .addParameterNode(<span class="integer">1</span>)
+            .addParameterNode( <span class="integer">1</span> )
             .addConstraintViolation();
 
 <span class="comment">//Cross-parameter constraint on a method</span>
@@ -4022,11 +4024,9 @@ context.buildConstraintViolationWithTemplate(
             <span class="keyword">return</span> <span class="predefined-constant">true</span>;
 
         <span class="keyword">return</span> <span class="rcl-da">allowedPrefixes</span><span class="rcl-dd">allowedFormats</span>.<span class="rcl-da">stream</span><span class="rcl-dd">size</span>()<span class="rcl-dd">== </span><span class="rcl-dd">0 </span><span class="rcl-dd">|| </span><span class="rcl-dd">(! </span><span class="rcl-dd">Collections </span>
-                .<span class="rcl-da">filter</span><span class="rcl-dd">disjoint</span>( <span class="rcl-da">s</span> <span class="rcl-da">-&gt;</span><span class="rcl-dd">guessFormat</span><span class="rcl-dd">(</span> value<span class="rcl-da">.</span><span class="rcl-da">startsWith</span><span class="rcl-dd">), </span><span class="rcl-dd">allowedFormats </span><span class="rcl-dd">) </span><span class="rcl-dd">); </span><span class="rcl-dd">} </span><span class="rcl-dd">Set </span><span class="rcl-dd">&lt; </span><span class="rcl-dd">Format </span><span class="rcl-dd">&gt; </span><span class="rcl-dd">guessFormats</span>( <span class="rcl-da">s</span><span class="rcl-dd">String </span><span class="rcl-dd">text</span> ) <span class="rcl-da">)</span>
-                <span class="rcl-da">.</span><span class="rcl-da">findAny</span><span class="rcl-da">()</span>
-                <span class="rcl-da">.</span><span class="rcl-da">isPresent</span><span class="rcl-da">();</span><span class="rcl-dd">{ </span><span class="rcl-dd">[...] </span>
-    }
-}</code></pre>
+                .<span class="rcl-da">anyMatch</span><span class="rcl-dd">disjoint</span>(<span class="rcl-dd">guessFormat</span><span class="rcl-dd">(</span> value<span class="rcl-da">::</span><span class="rcl-da">startsWith</span><span class="rcl-dd">), </span><span class="rcl-dd">allowedFormats </span><span class="rcl-dd">) </span> );
+    }<span class="rcl-dd">Set </span><span class="rcl-dd">&lt; </span><span class="rcl-dd">Format </span><span class="rcl-dd">&gt; </span><span class="rcl-dd">guessFormats</span><span class="rcl-dd">( </span><span class="rcl-dd">String </span><span class="rcl-dd">text</span><span class="rcl-dd">) </span><span class="rcl-dd">{ </span><span class="rcl-dd">[...] </span>
+}<span class="rcl-dd">} </span></code></pre>
 </div>
 </div>
 </div>
@@ -4419,7 +4419,7 @@ In this case, only one error report is returned at a given time but a constraint
 <div class="sect2">
 <h3 id="valueextractordefinition-extractedvalue"><a class="anchor" href="#valueextractordefinition-extractedvalue"></a><span class="rcl-da">4.1</span><span class="rcl-da">.</span> <span class="rcl-da">@</span><span class="rcl-da">ExtractedValue</span></h3>
 <div class="paragraph">
-<p><span class="rcl-da">The</span> <code><span class="rcl-da">@</span><span class="rcl-da">ExtractedValue</span></code> <span class="rcl-da">annotation</span> <span class="rcl-da">is</span> <span class="rcl-da">used</span> <span class="rcl-da">to</span> <span class="rcl-da">denote</span> <span class="rcl-da">the</span> <span class="rcl-da">element</span> <span class="rcl-da">extracted</span> <span class="rcl-da">by</span> <span class="rcl-da">a</span> <span class="rcl-da">given</span> <span class="rcl-da">value</span> <span class="rcl-da">extractor</span><span class="rcl-da">:</span></p>
+<p><span class="tck-testable"><span class="rcl-da">The</span> <code><span class="rcl-da">@</span><span class="rcl-da">ExtractedValue</span></code> <span class="rcl-da">annotation</span> <span class="rcl-da">is</span> <span class="rcl-da">used</span> <span class="rcl-da">to</span> <span class="rcl-da">denote</span> <span class="rcl-da">the</span> <span class="rcl-da">element</span> <span class="rcl-da">extracted</span> <span class="rcl-da">by</span> <span class="rcl-da">a</span> <span class="rcl-da">given</span> <span class="rcl-da">value</span> <span class="rcl-da">extractor</span></span><span class="rcl-da">:</span></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4462,8 +4462,8 @@ In this case, only one error report is returned at a given time but a constraint
 <p><span class="tck-testable"><span class="rcl-da">The</span> <code><span class="rcl-da">@</span><span class="rcl-da">ExtractedValue</span></code> <span class="rcl-da">annotation</span> <span class="rcl-da">must</span> <span class="rcl-da">be</span> <span class="rcl-da">specified</span> <span class="rcl-da">exactly</span> <span class="rcl-da">once</span> <span class="rcl-da">for</span> <span class="rcl-da">a</span> <span class="rcl-da">value</span> <span class="rcl-da">extractor</span> <span class="rcl-da">type</span><span class="rcl-da">.</span></span></p>
 </div>
 <div class="paragraph">
-<p><span class="rcl-da">For</span> <span class="rcl-da">generic</span> <span class="rcl-da">container</span> <span class="rcl-da">types</span> <span class="rcl-da">(</span><span class="rcl-da">e</span><span class="rcl-da">.</span><span class="rcl-da">g</span><span class="rcl-da">.</span> <code><span class="rcl-da">java</span><span class="rcl-da">.</span><span class="rcl-da">util</span><span class="rcl-da">.</span><span class="rcl-da">List</span></code><span class="rcl-da">),</span> <code><span class="rcl-da">@</span><span class="rcl-da">ExtractedValue</span></code> <span class="rcl-da">is</span> <span class="rcl-da">to</span> <span class="rcl-da">be</span> <span class="rcl-da">specified</span> <span class="rcl-da">on</span> <span class="rcl-da">a</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span> <span class="rcl-da">as</span> <span class="rcl-da">used</span> <span class="rcl-da">in</span> <span class="rcl-da">the</span> <span class="rcl-da">extractor</span> <span class="rcl-da">definition</span><span class="rcl-da">.</span>
-<span class="tck-not-testable"><span class="rcl-da">Only</span> <span class="rcl-da">wildcard</span> <span class="rcl-da">type</span> <span class="rcl-da">arguments</span> <span class="rcl-da">are</span> <span class="rcl-da">supported</span> <span class="rcl-da">as</span> <span class="rcl-da">target</span> <span class="rcl-da">for</span> <code><span class="rcl-da">@</span><span class="rcl-da">ExtractedValue</span></code> <span class="rcl-da">in</span> <span class="rcl-da">this</span> <span class="rcl-da">case</span><span class="rcl-da">.</span></span></p>
+<p><span class="tck-testable"><span class="rcl-da">For</span> <span class="rcl-da">generic</span> <span class="rcl-da">container</span> <span class="rcl-da">types</span> <span class="rcl-da">(</span><span class="rcl-da">e</span><span class="rcl-da">.</span><span class="rcl-da">g</span><span class="rcl-da">.</span> <code><span class="rcl-da">java</span><span class="rcl-da">.</span><span class="rcl-da">util</span><span class="rcl-da">.</span><span class="rcl-da">List</span></code><span class="rcl-da">),</span> <code><span class="rcl-da">@</span><span class="rcl-da">ExtractedValue</span></code> <span class="rcl-da">is</span> <span class="rcl-da">to</span> <span class="rcl-da">be</span> <span class="rcl-da">specified</span> <span class="rcl-da">on</span> <span class="rcl-da">a</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span> <span class="rcl-da">as</span> <span class="rcl-da">used</span> <span class="rcl-da">in</span> <span class="rcl-da">the</span> <span class="rcl-da">extractor</span> <span class="rcl-da">definition</span><span class="rcl-da">.</span></span>
+<span class="tck-not-testable"><span class="rcl-da">Only</span> <span class="rcl-da">unbounded</span> <span class="rcl-da">wildcard</span> <span class="rcl-da">type</span> <span class="rcl-da">arguments</span> <span class="rcl-da">are</span> <span class="rcl-da">supported</span> <span class="rcl-da">as</span> <span class="rcl-da">target</span> <span class="rcl-da">for</span> <code><span class="rcl-da">@</span><span class="rcl-da">ExtractedValue</span></code> <span class="rcl-da">in</span> <span class="rcl-da">this</span> <span class="rcl-da">case</span><span class="rcl-da">.</span></span></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4609,7 +4609,7 @@ In this case, only one error report is returned at a given time but a constraint
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">class</span></span> <span class="class"><span class="rcl-da">OptionalValueExtractor</span></span> <span class="directive"><span class="rcl-da">implements</span></span> <span class="rcl-da">ValueExtractor</span><span class="rcl-da">&lt;</span><span class="rcl-da">Optional</span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">ExtractedValue</span></span> <span class="rcl-da">?&gt;&gt;</span> <span class="rcl-da">{</span>
 
     <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Override</span></span>
-    <span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">void</span></span> <span class="rcl-da">extractValues</span><span class="rcl-da">(</span><span class="rcl-da">Optional</span><span class="rcl-da">&lt;?&gt;</span> <span class="rcl-da">originalValue</span><span class="rcl-da">,</span> <span class="rcl-da">ValueExtractor</span><span class="rcl-da">.</span><span class="rcl-da">ValueReceiver</span> <span class="rcl-da">receiver</span><span class="rcl-da">)</span> <span class="rcl-da">{</span>
+    <span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">void</span></span> <span class="rcl-da">extractValues</span><span class="rcl-da">(</span><span class="rcl-da">Optional</span><span class="rcl-da">&lt;?&gt;</span> <span class="rcl-da">originalValue</span><span class="rcl-da">,</span> <span class="rcl-da">ValueReceiver</span> <span class="rcl-da">receiver</span><span class="rcl-da">)</span> <span class="rcl-da">{</span>
         <span class="rcl-da">receiver</span><span class="rcl-da">.</span><span class="rcl-da">value</span><span class="rcl-da">(</span> <span class="predefined-constant"><span class="rcl-da">null</span></span><span class="rcl-da">,</span> <span class="rcl-da">originalValue</span><span class="rcl-da">.</span><span class="rcl-da">orElse</span><span class="rcl-da">(</span> <span class="predefined-constant"><span class="rcl-da">null</span></span> <span class="rcl-da">)</span> <span class="rcl-da">);</span>
     <span class="rcl-da">}</span>
 <span class="rcl-da">}</span></code></pre>
@@ -4618,7 +4618,7 @@ In this case, only one error report is returned at a given time but a constraint
 <div class="paragraph">
 <p><span class="rcl-da">This</span> <span class="rcl-da">extractor</span> <span class="rcl-da">passes</span> <span class="rcl-da">the</span> <span class="rcl-da">element</span> <span class="rcl-da">wrapped</span> <span class="rcl-da">by</span> <span class="rcl-da">the</span> <span class="rcl-da">given</span> <code><span class="rcl-da">Optional</span></code> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">receiver</span> <span class="rcl-da">object</span><span class="rcl-da">,</span> <span class="rcl-da">if</span> <span class="rcl-da">present</span><span class="rcl-da">.</span>
 <code><span class="rcl-da">null</span></code> <span class="rcl-da">is</span> <span class="rcl-da">passed</span> <span class="rcl-da">as</span> <span class="rcl-da">a</span> <span class="rcl-da">node</span> <span class="rcl-da">name</span><span class="rcl-da">,</span> <span class="rcl-da">causing</span> <span class="rcl-da">no</span> <span class="rcl-da">node</span> <span class="rcl-da">to</span> <span class="rcl-da">be</span> <span class="rcl-da">appended</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">resulting</span> <span class="rcl-da">property</span> <span class="rcl-da">path</span><span class="rcl-da">.</span>
-<span class="rcl-da">I</span><span class="rcl-da">.</span><span class="rcl-da">e</span><span class="rcl-da">.</span> <span class="rcl-da">when</span> <span class="rcl-da">the</span> <span class="rcl-da">constraint</span> <span class="rcl-da">the</span> <code><span class="rcl-da">@</span><span class="rcl-da">Size</span></code> <span class="rcl-da">constraint</span> <span class="rcl-da">in</span> <code><span class="rcl-da">private</span> <span class="rcl-da">Optional</span><span class="rcl-da">&lt;@</span><span class="rcl-da">Size</span><span class="rcl-da">(</span><span class="rcl-da">min</span><span class="rcl-da">=</span><span class="rcl-da">1</span><span class="rcl-da">)</span> <span class="rcl-da">String</span> <span class="rcl-da">name</span><span class="rcl-da">;</span></code> <span class="rcl-da">is</span> <span class="rcl-da">violated</span><span class="rcl-da">,</span>
+<span class="rcl-da">I</span><span class="rcl-da">.</span><span class="rcl-da">e</span><span class="rcl-da">.</span> <span class="rcl-da">when</span> <span class="rcl-da">the</span> <code><span class="rcl-da">@</span><span class="rcl-da">Size</span></code> <span class="rcl-da">constraint</span> <span class="rcl-da">in</span> <code><span class="rcl-da">private</span> <span class="rcl-da">Optional</span><span class="rcl-da">&lt;@</span><span class="rcl-da">Size</span><span class="rcl-da">(</span><span class="rcl-da">min</span><span class="rcl-da">=</span><span class="rcl-da">1</span><span class="rcl-da">)</span> <span class="rcl-da">String</span> <span class="rcl-da">name</span><span class="rcl-da">;</span></code> <span class="rcl-da">is</span> <span class="rcl-da">violated</span><span class="rcl-da">,</span>
 <span class="rcl-da">the</span> <span class="rcl-da">resulting</span> <span class="rcl-da">property</span> <span class="rcl-da">path</span> <span class="rcl-da">will</span> <span class="rcl-da">be</span> <span class="rcl-da">the</span> <span class="rcl-da">same</span> <span class="rcl-da">as</span> <span class="rcl-da">if</span> <span class="rcl-da">a</span> <span class="rcl-da">constraint</span> <span class="rcl-da">hosted</span> <span class="rcl-da">on</span> <span class="rcl-da">the</span> <code><span class="rcl-da">name</span></code> <span class="rcl-da">field</span> <span class="rcl-da">itself</span> <span class="rcl-da">was</span> <span class="rcl-da">violated</span><span class="rcl-da">.</span></p>
 </div>
 <div class="paragraph">
@@ -4672,7 +4672,7 @@ In this case, only one error report is returned at a given time but a constraint
 <p>Bean Validation also offers a way to declare constructor and method constraints where parameters and return values are the constrained elements. We will discuss method constraints declaration in detail in <a href="#constraintdeclarationvalidationprocess-methodlevelconstraints">Method and constructor constraints</a>.</p>
 </div>
 <div class="paragraph">
-<p><span class="rcl-da">Furthermore</span><span class="rcl-da">,</span> <span class="rcl-da">constraints</span> <span class="rcl-da">can</span> <span class="rcl-da">be</span> <span class="rcl-da">applied</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">elements</span> <span class="rcl-da">of</span> <span class="rcl-da">generic</span> <span class="rcl-da">container</span> <span class="rcl-da">types</span> <span class="rcl-da">such</span> <span class="rcl-da">as</span> <code><span class="rcl-da">Map</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">List</span></code> <span class="rcl-da">or</span> <code><span class="rcl-da">Optional</span></code><span class="rcl-da">.</span>
+<p><span class="rcl-da">Furthermore</span><span class="rcl-da">,</span> <span class="rcl-da">constraints</span> <span class="rcl-da">can</span> <span class="rcl-da">be</span> <span class="rcl-da">applied</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">elements</span> <span class="rcl-da">of</span> <span class="rcl-da">generic</span> <span class="rcl-da">container</span> <span class="rcl-da">types</span> <span class="rcl-da">such</span> <span class="rcl-da">as</span> <code><span class="rcl-da">Map</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">List</span></code> <span class="rcl-da">or</span> <code><span class="rcl-da">Optional</span></code> <span class="rcl-da">or</span> <span class="rcl-da">of</span> <span class="rcl-da">non-generic</span> <span class="rcl-da">container</span> <span class="rcl-da">types</span> <span class="rcl-da">such</span> <span class="rcl-da">as</span> <code><span class="rcl-da">OptionalInt</span></code><span class="rcl-da">.</span>
 <span class="rcl-da">Container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">are</span> <span class="rcl-da">discussed</span> <span class="rcl-da">in</span> <span class="rcl-da">detail</span> <span class="rcl-da">in</span> <a href="#constraintdeclarationvalidationprocess-containerelementconstraints"><span class="rcl-da">Container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span></a><span class="rcl-da">.</span></p>
 </div>
 <div class="sect2">
@@ -4878,11 +4878,16 @@ In this case, only one error report is returned at a given time but a constraint
 <p><span class="tck-testable"><code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code> <span class="rcl-da">also</span> <span class="rcl-da">allows</span> <span class="rcl-da">the</span> <span class="rcl-da">validation</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">elements</span> <span class="rcl-da">of</span> <span class="rcl-da">nested</span> <span class="rcl-da">generic</span> <span class="rcl-da">containers</span><span class="rcl-da">.</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code> <span class="rcl-da">must</span> <span class="rcl-da">be</span> <span class="rcl-da">put</span> <span class="rcl-da">to</span> <span class="rcl-da">a</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span> <span class="rcl-da">of</span> <span class="rcl-da">that</span> <span class="rcl-da">nested</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span> <span class="rcl-da">in</span> <span class="rcl-da">order</span> <span class="rcl-da">to</span> <span class="rcl-da">trigger</span> <span class="rcl-da">validation</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">elements</span> <span class="rcl-da">of</span> <span class="rcl-da">all</span> <span class="rcl-da">the</span> <span class="rcl-da">nested</span> <span class="rcl-da">containers</span><span class="rcl-da">.</span></span></p>
 </div>
 <div class="paragraph">
-<p><span class="rcl-da">For</span> <span class="rcl-da">a</span> <span class="rcl-da">given</span> <span class="rcl-da">container</span><span class="rcl-da">,</span> <span class="rcl-da">the</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code> <span class="rcl-da">annotation</span> <span class="rcl-da">should</span> <span class="rcl-da">either</span> <span class="rcl-da">be</span> <span class="rcl-da">put</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">itself</span> <em><span class="rcl-da">or</span></em> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span><span class="rcl-da">(</span><span class="rcl-da">s</span><span class="rcl-da">)</span> <span class="rcl-da">of</span> <span class="rcl-da">container</span><span class="rcl-da">,</span>
+<p><span class="rcl-da">For</span> <span class="rcl-da">a</span> <span class="rcl-da">given</span> <span class="rcl-da">container</span><span class="rcl-da">,</span> <span class="rcl-da">the</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code> <span class="rcl-da">annotation</span> <span class="rcl-da">should</span> <span class="rcl-da">either</span> <span class="rcl-da">be</span> <span class="rcl-da">put</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">itself</span> <em><span class="rcl-da">or</span></em> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span><span class="rcl-da">(</span><span class="rcl-da">s</span><span class="rcl-da">)</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span><span class="rcl-da">,</span>
 <span class="rcl-da">but</span> <span class="rcl-da">not</span> <span class="rcl-da">both</span> <span class="rcl-da">(</span><span class="rcl-da">in</span> <span class="rcl-da">order</span> <span class="rcl-da">to</span> <span class="rcl-da">prevent</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">elements</span> <span class="rcl-da">from</span> <span class="rcl-da">being</span> <span class="rcl-da">validated</span> <span class="rcl-da">twice</span><span class="rcl-da">).</span></p>
 </div>
 <div class="paragraph">
 <p><span class="tck-testable">The <code class="classname">@Valid</code> annotation is applied recursively.</span> A conforming implementation avoids infinite loops according to the rules described in <a href="#constraintdeclarationvalidationprocess-validationroutine-graphvalidation">Object graph validation</a>.</p>
+</div>
+<div class="paragraph">
+<p><span class="tck-not-testable"><span class="rcl-da">It</span> <span class="rcl-da">is</span> <span class="rcl-da">not</span> <span class="rcl-da">supported</span> <span class="rcl-da">to</span> <span class="rcl-da">put</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">type</span> <span class="rcl-da">parameters</span> <span class="rcl-da">of</span> <span class="rcl-da">generic</span> <span class="rcl-da">types</span> <span class="rcl-da">or</span> <span class="rcl-da">methods</span><span class="rcl-da">.</span></span>
+<span class="tck-not-testable"><span class="rcl-da">It</span> <span class="rcl-da">is</span> <span class="rcl-da">also</span> <span class="rcl-da">not</span> <span class="rcl-da">supported</span> <span class="rcl-da">to</span> <span class="rcl-da">put</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code> <span class="rcl-da">to</span> <span class="rcl-da">type</span> <span class="rcl-da">arguments</span> <span class="rcl-da">within</span> <span class="rcl-da">the</span> <code><span class="rcl-da">extends</span></code> <span class="rcl-da">or</span> <code><span class="rcl-da">implements</span></code> <span class="rcl-da">clauses</span> <span class="rcl-da">of</span> <span class="rcl-da">type</span> <span class="rcl-da">definitions</span><span class="rcl-da">.</span></span>
+<span class="rcl-da">A</span> <span class="rcl-da">future</span> <span class="rcl-da">revision</span> <span class="rcl-da">of</span> <span class="rcl-da">this</span> <span class="rcl-da">specification</span> <span class="rcl-da">might</span> <span class="rcl-da">define</span> <span class="rcl-da">support</span> <span class="rcl-da">for</span> <span class="rcl-da">such</span> <span class="rcl-da">usages</span> <span class="rcl-da">of</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code><span class="rcl-da">.</span></p>
 </div>
 <div class="sect4">
 <h5 id="constraintdeclarationvalidationprocess-requirements-graphvalidation-examples"><a class="anchor" href="#constraintdeclarationvalidationprocess-requirements-graphvalidation-examples"></a><span class="rcl-da">5.1.3.1</span><span class="rcl-da">.</span> <span class="rcl-da">Examples</span></h5>
@@ -4893,7 +4898,7 @@ In this case, only one error report is returned at a given time but a constraint
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="JAVA"><span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">class</span></span> <span class="class"><span class="rcl-da">User</span></span> <span class="rcl-da">{</span>
 
-    <span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">preferred</span> <span class="rcl-da">style</span> <span class="rcl-da">as</span> <span class="rcl-da">of</span> <span class="rcl-da">Bean</span> <span class="rcl-da">Validation</span> <span class="rcl-da">2</span></span>
+    <span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">preferred</span> <span class="rcl-da">style</span> <span class="rcl-da">as</span> <span class="rcl-da">of</span> <span class="rcl-da">Bean</span> <span class="rcl-da">Validation</span> <span class="rcl-da">2.0</span></span>
     <span class="directive"><span class="rcl-da">private</span></span> <span class="predefined-type"><span class="rcl-da">List</span></span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Valid</span></span> <span class="rcl-da">PhoneNumber</span><span class="rcl-da">&gt;</span> <span class="rcl-da">phoneNumbers</span><span class="rcl-da">;</span>
 
     <span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">traditional</span> <span class="rcl-da">style</span><span class="rcl-da">;</span> <span class="rcl-da">continues</span> <span class="rcl-da">to</span> <span class="rcl-da">be</span> <span class="rcl-da">supported</span></span>
@@ -4916,7 +4921,7 @@ In this case, only one error report is returned at a given time but a constraint
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="JAVA"><span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">class</span></span> <span class="class"><span class="rcl-da">User</span></span> <span class="rcl-da">{</span>
 
-    <span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">preferred</span> <span class="rcl-da">style</span> <span class="rcl-da">as</span> <span class="rcl-da">of</span> <span class="rcl-da">Bean</span> <span class="rcl-da">Validation</span> <span class="rcl-da">2</span></span>
+    <span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">preferred</span> <span class="rcl-da">style</span> <span class="rcl-da">as</span> <span class="rcl-da">of</span> <span class="rcl-da">Bean</span> <span class="rcl-da">Validation</span> <span class="rcl-da">2.0</span></span>
     <span class="directive"><span class="rcl-da">private</span></span> <span class="predefined-type"><span class="rcl-da">Map</span></span><span class="rcl-da">&lt;</span><span class="rcl-da">AddressType</span><span class="rcl-da">,</span> <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Valid</span></span> <span class="rcl-da">Address</span><span class="rcl-da">&gt;</span> <span class="rcl-da">addressesByType</span><span class="rcl-da">;</span>
 
     <span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">traditional</span> <span class="rcl-da">style</span><span class="rcl-da">;</span> <span class="rcl-da">continues</span> <span class="rcl-da">to</span> <span class="rcl-da">be</span> <span class="rcl-da">supported</span></span>
@@ -5013,6 +5018,10 @@ In this case, only one error report is returned at a given time but a constraint
 </div>
 <div class="paragraph">
 <p><a href="#constraintdeclarationvalidationprocess-methodlevelconstraints">Method and constructor constraints</a> discusses in detail constraints on methods and constructors.</p>
+</div>
+<div class="paragraph">
+<p><span class="rcl-da">Constraints</span> <span class="rcl-da">can</span> <span class="rcl-da">also</span> <span class="rcl-da">be</span> <span class="rcl-da">applied</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">elements</span> <span class="rcl-da">of</span> <span class="rcl-da">container</span> <span class="rcl-da">types</span><span class="rcl-da">,</span> <span class="rcl-da">e</span><span class="rcl-da">.</span><span class="rcl-da">g</span><span class="rcl-da">.</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">elements</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <code><span class="rcl-da">List</span></code><span class="rcl-da">-</span><span class="rcl-da">typed</span> <span class="rcl-da">property</span> <span class="rcl-da">or</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">value</span> <span class="rcl-da">wrapped</span> <span class="rcl-da">by</span> <span class="rcl-da">an</span> <code><span class="rcl-da">Optional</span></code> <span class="rcl-da">object</span> <span class="rcl-da">returned</span> <span class="rcl-da">by</span> <span class="rcl-da">a</span> <span class="rcl-da">method</span><span class="rcl-da">.</span>
+<span class="rcl-da">Container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">are</span> <span class="rcl-da">discussed</span> <span class="rcl-da">in</span> <a href="#constraintdeclarationvalidationprocess-containerelementconstraints"><span class="rcl-da">Container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span></a><span class="rcl-da">.</span></p>
 </div>
 </div>
 <div class="sect2">
@@ -5889,7 +5898,7 @@ In this case, only one error report is returned at a given time but a constraint
 </div>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable"><span class="rcl-da">When</span> <span class="rcl-da">a</span> <span class="rcl-da">field</span><span class="rcl-da">,</span> <span class="rcl-da">property</span><span class="rcl-da">,</span> <span class="rcl-da">executable</span> <span class="rcl-da">parameter</span> <span class="rcl-da">or</span> <span class="rcl-da">method</span> <span class="rcl-da">return</span> <span class="rcl-da">value</span> <span class="rcl-da">which</span> <span class="rcl-da">is</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span> <span class="rcl-da">gets</span> <span class="rcl-da">validated</span><span class="rcl-da">,</span> <span class="rcl-da">then</span> <span class="rcl-da">all</span> <span class="rcl-da">values</span> <span class="rcl-da">contained</span> <span class="rcl-da">in</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">will</span> <span class="rcl-da">be</span> <span class="rcl-da">validated</span> <span class="rcl-da">provided</span> <span class="rcl-da">that</span> <span class="rcl-da">their</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">is</span> <span class="rcl-da">constrained</span><span class="rcl-da">.</span></span>
+<p><span class="tck-testable"><span class="rcl-da">When</span> <span class="rcl-da">a</span> <span class="rcl-da">field</span><span class="rcl-da">,</span> <span class="rcl-da">property</span><span class="rcl-da">,</span> <span class="rcl-da">executable</span> <span class="rcl-da">parameter</span> <span class="rcl-da">or</span> <span class="rcl-da">method</span> <span class="rcl-da">return</span> <span class="rcl-da">value</span> <span class="rcl-da">which</span> <span class="rcl-da">is</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span> <span class="rcl-da">gets</span> <span class="rcl-da">validated</span><span class="rcl-da">,</span> <span class="rcl-da">then</span> <span class="rcl-da">all</span> <span class="rcl-da">values</span> <span class="rcl-da">contained</span> <span class="rcl-da">in</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">will</span> <span class="rcl-da">be</span> <span class="rcl-da">validated</span> <span class="rcl-da">provided</span> <span class="rcl-da">that</span> <span class="rcl-da">their</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">type</span> <span class="rcl-da">is</span> <span class="rcl-da">constrained</span><span class="rcl-da">.</span></span>
 <span class="tck-testable"><span class="rcl-da">Any</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">of</span> <span class="rcl-da">that</span> <span class="rcl-da">element</span> <span class="rcl-da">will</span> <span class="rcl-da">be</span> <span class="rcl-da">validated</span> <span class="rcl-da">alongside</span> <span class="rcl-da">any</span> <span class="rcl-da">other</span> <span class="rcl-da">constraints</span> <span class="rcl-da">hosted</span> <span class="rcl-da">by</span> <span class="rcl-da">that</span> <span class="rcl-da">element</span><span class="rcl-da">.</span></span>
 <span class="tck-testable"><span class="rcl-da">For</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span><span class="rcl-da">,</span> <span class="rcl-da">the</span> <span class="rcl-da">same</span> <span class="rcl-da">rules</span> <span class="rcl-da">for</span> <span class="rcl-da">validation</span> <span class="rcl-da">groups</span> <span class="rcl-da">and</span> <span class="rcl-da">group</span> <span class="rcl-da">sequences</span> <span class="rcl-da">apply</span> <span class="rcl-da">as</span> <span class="rcl-da">for</span> <span class="rcl-da">any</span> <span class="rcl-da">other</span> <span class="rcl-da">constraint</span> <span class="rcl-da">on</span> <span class="rcl-da">the</span> <span class="rcl-da">same</span> <span class="rcl-da">element</span><span class="rcl-da">.</span></span></p>
 </div>
@@ -5932,17 +5941,32 @@ In this case, only one error report is returned at a given time but a constraint
 </ul>
 </div>
 <div class="paragraph">
-<p><span class="tck-not-testable"><span class="rcl-da">Container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">are</span> <span class="rcl-da">not</span> <span class="rcl-da">supported</span> <span class="rcl-da">on</span> <span class="rcl-da">wildcard</span> <span class="rcl-da">type</span> <span class="rcl-da">arguments</span> <span class="rcl-da">(</span><span class="rcl-da">with</span> <span class="rcl-da">or</span> <span class="rcl-da">without</span> <span class="rcl-da">bounds</span><span class="rcl-da">),</span> <span class="rcl-da">i</span><span class="rcl-da">.</span><span class="rcl-da">e</span><span class="rcl-da">.</span> <span class="rcl-da">the</span> <span class="rcl-da">following</span> <span class="rcl-da">usage</span> <span class="rcl-da">is</span> <span class="rcl-da">unsupported</span></span><span class="rcl-da">:</span></p>
+<p><span class="tck-not-testable"><span class="rcl-da">It</span> <span class="rcl-da">is</span> <span class="rcl-da">not</span> <span class="rcl-da">supported</span> <span class="rcl-da">to</span> <span class="rcl-da">declare</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">on</span> <span class="rcl-da">the</span> <span class="rcl-da">type</span> <span class="rcl-da">parameters</span> <span class="rcl-da">of</span> <span class="rcl-da">generic</span> <span class="rcl-da">types</span> <span class="rcl-da">or</span> <span class="rcl-da">methods</span><span class="rcl-da">.</span></span>
+<span class="tck-not-testable"><span class="rcl-da">It</span> <span class="rcl-da">is</span> <span class="rcl-da">also</span> <span class="rcl-da">not</span> <span class="rcl-da">supported</span> <span class="rcl-da">to</span> <span class="rcl-da">declare</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">on</span> <span class="rcl-da">type</span> <span class="rcl-da">arguments</span> <span class="rcl-da">within</span> <span class="rcl-da">the</span> <code><span class="rcl-da">extends</span></code> <span class="rcl-da">or</span> <code><span class="rcl-da">implements</span></code> <span class="rcl-da">clauses</span> <span class="rcl-da">of</span> <span class="rcl-da">type</span> <span class="rcl-da">definitions</span><span class="rcl-da">.</span></span>
+<span class="rcl-da">I</span><span class="rcl-da">.</span><span class="rcl-da">e</span><span class="rcl-da">.</span> <span class="rcl-da">the</span> <span class="rcl-da">following</span> <span class="rcl-da">usages</span> <span class="rcl-da">are</span> <span class="rcl-da">unsupported</span><span class="rcl-da">:</span></p>
 </div>
 <div class="exampleblock">
-<div class="title"><span class="rcl-da">Example</span> <span class="rcl-da">5.20</span><span class="rcl-da">:</span> <span class="rcl-da">Unsupported</span> <span class="rcl-da">usage</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraint</span> <span class="rcl-da">on</span> <span class="rcl-da">a</span> <span class="rcl-da">wildcard</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span></div>
+<div class="title"><span class="rcl-da">Example</span> <span class="rcl-da">5.20</span><span class="rcl-da">:</span> <span class="rcl-da">Unsupported</span> <span class="rcl-da">usage</span> <span class="rcl-da">of</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">on</span> <span class="rcl-da">generic</span> <span class="rcl-da">types</span> <span class="rcl-da">and</span> <span class="rcl-da">methods</span></div>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="JAVA"><span class="directive"><span class="rcl-da">private</span></span> <span class="predefined-type"><span class="rcl-da">List</span></span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotEmpty</span></span> <span class="rcl-da">?&gt;</span> <span class="rcl-da">list</span><span class="rcl-da">;</span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="JAVA"><span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">class</span></span> <span class="class"><span class="rcl-da">NonNullList</span></span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotNull</span></span> <span class="rcl-da">T</span><span class="rcl-da">&gt;</span> <span class="rcl-da">{</span>
+    <span class="rcl-da">[...]</span>
+<span class="rcl-da">}</span>
+
+<span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">class</span></span> <span class="class"><span class="rcl-da">ContainerFactory</span></span> <span class="rcl-da">{</span>
+    <span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotNull</span></span> <span class="rcl-da">T</span><span class="rcl-da">&gt;</span> <span class="predefined-type"><span class="rcl-da">Container</span></span><span class="rcl-da">&lt;</span><span class="rcl-da">T</span><span class="rcl-da">&gt;</span> <span class="rcl-da">instantiateContainer</span><span class="rcl-da">(</span><span class="predefined-type"><span class="rcl-da">Class</span></span><span class="rcl-da">&lt;</span><span class="rcl-da">T</span><span class="rcl-da">&gt;</span> <span class="rcl-da">clazz</span><span class="rcl-da">)</span> <span class="rcl-da">{</span> <span class="rcl-da">[...]</span> <span class="rcl-da">}</span>
+<span class="rcl-da">}</span>
+
+<span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">class</span></span> <span class="class"><span class="rcl-da">NonNullSet</span></span><span class="rcl-da">&lt;</span><span class="rcl-da">T</span><span class="rcl-da">&gt;</span> <span class="directive"><span class="rcl-da">extends</span></span> <span class="predefined-type"><span class="rcl-da">Set</span></span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotNull</span></span> <span class="rcl-da">T</span><span class="rcl-da">&gt;</span> <span class="rcl-da">{</span>
+    <span class="rcl-da">[...]</span>
+<span class="rcl-da">}</span></code></pre>
 </div>
 </div>
 </div>
+</div>
+<div class="paragraph">
+<p><span class="rcl-da">A</span> <span class="rcl-da">future</span> <span class="rcl-da">revision</span> <span class="rcl-da">of</span> <span class="rcl-da">this</span> <span class="rcl-da">specification</span> <span class="rcl-da">might</span> <span class="rcl-da">define</span> <span class="rcl-da">support</span> <span class="rcl-da">for</span> <span class="rcl-da">such</span> <span class="rcl-da">usages</span> <span class="rcl-da">of</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span><span class="rcl-da">.</span></p>
 </div>
 <div class="sect3">
 <h4 id="constraintdeclarationvalidationprocess-containerelementconstraints-implicitunwrapping"><a class="anchor" href="#constraintdeclarationvalidationprocess-containerelementconstraints-implicitunwrapping"></a><span class="rcl-da">5.5.1</span><span class="rcl-da">.</span> <span class="rcl-da">Implicit</span> <span class="rcl-da">unwrapping</span> <span class="rcl-da">of</span> <span class="rcl-da">containers</span></h4>
@@ -5956,9 +5980,14 @@ In this case, only one error report is returned at a given time but a constraint
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="JAVA"><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Min</span></span><span class="rcl-da">(</span><span class="integer"><span class="rcl-da">1</span></span><span class="rcl-da">)</span> <span class="directive"><span class="rcl-da">private</span></span> <span class="rcl-da">OptionalInt</span> <span class="rcl-da">optionalNumber</span><span class="rcl-da">;</span>
-<span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Size</span></span><span class="rcl-da">(</span><span class="rcl-da">max</span><span class="rcl-da">=</span><span class="integer"><span class="rcl-da">10</span></span><span class="rcl-da">)</span> <span class="directive"><span class="rcl-da">private</span></span> <span class="rcl-da">StringProperty</span> <span class="rcl-da">name</span><span class="rcl-da">;</span>
-<span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Positive</span></span> <span class="directive"><span class="rcl-da">private</span></span> <span class="rcl-da">IntegerProperty</span> <span class="rcl-da">positiveInt</span><span class="rcl-da">;</span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="JAVA"><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Min</span></span><span class="rcl-da">(</span><span class="integer"><span class="rcl-da">1</span></span><span class="rcl-da">)</span>
+<span class="directive"><span class="rcl-da">private</span></span> <span class="rcl-da">OptionalInt</span> <span class="rcl-da">optionalNumber</span><span class="rcl-da">;</span>
+
+<span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Size</span></span><span class="rcl-da">(</span><span class="rcl-da">max</span><span class="rcl-da">=</span><span class="integer"><span class="rcl-da">10</span></span><span class="rcl-da">)</span>
+<span class="directive"><span class="rcl-da">private</span></span> <span class="rcl-da">StringProperty</span> <span class="rcl-da">name</span><span class="rcl-da">;</span>
+
+<span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Positive</span></span>
+<span class="directive"><span class="rcl-da">private</span></span> <span class="rcl-da">IntegerProperty</span> <span class="rcl-da">positiveInt</span><span class="rcl-da">;</span></code></pre>
 </div>
 </div>
 </div>
@@ -6034,8 +6063,12 @@ In this case, only one error report is returned at a given time but a constraint
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotNull</span></span><span class="rcl-da">(</span><span class="rcl-da">payload</span> <span class="rcl-da">=</span> <span class="rcl-da">Unwrapping</span><span class="rcl-da">.</span><span class="rcl-da">Skip</span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">)</span> <span class="rcl-da">StringProperty</span> <span class="rcl-da">name</span><span class="rcl-da">;</span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotNull</span></span><span class="rcl-da">(</span><span class="rcl-da">payload</span> <span class="rcl-da">=</span> <span class="rcl-da">Unwrapping</span><span class="rcl-da">.</span><span class="rcl-da">Skip</span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">)</span>
+<span class="directive"><span class="rcl-da">private</span></span> <span class="rcl-da">StringProperty</span> <span class="rcl-da">name</span><span class="rcl-da">;</span></code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p><span class="tck-testable"><span class="rcl-da">If</span> <span class="rcl-da">both</span> <code><span class="rcl-da">Unwrap</span></code> <span class="rcl-da">and</span> <code><span class="rcl-da">Skip</span></code> <span class="rcl-da">are</span> <span class="rcl-da">present</span> <span class="rcl-da">in</span> <span class="rcl-da">the</span> <span class="rcl-da">definition</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <span class="rcl-da">payload</span><span class="rcl-da">,</span> <span class="rcl-da">a</span> <code><span class="rcl-da">ConstraintDeclarationException</span></code> <span class="rcl-da">is</span> <span class="rcl-da">raised</span><span class="rcl-da">.</span></span></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -7050,9 +7083,12 @@ violations = validator.validate( driver, SequencedGroups.class );
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="JAVA"><span class="directive">public</span> <span class="type">class</span> <span class="class">Country</span> {
-    <span class="annotation">@NotNull</span> <span class="directive">private</span> <span class="predefined-type">String</span> name;
-    <span class="annotation">@Size</span>(max=<span class="integer">2</span>) <span class="directive">private</span> <span class="predefined-type">String</span> ISO2Code;
-    <span class="annotation">@Size</span>(max=<span class="integer">3</span>) <span class="directive">private</span> <span class="predefined-type">String</span> ISO3Code;
+    <span class="annotation">@NotNull</span>
+    <span class="directive">private</span> <span class="predefined-type">String</span> name;
+    <span class="annotation">@Size</span>(max=<span class="integer">2</span>)
+    <span class="directive">private</span> <span class="predefined-type">String</span> ISO2Code;
+    <span class="annotation">@Size</span>(max=<span class="integer">3</span>)
+    <span class="directive">private</span> <span class="predefined-type">String</span> ISO3Code;
 
     <span class="directive">public</span> <span class="predefined-type">String</span> getName() {
         <span class="keyword">return</span> name;
@@ -7324,7 +7360,7 @@ violations = validator.validate( driver, SequencedGroups.class );
 </td>
 <td class="content">
 <div class="paragraph">
-<p>While the Java compiler itself cannot determine if a constraint declaration will lead to a <code class="classname">UnexpectedTypeException</code>, rules can be statically checked. A tool such as an IDE or a Java 6 annotation processor can apply these rules and prevent compilation in case of ambiguity. The specification encourages Bean Validation providers to provide such a tool to their users.</p>
+<p>While the Java compiler itself cannot determine if a constraint declaration will lead to a <code class="classname">UnexpectedTypeException</code>, rules can be statically checked. A tool such as an IDE or <span class="rcl-da">an</span><span class="rcl-dd">a </span><span class="rcl-dd">Java </span><span class="rcl-dd">6 </span> annotation processor can apply these rules and prevent compilation in case of ambiguity. The specification encourages Bean Validation providers to provide such a tool to their users.</p>
 </div>
 </td>
 </tr>
@@ -7554,7 +7590,7 @@ violations = validator.validate( driver, SequencedGroups.class );
 <td class="content">
 <div class="title"><span class="rcl-da">Implementation</span> <span class="rcl-da">note</span></div>
 <div class="paragraph">
-<p><span class="rcl-da">Extractor</span> <span class="rcl-da">retrieval</span> <span class="rcl-da">for</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">is</span> <span class="rcl-da">based</span> <span class="rcl-da">on</span> <span class="rcl-da">the</span> <span class="rcl-da">runtime</span> <span class="rcl-da">type</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">elements</span> <span class="rcl-da">marked</span> <span class="rcl-da">with</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code>
+<p><span class="rcl-da">Extractor</span> <span class="rcl-da">retrieval</span> <span class="rcl-da">for</span> <span class="rcl-da">cascaded</span> <span class="rcl-da">validation</span> <span class="rcl-da">is</span> <span class="rcl-da">based</span> <span class="rcl-da">on</span> <span class="rcl-da">the</span> <span class="rcl-da">runtime</span> <span class="rcl-da">type</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">elements</span> <span class="rcl-da">marked</span> <span class="rcl-da">with</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code>
 <span class="rcl-da">(</span><span class="rcl-da">this</span> <span class="rcl-da">is</span> <span class="rcl-da">to</span> <span class="rcl-da">be</span> <span class="rcl-da">consistent</span> <span class="rcl-da">with</span> <span class="rcl-da">the</span> <span class="rcl-da">semantics</span> <span class="rcl-da">of</span> <span class="rcl-da">property</span> <span class="rcl-da">paths</span> <span class="rcl-da">for</span> <span class="rcl-da">cascaded</span> <span class="rcl-da">validation</span><span class="rcl-da">),</span>
 <span class="rcl-da">hence</span> <span class="rcl-da">it</span> <span class="rcl-da">is</span> <span class="rcl-da">not</span> <span class="rcl-da">possible</span> <span class="rcl-da">to</span> <span class="rcl-da">perform</span> <span class="rcl-da">the</span> <span class="rcl-da">extractor</span> <span class="rcl-da">resolution</span> <span class="rcl-da">only</span> <span class="rcl-da">once</span> <span class="rcl-da">per</span> <span class="rcl-da">usage</span> <span class="rcl-da">of</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code> <span class="rcl-da">and</span> <span class="rcl-da">cache</span> <span class="rcl-da">the</span> <span class="rcl-da">result</span><span class="rcl-da">.</span></p>
 </div>
@@ -7575,7 +7611,7 @@ violations = validator.validate( driver, SequencedGroups.class );
 </li>
 <li>
 <p><span class="tck-testable"><span class="rcl-da">If</span> <span class="rcl-da">the</span> <span class="rcl-da">constraint</span> <span class="rcl-da">carries</span> <span class="rcl-da">the</span> <code><span class="rcl-da">Unwrapping</span><span class="rcl-da">.</span><span class="rcl-da">Unwrap</span></code> <span class="rcl-da">payload</span> <span class="rcl-da">and</span> <span class="rcl-da">there</span> <span class="rcl-da">is</span> <span class="rcl-da">exactly</span> <span class="rcl-da">one</span> <span class="rcl-da">maximally-specific</span> <span class="rcl-da">type-compliant</span> <span class="rcl-da">value</span> <span class="rcl-da">extractor</span><span class="rcl-da">,</span> <span class="rcl-da">this</span> <span class="rcl-da">extractor</span> <span class="rcl-da">is</span> <span class="rcl-da">applied</span><span class="rcl-da">;</span></span>
-<span class="tck-testable"><span class="rcl-da">type-compliant</span> <span class="rcl-da">extractor</span> <span class="rcl-da">or</span> <span class="rcl-da">multiple</span> <span class="rcl-da">maximally-specific</span> <span class="rcl-da">type-compliant</span> <span class="rcl-da">extractors</span> <span class="rcl-da">exist</span><span class="rcl-da">,</span> <span class="rcl-da">a</span> <code><span class="rcl-da">ConstraintDeclarationException</span></code> <span class="rcl-da">is</span> <span class="rcl-da">raised</span><span class="rcl-da">.</span></span></p>
+<span class="tck-testable"><span class="rcl-da">if</span> <span class="rcl-da">no</span> <span class="rcl-da">type-compliant</span> <span class="rcl-da">extractor</span> <span class="rcl-da">or</span> <span class="rcl-da">multiple</span> <span class="rcl-da">maximally-specific</span> <span class="rcl-da">type-compliant</span> <span class="rcl-da">extractors</span> <span class="rcl-da">exist</span><span class="rcl-da">,</span> <span class="rcl-da">a</span> <code><span class="rcl-da">ConstraintDeclarationException</span></code> <span class="rcl-da">is</span> <span class="rcl-da">raised</span><span class="rcl-da">.</span></span></p>
 </li>
 <li>
 <p><span class="rcl-da">If</span> <span class="rcl-da">the</span> <span class="rcl-da">constraint</span> <span class="rcl-da">carries</span> <span class="rcl-da">neither</span> <span class="rcl-da">the</span> <code><span class="rcl-da">Unwrapping</span><span class="rcl-da">.</span><span class="rcl-da">Unwrap</span></code> <span class="rcl-da">nor</span> <span class="rcl-da">the</span> <code><span class="rcl-da">Unwrapping</span><span class="rcl-da">.</span><span class="rcl-da">Skip</span></code> <span class="rcl-da">payload</span><span class="rcl-da">:</span></p>
@@ -7830,8 +7866,10 @@ violations = validator.validate( driver, SequencedGroups.class );
 <pre class="CodeRay highlight"><code data-lang="JAVA"><span class="directive">public</span> <span class="type">class</span> <span class="class">Country</span> {
     <span class="annotation">@NotNull</span>
     <span class="directive">private</span> <span class="predefined-type">String</span> name;
-    <span class="annotation">@Size</span>(max=<span class="integer">2</span>) <span class="directive">private</span> <span class="predefined-type">String</span> ISO2Code;
-    <span class="annotation">@Size</span>(max=<span class="integer">3</span>) <span class="directive">private</span> <span class="predefined-type">String</span> ISO3Code;
+    <span class="annotation">@Size</span>(max=<span class="integer">2</span>)
+    <span class="directive">private</span> <span class="predefined-type">String</span> ISO2Code;
+    <span class="annotation">@Size</span>(max=<span class="integer">3</span>)
+    <span class="directive">private</span> <span class="predefined-type">String</span> ISO3Code;
 
     <span class="directive">public</span> <span class="predefined-type">String</span> getName() {
         <span class="keyword">return</span> name;
@@ -8189,7 +8227,7 @@ book.setAuthor( author );</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="JAVA">book.setTitle( <span class="string"><span class="delimiter">"</span><span class="content">Les fleurs du mal</span><span class="delimiter">"</span></span> );
-author.setCompany(<span class="string"><span class="delimiter">"</span><span class="content">Some random publisher with a very very very long name</span><span class="delimiter">"</span></span>);</code></pre>
+author.setCompany( <span class="string"><span class="delimiter">"</span><span class="content">Some random publisher with a very very very long name</span><span class="delimiter">"</span></span> );</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8495,7 +8533,7 @@ address.setCity(<span class="string"><span class="delimiter">"</span><span class
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="JAVA">validator.validateValue(<span class="string"><span class="delimiter">"</span><span class="content">city</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">Paris</span><span class="delimiter">"</span></span>).size() == <span class="integer">0</span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="JAVA">validator.validateValue(<span class="rcl-da">Address</span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">,</span> <span class="string"><span class="delimiter">"</span><span class="content">city</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">Paris</span><span class="delimiter">"</span></span>).size() == <span class="integer">0</span></code></pre>
 </div>
 </div>
 </div>
@@ -9078,13 +9116,13 @@ executableValidator.validateConstructorParameters(constructor, <span class="keyw
 </div>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">The <code class="methodname">getExecutableParameters()</code> returns the parameters provided to the method or constructor invocation or <code>null</code> if not validating the method or constructor parameters.</span></p>
+<p><span class="tck-testable">The <code class="methodname">getExecutableParameters()</code> returns the parameters provided to the method or constructor invocation or <code>null</code> if not validating <span class="rcl-da">a</span><span class="rcl-dd">the </span> method or constructor parameters.</span></p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">The <code class="methodname">getExecutableReturnValue()</code> returns the return value of the method or constructor invocation or <code>null</code> if the method has no return value or if not validating the method or constructor return value.</span></p>
+<p><span class="tck-testable">The <code class="methodname">getExecutableReturnValue()</code> returns the return value of the method or constructor invocation or <code>null</code> if the method has no return value or if not validating <span class="rcl-da">a</span><span class="rcl-dd">the </span> method or constructor return value.</span></p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">The <code class="methodname">getInvalidValue()</code> method returns the value (field, property, method/constructor parameter, method/constructor return value or validated object) being passed to <code class="methodname">isValid()</code>.</span> <span class="tck-testable">For a cross-parameter constraint failure, an <code class="code">Object[]</code> representing the method/constructor invocation arguments is returned.</span></p>
+<p><span class="tck-testable">The <code class="methodname">getInvalidValue()</code> method returns the value (field, property, method/constructor parameter, method/constructor return value<span class="rcl-da">,</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> or validated object) being passed to <code class="methodname">isValid()</code>.</span> <span class="tck-testable">For a cross-parameter constraint failure, an <code class="code">Object[]</code> representing the method/constructor invocation arguments is returned.</span></p>
 </div>
 <div class="paragraph">
 <p><span class="tck-testable"><code class="methodname">getConstraintDescriptor()</code> provides access to the failing constraint metadata</span> (see <a href="#constraintmetadata-constraintdescriptor">ConstraintDescriptor</a>).</p>
@@ -9100,7 +9138,9 @@ executableValidator.validateConstructorParameters(constructor, <span class="keyw
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="JAVA"><span class="comment">/**
+<pre class="CodeRay highlight"><code data-lang="JAVA"><span class="keyword"><span class="rcl-da">import</span></span> <span class="include"><span class="rcl-da">javax</span><span class="rcl-da">.</span><span class="rcl-da">validation</span><span class="rcl-da">.</span><span class="rcl-da">valueextraction</span><span class="rcl-da">.</span><span class="rcl-da">ValueExtractor</span></span><span class="rcl-da">;</span>
+
+<span class="comment">/**
  * Represents the navigation path from an object to another
  * in an object graph.
  * Each path element is represented by a {@code Node}.
@@ -9146,27 +9186,34 @@ executableValidator.validateConstructorParameters(constructor, <span class="keyw
          *     cross-parameter.&lt;/li&gt;
          *     &lt;li&gt;The literal {@code &lt;return value&gt;} for a method or constructor return
          *     value.&lt;/li&gt;
-         * &lt;/ul&gt;
+         *     <span class="rcl-da">&lt;</span><span class="rcl-da">li</span><span class="rcl-da">&gt;</span><span class="rcl-da">The</span> <span class="rcl-da">node</span> <span class="rcl-da">name</span> <span class="rcl-da">as</span> <span class="rcl-da">defined</span> <span class="rcl-da">by</span> <span class="rcl-da">the</span> <span class="rcl-da">{@</span><span class="rcl-da">link</span> <span class="rcl-da">ValueExtractor</span><span class="rcl-da">}</span> <span class="rcl-da">for</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span>
+         <span class="rcl-da">*</span>     <span class="rcl-da">element</span><span class="rcl-da">;</span> <span class="rcl-da">specifically</span><span class="rcl-da">,</span> <span class="rcl-da">the</span> <span class="rcl-da">literal</span> <span class="rcl-da">{@</span><span class="rcl-da">code</span> <span class="rcl-da">&lt;</span><span class="rcl-da">list</span> <span class="rcl-da">element</span><span class="rcl-da">&gt;}</span> <span class="rcl-da">for</span> <span class="rcl-da">elements</span>
+         <span class="rcl-da">*</span>     <span class="rcl-da">stored</span> <span class="rcl-da">in</span> <span class="rcl-da">a</span> <span class="rcl-da">list</span><span class="rcl-da">,</span> <span class="rcl-da">the</span> <span class="rcl-da">literal</span> <span class="rcl-da">{@</span><span class="rcl-da">code</span> <span class="rcl-da">&lt;</span><span class="rcl-da">iterable</span> <span class="rcl-da">element</span><span class="rcl-da">&gt;}</span> <span class="rcl-da">for</span> <span class="rcl-da">elements</span>
+         <span class="rcl-da">*</span>     <span class="rcl-da">stored</span> <span class="rcl-da">in</span> <span class="rcl-da">an</span> <span class="rcl-da">{@</span><span class="rcl-da">code</span> <span class="rcl-da">Iterable</span><span class="rcl-da">},</span> <span class="rcl-da">the</span> <span class="rcl-da">literal</span> <span class="rcl-da">{@</span><span class="rcl-da">code</span> <span class="rcl-da">&lt;</span><span class="rcl-da">map</span> <span class="rcl-da">key</span><span class="rcl-da">&gt;}</span> <span class="rcl-da">for</span> <span class="rcl-da">the</span> <span class="rcl-da">keys</span>
+         <span class="rcl-da">*</span>     <span class="rcl-da">stored</span> <span class="rcl-da">in</span> <span class="rcl-da">a</span> <span class="rcl-da">{@</span><span class="rcl-da">code</span> <span class="rcl-da">Map</span><span class="rcl-da">}</span> <span class="rcl-da">and</span> <span class="rcl-da">the</span> <span class="rcl-da">literal</span> <span class="rcl-da">{@</span><span class="rcl-da">code</span> <span class="rcl-da">&lt;</span><span class="rcl-da">map</span> <span class="rcl-da">value</span><span class="rcl-da">&gt;}</span> <span class="rcl-da">for</span> <span class="rcl-da">the</span> <span class="rcl-da">values</span>
+         <span class="rcl-da">*</span>     <span class="rcl-da">stored</span> <span class="rcl-da">in</span> <span class="rcl-da">a</span> <span class="rcl-da">{@</span><span class="rcl-da">code</span> <span class="rcl-da">Map</span><span class="rcl-da">}.</span>
+         <span class="rcl-da">*</span> &lt;/ul&gt;
          *
          * @return name of the element which the node represents
          */</span>
         <span class="predefined-type">String</span> getName();
 
         <span class="comment">/**
-         * @return {@code true} if the node represents an object contained in an
-         *         {@code Iterable} or in a {@code Map}, {@code false} otherwise
+         * @return  <span class="rcl-da">@</span><span class="rcl-da">return</span> {@code true} if the node represents an object contained in<span class="rcl-dd">an </span>
+         * <span class="rcl-da">a</span> <span class="rcl-da">multi-valued</span> <span class="rcl-da">container</span> <span class="rcl-da">such</span> <span class="rcl-da">as</span> {@code Iterable} or<span class="rcl-dd">in </span><span class="rcl-dd">a </span> {@code Map<span class="rcl-da">}</span> <span class="rcl-da">or</span> <span class="rcl-da">an</span> <span class="rcl-da">array</span><span class="rcl-da">,</span>
+         <span class="rcl-da">*</span><span class="rcl-dd">}, </span> {@code false} otherwise
          */</span>
         <span class="type">boolean</span> isInIterable();
 
         <span class="comment">/**
-         * @return the index the node is placed in if contained in an array or
-         *         {@code List}; {@code null} otherwise
+         * @return the index the node is placed in if contained in an array<span class="rcl-da">,</span> <span class="rcl-da">a</span><span class="rcl-dd">or </span><span class="rcl-dd">* </span> {@code List<span class="rcl-da">}</span>
+         <span class="rcl-da">*</span>         <span class="rcl-da">or</span> <span class="rcl-da">any</span> <span class="rcl-da">other</span> <span class="rcl-da">container</span> <span class="rcl-da">supporting</span> <span class="rcl-da">indexed</span> <span class="rcl-da">access</span><span class="rcl-da">,</span><span class="rcl-dd">}; </span> {@code null} otherwise
          */</span>
         <span class="predefined-type">Integer</span> getIndex();
 
         <span class="comment">/**
-         * @return the key the node is placed in if contained in a {@code Map},
-         *         {@code null} otherwise
+         * @return the key the node is placed in if contained in a {@code Map<span class="rcl-da">}</span> <span class="rcl-da">or</span> <span class="rcl-da">any</span><span class="rcl-dd">}, </span>
+         *         <span class="rcl-da">other</span> <span class="rcl-da">container</span> <span class="rcl-da">supporting</span> <span class="rcl-da">keyed</span> <span class="rcl-da">access</span><span class="rcl-da">,</span> {@code null} otherwise
          */</span>
         <span class="predefined-type">Object</span> getKey();
 
@@ -9447,26 +9494,26 @@ executableValidator.validateConstructorParameters(constructor, <span class="keyw
 <p>The literal <code>&lt;return value&gt;</code> for a method or constructor return value.</p>
 </li>
 <li>
-<p><span class="rcl-da">The</span> <span class="rcl-da">name</span> <span class="rcl-da">set</span> <span class="rcl-da">by</span> <span class="rcl-da">the</span> <span class="rcl-da">applied</span> <span class="rcl-da">value</span> <span class="rcl-da">extractor</span> <span class="rcl-da">for</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraint</span><span class="rcl-da">,</span>
-<span class="rcl-da">e</span><span class="rcl-da">.</span><span class="rcl-da">g</span><span class="rcl-da">.</span> <code><span class="rcl-da">&lt;</span><span class="rcl-da">map</span> <span class="rcl-da">value</span><span class="rcl-da">&gt;</span></code> <span class="rcl-da">if</span> <span class="rcl-da">the</span> <span class="rcl-da">default</span> <span class="rcl-da">value</span> <span class="rcl-da">extractor</span> <span class="rcl-da">for</span> <span class="rcl-da">map</span> <span class="rcl-da">values</span> <span class="rcl-da">is</span> <span class="rcl-da">applied</span></p>
+<p><span class="rcl-da">The</span> <span class="rcl-da">name</span> <span class="rcl-da">set</span> <span class="rcl-da">by</span> <span class="rcl-da">the</span> <span class="rcl-da">applied</span> <span class="rcl-da">value</span> <span class="rcl-da">extractor</span> <span class="rcl-da">for</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraint</span><span class="rcl-da">;</span>
+<span class="rcl-da">specifically</span><span class="rcl-da">,</span> <span class="rcl-da">when</span> <span class="rcl-da">applying</span> <span class="rcl-da">the</span> <span class="rcl-da">default</span> <span class="rcl-da">value</span> <span class="rcl-da">extractor</span> <span class="rcl-da">for</span> <span class="rcl-da">iterable</span> <span class="rcl-da">elements</span><span class="rcl-da">,</span> <span class="rcl-da">list</span> <span class="rcl-da">elements</span><span class="rcl-da">,</span> <span class="rcl-da">map</span> <span class="rcl-da">keys</span> <span class="rcl-da">or</span> <span class="rcl-da">map</span> <span class="rcl-da">values</span><span class="rcl-da">,</span> <span class="rcl-da">the</span> <span class="rcl-da">literal</span> <code><span class="rcl-da">&lt;</span><span class="rcl-da">iterable</span> <span class="rcl-da">element</span><span class="rcl-da">&gt;</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">&lt;</span><span class="rcl-da">list</span> <span class="rcl-da">element</span><span class="rcl-da">&gt;</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">&lt;</span><span class="rcl-da">map</span> <span class="rcl-da">key</span><span class="rcl-da">&gt;</span></code> <span class="rcl-da">or</span> <code><span class="rcl-da">&lt;</span><span class="rcl-da">map</span> <span class="rcl-da">value</span><span class="rcl-da">&gt;</span></code><span class="rcl-da">,</span> <span class="rcl-da">respectively</span><span class="rcl-da">.</span></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><span class="tck-testable"><code class="methodname">isInIterable()</code> returns <code>true</code> if the node represents an object contained in an <span class="rcl-da">array</span><span class="rcl-da">,</span> <code class="classname">Iterable</code> or in a <code class="classname">Map</code>, <code>false</code> otherwise.</span></p>
+<p><span class="tck-testable"><code class="methodname">isInIterable()</code> returns <code>true</code> if the node represents an object contained in an <span class="rcl-da">array</span> <span class="rcl-da">or</span> <span class="rcl-da">in</span> <span class="rcl-da">a</span> <span class="rcl-da">multi-valued</span> <span class="rcl-da">container</span> <span class="rcl-da">such</span> <span class="rcl-da">as</span> <code class="classname">Iterable</code> or<span class="rcl-dd">in </span><span class="rcl-dd">a </span> <code class="classname">Map</code>, <code>false</code> otherwise.</span></p>
 </li>
 <li>
-<p><span class="tck-testable"><code class="methodname">getIndex()</code> returns the index of the node if it is contained in an array or <code class="classname">List</code>. Returns <code>null</code> otherwise.</span></p>
+<p><span class="tck-testable"><code class="methodname">getIndex()</code> returns the index of the node if it is contained in an array<span class="rcl-da">,</span><span class="rcl-dd">or </span> <code class="classname">List</code> <span class="rcl-da">or</span> <span class="rcl-da">any</span> <span class="rcl-da">other</span> <span class="rcl-da">container</span> <span class="rcl-da">supporting</span> <span class="rcl-da">indexed</span> <span class="rcl-da">access</span>. Returns <code>null</code> otherwise.</span></p>
 </li>
 <li>
-<p><span class="tck-testable"><code class="methodname">getKey()</code> returns the key of the node if it is contained in a <code class="classname">Map</code>. Returns <code>null</code> otherwise.</span></p>
+<p><span class="tck-testable"><code class="methodname">getKey()</code> returns the key of the node if it is contained in a <code class="classname">Map</code> <span class="rcl-da">or</span> <span class="rcl-da">any</span> <span class="rcl-da">other</span> <span class="rcl-da">container</span> <span class="rcl-da">supporting</span> <span class="rcl-da">keyed</span> <span class="rcl-da">access</span>. Returns <code>null</code> otherwise.</span></p>
 </li>
 <li>
 <p><span class="tck-testable"><code class="methodname">getKind()</code> returns the <code class="classname">ElementKind</code> corresponding to the actual node type. This can be used in conjunction with the method <code class="methodname">as()</code> to narrow the type and access node specific methods</span></p>
 </li>
 <li>
-<p><span class="tck-testable"><code class="methodname">as(Class&lt;? extends Node&gt;)</code> returns the node instance narrowed to the type passed as a parameter or <code class="classname">ClassCastException</code> if the type and node don’t match.</span></p>
+<p><span class="tck-testable"><code class="methodname">as(Class&lt;? extends Node&gt;)</code> returns the node instance narrowed to the type passed as a parameter or <span class="rcl-da">throws</span> <span class="rcl-da">a</span> <code class="classname">ClassCastException</code> if the type and node don’t match.</span></p>
 </li>
 </ul>
 </div>
@@ -9789,7 +9836,8 @@ executableValidator.validateConstructorParameters(constructor, <span class="keyw
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A given <code class="classname">Node</code> object derives its <code>inIterable</code>, <code>key</code> and <code>index</code> properties from the previous association, method parameter or return value traversed.</p>
+<p>A given <code class="classname">Node</code> object derives its <code>inIterable</code>, <code>key</code> and <code>index</code> properties from the previous association, method parameter or return value traversed.
+<span class="rcl-da">The</span> <span class="rcl-da">same</span> <span class="rcl-da">applies</span> <span class="rcl-da">to</span> <code><span class="rcl-da">typeArgumentIndex</span></code> <span class="rcl-da">and</span> <code><span class="rcl-da">containerClass</span></code> <span class="rcl-da">if</span> <span class="rcl-da">the</span> <span class="rcl-da">given</span> <span class="rcl-da">node</span> <span class="rcl-da">type</span> <span class="rcl-da">defines</span> <span class="rcl-da">these</span> <span class="rcl-da">properties</span><span class="rcl-da">.</span></p>
 </div>
 </td>
 </tr>
@@ -9843,7 +9891,8 @@ executableValidator.validateConstructorParameters(constructor, <span class="keyw
 
     [...]
 
-    <span class="annotation">@OldAndNewPasswordsDifferent</span> <span class="annotation">@NewPasswordsIdentical</span>
+    <span class="annotation">@OldAndNewPasswordsDifferent</span>
+    <span class="annotation">@NewPasswordsIdentical</span>
     <span class="directive">public</span> <span class="type">void</span> renewPassword(
             <span class="predefined-type">String</span> oldPassword, <span class="predefined-type">String</span> newPassword, <span class="predefined-type">String</span> retypedNewPassword<span class="rcl-da">)</span> <span class="rcl-da">{</span>
         <span class="rcl-da">[...]</span><span class="rcl-dd">); </span>
@@ -10318,7 +10367,7 @@ author.setLastName(<span class="string"><span class="delimiter">"</span><span cl
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="JAVA"><span class="comment">//assuming an english locale, the interpolated message is returned</span>
-<span class="keyword">assert</span> <span class="string"><span class="delimiter">"</span><span class="content">may not be null</span><span class="delimiter">"</span></span>.equals( constraintViolation.getMessage() );
+<span class="keyword">assert</span> <span class="string"><span class="delimiter">"</span><span class="content"><span class="rcl-da">must</span><span class="rcl-dd">may </span> not be null</span><span class="delimiter">"</span></span>.equals( constraintViolation.getMessage() );
 
 <span class="keyword">assert</span> library == constraintViolation.getRootBean();
 <span class="keyword">assert</span> Library.class == constraintViolation.getRootBeanClass();
@@ -10435,7 +10484,7 @@ node = nodeIter.next();
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="JAVA"><span class="comment">//assuming an english locale, the interpolated message is returned</span>
-<span class="keyword">assert</span> <span class="string"><span class="delimiter">"</span><span class="content">may not be null</span><span class="delimiter">"</span></span>.equals( constraintViolation.getMessage() );
+<span class="keyword">assert</span> <span class="string"><span class="delimiter">"</span><span class="content"><span class="rcl-da">must</span><span class="rcl-dd">may </span> not be null</span><span class="delimiter">"</span></span>.equals( constraintViolation.getMessage() );
 
 <span class="keyword">assert</span> <span class="predefined-constant">null</span> == constraintViolation.getRootBean();
 <span class="keyword">assert</span> Library.class == constraintViolation.getRootBeanClass();
@@ -10547,7 +10596,7 @@ node = nodeIter.next();
 <div class="sect3">
 <h4 id="validationapi-message-defaultmessageinterpolation"><a class="anchor" href="#validationapi-message-defaultmessageinterpolation"></a><span class="rcl-da">6.3.1</span><span class="rcl-dd">5.3.1</span>. Default message interpolation</h4>
 <div class="paragraph">
-<p><span class="tck-testable">Every conforming Bean Validation implementation includes a default message interpolator which has to comply with</span> the algorithm defined here to interpolate message descriptors. As precondition for message interpolation the following applies:</p>
+<p><span class="tck-testable">Every conforming Bean Validation implementation includes a default message interpolator which has to comply with the algorithm defined here to interpolate message descriptors.</span> As precondition for message interpolation the following applies:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -10692,7 +10741,7 @@ node = nodeIter.next();
 </ul>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">If an exception occurs during message interpolation, e.g. due invalid expressions or references to an unknown property, the message expression stays unchanged.</span></p>
+<p><span class="tck-testable">If an exception occurs during message interpolation, e.g. due <span class="rcl-da">to</span> invalid expressions or references to an unknown property, the message expression stays unchanged.</span></p>
 </div>
 </div>
 </div>
@@ -10873,6 +10922,7 @@ myapp.creditcard.error=credit card number not valid</code></pre>
     <span class="comment">/**
      * enforces the locale passed to the interpolator
      */</span>
+    <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Override</span></span>
     <span class="directive">public</span> <span class="predefined-type">String</span> interpolate(<span class="predefined-type">String</span> message,
                               <span class="predefined-type">Context</span> context) {
         <span class="keyword">return</span> defaultInterpolator.interpolate(message,
@@ -10881,6 +10931,7 @@ myapp.creditcard.error=credit card number not valid</code></pre>
     }
 
     <span class="comment">// no real use, implemented for completeness</span>
+    <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Override</span></span>
     <span class="directive">public</span> <span class="predefined-type">String</span> interpolate(<span class="predefined-type">String</span> message,
                               <span class="predefined-type">Context</span> context,
                               <span class="predefined-type">Locale</span> locale) {
@@ -10916,12 +10967,14 @@ MessageInterpolator interpolator = <span class="keyword">new</span> LocaleSpecif
         <span class="local-variable">this</span>.delegate = delegate;
     }
 
+    <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Override</span></span>
     <span class="directive">public</span> <span class="predefined-type">String</span> interpolate(<span class="predefined-type">String</span> message, <span class="predefined-type">Context</span> context) {
         <span class="predefined-type">Locale</span> locale = <span class="predefined-type">Container</span>.getManager().getUserLocale();
         <span class="keyword">return</span> <span class="local-variable">this</span>.delegate.interpolate(
                         message, context, locale );
     }
 
+    <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Override</span></span>
     <span class="directive">public</span> <span class="predefined-type">String</span> interpolate(<span class="predefined-type">String</span> message, <span class="predefined-type">Context</span> context, <span class="predefined-type">Locale</span> locale) {
         <span class="keyword">return</span> <span class="local-variable">this</span>.delegate.interpolate(message, context, locale);
     }
@@ -10992,7 +11045,7 @@ ValidatorFactory factory = configuration
 </ul>
 </div>
 <div class="paragraph">
-<p>By default, integrators intercept and validate methods hosting either a constraint or being marked for cascaded validation (<code class="classname">@Valid</code>) whether it be on the method itself or on any of its parameters. <span class="tck-testable">The <code class="classname">Default</code> group is used for validation out of the box.</span></p>
+<p>By default, integrators intercept and validate methods<span class="rcl-dd">hosting </span> either <span class="rcl-da">hosting</span> a constraint or being marked for cascaded validation (<code class="classname">@Valid</code>) whether it be on the method itself or on any of its parameters. <span class="tck-testable">The <code class="classname">Default</code> group is used for validation out of the box.</span></p>
 </div>
 <div class="paragraph">
 <p>Integrators are encouraged to use Bean Validation’s metadata API to find whether or not a method or a constructor should be intercepted. This guarantees that XML descriptors as well as future mapping strategies are taken into account. Note that the metadata API does not take into account the fact that a method or constructor validation has been enabled or disabled by the techniques described in <a href="#integration-general-executable">Method and constructor validation</a>.</p>
@@ -11277,7 +11330,7 @@ factory.close();</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The third example shows how to bootstrap Bean Validation in an environment not following the traditional Java classloader strategies (such as tools or alternative service containers like OSGi). They can provide some alternative provider resolution strategy to discover Bean Validation providers.</p>
+<p>The third example shows how to bootstrap Bean Validation in an environment not following the traditional Java <span class="rcl-da">class</span> <span class="rcl-da">loader</span><span class="rcl-dd">classloader </span> strategies (such as tools or alternative service containers like OSGi). They can provide some alternative provider resolution strategy to discover Bean Validation providers.</p>
 </div>
 <div class="exampleblock">
 <div class="title">Example <span class="rcl-da">6.16</span><span class="rcl-da">:</span><span class="rcl-dd">72</span><span class="rcl-dd">. </span> Customize the Bean Validation provider resolution mechanism</div>
@@ -12495,7 +12548,7 @@ ValidatorFactory factory2 = configuration
 <div class="sect3">
 <h4 id="validationapi-bootstrapping-validationprovider"><a class="anchor" href="#validationapi-bootstrapping-validationprovider"></a><span class="rcl-da">6.5.4</span><span class="rcl-dd">5.5.4</span>. ValidationProvider and ValidationProviderResolver</h4>
 <div class="paragraph">
-<p><code class="classname">ValidationProvider</code> is the contract between the bootstrap process and a specific Bean Validation provider. <code class="classname">ValidationProviderResolver</code> implements the discovery mechanism for Bean Validation provider implementations. Any Bean Validation client can implement such a discovery mechanism but it is typically implemented by containers having specific classloader structures and restrictions.</p>
+<p><code class="classname">ValidationProvider</code> is the contract between the bootstrap process and a specific Bean Validation provider. <code class="classname">ValidationProviderResolver</code> implements the discovery mechanism for Bean Validation provider implementations. Any Bean Validation client can implement such a discovery mechanism but it is typically implemented by containers having specific <span class="rcl-da">class</span> <span class="rcl-da">loader</span><span class="rcl-dd">classloader </span> structures and restrictions.</p>
 </div>
 <div class="sect4">
 <h5 id="validationapi-bootstrapping-validationprovider-resolver"><a class="anchor" href="#validationapi-bootstrapping-validationprovider-resolver"></a><span class="rcl-da">6.5.4.1</span><span class="rcl-da">.</span> ValidationProviderResolver</h5>
@@ -12542,7 +12595,7 @@ ValidatorFactory factory2 = configuration
 <p>Bean Validation provider jars may be installed or made available in the same ways as other service providers, e.g. as extensions or added to the application classpath according to the guidelines in the JAR file specification.</p>
 </div>
 <div class="paragraph">
-<p>The default <code class="classname">ValidationProviderResolver</code> implementation will locate all the Bean Validation providers by their provider configuration files visible in the classpath. The default <code class="classname">ValidationProviderResolver</code> implementation is recommended and custom <code class="classname">ValidationProviderResolver</code> implementations should be rarely used. A typical use of a custom resolution is resolving providers in a classloader constrained container like OSGi or in a tool environment (IDE).</p>
+<p>The default <code class="classname">ValidationProviderResolver</code> implementation will locate all the Bean Validation providers by their provider configuration files visible in the classpath. The default <code class="classname">ValidationProviderResolver</code> implementation is recommended and custom <code class="classname">ValidationProviderResolver</code> implementations should be rarely used. A typical use of a custom resolution is resolving providers in a <span class="rcl-da">class</span> <span class="rcl-da">loader</span><span class="rcl-dd">classloader </span> constrained container like OSGi or in a tool environment (IDE).</p>
 </div>
 <div class="paragraph">
 <p>The default <code class="classname">ValidationProviderResolver</code> can be accessed via <code class="classname">BootStrapState.getDefaultValidationProviderResolver()</code>. This method is typically used by the Bean Validation provider <code class="classname">Configuration</code> implementation.</p>
@@ -13142,7 +13195,7 @@ ValidatorFactory factory2 = configuration
 <div class="ulist">
 <ul>
 <li>
-<p><span class="tck-not-testable"><code class="classname">ValidatorFactory</code> is a thread-safe object that should be built once per deployment unit</span></p>
+<p><span class="tck-not-testable"><code class="classname">ValidatorFactory</code> is a thread-safe object that should be built once per deployment unit<span class="rcl-da">.</span></span></p>
 </li>
 <li>
 <p><code class="classname">ValidatorFactory</code> should be closed when it is no longer needed (e.g. when the unit is undeployed or the server stopped).</p>
@@ -13377,7 +13430,10 @@ ValidatorFactory factory2 = configuration
 <p><code>Object[].class</code> when invoked on <code class="classname">CrossParameterDescriptor</code>,</p>
 </li>
 <li>
-<p>the return type when invoked on <code class="classname">ConstructorDescriptor</code>, <code class="classname">MethodDescriptor</code> or <code class="classname">ReturnValueDescriptor</code>.</p>
+<p>the return type when invoked on <code class="classname">ConstructorDescriptor</code>, <code class="classname">MethodDescriptor</code> or <code class="classname">ReturnValueDescriptor</code><span class="rcl-da">,</span></p>
+</li>
+<li>
+<p><span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">type</span> <span class="rcl-da">when</span> <span class="rcl-da">invoked</span> <span class="rcl-da">on</span> <code><span class="rcl-da">ContainerElementTypeDescriptor</span></code> <span class="rcl-da">(</span><span class="rcl-da">e</span>.<span class="rcl-da">g</span><span class="rcl-da">.</span> <span class="rcl-da">when</span> <span class="rcl-da">invoked</span> <span class="rcl-da">on</span> <span class="rcl-da">a</span> <span class="rcl-da">descriptor</span> <span class="rcl-da">representing</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">type</span> <span class="rcl-da">of</span> <code><span class="rcl-da">List</span><span class="rcl-da">&lt;</span><span class="rcl-da">String</span><span class="rcl-da">&gt;</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">String</span><span class="rcl-da">.</span><span class="rcl-da">class</span></code> <span class="rcl-da">will</span> <span class="rcl-da">be</span> <span class="rcl-da">returned</span><span class="rcl-da">).</span></p>
 </li>
 </ul>
 </div>
@@ -13390,7 +13446,7 @@ ValidatorFactory factory2 = configuration
 <p><span class="tck-testable"><code class="methodname">hasConstraints()</code> returns <code>true</code> if the given element in the class hierarchy holds at least one constraint declaration.</span></p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">If you need to query the metadata API in a more fine grained way for example by restricting the constraints to the one described on fields or on getters or by restricting to a given set of groups, you can use the <code class="classname">ConstraintFinder</code> fluent API by calling <code class="methodname">findConstraints()</code>.</span></p>
+<p><span class="tck-testable">If you need to query the metadata API in a more fine grained way for example by restricting the constraints to the <span class="rcl-da">ones</span><span class="rcl-dd">one </span> described on fields or on getters or by restricting to a given set of groups, you can use the <code class="classname">ConstraintFinder</code> fluent API by calling <code class="methodname">findConstraints()</code>.</span></p>
 </div>
 <div class="paragraph">
 <p><span class="tck-testable"><code class="classname">unorderedAndMatchingGroups()</code> restricts the results to the <code class="classname">ConstraintDescriptor</code>s (see <a href="#constraintmetadata-constraintdescriptor">ConstraintDescriptor</a>) matching the given groups. Order is not respected but group inheritance and inheritance via sequence (including the <code class="classname">Default</code> group overriding at the class level) are honored.</span></p>
@@ -13629,9 +13685,8 @@ ConstructorDescriptor constructorDescriptor = validator
      * exists or the specified constructor neither has parameter or return value
      * constraints nor a parameter or return value marked for cascaded
      * validation.
-     * Constructor of super types are considered.
-     *
-     * @param parameterTypes the parameter types of the constructor
+     *<span class="rcl-dd">Constructor </span><span class="rcl-dd">of </span><span class="rcl-dd">super </span><span class="rcl-dd">types </span><span class="rcl-dd">are </span><span class="rcl-dd">considered</span><span class="rcl-dd">. </span>
+     *<span class="rcl-dd">* </span> @param parameterTypes the parameter types of the constructor
      * @return a constructor descriptor for the given constructor
      *
      * @since 1.1
@@ -14075,7 +14130,7 @@ ConstructorDescriptor constructorDescriptor = validator
 <div class="sect2">
 <h3 id="constraintmetadata-crossparameterdescriptor"><a class="anchor" href="#constraintmetadata-crossparameterdescriptor"></a><span class="rcl-da">7.9</span><span class="rcl-dd">6.9</span>. CrossParameterDescriptor</h3>
 <div class="paragraph">
-<p>The <code class="classname">CrossParameterDescriptor</code> interface describes a element containing all cross-parameter constraints of a method or constructor.</p>
+<p>The <code class="classname">CrossParameterDescriptor</code> interface describes <span class="rcl-da">an</span><span class="rcl-dd">a </span> element containing all cross-parameter constraints of a method or constructor.</p>
 </div>
 <div class="paragraph">
 <p>This interface is returned by <code class="methodname">MethodDescriptor.getCrossParameterDescriptor()</code> and <code class="methodname">ConstructorDescriptor.getCrossParameterDescriptor()</code>.</p>
@@ -14130,7 +14185,7 @@ ConstructorDescriptor constructorDescriptor = validator
 <div class="sect2">
 <h3 id="constraintmetadata-containerdescriptor"><a class="anchor" href="#constraintmetadata-containerdescriptor"></a><span class="rcl-da">7.11</span><span class="rcl-dd">6.11</span>. <span class="rcl-da">ContainerDescriptor</span> <span class="rcl-da">and</span> <span class="rcl-da">ContainerElementTypeDescriptor</span></h3>
 <div class="paragraph">
-<p><span class="rcl-da">The</span> <code><span class="rcl-da">ContainerDescriptor</span></code> <span class="rcl-da">interface</span> <span class="rcl-da">describes</span> <span class="rcl-da">those</span> <span class="rcl-da">elements</span> <span class="rcl-da">that</span> <span class="rcl-da">can</span> <span class="rcl-da">host</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">(</span><span class="rcl-da">see</span> <a href="#constraintdeclarationvalidationprocess-containerelementconstraints"><span class="rcl-da">Container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span></a><span class="rcl-da">).</span></p>
+<p><span class="rcl-da">The</span> <code><span class="rcl-da">ContainerDescriptor</span></code> <span class="rcl-da">interface</span> <span class="rcl-da">describes</span> <span class="rcl-da">those</span> <span class="rcl-da">elements</span> <span class="rcl-da">that</span> <span class="rcl-da">can</span> <span class="rcl-da">be</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span><span class="rcl-da">,</span> <span class="rcl-da">e</span><span class="rcl-da">.</span><span class="rcl-da">g</span><span class="rcl-da">.</span> <code><span class="rcl-da">List</span></code> <span class="rcl-da">or</span> <code><span class="rcl-da">Map</span></code><span class="rcl-da">,</span> <span class="rcl-da">and</span> <span class="rcl-da">as</span> <span class="rcl-da">such</span> <span class="rcl-da">may</span> <span class="rcl-da">host</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">(</span><span class="rcl-da">see</span> <a href="#constraintdeclarationvalidationprocess-containerelementconstraints"><span class="rcl-da">Container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span></a><span class="rcl-da">)</span> <span class="rcl-da">or</span> <span class="rcl-da">have</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">types</span> <span class="rcl-da">that</span> <span class="rcl-da">are</span> <span class="rcl-da">marked</span> <span class="rcl-da">with</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code><span class="rcl-da">.</span></p>
 </div>
 <div class="paragraph">
 <p><code><span class="rcl-da">ContainerDescriptor</span></code> <span class="rcl-da">is</span> <span class="rcl-da">extended</span> <span class="rcl-da">by</span> <code><span class="rcl-da">PropertyDescriptor</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">ParameterDescriptor</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">ReturnValueDescriptor</span></code> <span class="rcl-da">and</span> <code><span class="rcl-da">ContainerElementTypeDescriptor</span></code><span class="rcl-da">.</span></p>
@@ -14161,14 +14216,15 @@ ConstructorDescriptor constructorDescriptor = validator
 </div>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable"><code><span class="rcl-da">getContainerElementTypes</span><span class="rcl-da">()</span></code> <span class="rcl-da">returns</span> <span class="rcl-da">a</span> <span class="rcl-da">list</span> <span class="rcl-da">of</span> <span class="rcl-da">descriptors</span> <span class="rcl-da">representing</span> <span class="rcl-da">all</span> <span class="rcl-da">the</span> <span class="rcl-da">type</span> <span class="rcl-da">arguments</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span><span class="rcl-da">,</span>
-<span class="rcl-da">in</span> <span class="rcl-da">the</span> <span class="rcl-da">order</span> <span class="rcl-da">of</span> <span class="rcl-da">their</span> <span class="rcl-da">declaration</span><span class="rcl-da">.</span></span></p>
+<p><span class="tck-testable"><span class="rcl-da">If</span> <span class="rcl-da">a</span> <span class="rcl-da">given</span> <span class="rcl-da">element</span> <span class="rcl-da">is</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span><span class="rcl-da">,</span> <code><span class="rcl-da">getConstrainedContainerElementTypes</span><span class="rcl-da">()</span></code> <span class="rcl-da">returns</span> <span class="rcl-da">a</span> <span class="rcl-da">set</span> <span class="rcl-da">with</span> <span class="rcl-da">descriptors</span> <span class="rcl-da">representing</span> <span class="rcl-da">those</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">types</span> <span class="rcl-da">that</span> <span class="rcl-da">either</span> <span class="rcl-da">host</span> <span class="rcl-da">at</span> <span class="rcl-da">least</span> <span class="rcl-da">one</span> <span class="rcl-da">constraint</span> <span class="rcl-da">or</span> <span class="rcl-da">are</span> <span class="rcl-da">marked</span> <span class="rcl-da">with</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code><span class="rcl-da">.</span></span>
+<span class="tck-testable"><span class="rcl-da">The</span> <span class="rcl-da">returned</span> <span class="rcl-da">set</span> <span class="rcl-da">will</span> <span class="rcl-da">be</span> <span class="rcl-da">empty</span> <span class="rcl-da">if</span> <span class="rcl-da">the</span> <span class="rcl-da">given</span> <span class="rcl-da">element</span> <span class="rcl-da">is</span> <span class="rcl-da">not</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span> <span class="rcl-da">or</span> <span class="rcl-da">is</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span> <span class="rcl-da">but</span> <span class="rcl-da">has</span> <span class="rcl-da">no</span> <span class="rcl-da">element</span> <span class="rcl-da">types</span> <span class="rcl-da">that</span> <span class="rcl-da">are</span> <span class="rcl-da">constrained</span> <span class="rcl-da">or</span> <span class="rcl-da">marked</span> <span class="rcl-da">with</span> <code><span class="rcl-da">@</span><span class="rcl-da">Valid</span></code><span class="rcl-da">.</span></span>
+<span class="rcl-da">In</span> <span class="rcl-da">the</span> <span class="rcl-da">context</span> <span class="rcl-da">of</span> <span class="rcl-da">properties</span> <span class="rcl-da">and</span> <span class="rcl-da">method</span> <span class="rcl-da">return</span> <span class="rcl-da">values</span><span class="rcl-da">,</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">types</span> <span class="rcl-da">of</span> <span class="rcl-da">super-types</span> <span class="rcl-da">are</span> <span class="rcl-da">considered</span><span class="rcl-da">.</span></p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable"><span class="rcl-da">The</span> <code><span class="rcl-da">ContainerElementTypeDescriptor</span></code> <span class="rcl-da">interface</span> <span class="rcl-da">describes</span> <span class="rcl-da">the</span> <span class="rcl-da">potential</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">applied</span> <span class="rcl-da">to</span> <span class="rcl-da">one</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span> <span class="rcl-da">type</span><span class="rcl-da">.</span></span></p>
+<p><span class="tck-testable"><span class="rcl-da">The</span> <code><span class="rcl-da">ContainerElementTypeDescriptor</span></code> <span class="rcl-da">interface</span> <span class="rcl-da">describes</span> <span class="rcl-da">the</span> <span class="rcl-da">potential</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">applied</span> <span class="rcl-da">to</span> <span class="rcl-da">one</span> <span class="rcl-da">element</span> <span class="rcl-da">type</span> <span class="rcl-da">of</span> <span class="rcl-da">a</span> <span class="rcl-da">container</span><span class="rcl-da">.</span></span></p>
 </div>
 <div class="paragraph">
-<p><span class="rcl-da">This</span> <span class="rcl-da">interface</span> <span class="rcl-da">is</span> <span class="rcl-da">returned</span> <span class="rcl-da">by</span> <code><span class="rcl-da">ContainerDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getContainerElementTypes</span><span class="rcl-da">()</span></code><span class="rcl-da">.</span></p>
+<p><span class="rcl-da">This</span> <span class="rcl-da">interface</span> <span class="rcl-da">is</span> <span class="rcl-da">returned</span> <span class="rcl-da">by</span> <code><span class="rcl-da">ContainerDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstrainedContainerElementTypes</span><span class="rcl-da">()</span></code><span class="rcl-da">.</span></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -14190,7 +14246,153 @@ ConstructorDescriptor constructorDescriptor = validator
 </div>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable"><code><span class="rcl-da">getTypeArgumentIndex</span><span class="rcl-da">()</span></code> <span class="rcl-da">returns</span> <span class="rcl-da">the</span> <span class="rcl-da">index</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span> <span class="rcl-da">corresponding</span> <span class="rcl-da">to</span> <span class="rcl-da">this</span> <span class="rcl-da">descriptor</span> <span class="rcl-da">instance</span><span class="rcl-da">.</span></span></p>
+<p><span class="tck-testable"><code><span class="rcl-da">getTypeArgumentIndex</span><span class="rcl-da">()</span></code> <span class="rcl-da">returns</span> <span class="rcl-da">the</span> <span class="rcl-da">index</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span> <span class="rcl-da">corresponding</span> <span class="rcl-da">to</span> <span class="rcl-da">this</span> <span class="rcl-da">descriptor</span> <span class="rcl-da">instance</span><span class="rcl-da">.</span></span>
+<span class="tck-testable"><code><span class="rcl-da">getContainerClass</span><span class="rcl-da">()</span></code> <span class="rcl-da">returns</span> <span class="rcl-da">the</span> <span class="rcl-da">type</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">declaring</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">type</span> <span class="rcl-da">represented</span> <span class="rcl-da">by</span> <span class="rcl-da">this</span> <span class="rcl-da">descriptor</span> <span class="rcl-da">instance</span><span class="rcl-da">.</span></span></p>
+</div>
+<div class="paragraph">
+<p><span class="rcl-da">As</span> <span class="rcl-da">an</span> <span class="rcl-da">example</span><span class="rcl-da">,</span> <span class="rcl-da">consider</span> <span class="rcl-da">the</span> <span class="rcl-da">following</span> <span class="rcl-da">type</span> <span class="rcl-da">hierarchy</span><span class="rcl-da">:</span></p>
+</div>
+<div class="exampleblock">
+<div class="title"><span class="rcl-da">Example</span> <span class="rcl-da">7.7</span><span class="rcl-da">:</span> <span class="rcl-da">Type</span> <span class="rcl-da">hierarchy</span> <span class="rcl-da">with</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span></div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="JAVA"><span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">interface</span></span> <span class="class"><span class="rcl-da">LegalEntity</span></span> <span class="rcl-da">{</span>
+
+    <span class="predefined-type"><span class="rcl-da">Iterable</span></span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotNull</span></span> <span class="predefined-type"><span class="rcl-da">String</span></span><span class="rcl-da">&gt;</span> <span class="rcl-da">getRoles</span><span class="rcl-da">();</span>
+<span class="rcl-da">}</span>
+
+<span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">interface</span></span> <span class="class"><span class="rcl-da">Person</span></span> <span class="directive"><span class="rcl-da">extends</span></span> <span class="rcl-da">LegalEntity</span> <span class="rcl-da">{</span>
+
+    <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Override</span></span>
+    <span class="predefined-type"><span class="rcl-da">Set</span></span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotEmpty</span></span> <span class="predefined-type"><span class="rcl-da">String</span></span><span class="rcl-da">&gt;</span> <span class="rcl-da">getRoles</span><span class="rcl-da">();</span>
+
+    <span class="predefined-type"><span class="rcl-da">Map</span></span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotNull</span></span> <span class="predefined-type"><span class="rcl-da">String</span></span><span class="rcl-da">,</span> <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Valid</span></span> <span class="rcl-da">Account</span><span class="rcl-da">&gt;</span> <span class="rcl-da">getAccounts</span><span class="rcl-da">();</span>
+<span class="rcl-da">}</span>
+
+<span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">interface</span></span> <span class="class"><span class="rcl-da">Employee</span></span> <span class="directive"><span class="rcl-da">extends</span></span> <span class="rcl-da">Person</span> <span class="rcl-da">{</span>
+
+    <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Override</span></span>
+    <span class="predefined-type"><span class="rcl-da">Set</span></span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotBlank</span></span> <span class="predefined-type"><span class="rcl-da">String</span></span><span class="rcl-da">&gt;</span> <span class="rcl-da">getRoles</span><span class="rcl-da">();</span>
+
+    <span class="predefined-type"><span class="rcl-da">Map</span></span><span class="rcl-da">&lt;</span><span class="predefined-type"><span class="rcl-da">String</span></span><span class="rcl-da">,</span> <span class="predefined-type"><span class="rcl-da">List</span></span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">NotNull</span></span> <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Valid</span></span> <span class="rcl-da">Address</span><span class="rcl-da">&gt;&gt;</span> <span class="rcl-da">getAddresses</span><span class="rcl-da">();</span>
+<span class="rcl-da">}</span>
+
+<span class="directive"><span class="rcl-da">public</span></span> <span class="directive"><span class="rcl-da">abstract</span></span> <span class="type"><span class="rcl-da">class</span></span> <span class="class"><span class="rcl-da">Roles</span></span> <span class="directive"><span class="rcl-da">implements</span></span> <span class="predefined-type"><span class="rcl-da">Set</span></span><span class="rcl-da">&lt;</span><span class="predefined-type"><span class="rcl-da">String</span></span><span class="rcl-da">&gt;</span> <span class="rcl-da">{</span>
+    <span class="rcl-da">[...]</span>
+<span class="rcl-da">}</span>
+
+<span class="directive"><span class="rcl-da">public</span></span> <span class="type"><span class="rcl-da">class</span></span> <span class="class"><span class="rcl-da">EmployeeImpl</span></span> <span class="directive"><span class="rcl-da">implements</span></span> <span class="rcl-da">Employee</span> <span class="rcl-da">{</span>
+
+    <span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">Override</span></span>
+    <span class="directive"><span class="rcl-da">public</span></span> <span class="rcl-da">Roles</span> <span class="rcl-da">getRoles</span><span class="rcl-da">()</span> <span class="rcl-da">{</span>
+        <span class="rcl-da">[...]</span>
+    <span class="rcl-da">}</span>
+
+    <span class="directive"><span class="rcl-da">public</span></span> <span class="predefined-type"><span class="rcl-da">Map</span></span><span class="rcl-da">&lt;</span><span class="predefined-type"><span class="rcl-da">String</span></span><span class="rcl-da">,</span> <span class="predefined-type"><span class="rcl-da">List</span></span><span class="rcl-da">&lt;</span><span class="annotation"><span class="rcl-da">@</span><span class="rcl-da">ValidAddress</span></span> <span class="rcl-da">Address</span><span class="rcl-da">&gt;&gt;</span> <span class="rcl-da">getAddresses</span><span class="rcl-da">()</span> <span class="rcl-da">{</span>
+        <span class="rcl-da">[...]</span>
+    <span class="rcl-da">}</span>
+
+    <span class="rcl-da">[...]</span>
+<span class="rcl-da">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="rcl-da">Then</span> <span class="rcl-da">the</span> <span class="rcl-da">assertions</span> <span class="rcl-da">in</span> <span class="rcl-da">the</span> <span class="rcl-da">following</span> <span class="rcl-da">example</span> <span class="rcl-da">are</span> <span class="rcl-da">true</span><span class="rcl-da">:</span></p>
+</div>
+<div class="exampleblock">
+<div class="title"><span class="rcl-da">Example</span> <span class="rcl-da">7.8</span><span class="rcl-da">:</span> <span class="rcl-da">Retrieving</span> <span class="rcl-da">metadata</span> <span class="rcl-da">on</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span></div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="JAVA"><span class="predefined-type"><span class="rcl-da">Validator</span></span> <span class="rcl-da">validator</span> <span class="rcl-da">=</span> <span class="rcl-da">...;</span>
+
+<span class="predefined-type"><span class="rcl-da">BeanDescriptor</span></span> <span class="rcl-da">employeeImplDescriptor</span> <span class="rcl-da">=</span> <span class="rcl-da">validator</span><span class="rcl-da">.</span><span class="rcl-da">getConstraintsForClass</span><span class="rcl-da">(</span> <span class="rcl-da">Employee</span><span class="rcl-da">.</span><span class="rcl-da">class</span> <span class="rcl-da">);</span>
+
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">for</span> <span class="rcl-da">property</span> <span class="rcl-da">"</span><span class="rcl-da">roles</span><span class="rcl-da">"</span></span>
+<span class="predefined-type"><span class="rcl-da">PropertyDescriptor</span></span> <span class="rcl-da">rolesDescriptor</span> <span class="rcl-da">=</span> <span class="rcl-da">employeeImplDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstraintsForProperty</span><span class="rcl-da">(</span> <span class="string"><span class="delimiter"><span class="rcl-da">"</span></span><span class="content"><span class="rcl-da">roles</span></span><span class="delimiter"><span class="rcl-da">"</span></span></span> <span class="rcl-da">);</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">rolesDescriptor</span> <span class="rcl-da">!=</span> <span class="predefined-constant"><span class="rcl-da">null</span></span><span class="rcl-da">;</span>
+
+<span class="predefined-type"><span class="rcl-da">Set</span></span><span class="rcl-da">&lt;</span><span class="rcl-da">ContainerElementTypeDescriptor</span><span class="rcl-da">&gt;</span> <span class="rcl-da">constrainedContainerElementTypes</span> <span class="rcl-da">=</span> <span class="rcl-da">rolesDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstrainedContainerElementTypes</span><span class="rcl-da">();</span>
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">types</span> <span class="rcl-da">of</span> <span class="rcl-da">Set</span> <span class="rcl-da">and</span> <span class="rcl-da">Iterable</span><span class="rcl-da">;</span> <span class="rcl-da">Roles</span> <span class="rcl-da">does</span> <span class="rcl-da">not</span> <span class="rcl-da">declare</span> <span class="rcl-da">any</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">types</span> <span class="rcl-da">itself</span></span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">constrainedContainerElementTypes</span><span class="rcl-da">.</span><span class="rcl-da">size</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">2</span></span><span class="rcl-da">;</span>
+
+<span class="predefined-type"><span class="rcl-da">Iterator</span></span><span class="rcl-da">&lt;</span><span class="rcl-da">ContainerElementTypeDescriptor</span><span class="rcl-da">&gt;</span> <span class="rcl-da">it</span> <span class="rcl-da">=</span> <span class="rcl-da">constrainedContainerElementTypes</span><span class="rcl-da">.</span><span class="rcl-da">iterator</span><span class="rcl-da">();</span>
+
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">assuming</span> <span class="rcl-da">that</span> <span class="rcl-da">the</span> <span class="rcl-da">descriptor</span> <span class="rcl-da">for</span> <span class="rcl-da">Set</span> <span class="rcl-da">is</span> <span class="rcl-da">returned</span> <span class="rcl-da">first</span></span>
+<span class="rcl-da">ContainerElementTypeDescriptor</span> <span class="rcl-da">containerElementTypeDescriptor</span> <span class="rcl-da">=</span> <span class="rcl-da">it</span><span class="rcl-da">.</span><span class="rcl-da">next</span><span class="rcl-da">();</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getContainerClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-type"><span class="rcl-da">Set</span></span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getTypeArgumentIndex</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">0</span></span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getElementClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-type"><span class="rcl-da">String</span></span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">@</span><span class="rcl-da">NotEmpty</span> <span class="rcl-da">and</span> <span class="rcl-da">@</span><span class="rcl-da">NotBlank</span></span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstraintDescriptors</span><span class="rcl-da">().</span><span class="rcl-da">size</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">2</span></span><span class="rcl-da">;</span>
+
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">assuming</span> <span class="rcl-da">that</span> <span class="rcl-da">the</span> <span class="rcl-da">descriptor</span> <span class="rcl-da">for</span> <span class="rcl-da">Iterable</span> <span class="rcl-da">is</span> <span class="rcl-da">returned</span> <span class="rcl-da">next</span></span>
+<span class="rcl-da">containerElementTypeDescriptor</span> <span class="rcl-da">=</span> <span class="rcl-da">it</span><span class="rcl-da">.</span><span class="rcl-da">next</span><span class="rcl-da">();</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getContainerClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-type"><span class="rcl-da">Iterable</span></span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getTypeArgumentIndex</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">0</span></span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getElementClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-type"><span class="rcl-da">String</span></span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">@</span><span class="rcl-da">NotNull</span></span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstraintDescriptors</span><span class="rcl-da">().</span><span class="rcl-da">size</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">1</span></span><span class="rcl-da">;</span>
+
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">for</span> <span class="rcl-da">property</span> <span class="rcl-da">"</span><span class="rcl-da">accounts</span><span class="rcl-da">"</span></span>
+<span class="predefined-type"><span class="rcl-da">PropertyDescriptor</span></span> <span class="rcl-da">accountsDescriptor</span> <span class="rcl-da">=</span> <span class="rcl-da">employeeImplDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstraintsForProperty</span><span class="rcl-da">(</span> <span class="string"><span class="delimiter"><span class="rcl-da">"</span></span><span class="content"><span class="rcl-da">accounts</span></span><span class="delimiter"><span class="rcl-da">"</span></span></span> <span class="rcl-da">);</span>
+<span class="rcl-da">constrainedContainerElementTypes</span> <span class="rcl-da">=</span> <span class="rcl-da">accountsDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstrainedContainerElementTypes</span><span class="rcl-da">();</span>
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">the</span> <span class="rcl-da">map</span> <span class="rcl-da">key</span> <span class="rcl-da">type</span> <span class="rcl-da">and</span> <span class="rcl-da">the</span> <span class="rcl-da">map</span> <span class="rcl-da">value</span> <span class="rcl-da">type</span></span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">constrainedContainerElementTypes</span><span class="rcl-da">.</span><span class="rcl-da">size</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">2</span></span><span class="rcl-da">;</span>
+
+<span class="rcl-da">it</span> <span class="rcl-da">=</span> <span class="rcl-da">constrainedContainerElementTypes</span><span class="rcl-da">.</span><span class="rcl-da">iterator</span><span class="rcl-da">();</span>
+
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">assuming</span> <span class="rcl-da">that</span> <span class="rcl-da">the</span> <span class="rcl-da">descriptor</span> <span class="rcl-da">for</span> <span class="rcl-da">the</span> <span class="rcl-da">map</span> <span class="rcl-da">key</span> <span class="rcl-da">is</span> <span class="rcl-da">returned</span> <span class="rcl-da">first</span></span>
+<span class="rcl-da">containerElementTypeDescriptor</span> <span class="rcl-da">=</span> <span class="rcl-da">it</span><span class="rcl-da">.</span><span class="rcl-da">next</span><span class="rcl-da">();</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getContainerClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-type"><span class="rcl-da">Map</span></span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getTypeArgumentIndex</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">0</span></span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getElementClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-type"><span class="rcl-da">String</span></span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">@</span><span class="rcl-da">NotNull</span></span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstraintDescriptors</span><span class="rcl-da">().</span><span class="rcl-da">size</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">1</span></span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">isCascaded</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-constant"><span class="rcl-da">false</span></span><span class="rcl-da">;</span>
+
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">assuming</span> <span class="rcl-da">that</span> <span class="rcl-da">the</span> <span class="rcl-da">descriptor</span> <span class="rcl-da">for</span> <span class="rcl-da">the</span> <span class="rcl-da">map</span> <span class="rcl-da">value</span> <span class="rcl-da">is</span> <span class="rcl-da">returned</span> <span class="rcl-da">next</span></span>
+<span class="rcl-da">containerElementTypeDescriptor</span> <span class="rcl-da">=</span> <span class="rcl-da">it</span><span class="rcl-da">.</span><span class="rcl-da">next</span><span class="rcl-da">();</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getContainerClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-type"><span class="rcl-da">Map</span></span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getTypeArgumentIndex</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">1</span></span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getElementClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="rcl-da">Account</span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstraintDescriptors</span><span class="rcl-da">().</span><span class="rcl-da">size</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">0</span></span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">isCascaded</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-constant"><span class="rcl-da">true</span></span><span class="rcl-da">;</span>
+
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">constraints</span> <span class="rcl-da">for</span> <span class="rcl-da">property</span> <span class="rcl-da">"</span><span class="rcl-da">addresses</span><span class="rcl-da">"</span></span>
+<span class="predefined-type"><span class="rcl-da">PropertyDescriptor</span></span> <span class="rcl-da">addressesDescriptor</span> <span class="rcl-da">=</span> <span class="rcl-da">employeeImplDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstraintsForProperty</span><span class="rcl-da">(</span> <span class="string"><span class="delimiter"><span class="rcl-da">"</span></span><span class="content"><span class="rcl-da">addresses</span></span><span class="delimiter"><span class="rcl-da">"</span></span></span> <span class="rcl-da">);</span>
+<span class="rcl-da">constrainedContainerElementTypes</span> <span class="rcl-da">=</span> <span class="rcl-da">accountsDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstrainedContainerElementTypes</span><span class="rcl-da">();</span>
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">the</span> <span class="rcl-da">map</span> <span class="rcl-da">value</span> <span class="rcl-da">type</span></span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">constrainedContainerElementTypes</span><span class="rcl-da">.</span><span class="rcl-da">size</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">1</span></span><span class="rcl-da">;</span>
+
+<span class="rcl-da">it</span> <span class="rcl-da">=</span> <span class="rcl-da">constrainedContainerElementTypes</span><span class="rcl-da">.</span><span class="rcl-da">iterator</span><span class="rcl-da">();</span>
+
+<span class="rcl-da">containerElementTypeDescriptor</span> <span class="rcl-da">=</span> <span class="rcl-da">it</span><span class="rcl-da">.</span><span class="rcl-da">next</span><span class="rcl-da">();</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getContainerClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-type"><span class="rcl-da">Map</span></span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getTypeArgumentIndex</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">1</span></span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getElementClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-type"><span class="rcl-da">List</span></span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">No</span> <span class="rcl-da">constraints</span> <span class="rcl-da">nor</span> <span class="rcl-da">@</span><span class="rcl-da">Valid</span> <span class="rcl-da">on</span> <span class="rcl-da">List</span> <span class="rcl-da">itself</span></span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstraintDescriptors</span><span class="rcl-da">().</span><span class="rcl-da">size</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">0</span></span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">isCascaded</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-constant"><span class="rcl-da">false</span></span><span class="rcl-da">;</span>
+
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">type</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">nested</span> <span class="rcl-da">List</span> <span class="rcl-da">container</span></span>
+<span class="rcl-da">constrainedContainerElementTypes</span> <span class="rcl-da">=</span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstrainedContainerElementTypes</span><span class="rcl-da">();</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">constrainedContainerElementTypes</span><span class="rcl-da">.</span><span class="rcl-da">size</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">1</span></span><span class="rcl-da">;</span>
+<span class="rcl-da">it</span> <span class="rcl-da">=</span> <span class="rcl-da">constrainedContainerElementTypes</span><span class="rcl-da">.</span><span class="rcl-da">iterator</span><span class="rcl-da">();</span>
+
+<span class="rcl-da">containerElementTypeDescriptor</span> <span class="rcl-da">=</span> <span class="rcl-da">it</span><span class="rcl-da">.</span><span class="rcl-da">next</span><span class="rcl-da">();</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getContainerClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-type"><span class="rcl-da">List</span></span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getTypeArgumentIndex</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">0</span></span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getElementClass</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="rcl-da">Address</span><span class="rcl-da">.</span><span class="rcl-da">class</span><span class="rcl-da">;</span>
+<span class="comment"><span class="rcl-da">//</span> <span class="rcl-da">@</span><span class="rcl-da">NotNull</span> <span class="rcl-da">and</span> <span class="rcl-da">@</span><span class="rcl-da">ValidAddress</span></span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">getConstraintDescriptors</span><span class="rcl-da">().</span><span class="rcl-da">size</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="integer"><span class="rcl-da">2</span></span><span class="rcl-da">;</span>
+<span class="keyword"><span class="rcl-da">assert</span></span> <span class="rcl-da">containerElementTypeDescriptor</span><span class="rcl-da">.</span><span class="rcl-da">isCascaded</span><span class="rcl-da">()</span> <span class="rcl-da">==</span> <span class="predefined-constant"><span class="rcl-da">true</span></span><span class="rcl-da">;</span></code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -16201,7 +16403,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 <p>Constructor-level annotations are described via the <code>constructor</code> element.</p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">To identify a constructor to be configured, zero or more parameter elements are used, matching the number and types of parameters of the configured constructor. When configuring the default constructor, no parameter element is to be used. The parameter types are specified using their fully qualified name using the syntax described in the documentation of <code class="methodname">java.lang.Class.getName()</code>.</span></p>
+<p><span class="tck-testable">To identify a constructor to be configured, zero or more <code>parameter</code> elements are used, matching the number and types of parameters of the configured constructor. When configuring the default constructor, no <code>parameter</code> element is to be used. The parameter types are specified using their fully qualified name using the syntax described in the documentation of <code class="methodname">java.lang.Class.getName()</code>.</span></p>
 </div>
 <div class="paragraph">
 <p>Let’s look at some examples:</p>
@@ -16255,7 +16457,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 <p><span class="tck-testable">The cross-parameter constraints applied on a constructor parameter list are specified by adding <code>constraint</code> elements to the <code>cross-parameter</code> element.</span></p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">If <code>ignore-annotations</code> is declared on the parameter, cross-parameter element or return value level, Bean Validation must honor the explicit value for this element. Otherwise, if <code>ignore-annotations</code> is declared for the <code>constructor</code> element, Bean Validation must honor this value. Otherwise, the default value declared in the encapsulating <code>bean</code> element is considered.</span></p>
+<p><span class="tck-testable">If <code>ignore-annotations</code> is declared on the <code>parameter</code>, <code>cross-parameter</code><span class="rcl-dd">element </span> or <code><span class="rcl-da">return-value</span></code> <span class="rcl-da">element</span><span class="rcl-dd">return </span><span class="rcl-dd">value </span><span class="rcl-dd">level</span>, Bean Validation must honor the explicit value for this element. Otherwise, if <code>ignore-annotations</code> is declared for the <code>constructor</code> element, Bean Validation must honor this value. Otherwise, the default value declared in the encapsulating <code>bean</code> element is considered.</span></p>
 </div>
 <div class="paragraph">
 <p><span class="tck-testable">When <code>ignore-annotations</code> is true, Bean Validation annotations on the targeted constructor or parameter are ignored (including <code class="classname">@Valid</code> and <code class="classname">@ConvertGroup</code>).</span> When <code>ignore-annotations</code> is false:</p>
@@ -16319,7 +16521,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 <p>Method-level annotations are described via the <code>method</code> element.</p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">To identify a method to be configured, zero or more parameter elements are used, matching the number and types of parameters of the configured method. The parameter types are specified using their fully qualified name using the syntax described in the documentation of <code class="methodname">java.lang.Class.getName()</code>.</span></p>
+<p><span class="tck-testable">To identify a method to be configured, zero or more <code>parameter</code> elements are used, matching the number and types of parameters of the configured method. The parameter types are specified using their fully qualified name using the syntax described in the documentation of <code class="methodname">java.lang.Class.getName()</code>.</span></p>
 </div>
 <div class="paragraph">
 <p>Let’s look at some examples:</p>
@@ -16387,7 +16589,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 <p><span class="tck-testable">The cross-parameter constraints applied on a method parameter list are specified by adding <code>constraint</code> elements to the <code>cross-parameter</code> element.</span></p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">If <code>ignore-annotations</code> is declared on the parameter, cross-parameter element or return value level, Bean Validation must honor the explicit value for this element. Otherwise, if <code>ignore-annotations</code> is declared for the <code>method</code> element, Bean Validation must honor this value. Otherwise, the default value declared in the encapsulating <code>bean</code> element is considered.</span></p>
+<p><span class="tck-testable">If <code>ignore-annotations</code> is declared on the <code>parameter</code>, <code>cross-parameter</code><span class="rcl-dd">element </span> or <code><span class="rcl-da">return-value</span></code> <span class="rcl-da">element</span><span class="rcl-dd">return </span><span class="rcl-dd">value </span><span class="rcl-dd">level</span>, Bean Validation must honor the explicit value for this element. Otherwise, if <code>ignore-annotations</code> is declared for the <code>method</code> element, Bean Validation must honor this value. Otherwise, the default value declared in the encapsulating <code>bean</code> element is considered.</span></p>
 </div>
 <div class="paragraph">
 <p><span class="tck-testable">When <code>ignore-annotations</code> is true, Bean Validation annotations on the targeted method or parameter are ignored (including <code class="classname">@Valid</code> and <code class="classname">@ConvertGroup</code>).</span> When <code>ignore-annotations</code> is false:</p>
@@ -16448,7 +16650,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 <div class="sect4">
 <h5 id="xml-mapping-constraintdeclarationinxml-containerelementconstraints"><a class="anchor" href="#xml-mapping-constraintdeclarationinxml-containerelementconstraints"></a><span class="rcl-da">9.1.1.6</span><span class="rcl-da">.</span> <span class="rcl-da">Container-element</span> <span class="rcl-da">overriding</span></h5>
 <div class="paragraph">
-<p><span class="tck-testable"><span class="rcl-da">For</span> <span class="rcl-da">applying</span> <span class="rcl-da">constraints</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">elements</span> <span class="rcl-da">of</span> <span class="rcl-da">generic</span> <span class="rcl-da">container</span> <span class="rcl-da">types</span> <span class="rcl-da">or</span> <span class="rcl-da">marking</span> <span class="rcl-da">the</span> <span class="rcl-da">same</span> <span class="rcl-da">for</span> <span class="rcl-da">cascaded</span> <span class="rcl-da">validation</span><span class="rcl-da">,</span> <span class="rcl-da">the</span> <code><span class="rcl-da">container-element-type</span></code> <span class="rcl-da">element</span> <span class="rcl-da">is</span> <span class="rcl-da">used</span><span class="rcl-da">.</span></span></p>
+<p><span class="tck-testable"><span class="rcl-da">For</span> <span class="rcl-da">applying</span> <span class="rcl-da">constraints</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">elements</span> <span class="rcl-da">of</span> <span class="rcl-da">generic</span> <span class="rcl-da">container</span> <span class="rcl-da">types</span> <span class="rcl-da">or</span> <span class="rcl-da">marking</span> <span class="rcl-da">them</span> <span class="rcl-da">for</span> <span class="rcl-da">cascaded</span> <span class="rcl-da">validation</span><span class="rcl-da">,</span> <span class="rcl-da">the</span> <code><span class="rcl-da">container-element-type</span></code> <span class="rcl-da">element</span> <span class="rcl-da">is</span> <span class="rcl-da">used</span><span class="rcl-da">.</span></span></p>
 </div>
 <div class="paragraph">
 <p><span class="tck-testable"><code><span class="rcl-da">container-element-type</span></code> <span class="rcl-da">can</span> <span class="rcl-da">be</span> <span class="rcl-da">used</span> <span class="rcl-da">within</span> <span class="rcl-da">the</span> <code><span class="rcl-da">field</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">getter</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">parameter</span></code> <span class="rcl-da">and</span> <code><span class="rcl-da">return-value</span></code> <span class="rcl-da">elements</span><span class="rcl-da">.</span></span></p>
@@ -16456,7 +16658,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 <div class="paragraph">
 <p><span class="tck-testable"><span class="rcl-da">The</span> <code><span class="rcl-da">type-argument-index</span></code> <span class="rcl-da">is</span> <span class="rcl-da">used</span> <span class="rcl-da">to</span> <span class="rcl-da">specify</span> <span class="rcl-da">the</span> <span class="rcl-da">index</span> <span class="rcl-da">of</span> <span class="rcl-da">the</span> <span class="rcl-da">configured</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span><span class="rcl-da">.</span></span>
 <span class="tck-testable"><span class="rcl-da">The</span> <code><span class="rcl-da">type-argument-index</span></code> <span class="rcl-da">can</span> <span class="rcl-da">be</span> <span class="rcl-da">omitted</span><span class="rcl-da">,</span> <span class="rcl-da">if</span> <span class="rcl-da">the</span> <span class="rcl-da">container</span> <span class="rcl-da">element</span> <span class="rcl-da">type</span> <span class="rcl-da">has</span> <span class="rcl-da">exactly</span> <span class="rcl-da">one</span> <span class="rcl-da">type</span> <span class="rcl-da">argument</span><span class="rcl-da">.</span></span>
-<span class="tck-testable"><span class="rcl-da">The</span> <code><span class="rcl-da">ignore-annotations</span></code> <span class="rcl-da">settings</span> <span class="rcl-da">effectively</span> <span class="rcl-da">applying</span> <span class="rcl-da">for</span> <span class="rcl-da">the</span> <span class="rcl-da">encapsulating</span> <span class="rcl-da">element</span> <span class="rcl-da">(</span><code><span class="rcl-da">field</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">getter</span></code> <span class="rcl-da">etc</span><span class="rcl-da">.)</span> <span class="rcl-da">are</span> <span class="rcl-da">applied</span> <span class="rcl-da">for</span> <code><span class="rcl-da">container-element-type</span></code><span class="rcl-da">,</span> <span class="rcl-da">too</span><span class="rcl-da">.</span></span>
+<span class="tck-testable"><span class="rcl-da">The</span> <code><span class="rcl-da">ignore-annotations</span></code> <span class="rcl-da">settings</span> <span class="rcl-da">effectively</span> <span class="rcl-da">applying</span> <span class="rcl-da">to</span> <span class="rcl-da">the</span> <span class="rcl-da">encapsulating</span> <span class="rcl-da">element</span> <span class="rcl-da">(</span><code><span class="rcl-da">field</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">getter</span></code> <span class="rcl-da">etc</span><span class="rcl-da">.)</span> <span class="rcl-da">are</span> <span class="rcl-da">applied</span> <span class="rcl-da">to</span> <code><span class="rcl-da">container-element-type</span></code><span class="rcl-da">,</span> <span class="rcl-da">too</span><span class="rcl-da">.</span></span>
 <span class="tck-testable"><span class="rcl-da">The</span> <code><span class="rcl-da">container-element-type</span></code> <span class="rcl-da">element</span> <span class="rcl-da">can</span> <span class="rcl-da">be</span> <span class="rcl-da">nested</span> <span class="rcl-da">for</span> <span class="rcl-da">configuring</span> <span class="rcl-da">nested</span> <span class="rcl-da">generic</span> <span class="rcl-da">containers</span> <span class="rcl-da">such</span> <span class="rcl-da">as</span> <code><span class="rcl-da">List</span><span class="rcl-da">&lt;</span><span class="rcl-da">List</span><span class="rcl-da">&lt;</span><span class="rcl-da">String</span><span class="rcl-da">&gt;&gt;</span></code><span class="rcl-da">.</span></span></p>
 </div>
 <div class="paragraph">
@@ -16711,7 +16913,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 <div class="sect4">
 <h5 id="xml-mapping-constraintdeclarationinxml-groupconversions"><a class="anchor" href="#xml-mapping-constraintdeclarationinxml-groupconversions"></a><span class="rcl-da">9.1.1.8</span><span class="rcl-da">.</span> Declaration of group conversions</h5>
 <div class="paragraph">
-<p><span class="tck-testable">Group conversion rules are declared by specifying one or more <code>convert-group</code> elements within the <code>field</code>, <code>getter</code>, <code>parameter</code> and <code>return-value</code> elements.</span></p>
+<p><span class="tck-testable">Group conversion rules are declared by specifying one or more <code>convert-group</code> elements within the <code>field</code>, <code>getter</code>, <code>parameter</code><span class="rcl-da">,</span><span class="rcl-dd">and </span> <code>return-value</code> <span class="rcl-da">and</span> <code><span class="rcl-da">container-element-type</span></code> elements.</span></p>
 </div>
 <div class="paragraph">
 <p><span class="tck-testable">Source and target group of a conversion rule are given by specifying their fully-qualified names within the <code>from</code> and <code>to</code> attribute respectively. If the <code>default-package</code> element is configured for the mapping file, any unqualified class names will be resolved using the given default package.</span></p>
@@ -16780,7 +16982,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 <p><span class="tck-testable">A constraint definition is represented by a <code>constraint-definition</code> element.</span> The <code>annotation</code> attribute represents the constraint annotation being altered. The <code>validated-by</code> elements represent the (ordered) list of <code class="classname">ConstraintValidator</code> implementations associated to the constraint.</p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">If <code>include-existing-validator</code> is set to false, <code class="classname">ConstraintValidator</code> defined on the constraint annotation are ignored.</span> <span class="tck-testable">If set to true, the list of <code class="classname">ConstraintValidator</code>s described in XML are concatenated to the list of <code class="classname">ConstraintValidator</code> described on the annotation to form a new array of <code class="classname">ConstraintValidator</code> evaluated.</span> <span class="tck-testable">Annotation based <code class="classname">ConstraintValidator</code> come before XML based <code class="classname">ConstraintValidator</code>s in the array.</span> <span class="tck-testable">The new list is returned by <code class="methodname">ConstraintDescriptor.getConstraintValidatorClasses()</code>.</span></p>
+<p><span class="tck-testable">If <code>include-existing-validator</code> is set to false, <code class="classname">ConstraintValidator</code> defined on the constraint annotation are ignored.</span> <span class="tck-testable">If set to true, the list of <code class="classname">ConstraintValidator</code>s described in XML are concatenated to the list of <code class="classname">ConstraintValidator</code> described on the annotation to form a new array of <code class="classname">ConstraintValidator</code> evaluated.</span> <span class="tck-testable">Annotation based <code class="classname">ConstraintValidator</code><span class="rcl-da">s</span> come before XML based <code class="classname">ConstraintValidator</code>s in the array.</span> <span class="tck-testable">The new list is returned by <code class="methodname">ConstraintDescriptor.getConstraintValidatorClasses()</code>.</span></p>
 </div>
 <div class="exampleblock">
 <div class="title">Example <span class="rcl-da">9.10</span><span class="rcl-da">:</span><span class="rcl-dd">119</span><span class="rcl-dd">. </span> Overriding constraint definitions</div>
@@ -17366,7 +17568,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 <p>Each of these error cases lead to a <code class="classname">ValidationException</code> or a subclass of <code class="classname">ValidationException</code> (see following subsections).</p>
 </div>
 <div class="paragraph">
-<p><span class="tck-testable">Every (runtime) exception raised either at initialization time or execution time by any of the extension interfaces (<code class="classname">ConstraintValidator</code>, <code class="classname">ConstraintValidatorFactory</code>, <code class="classname">MessageInterpolator</code>, <code class="classname">TraversableResolver</code>, <code class="classname">ValidationProviderResolver</code>, <code class="classname">ParameterNameProvider</code><span class="rcl-da">,</span> <code class="classname"><span class="rcl-da">ClockProvider</span></code>) is wrapped in a <code class="classname">ValidationException</code>.</span></p>
+<p><span class="tck-testable">Every (runtime) exception raised either at initialization time or execution time by any of the extension interfaces (<code class="classname">ConstraintValidator</code>, <code class="classname">ConstraintValidatorFactory</code>, <code class="classname">MessageInterpolator</code>, <code class="classname">TraversableResolver</code>, <code class="classname">ValidationProviderResolver</code>, <code class="classname">ParameterNameProvider</code><span class="rcl-da">,</span> <code class="classname"><span class="rcl-da">ClockProvider</span></code><span class="rcl-da">,</span> <code><span class="rcl-da">ValueExtractor</span></code>) is wrapped in a <code class="classname">ValidationException</code>.</span></p>
 </div>
 <div class="paragraph">
 <p>If a constraint definition or constraint declaration is invalid for a given class, the metadata API should raise the according exception.</p>
@@ -17753,7 +17955,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 <div class="ulist">
 <ul>
 <li>
-<p><span class="tck-testable tcck-needs-update">the executable is validated if it is annotated with <code class="classname">@ValidateOnExecution</code> and the <code class="methodname">type</code> attribute contains the executable type or <code>IMPLICIT</code>. If the <code class="methodname">type</code> attribute does neither contain the executable type nor <code>IMPLICIT</code>, the executable is not validated.</span></p>
+<p><span class="tck-testable tck-needs-update">the executable is validated if it is annotated with <code class="classname">@ValidateOnExecution</code> and the <code class="methodname">type</code> attribute contains the executable type or <code>IMPLICIT</code>. If the <code class="methodname">type</code> attribute does neither contain the executable type nor <code>IMPLICIT</code>, the executable is not validated.</span></p>
 </li>
 <li>
 <p><span class="tck-testable">otherwise the executable is validated if the type (class, interface) on which it is declared is annotated with <code class="classname">@ValidateOnExecution</code> and the <code class="methodname">type</code> attribute contains the executable type. If the <code>type</code> attribute contains <code>IMPLICIT</code>, then this rule is ignored and the behavior is equivalent to <code class="classname">@ValidateOnExecution</code> not being present. If the <code class="methodname">type</code> attribute does not contain the executable type, the executable is not validated.</span></p>
@@ -18224,7 +18426,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 </dd>
 <dt class="hdlist1">Group</dt>
 <dd>
-<p>Constraints can belong to one or more group or context. Useful to apply a subset of the constraints for a given use case. By default, the <code>Default</code>  group is used.</p>
+<p>Constraints can belong to one or more group or context. Useful to apply a subset of the constraints for a given use case. By default, the <code>Default</code> group is used.</p>
 </dd>
 <dt class="hdlist1">Group Sequence</dt>
 <dd>
@@ -18236,7 +18438,7 @@ ConstraintDescriptor&lt;?&gt; crossParameterConstraint =
 </dd>
 <dt class="hdlist1">Constraint validation implementation</dt>
 <dd>
-<p>Class implementing the constraint logic and used to determine whether a given value pass a constraint or not.</p>
+<p>Class implementing the constraint logic and used to determine whether a given value <span class="rcl-da">passes</span><span class="rcl-dd">pass </span> a constraint or not.</p>
 </dd>
 <dt class="hdlist1">Bean Validation provider</dt>
 <dd>
