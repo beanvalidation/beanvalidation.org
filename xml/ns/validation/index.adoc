@@ -1,0 +1,67 @@
+= Bean Validation XML Schemas
+Gunnar Morling
+:awestruct-layout: default
+
+This page describes the XML schemas used to validate the XML descriptors of Bean Validation.
+
+== XML Namespaces
+
+As of Bean Validation 2.0, the XML namespaces of the descriptors are:
+
+* `http://xmlns.jcp.org/xml/ns/validation/configuration` for _META-INF/validation.xml_
+* `http://xmlns.jcp.org/xml/ns/validation/mapping` for constraint mapping XML files
+
+For Bean Validation 1.x the XML namespaces are:
+
+* `http://jboss.org/xml/ns/javax/validation/configuration` for _META-INF/validation.xml_
+* `http://jboss.org/xml/ns/javax/validation/mapping` for constraint mapping XML files
+
+== Using the Bean Validation XML Schemas
+
+XML descriptors for Bean Validation 1.1 and later must specify the used schema version using the `version` attribute in the root element, e.g. like so:
+
+[source, XML]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config
+        xmlns="http://xmlns.jcp.org/xml/ns/validation/configuration"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/validation/configuration validation-configuration-2.0.xsd"
+        version="2.0">
+
+        [...]
+
+</validation-config>
+----
+
+This allows XML descriptor processors to use the version information to choose the appropriate version of the schema document(s) to process XML descriptor instances.
+
+== Bean Validation 2.0 Schema Resources
+
+.XML schemas for Bean Validation 2.0
+|===
+|Date Published| File Name| Description| Specification Section | Status
+
+|June 23 2017 |link:validation-configuration-2.0.xsd[validation-configuration-2.0.xsd] |Bean Validation configuration schema | link:/2.0/spec/2.0.0.cr1/#validationapi-bootstrapping-xmlconfiguration[6.5.6] |Proposed Final Draft
+|June 23 2017 |link:validation-mapping-2.0.xsd[validation-mapping-2.0.xsd] |Bean Validation constraint mapping schema | link:/2.0/spec/2.0.0.cr1/#xml[9] |Proposed Final Draft
+|===
+
+== Bean Validation 1.1 Schema Resources
+
+.XML schemas for Bean Validation 1.1
+|===
+|Date Published| File Name| Description| Specification Section | Status
+
+|May 24 2013 |link:validation-configuration-1.1.xsd[validation-configuration-1.1.xsd] |Bean Validation configuration schema | link:/1.1/spec/#xml-config[5.5.6] |Final Release
+|May 24 2013 |link:validation-mapping-1.1.xsd[validation-mapping-1.1.xsd] |Bean Validation constraint mapping schema | link:/1.1/spec/#xml[8] |Final Release
+|===
+
+== Bean Validation 1.0 Schema Resources
+
+.XML schemas for Bean Validation 1.0
+|===
+|Date Published| File Name| Description| Specification Section | Status
+
+|November 16 2009 |link:validation-configuration-1.0.xsd[validation-configuration-1.0.xsd] |Bean Validation configuration schema | link:/1.0/spec/#xml-config[5.5.6] |Final Release
+|November 16 2009 |link:validation-mapping-1.0.xsd[validation-mapping-1.0.xsd] |Bean Validation constraint mapping schema | link:/1.0/spec/#xml[8] |Final Release
+|===
