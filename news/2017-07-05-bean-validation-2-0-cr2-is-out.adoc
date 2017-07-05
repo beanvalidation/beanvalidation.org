@@ -1,0 +1,57 @@
+= Bean Validation 2.0 CR 2 released
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "release" ]
+
+I'm very happy to announce the CR 2 release of the Bean Validation 2.0 spec!
+
+The CR 2 is an update to the Proposed Final Draft (CR 1), addressing remarks and comments from reviewing all the changes.
+The updated spec document can be found link:/2.0/spec/2.0.0.cr2/[here].
+To see the changes applied since the CR 1, check out this link:/2.0/spec/2.0.0.cr2/diff/diff-to-2.0-cr1/[colored diff]. If you'd like to see all the changes since Bean Validation 1.1, take a look at link:/2.0/spec/2.0.0.cr2/diff/diff-to-1.1/[this diff].
+The updated API is available on Maven Central, using the GAV coordinates are _javax.validation:validation-api:2.0.0.CR2_.
+
+== What's new since CR 1?
+
+Given we are in the CR phase, most of the changes of this release naturally fall into the category of bug fixes, wording clarifications, formatting and other similar improvements.
+Reviewing the work done so far, and also working on the reference implementation and the TCK, we've decided to include two improvements to the API, too:
+
+* `ConstraintDescriptor#validateUnwrappedValue()` got renamed into `getValueUnwrapping()` (https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-674[BVAL-674]).
+The original method name sounded like a "command", whereas the new name makes clear it's a "query" kind of method;
+also the members of the returned enum have been adapted to be in sync with the corresponding `Unwrapping` payload type names.
+We've also added a method `ConstraintDescriptor#unwrap(Class)`, which will let providers expose additional functionality via extension interfaces,
+e.g. to explore new features which then can be standardized in a future spec revision.
+* `@ConvertGroup#from()` has a default value of `Default.class` now (https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-689[BVAL-689]).
+This simplifies group conversions in the common case where the default group is converted into another group.
+
+Another interesting change is https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-613[BVAL-613]:
+when using the reference API JAR with the Java 9 module system, it will have the module name "java.validation" (following the recommendation in the link:/2.0/spec/2.0.0.cr2/#appendix-module-name[spec appendix]).
+This is done using the `Automatic-Module-Name` manifest header defined by Java 9.
+
+Other changes include JavaDoc improvements and more clearly separating API types from examples in the spec.
+The complete list of all issues resolved for the CR 2 release can be found in the https://hibernate.atlassian.net/issues/?jql=project%20%3D%20BVAL%20AND%20fixVersion%20%3D%202.0.0.CR2[BVAL JIRA project].
+Corresponding releases of our reference implementation Hibernate Validator 6 and the TCK are also done today.
+
+== What's new in Bean Validation 2.0?
+
+The focus of Bean Validation 2.0 is supporting and taking advantage of Java SE 8.
+
+For instance type annotations are used to validate the elements of generic containers: `List<@NotNull @Email String> emails`.
+There are new built-in constraints (e.g. `@NotBlank`, `@NotEmpty`, `@Email`, `@Positive` and `@Negative`) and all built-in constraints are repeatable annotations now.
+Bean Validation 2.0 also supports the new Java 8 date and time types (JSR 310), the property types defined by JavaFX (`StringProperty` etc.) as well as `java.util.Optional`.
+
+To learn more about all the new features in Bean Validation 2.0,
+check out https://speakerdeck.com/gunnarmorling/keeping-your-data-sane-with-bean-validation-2-dot-0-jdk-dot-io[this presentation] which I recently gave at the jdk.io conference.
+
+== What can you do to help?
+
+We'll hand over the specification to the JCP for the Final Approval Ballot early next week.
+For the FAB release, we don't expect any significant changes over today's CR 2.
+If you'd like to help, reviewing the link:/2.0/spec/2.0.0.cr2/diff/diff-to-1.1/[specification changes] would be the best thing to do at this point.
+Also it'd be of great help if you tried out the reference implementation in your applications and let us know how it works.
+Any feedback is welcomed!
+
+To post your feedback, just add a comment below, send a message to our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list] or post in the https://forum.hibernate.org/viewforum.php?f=26[Bean Validation forum].
+If you find a bug or have a specific feature request, please raise it in the https://hibernate.atlassian.net/projects/BVAL/summary[issue tracker].
+
+Everything in Bean Validation is open source, so you also can send in actual patches: be it to the https://github.com/beanvalidation/beanvalidation-api[API], the https://github.com/beanvalidation/beanvalidation-spec[spec document], the https://github.com/beanvalidation/beanvalidation-tck[TCK] or the https://github.com/hibernate/hibernate-validator[reference implementation].
+If you are interested, you can find out all the details to get started in the link:/contribute[contribution guide].
