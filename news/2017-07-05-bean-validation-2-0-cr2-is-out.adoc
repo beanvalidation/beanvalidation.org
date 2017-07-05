@@ -15,15 +15,15 @@ The updated API is available on Maven Central, using the GAV coordinates are _ja
 Given we are in the CR phase, most of the changes of this release naturally fall into the category of bug fixes, wording clarifications, formatting and other similar improvements.
 Reviewing the work done so far, and also working on the reference implementation and the TCK, we've decided to include two improvements to the API, too:
 
-* `ConstraintDescriptor#validateUnwrappedValue()` got renamed into `getValueUnwrapping()` (https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-674[BVAL-674]).
+* `ConstraintDescriptor#validateUnwrappedValue()` got renamed into `getValueUnwrapping()` (https://hibernate.atlassian.net/browse/BVAL-674[BVAL-674]).
 The original method name sounded like a "command", whereas the new name makes clear it's a "query" kind of method;
 also the members of the returned enum have been adapted to be in sync with the corresponding `Unwrapping` payload type names.
 We've also added a method `ConstraintDescriptor#unwrap(Class)`, which will let providers expose additional functionality via extension interfaces,
 e.g. to explore new features which then can be standardized in a future spec revision.
-* `@ConvertGroup#from()` has a default value of `Default.class` now (https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-689[BVAL-689]).
+* `@ConvertGroup#from()` has a default value of `Default.class` now (https://hibernate.atlassian.net/browse/BVAL-689[BVAL-689]).
 This simplifies group conversions in the common case where the default group is converted into another group.
 
-Another interesting change is https://hibernate.atlassian.net/projects/BVAL/issues/BVAL-613[BVAL-613]:
+Another interesting change is https://hibernate.atlassian.net/browse/BVAL-613[BVAL-613]:
 when using the reference API JAR with the Java 9 module system, it will have the module name "java.validation" (following the recommendation in the link:/2.0/spec/2.0.0.cr2/#appendix-module-name[spec appendix]).
 This is done using the `Automatic-Module-Name` manifest header defined by Java 9.
 
@@ -36,7 +36,7 @@ Corresponding releases of our reference implementation Hibernate Validator 6 and
 The focus of Bean Validation 2.0 is supporting and taking advantage of Java SE 8.
 
 For instance type annotations are used to validate the elements of generic containers: `List<@NotNull @Email String> emails`.
-There are new built-in constraints (e.g. `@NotBlank`, `@NotEmpty`, `@Email`, `@Positive` and `@Negative`) and all built-in constraints are repeatable annotations now.
+There are new built-in constraints (`@NotBlank`, `@NotEmpty`, `@Email`, `@FutureOrPresent`, `@PastOrPresent`, `@Positive`, `@PositiveOrZero`, `@Negative` and `@NegativeOrZero`) and all built-in constraints are repeatable annotations now.
 Bean Validation 2.0 also supports the new Java 8 date and time types (JSR 310), the property types defined by JavaFX (`StringProperty` etc.) as well as `java.util.Optional`.
 
 To learn more about all the new features in Bean Validation 2.0,
