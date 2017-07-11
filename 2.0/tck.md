@@ -24,13 +24,13 @@ The latest version used to test the upcoming Bean Validation 2.0 (JSR 380) is:
     <dependency>
         <groupId>org.hibernate.beanvalidation.tck</groupId>
         <artifactId>beanvalidation-tck-tests</artifactId>
-        <version>2.0.0.Alpha1</version>
+        <version>2.0.0.CR3</version>
     </dependency>
 
 Distribution bundles are available on the SourceForge
 [File Release System](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck) and come as
-[ZIP](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/2.0.0.Alpha1/beanvalidation-tck-dist-2.0.0.Alpha1.zip/download)
-or [TGZ](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/2.0.0.Alpha1/beanvalidation-tck-dist-2.0.0.Alpha1.tar.gz/download)
+[ZIP](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/2.0.0.CR3/beanvalidation-tck-dist-2.0.0.CR3.zip/download)
+or [TGZ](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/2.0.0.CR3/beanvalidation-tck-dist-2.0.0.CR3.tar.gz/download)
 archive.
 They contain JARs, documentation, source code, et al.
 
