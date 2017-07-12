@@ -1,0 +1,58 @@
+= Bean Validation 2.0 CR 3 released and submitted to Final Approval Ballot
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "release" ]
+
+It's my great pleasure to announce the CR 3 release of the Bean Validation 2.0 spec!
+
+This release of the spec and the API as well as accompanying releases of the TCK and the reference implementation (http://in.relation.to/2017/07/11/hibernate-validator-600-cr3-out/[release announcement]) have been handed over to the JCP for the Final Approval Ballot last night.
+It's this ballot where the Executive Committee of the JCP will cast its final go/no-go vote on the Bean Validation 2.0 JSR.
+
+Since the CR 2 release, only a few things have changed after reviewing the spec changes one more time:
+
+* Clarifying the semantics of `ConstraintViolation#getLeafBean()` in case a container element constraint is violated (https://hibernate.atlassian.net/browse/BVAL-690[BVAL-690])
+* Making the order of the `<container-element-type>` and `<constraint>` elements consistent in the schema for XML constraint mapping files (https://hibernate.atlassian.net/browse/BVAL-693[BVAL-693])
+* Minor wording and JavaDoc improvements (https://hibernate.atlassian.net/browse/BVAL-692[BVAL-692])
+
+The updated spec document can be found link:/2.0/spec/2.0.0.cr3/[here].
+To see the changes applied since the CR 2, check out this link:/2.0/spec/2.0.0.cr3/diff/diff-to-2.0-cr2/[colored diff]. If you'd like to see all the changes since Bean Validation 1.1, take a look at link:/2.0/spec/2.0.0.cr3/diff/diff-to-1.1/[this diff].
+The updated API is available on Maven Central, using the GAV coordinates are _javax.validation:validation-api:2.0.0.CR3_.
+
+== Some TCK stats
+
+Thanks to Guillaume's tireless work, the Bean Validation TCK has grown substantially since 1.1.
+There are now *685* assertions overall, out of which *627* are testable. *99.04%* of them are covered by *2133* tests overall.
+The added tests cover all the new Bean Validation 2.0 features, so we feel very confident that the TCK ensures correctness of implementations passing it.
+
+Also the tooling for producing the TCK has been improved significantly:
+sentences or phrases of the spec document can be marked as relevant for the TCK with the help of AsciiDoc roles.
+A special Maven plug-in then is used to generate a report of all those marked assertions, allowing to link them to tests of the TCK and making it easy to identify assertions without corresponding tests yet.
+
+We'll discuss the entire TCK tool chain in more depth in a separate blog post.
+If you are interested in the TCK and would like to learn more about its development, the appeals process and other related things, check out the http://docs.jboss.org/hibernate/beanvalidation/tck/2.0/reference/html_single/[TCK reference guide].
+
+== What's new in Bean Validation 2.0?
+
+The focus of Bean Validation 2.0 is supporting and taking advantage of Java SE 8.
+
+For instance type annotations are used to validate the elements of generic containers: `List<@NotNull @Email String> emails`.
+There are new built-in constraints (`@NotBlank`, `@NotEmpty`, `@Email`, `@FutureOrPresent`, `@PastOrPresent`, `@Positive`, `@PositiveOrZero`, `@Negative` and `@NegativeOrZero`) and all built-in constraints are repeatable annotations now.
+Bean Validation 2.0 also supports the new Java 8 date and time types (JSR 310), the property types defined by JavaFX (`StringProperty` etc.) as well as `java.util.Optional`.
+
+To learn more about all the new features in Bean Validation 2.0,
+check out https://speakerdeck.com/gunnarmorling/keeping-your-data-sane-with-bean-validation-2-dot-0-jdk-dot-io[this presentation] which I recently gave at the jdk.io conference.
+
+== What can you do to help?
+
+With the submission of the specification to the JCP for the Final Approval Ballot, the work on Bean Validation 2.0 is done more or less.
+If you'd like to help, reviewing the link:/2.0/spec/2.0.0.cr3/diff/diff-to-1.1/[specification changes] would be the best thing to do at this point.
+You also could try out the reference implementation Hibernate Validator in your applications and let us know how it works.
+
+Also tell us about ideas and wishes for a future 2.1 release of the spec.
+We are eager to learn about your requirements, so we can explore any new features in the reference implementation.
+
+To post your feedback, just add a comment below, send a message to our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list] or post in the https://forum.hibernate.org/viewforum.php?f=26[Bean Validation forum].
+If you find a bug or have a specific feature request, please raise it in the https://hibernate.atlassian.net/projects/BVAL/summary[issue tracker].
+
+Everything in Bean Validation is open source, so you also can send in actual patches: be it to the https://github.com/beanvalidation/beanvalidation-api[API], the https://github.com/beanvalidation/beanvalidation-spec[spec document], the https://github.com/beanvalidation/beanvalidation-tck[TCK] or the https://github.com/hibernate/hibernate-validator[reference implementation].
+If you are interested, you can find out all the details to get started in the link:/contribute[contribution guide].
