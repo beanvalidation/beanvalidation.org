@@ -14,7 +14,7 @@ author: Hardy Ferentschik
 |image:/images/completed.png[Completed]
 
 |image:/images/bval-bean-small.png[Apache]|Apache BVal
-|http://bval.apache.org/downloads.html/[1.1.2]
+|http://bval.apache.org/downloads.html[1.1.2]
 |http://bval.apache.org/[]
 |
 
