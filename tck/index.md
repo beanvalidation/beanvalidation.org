@@ -8,7 +8,7 @@ author: Guillaume Smet
 
 Bean Validation 2.0 (JSR 380) is currently under development.
 
-The TCK for Bean Validation 2.0 can be found [here](/2.0/tck/). It is still in alpha stage.
+The TCK for Bean Validation 2.0 can be found [here](/2.0/tck/). It has been submitted for the Final Approval Ballot.
 
 ## Bean Validation 1.1
 

@@ -34,9 +34,8 @@ or [TGZ](http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/2.0.
 archive.
 They contain JARs, documentation, source code, et al.
 
-You can find the TCK reference manual also online in three different formats -
-[html](http://docs.jboss.org/hibernate/beanvalidation/tck/2.0/reference/html/),
-[html (single-page)](http://docs.jboss.org/hibernate/beanvalidation/tck/2.0/reference/html_single/),
+You can find the TCK reference manual also online in two different formats -
+[HTML](http://docs.jboss.org/hibernate/beanvalidation/tck/2.0/reference/html_single/),
 [PDF](http://docs.jboss.org/hibernate/beanvalidation/tck/2.0/reference/pdf/beanvalidation-tck-documentation.pdf).
 
 To report a bug or challenge a test use our [issue tracker](https://hibernate.atlassian.net/browse/BVTCK).
