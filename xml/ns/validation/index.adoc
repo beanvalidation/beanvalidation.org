@@ -42,8 +42,8 @@ This allows XML descriptor processors to use the version information to choose t
 |===
 |Date Published| File Name| Description| Specification Section | Status
 
-|June 23 2017 |link:validation-configuration-2.0.xsd[validation-configuration-2.0.xsd] |Bean Validation configuration schema | link:/2.0/spec/2.0.0.cr1/#validationapi-bootstrapping-xmlconfiguration[6.5.6] |Proposed Final Draft
-|June 23 2017 |link:validation-mapping-2.0.xsd[validation-mapping-2.0.xsd] |Bean Validation constraint mapping schema | link:/2.0/spec/2.0.0.cr1/#xml[9] |Proposed Final Draft
+|July 11 2017 |link:validation-configuration-2.0.xsd[validation-configuration-2.0.xsd] |Bean Validation configuration schema | link:/2.0/spec/2.0.0.cr1/#validationapi-bootstrapping-xmlconfiguration[6.5.6] |Submitted to Final Approval Ballot
+|July 11 2017 |link:validation-mapping-2.0.xsd[validation-mapping-2.0.xsd] |Bean Validation constraint mapping schema | link:/2.0/spec/2.0.0.cr1/#xml[9] |Submitted to Final Approval Ballot
 |===
 
 == Bean Validation 1.1 Schema Resources
