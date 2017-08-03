@@ -1,0 +1,16 @@
+---
+title:  Certified Bean Validation 2.0 compatible implementations
+layout: default
+author: Guillaume Smet
+---
+
+[cols="1,4,2,5,1"]
+|===
+||Name|Version|URL|RI
+
+|image:/images/hibernate.gif[Hibernate]|Hibernate Validator
+|http://hibernate.org/validator/downloads/[6.0.1.Final]
+|http://hibernate.org/validator/[]
+|image:/images/completed.png[Completed]
+
+|===

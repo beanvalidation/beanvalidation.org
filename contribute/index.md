@@ -4,7 +4,7 @@ layout: default
 author: Emmanuel Bernard
 ---
 
-Bean Validation 2.0 is currently under active development, so come and join to make the new revision happen!
+Bean Validation 2.0 was finalized in 2017 but it doesn't end here, come and join planning the new features of the next revision!
 
 We welcome your contributions of any sort:
 
@@ -44,9 +44,9 @@ Interested? Read all about how to:
 
 ## <a name="joining_eg"></a>Joining the EG
 
-Bean Validation 2.0 operates under the [2.10 rules](https://jcp.org/en/resources/2.10) of the JCP (Java Community Process).
+Bean Validation operates under the [2.10 rules](https://jcp.org/en/resources/2.10) of the JCP (Java Community Process).
 
-If you either are or represent a Full member of the JCP, you may become a member of the JSR 380 expert group. If you are an Associate Member of the JCP, you may become an officially recognized contributor of this JSR. [Nominate yourself](https://www.jcp.org/en/jsr/egnom?id=380) to get started.
+If you either are or represent a Full member of the JCP, you may become a member of the next JSR expert group. If you are an Associate Member of the JCP, you may become an officially recognized contributor of this JSR. [Nominate yourself](https://www.jcp.org/en/jsr/egnom?id=380) to get started.
 
 ### License
 
