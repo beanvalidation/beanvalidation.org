@@ -1,0 +1,45 @@
+---
+title: Certified implementations
+layout: default
+author: Guillaume Smet
+---
+
+## Bean Validation 2.0
+
+Bean Validation 2.0 (https://www.jcp.org/en/jsr/detail?id=380[JSR 380]) was finished in 2017 and is part of Java EE 8.
+
+Here is the list of the certified implementations for Bean Validation 2.0:
+
+[cols="1,4,2,5,1"]
+|===
+||Name|Version|URL|RI
+
+|image:/images/hibernate.gif[Hibernate]|Hibernate Validator
+|http://hibernate.org/validator/downloads/[6.0.1.Final]
+|http://hibernate.org/validator/[]
+|image:/images/completed.png[Completed]
+
+|===
+
+## Bean Validation 1.1
+
+Bean Validation 1.1 (https://www.jcp.org/en/jsr/detail?id=349[JSR 349]) was finished in 2013 and is part of Java EE 7.
+
+Here is the list of the certified implementations for Bean Validation 1.1:
+
+[cols="1,4,2,5,1"]
+|===
+||Name|Version|URL|RI
+
+|image:/images/hibernate.gif[Hibernate]|Hibernate Validator
+|http://hibernate.org/validator/downloads/[5.1.1.Final]
+|http://hibernate.org/validator/[]
+|image:/images/completed.png[Completed]
+
+|image:/images/bval-bean-small.png[Apache]|Apache BVal
+|http://bval.apache.org/downloads.html[1.1.2]
+|http://bval.apache.org/[]
+|
+
+|===
+
