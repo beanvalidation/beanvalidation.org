@@ -8,7 +8,7 @@ author: Gunnar Morling
 
 Bean Validation 2.0 ([JSR 380](https://www.jcp.org/en/jsr/detail?id=380)) was finished in August 2017.
 
-It's planned to be part of Java EE 8 (and can of course be used with plain Java SE as the previous releases).
+It's part of Java EE 8 (but can of course be used with plain Java SE as the previous releases).
 
 You can learn more about Bean Validation 2.0 [here](/2.0/) (specification text, full change log, API docs etc).
 
