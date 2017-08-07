@@ -40,6 +40,7 @@ I'd like to shout out a huge "Thank you" to everyone helping with the work on Be
 * The fantastic **JSR 380 expert group** (thanks to Christian, Hendrik, Marco, Otavio and everyone else for their great input, proposals and much more) as well as the **BV community at large** (thanks to Hardy, Matt and everyone else for making themselves heard and providing feedback)
 * The former spec lead **Emmanuel** for his continued support with everything JCP-related and going through the details of container element validation again and again
 * My dear fellow **Guillaume** for his tireless work on the TCK, the reference implementation, the website and the spec; merci beaucoup!
+* **Marko Bekhta** who stepped up to work on the TCK which has been a very much appreciated contribution
 * **Everyone participating** in our polls and surveys; your replies and comments helped very much to arrive on good decisions on the different options on the table
 * The friendly folks of Oracle's **GlassFish team** for all their work on integrating Bean Validation 2.0 into the Java EE 8 reference implementation
 
