@@ -12,6 +12,6 @@ The tested version is http://bval.apache.org/downloads.html#apache-bval-112-rele
 using the Bean Validation API signatures from http://mvnrepository.com/artifact/org.apache.tomee/javaee-api/7.0-1[org.apache.tomee:javaee-api:7.0-1] and
 version 1.1.4.Final of the http://docs.jboss.org/hibernate/beanvalidation/tck/1.1/reference/html_single/[Bean Validation TCK].
 
-The list of link:/1.1/certified/[certified implementations] has been updated accordingly.
+The list of link:/certified/[certified implementations] has been updated accordingly.
 
 Congrats to the BVal team!
