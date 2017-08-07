@@ -1,0 +1,52 @@
+= Bean Validation 2.0 is a spec!
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "release" ]
+
+It is done -- after link:/news/2016/07/15/bean-validation-2-0-is-coming/[one year] of hard work, and a bit more than link:/news/2013/05/02/bean-validation-1-1-is-a-spec/[four years] after the previous revision,
+the final release of Bean Validation 2.0 (https://www.jcp.org/en/jsr/detail?id=380[JSR 380]) is out!
+
+Last week, the JSR https://jcp.org/en/jsr/results?id=6033[passed the Final Approval Ballot] by the executive committee of the JCP unanimously with 25 "Yes" votes.
+After the ballot we've released version 2.0.0.Final of the specification, the API as well as the TCK. At the same time, the http://in.relation.to/2017/08/07/and-here-comes-hibernate-validator-60/[final version] of the reference implementation, Hibernate Validator 6, was released, too.
+
+Within the next few days, the final specification will also be available on the https://jcp.org/en/jsr/detail?id=380[JSR 380 page] on jcp.org, after which the work on this JSR is complete and the expert group officially will disband.
+
+== What's new in Bean Validation 2.0?
+
+By now, you'll probably have heard about all the new features added in Bean Validation 2.0.
+Just in case you haven't, here's a quick summary:
+
+* Support for validating container elements by annotating type arguments of parameterized types, e.g. `List<@Positive Integer> positiveNumbers`; this also includes:
+** More flexible cascaded validation of collection types; e.g. values _and_ keys of maps can be validated now: `Map<@Valid CustomerType, @Valid Customer> customersByType`
+** Support for `java.util.Optional`
+** Support for the property types declared by JavaFX
+** Support for custom container types by plugging in additional value extractors
+* Support for the JSR 310 date/time types for `@Past` and `@Future`;
+fine-grained control over the current time and time zone used for validation
+* New built-in constraints: `@Email`, `@NotEmpty`, `@NotBlank`, `@Positive`, `@PositiveOrZero`, `@Negative`, `@NegativeOrZero`, `@PastOrPresent` and `@FutureOrPresent`
+* All built-in constraints are marked as repeatable
+* Parameter names are retrieved using reflection
+* `ConstraintValidator#initialize()` is a default method
+
+Bean Validation 2.0 will also be part of the https://www.jcp.org/en/jsr/detail?id=366[Java EE 8 platform], to be released later this summer.
+
+To learn more about all the new features in Bean Validation 2.0,
+check out https://speakerdeck.com/gunnarmorling/keeping-your-data-sane-with-bean-validation-2-dot-0-jdk-dot-io[this presentation] which I recently gave at the jdk.io conference.
+
+== Thank you!
+
+I'd like to shout out a huge "Thank you" to everyone helping with the work on Bean Validation 2.0:
+
+* The fantastic **JSR 380 expert group** (thanks to Christian, Hendrik, Marco, Otavio and everyone else for their great input, proposals and much more) as well as the **BV community at large** (thanks to Hardy, Matt and everyone else for making themselves heard and providing feedback)
+* The former spec lead **Emmanuel** for his continued support with everything JCP-related and going through the details of container element validation again and again
+* My dear fellow **Guillaume** for his tireless work on the TCK, the reference implementation, the website and the spec; merci beaucoup!
+* **Everyone participating** in our polls and surveys; your replies and comments helped very much to arrive on good decisions on the different options on the table
+* The friendly folks of Oracle's **GlassFish team** for all their work on integrating Bean Validation 2.0 into the Java EE 8 reference implementation
+
+It has been a true pleasure and honor for me to make the new spec a reality together with such a fantastic community!
+
+== Give it a try
+
+Don't wait and try out the new release yourself!
+Just http://hibernate.org/validator/downloads/[download] the reference implementation Hibernate Validator and read the http://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-gettingstarted[Getting started] section of its reference guide.
+You also can read the link:/2.0/spec/[complete specification] as well as the http://docs.jboss.org/hibernate/beanvalidation/spec/2.0/api/[API docs].
