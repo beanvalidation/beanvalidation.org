@@ -1,0 +1,5 @@
+-# Displays a single blog post
+- post = page["post"]
+
+.blog-body{:itemprop=>"articleBody"}
+  ~ post.content.force_encoding("UTF-8")

@@ -17,14 +17,22 @@ asciidoctor:
 
 
 profiles:
+  editor: &base
+    semantic_ui_css_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
+    jquery_js_url: https://code.jquery.com/jquery-3.1.1
+    semantic_ui_js_url: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic
+    match_height_js_url: https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight
   development:
+    << : *base
     disqus_developer: true
     enable_google_analytics: false
   staging:
+    << : *base
     disqus_developer: true
     base_url: http://staging.beanvalidation.org/
     enable_google_analytics: false
   production:
+    << : *base
     base_url: http://beanvalidation.org/
     enable_google_analytics: true
 

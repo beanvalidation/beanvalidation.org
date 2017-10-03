@@ -4,7 +4,13 @@ layout: default
 author: Emmanuel Bernard
 ---
 
-Bean Validation 2.0 was finalized in 2017 but it doesn't end here, come and join planning the new features of the next revision!
+<div class="ui icon message">
+	<i class="icon users"></i>
+	<div class="content">
+		<div class="header">Come and join us!</div>
+		<p>Bean Validation 2.0 was finalized in 2017 but it doesn't end here, come and join planning the new features of the next revision!</p>
+	</div>
+</div>
 
 We welcome your contributions of any sort:
 

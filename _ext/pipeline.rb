@@ -6,6 +6,27 @@ require 'patternfly-sass'
 require 'font-awesome-sass'
 require 'sass_config'
 require 'js_config'
+require 'link_renderer'
+
+# hack to add asciidoc support in HAML
+# remove once haml_contrib has accepted the asciidoc registration patch
+# :asciidoc
+#   some block content
+#
+# :asciidoc
+#   :doctype: inline
+#   some inline content
+#
+if !Haml::Filters.constants.map(&:to_s).include?('AsciiDoc')
+  Haml::Filters.register_tilt_filter 'AsciiDoc'
+  Haml::Filters::AsciiDoc.options[:safe] = :safe
+  Haml::Filters::AsciiDoc.options[:attributes] ||= {}
+  Haml::Filters::AsciiDoc.options[:attributes]['notitle!'] = ''
+  # copy attributes from site.yml
+  attributes = site.asciidoctor[:attributes].each do |key, value|
+  Haml::Filters::AsciiDoc.options[:attributes][key] = value
+  end
+end
 
 Awestruct::Extensions::Pipeline.new do
   extension BeanVal::SassConfig.new
@@ -16,6 +37,7 @@ Awestruct::Extensions::Pipeline.new do
                                                '/news/index',
                                                '/news/tags',
                                                :per_page=>5 )
+  extension InRelationTo::Extensions::PaginationLinkRenderer.new()
   extension Awestruct::Extensions::Indexifier.new
   extension Awestruct::Extensions::Atomizer.new( :posts, '/news/news.atom' )
   extension Awestruct::Extensions::Disqus.new

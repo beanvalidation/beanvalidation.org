@@ -1,29 +1,47 @@
 ---
 layout: base
 title: Home
+is_home_page: true
 ---
 .jumbotron
-  %h1 Bean Validation
-  %p Constrain once, validate everywhere
-  %div.text-center
-    %a.btn.btn-spec-stable.btn-lg{:href=>"#{relative('/2.0/spec/')}"} Bean Validation 2.0
+  .ui.container.text-center
+    .logo
+      %img(src="logo/logo-128.png" alt="Bean Validation" width="128" height="128")
+    %h1 Bean Validation
+    %h2 Constrain once, validate everywhere
+    %div.text-center
+      %a.ui.button.icon.right.labeled.green.big{:href=>"#{relative('/2.0/')}"}
+        %i.icon.arrow.right
+        Bean&nbsp;Validation&nbsp;2.0
 
-#overview.container
-  #content.clearfix.row
-    #main.col-sm-9.col-md-9.col-lg-9.clearfix
-      ~content
-    #sidebar.sidebar.sidebar-right.col-sm-3.col-md-3.col-lg-3{:role=>"complementary"}
-      =partial ('news_feed.html.haml')
-      #latest-news
-        - for post in site.posts[0,3] do
-          .item
+.content-banner
+  .ui.container
+    %h2
+      %span Latest news
+      %small
+        Stay up to date, subscribe to the&nbsp;
+        %a{:href=>"/news/news.atom"}>< news feed
+        \.
+    .ui.grid.equal.height.three.column.news.stackable
+      - for post in site.posts[0,3] do
+        .column
+          .ui.segment
             %h3
               %a{:href=>post.url}= post.title
-            %h4 #{post.date.strftime( '%d %B %Y' )}
-            .body
+            .date
+              #{post.date.strftime( '%d %B %Y' )}
+            %p
               #{summarize( html_to_text( post.content ), 30 )}
-            .tail
-              %a{:href=>"#{relative( post.url ) }"} Read more
-              %hr
-        #even-more
-          %a{:href=>"#{relative('/news')}"}Even more news!
+    .text-right
+      %a.ui.button.icon.right.labeled{:href=>"#{relative('/news')}"}
+        %i.icon.arrow.right
+        More news...
+
+.ui.container
+  .content#content
+    ~content
+
+:javascript
+  $(document).ready(function() {
+    $('.news .ui.segment').matchHeight({ byRow: false });
+  });

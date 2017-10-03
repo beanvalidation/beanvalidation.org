@@ -1,0 +1,96 @@
+---
+title: Bean Validation 1.1 (JSR 349)
+layout: base
+author: Emmanuel Bernard
+---
+
+.jumbotron.small
+  .ui.container.grid.stackable
+    .column.ten.wide
+      %h1= site.title
+      %h2= page.title
+    .column.six.wide
+      .ui.segment
+        %p
+          Bean Validation 1.1 (
+          %a(href="https://www.jcp.org/en/jsr/detail?id=349")> JSR 349
+          ) was finished in 2013.
+        %p
+          It is part of Java EE 7.
+
+.ui.container.page-content
+  .spec-buttons.text-center
+    %a.ui.button.labeled.icon.green.large(href="/1.1/spec/")
+      %i.icon.book
+      Bean Validation 1.1 specification
+    %a.ui.button.labeled.icon.green.large(href="https://docs.jboss.org/hibernate/beanvalidation/spec/1.1/api/")
+      %i.icon.code
+      API JavaDocs
+
+.content-banner
+  .ui.container.grid.divided.stackable
+    .twelve.wide.column
+      %h2 Certified implementations
+      %table.ui.table.celled.striped.unstackable
+        %thead
+          %tr
+            %th(colspan='2') Name
+            %th Version
+            %th RI
+        %tbody
+          %tr
+            %td(width='30')
+              %img(src='/images/hibernate.gif')
+            %td
+              %a(href='http://hibernate.org/validator/') Hibernate Validator
+            %td
+              %a(href='http://hibernate.org/validator/releases/') 5.1.1.Final
+            %td.text-center(width='30')
+              %i.icon.check.circle.green.large
+          %tr
+            %td(width='30')
+              %img(src='/images/bval-bean-small.png')
+            %td
+              %a(href='http://bval.apache.org/') Apache BVal
+            %td
+              %a(href='http://bval.apache.org/downloads.html') 1.1.2
+            %td.text-center(width='30')
+              &nbsp;
+
+    .four.wide.column
+      %h2 TCK
+      .ui.segment
+        %p
+          The TCK for Bean Validation 1.1 can be found
+          %a(href="/1.1/tck/") here
+          \.
+
+.ui.container#content
+  :asciidoc
+    == Changes between Bean Validation 1.0 and 1.1
+
+    Bean Validation 1.1 focused on the following topics:
+
+    - openness of the specification and its process
+    - method-level validation (validation of parameters or return values)
+    - dependency injection for Bean Validation components
+    - integration with Context and Dependency Injection (CDI)
+    - group conversion
+    - error message interpolation using EL expressions
+
+    For more information, check out the link:changes/[full list of goals and changes].
+
+    == History
+
+    If you are interested in the various drafts that led to Bean Validation 1.1, check
+    out the link:history/[history page].
+
+    == Feedback
+
+    Do you have feedback? Talk to us:
+
+    - on our https://lists.jboss.org/mailman/listinfo/beanvalidation-dev[mailing list]
+    - in our https://hibernate.atlassian.net/browse/BVAL[issue tracker]
+    - or on the https://forum.hibernate.org/viewforum.php?f=26[Bean Validation forum]
+
+    If you want to take the next step and contribute, read link:/contribute[how to contribute].

@@ -4,9 +4,11 @@ layout: default
 author: Guillaume Smet
 ---
 
+<div class="ui message">
 This pages contains the various drafts published for Bean Validation 2.0.
-This page is useful for archaeological purposes and you probably want [the
-final version of the specification](/2.0/).
+This page is useful for archaeological purposes and you probably want
+<a href="/2.0/">the final version of the specification</a>.
+</div>
 
 ## Specification Drafts
 

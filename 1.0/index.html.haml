@@ -1,0 +1,65 @@
+---
+title: Bean Validation 1.0 (JSR 303)
+layout: base
+author: Emmanuel Bernard
+---
+
+.jumbotron.small
+  .ui.container.grid.stackable
+    .column.ten.wide
+      %h1= site.title
+      %h2= page.title
+    .column.six.wide
+      .ui.segment
+        %p
+          Bean Validation 1.0 (
+          %a(href="https://www.jcp.org/en/jsr/detail?id=303")> JSR 303
+          ) was the first version of Java's standard for object validation.
+        %p It was released in 2009 and is part of Java EE 6.
+
+.ui.container.page-content
+  .spec-buttons.text-center
+    %a.ui.button.labeled.icon.green.large(href="/1.0/spec/")
+      %i.icon.book
+      Bean Validation 1.0 specification
+    %a.ui.button.labeled.icon.green.large(href="https://docs.jboss.org/hibernate/beanvalidation/spec/1.0/api/")
+      %i.icon.code
+      API JavaDocs
+
+.content-banner
+  .ui.container.grid.divided.stackable
+    .twelve.wide.column
+      %h2 Certified implementations
+      %table.ui.table.celled.striped.unstackable
+        %thead
+          %tr
+            %th(colspan='2') Name
+            %th Version
+            %th RI
+        %tbody
+          %tr
+            %td(width='30')
+              %img(src='/images/hibernate.gif')
+            %td
+              %a(href='http://hibernate.org/validator/') Hibernate Validator
+            %td
+              %a(href='http://hibernate.org/validator/releases/') 4.3.1.Final
+            %td.text-center(width='30')
+              %i.icon.check.circle.green.large
+          %tr
+            %td(width='30')
+              %img(src='/images/bval-bean-small.png')
+            %td
+              %a(href='http://bval.apache.org/') Apache BVal
+            %td
+              %a(href='http://bval.apache.org/downloads.html') 0.5
+            %td.text-center(width='30')
+              &nbsp;
+
+    .four.wide.column
+      %h2 TCK
+      .ui.segment
+        %p
+          The TCK for Bean Validation 1.0 can be found
+          %a(href="/1.0/tck/") here
+          \.

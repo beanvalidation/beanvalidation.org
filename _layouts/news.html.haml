@@ -1,20 +1,31 @@
 ---
-layout: news_base
+layout: base
 ---
 
-%article.post
-  = partial('article_header.html.haml', { :title => page.title, :author => page.author, :date => page.date,  :tags => page.tags})
-  .body
-    ~ content
-  %footer
-    #post-navigation
-      .previous
-        - if page.previous_post
-          &laquo;
-          %a{:href => relative(page.previous_post.url)} #{page.previous_post.title}
-      .next
-        - if page.next_post
-          &raquo;
-          %a{:href => relative(page.next_post.url)} #{page.next_post.title}
+.jumbotron.small
+  .ui.container
+    %h1= site.title
+
+.page-title.blog-title
+  .ui.container
+    = partial( 'blog/post-title.html.haml', {"post" => page} )
+
+.ui.container.blog-article
+  .content#content
+    %article
+      = partial( 'blog/post-content.html.haml', {"post" => page} )
+
+    %hr
+    .post-navigation
+      .ui.grid.two.column.stackable
+        .column
+          - if page.previous_post
+            &laquo;
+            %a{:href => relative(page.previous_post.url)} #{page.previous_post.title}
+        .column.text-right
+          - if page.next_post
+            %a{:href => relative(page.next_post.url)} #{page.next_post.title}
+            &raquo;
+    %hr
 
     #{page.disqus_comments}

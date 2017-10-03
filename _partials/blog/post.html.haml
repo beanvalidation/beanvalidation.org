@@ -1,0 +1,6 @@
+-# Displays a single blog post
+- post = page["post"]
+
+= partial( 'blog/post-title.html.haml', {"post" => post} )
+.mobile.hidden
+  = partial( 'blog/post-content.html.haml', {"post" => post} )

@@ -5,11 +5,9 @@ author: Emmanuel Bernard
 ---
 
 - for post in page.posts
-  %article.post
-    - puts "post=#{post}"
-    = partial('article_header.html.haml', { :title => post.title, :author => post.author, :date => post.date, :tags => post.tags, :url => post.url})
-    .body
-      ~ post.content
+  %article.blogpost
+    = partial( 'blog/post.html.haml', { :post => post} )
+    .disqus-comments-link
       = post.disqus_comments_link
 
-= page.posts.links
+= page.posts.semantic_ui_pager_links

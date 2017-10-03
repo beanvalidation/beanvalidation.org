@@ -1,0 +1,19 @@
+-# Displays a single blog post
+- post = page['post']
+
+.blog-title-bar
+  .blog-title-caption
+    %h2
+      %a{:href => post.url}= post.title
+
+    .blog-author-bar
+      Posted by
+      %strong
+        = post.author
+      &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      = post.date.strftime('%d %b %Y')
+      &nbsp;&nbsp;
+      %span.blog-tags
+        - post.tags.each do |tag|
+          %a.ui.label.tag{:href=>tag.primary_page.url}
+            = tag

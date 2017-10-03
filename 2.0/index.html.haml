@@ -1,0 +1,94 @@
+---
+title: Bean Validation 2.0 (JSR 380)
+layout: base
+author: Guillaume Smet
+---
+
+.jumbotron.small
+  .ui.container.grid.stackable
+    .column.ten.wide
+      %h1= site.title
+      %h2= page.title
+    .column.six.wide
+      .ui.segment
+        %p
+          Bean Validation 2.0 (
+          %a(href="https://www.jcp.org/en/jsr/detail?id=380")> JSR 380
+          ) was finished in August 2017.
+        %p It's part of Java EE 8 (but can of course be used with plain Java SE as the previous releases).
+
+.ui.container.page-content
+  .spec-buttons.text-center
+    %a.ui.button.labeled.icon.green.large(href="/2.0/spec/")
+      %i.icon.book
+      Bean Validation 2.0 specification
+    %a.ui.button.labeled.icon.green.large(href="https://docs.jboss.org/hibernate/beanvalidation/spec/2.0/api/")
+      %i.icon.code
+      API JavaDocs
+
+.content-banner
+  .ui.container.grid.divided.stackable
+    .twelve.wide.column
+      %h2 Certified implementations
+      %table.ui.table.celled.striped.unstackable
+        %thead
+          %tr
+            %th(colspan='2') Name
+            %th Version
+            %th RI
+        %tbody
+          %tr
+            %td(width='30')
+              %img(src='/images/hibernate.gif')
+            %td
+              %a(href='http://hibernate.org/validator/') Hibernate Validator
+            %td
+              %a(href='http://hibernate.org/validator/releases/') 6.0.1.Final
+            %td.text-center(width='30')
+              %i.icon.check.circle.green.large
+    .four.wide.column
+      %h2 TCK
+      .ui.segment
+        %p
+          The TCK for Bean Validation 2.0 can be found
+          %a(href="/2.0/tck/") here
+          \.
+
+.ui.container#content
+  :asciidoc
+    == Changes between Bean Validation 2.0 and 1.1
+
+    Bean Validation 2.0 focused on the following topics:
+
+    * support for validating container elements by annotating type arguments of
+    parameterized types e.g. `List<@Positive Integer> positiveNumbers`. This also includes:
+    ** more flexible cascaded validation of container types
+    ** support for `java.util.Optional`
+    ** support for the property types declared by JavaFX
+    ** support for custom container types
+    * support for the new date/time data types (JSR 310) for `@Past` and `@Future`
+    * new built-in constraints: `@Email`, `@NotEmpty`, `@NotBlank`, `@Positive`,
+    `@PositiveOrZero`, `@Negative`, `@NegativeOrZero`, `@PastOrPresent` and
+    `@FutureOrPresent`
+    * leverage the JDK 8 new features (built-in constraints are marked repeatable,
+    parameter names are retrieved via reflection)
+
+    You can consult an HTML diff between the 1.1 specification and the 2.0 specification
+    link:spec/2.0.0.final/diff/diff-to-1.1/[here].
+
+    For more information, check out the link:spec/#changelog[full list of changes].
+
+    == History
+
+    If you are interested in the various drafts that led to Bean Validation 2.0, check
+    out the link:history/[history page].
+
+    == Feedback
+
+    Do you have feedback? Talk to us:
+
+    - on our https://lists.jboss.org/mailman/listinfo/beanvalidation-dev[mailing list]
+    - in our https://hibernate.atlassian.net/browse/BVAL[issue tracker]
+    - or on the https://forum.hibernate.org/viewforum.php?f=26[Bean Validation forum]
+
+    If you want to take the next step and contribute, read link:/contribute[how to contribute].

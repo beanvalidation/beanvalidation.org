@@ -3,7 +3,14 @@ title: Licensing
 layout: default
 author: Emmanuel Bernard
 ---
-All of our work is freely available under open source licenses.
+
+<div class="ui icon compact message">
+        <i class="icon legal"></i>
+        <div class="content">
+                <div class="header">Open Source</div>
+                <p>All of our work is freely available under open source licenses.</p>
+        </div>
+</div>
 
 ## Specification, API, TCK and JavaDoc
 

@@ -1,12 +1,16 @@
 ---
 layout: base
 ---
-#overview.container
-  #content.clearfix.row
-    #main.col-sm-12.col-md-12.col-lg-12.clearfix
-      %h1 #{page.title}
 
-      ~ content
+.jumbotron.small
+  .ui.container
+    %h1= site.title
+    %h2= page.title
 
-      - if (page.comments == true)
-        = page.disqus_comments
+.ui.container.page-content
+  .content#content
+    ~ content
+
+    - if (page.comments == true)
+      %hr
+      = page.disqus_comments

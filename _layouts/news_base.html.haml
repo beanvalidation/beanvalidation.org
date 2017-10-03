@@ -2,13 +2,24 @@
 layout: base
 ---
 
-#overview.container
-  #content.clearfix.row
-    #main.col-sm-9.col-md-9.col-lg-9.clearfix
-      ~content
+.jumbotron.small
+  .ui.container
+    %h1= site.title
+    %h2= page.title
 
-    -# sidebars with full list of articles
-    #sidebar.sidebar.sidebar-right.col-sm-3.col-md-3.col-lg-3{:role=>"complementary"}
-      =partial ('news_feed.html.haml')
-      - for post in site.posts
-        %a.news-link{:href => post.url} #{post.title}
+.ui.container.page-content#content
+  .ui.grid.stackable
+    .column.twelve.wide
+      .content
+        ~content
+
+    .column.four.wide.left-column
+      %h2 Latest news
+      %p
+        Stay up to date, subscribe to the&nbsp;
+        %a{:href=>"/news/news.atom"}>< news feed
+        \.
+      .ui.menu.vertical.fluid
+        - for post in site.posts
+          %a.item.news-link{:href => post.url} #{post.title}
+
