@@ -1,0 +1,7 @@
+# A list of redirects picked up by the RedirectCreator extension
+# For each key in this file a html page is created with a appropriate meta redirect directive to
+# the new URL
+
+/tck/:         /2.0/tck/
+/ri/:          /2.0/
+/certified/:   /2.0/

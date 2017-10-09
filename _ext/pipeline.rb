@@ -7,6 +7,7 @@ require 'font-awesome-sass'
 require 'sass_config'
 require 'js_config'
 require 'link_renderer'
+require 'redirect_creator'
 
 # hack to add asciidoc support in HAML
 # remove once haml_contrib has accepted the asciidoc registration patch
@@ -41,6 +42,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Indexifier.new
   extension Awestruct::Extensions::Atomizer.new( :posts, '/news/news.atom' )
   extension Awestruct::Extensions::Disqus.new
+  extension Awestruct::Extensions::RedirectCreator.new "redirects"
 
   helper Awestruct::Extensions::Partial
   helper Awestruct::Extensions::Relative
