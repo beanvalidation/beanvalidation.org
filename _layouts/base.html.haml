@@ -16,29 +16,29 @@
 
   %body.pushable
     .ui.vertical.menu.inverted.sidebar.left.print.hidden#mobile-menu
-      %a.item{:href => "#{relative('/')}", :class=>"#{'selected' if page.is_home_page }", :title => 'Home'}
+      %a.item{:href => "/", :class=>"#{'selected' if page.is_home_page }", :title => 'Home'}
         %i.grid.icon.home
         Home
-      %a.item{:href => "#{relative('/news')}", :class=>"#{'selected' if page.output_path.start_with?('/news') }"}
+      %a.item{:href => "/news/", :class=>"#{'selected' if page.output_path.start_with?('/news') }"}
         %i.grid.icon.newspaper
         News
-      %a.item{:href => "#{relative('/2.0')}", :class=>"#{'selected' if page.output_path.start_with?('/2.0') }"}
+      %a.item{:href => "/2.0/", :class=>"#{'selected' if page.output_path.start_with?('/2.0') }"}
         %i.grid.icon.book
         %strong Bean Validation 2.0
       .item
         %i.grid.icon.archive
         Archives
         .menu
-          %a.item{:href => "#{relative('/1.1')}", :class=>"#{'selected' if page.output_path.start_with?('/1.1') }"}
+          %a.item{:href => "/1.1/", :class=>"#{'selected' if page.output_path.start_with?('/1.1') }"}
             %i.grid.icon.book
             Bean Validation 1.1
-          %a.item{:href => "#{relative('/1.0')}", :class=>"#{'selected' if page.output_path.start_with?('/1.0') }"}
+          %a.item{:href => "/1.0/", :class=>"#{'selected' if page.output_path.start_with?('/1.0') }"}
             %i.grid.icon.book
             Bean Validation 1.0
-      %a.item{:href => "#{relative('/licensing')}", :class=>"#{'selected' if page.output_path.start_with?('/licensing') }"}
+      %a.item{:href => "/licensing/", :class=>"#{'selected' if page.output_path.start_with?('/licensing') }"}
         %i.grid.icon.legal
         Licensing
-      %a.item{:href => "#{relative('/contribute')}", :class=>"#{'selected' if page.output_path.start_with?('/contribute') }"}
+      %a.item{:href => "/contribute/", :class=>"#{'selected' if page.output_path.start_with?('/contribute') }"}
         %i.grid.icon.users
         Contribute
 
@@ -51,19 +51,19 @@
       %header{:role => "banner"}
         .ui.container.banner
           .ui.stackable.menu.mobile.hidden.print.hidden#nav
-            %a.item{:href => "#{relative('/')}", :class=>"#{'selected' if page.is_home_page }", :title => 'Home'}
+            %a.item{:href => "/", :class=>"#{'selected' if page.is_home_page }", :title => 'Home'}
               %img{:src => '/logo/logo.svg', :alt => 'Bean Validation'}
-            %a.item{:href => "#{relative('/news')}", :class=>"#{'selected' if page.output_path.start_with?('/news') }"} News
-            %a.item{:href => "#{relative('/2.0')}", :class=>"#{'selected' if page.output_path.start_with?('/2.0') }"}
+            %a.item{:href => "/news/", :class=>"#{'selected' if page.output_path.start_with?('/news') }"} News
+            %a.item{:href => "/2.0/", :class=>"#{'selected' if page.output_path.start_with?('/2.0') }"}
               %strong Bean Validation 2.0
             .ui.dropdown.item{:class=>"#{'selected' if page.output_path.start_with?('/1.1') || page.output_path.start_with?('/1.0') }"}
               Archives
               %i.dropdown.icon
               .menu
-                %a.item{:href => "#{relative('/1.1')}", :class=>"#{'selected' if page.output_path.start_with?('/1.1') }"} Bean Validation 1.1
-                %a.item{:href => "#{relative('/1.0')}", :class=>"#{'selected' if page.output_path.start_with?('/1.0') }"} Bean Validation 1.0
-            %a.item{:href => "#{relative('/licensing')}", :class=>"#{'selected' if page.output_path.start_with?('/licensing') }"} Licensing
-            %a.item{:href => "#{relative('/contribute')}", :class=>"#{'selected' if page.output_path.start_with?('/contribute') }"} Contribute
+                %a.item{:href => "/1.1/", :class=>"#{'selected' if page.output_path.start_with?('/1.1') }"} Bean Validation 1.1
+                %a.item{:href => "/1.0/", :class=>"#{'selected' if page.output_path.start_with?('/1.0') }"} Bean Validation 1.0
+            %a.item{:href => "/licensing/", :class=>"#{'selected' if page.output_path.start_with?('/licensing') }"} Licensing
+            %a.item{:href => "/contribute/", :class=>"#{'selected' if page.output_path.start_with?('/contribute') }"} Contribute
 
       ~ content
 
