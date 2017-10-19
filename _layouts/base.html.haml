@@ -52,7 +52,7 @@
         .ui.container.banner
           .ui.stackable.menu.mobile.hidden.print.hidden#nav
             %a.item{:href => "#{relative('/')}", :class=>"#{'selected' if page.is_home_page }", :title => 'Home'}
-              %img{:src => '/logo/logo-64.png', :alt => 'Bean Validation'}
+              %img{:src => '/logo/logo.svg', :alt => 'Bean Validation'}
             %a.item{:href => "#{relative('/news')}", :class=>"#{'selected' if page.output_path.start_with?('/news') }"} News
             %a.item{:href => "#{relative('/2.0')}", :class=>"#{'selected' if page.output_path.start_with?('/2.0') }"}
               %strong Bean Validation 2.0

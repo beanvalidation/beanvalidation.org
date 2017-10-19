@@ -55,6 +55,11 @@ h1, h2, h3, h4, h5 {
 		letter-spacing: 1px;
 	}
 
+	.logo img {
+		width: 180px;
+		height: 180px;
+	}
+
 	&.small {
 		padding: 20px;
 
@@ -86,6 +91,11 @@ h1, h2, h3, h4, h5 {
 			font-size: 1.7rem;
 			margin-top: 15px;
 			margin-bottom: 25px;
+		}
+
+		.logo img {
+			width: 128px;
+			height: 128px;
 		}
 	}
 }
