@@ -12,7 +12,7 @@
     %script(src="#{site.semantic_ui_js_url}#{site.minified}.js")
     // Unfortunately, matchHeight doesn't follow the same convention as the other minified files
     %script(src="#{site.match_height_js_url}#{site.minified ? '-min' : ''}.js")
-    %link{ :rel=>'alternate',  :type=>'application/atom+xml', :href=>"#{relative('/news/news.atom' )}" }
+    %link{ :rel=>'alternate',  :type=>'application/atom+xml', :href=>"/news/news.atom" }
 
   %body.pushable
     .ui.vertical.menu.inverted.sidebar.left.print.hidden#mobile-menu
