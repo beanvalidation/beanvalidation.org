@@ -2,6 +2,10 @@
 # For each key in this file a html page is created with a appropriate meta redirect directive to
 # the new URL
 
-/tck/:         /2.0/tck/
-/ri/:          /2.0/
-/certified/:   /2.0/
+/tck/:           /2.0/tck/
+/ri/:            /2.0/
+/certified/:     /2.0/
+/1.0/certified/: /1.0/
+/1.0/ri/:        /1.0/
+/1.1/ri/:        /1.1/
+/2.0/ri/:        /2.0/
