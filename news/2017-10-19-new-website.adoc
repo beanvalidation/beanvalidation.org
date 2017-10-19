@@ -1,0 +1,37 @@
+= Bean Validation has a new website!
+Guillaume Smet
+:awestruct-layout: news
+:awestruct-tags: [ "website" ]
+
+Bean Validation just got a new website and we hope you will like it!
+
+== New layout
+
+We developed a more modern layout based on https://semantic-ui.com/[Semantic UI].
+
+It should be easier to the eye and more readable too.
+
+The logo, contributed by Hendrik Ebbers for Bean Validation 2.0, is now in good place.
+
+== New organization
+
+In the old website, the information about a given version of the spec was spread over multiple pages. It was hard for the user to get an overview of a given version and it was also hard for us to work on new versions of the spec.
+
+We changed the website organization to centralize all the information of a spec release on one page.
+
+See for instance:
+
+ * link:/2.0/[The Bean Validation 2.0 landing page]
+ * link:/1.1/[The Bean Validation 1.1 landing page]
+
+The main changes, the TCK and the certified implementations are all accessible from these landing pages.
+
+== A bright future
+
+The last version of the spec has a prominent link in the menu and you can find the old versions of the spec in the archives.
+
+Presenting a new version of the spec should be easier than ever. That was our ultimate goal.
+
+== Feedback
+
+As usual, if you have some feedback or if you find an issue in the new website, either add a comment just below or post something on the mailto:beanvalidation-dev@lists.jboss.org[Bean Validation mailing list].
