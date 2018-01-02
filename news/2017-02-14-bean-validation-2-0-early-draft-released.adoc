@@ -106,7 +106,7 @@ One area where we are looking for feedback specifically is the proposal for link
 There is a link:/2.0/spec/2.0.0.alpha1/#_open_questions[list of open questions] towards the end of that section.
 If you have thoughts on any of those, please let us know.
 
-To get a discussion started, just post a comment below, send a message to our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list] or post in the https://forum.hibernate.org/viewforum.php?f=26[Bean Validation forum].
+To get a discussion started, just post a comment below, send a message to our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list] or post in the https://discourse.hibernate.org/c/bean-validation[Bean Validation forum].
 If you find a bug or have a specific feature request, please raise them in the https://hibernate.atlassian.net/projects/BVAL/summary[issue tracker].
 
 And as Bean Validation is a true open source project, contributing e.g. in form of patches is easy, too.

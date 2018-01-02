@@ -69,5 +69,5 @@ compromise on quality.
 [javadoc]: http://docs.jboss.org/hibernate/beanvalidation/spec/1.1/api/
 [maven]: https://repository.jboss.org/nexus/content/groups/public-jboss/javax/validation/validation-api/1.1.0.CR1/
 [issues]: /issues
-[forum]: https://forum.hibernate.org/viewforum.php?f=26
+[forum]: https://discourse.hibernate.org/c/bean-validation
 [mailing list]: https://lists.jboss.org/mailman/listinfo/beanvalidation-dev

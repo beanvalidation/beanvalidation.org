@@ -63,7 +63,7 @@ After that, there will be an approval ballot and we will hopefully be ready to g
 So if you ever wanted to contribute to a Java Specification Request - be it just by voting for issues, opening new feature requests or actually working on the specification, its reference implementation and the test compatability kit (TCK) - then this is the perfect time.
 If you are a member of the JCP, you also can [join the expert group](https://jcp.org/en/jsr/egnom?id=380), we'd be very happy to have you aboard.
 
-Whether EG member or not, in order to get the discussion on this JSR proposal started, just drop a comment below, post to the [feedback forum](https://forum.hibernate.org/viewforum.php?f=26), shoot a message to the [Bean Validation mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev) or
+Whether EG member or not, in order to get the discussion on this JSR proposal started, just drop a comment below, post to the [feedback forum](https://discourse.hibernate.org/c/bean-validation), shoot a message to the [Bean Validation mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev) or
 comment on specific issues in [the tracker](https://hibernate.atlassian.net/projects/BVAL/summary).
 
 We are looking forward to hearing from you and get Bean Validation 2.0 rolling!

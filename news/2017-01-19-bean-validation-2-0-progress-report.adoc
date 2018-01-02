@@ -225,4 +225,4 @@ And you can find an https://www.heise.de/developer/artikel/Bean-Validation-ist-s
 == Raise your feedback
 
 Bean Validation is a true community effort, so we are eager to learn about your suggestions and proposals.
-Don't be shy, get a discussion started by dropping a comment below, posting to the https://forum.hibernate.org/viewforum.php?f=26[feedback forum] or sending a message to the https://lists.jboss.org/mailman/listinfo/beanvalidation-dev[Bean Validation mailing list].
+Don't be shy, get a discussion started by dropping a comment below, posting to the https://discourse.hibernate.org/c/bean-validation[feedback forum] or sending a message to the https://lists.jboss.org/mailman/listinfo/beanvalidation-dev[Bean Validation mailing list].

@@ -82,7 +82,7 @@ Do the new features work as intended? Is anything missing, not behaving as descr
 Then please tell us.
 The more feedback we get, the better.
 
-To post your feedback, just add a comment below, send a message to our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list] or post in the https://forum.hibernate.org/viewforum.php?f=26[Bean Validation forum].
+To post your feedback, just add a comment below, send a message to our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list] or post in the https://discourse.hibernate.org/c/bean-validation[Bean Validation forum].
 If you find a bug or have a specific feature request, please raise it in the https://hibernate.atlassian.net/projects/BVAL/summary[issue tracker].
 
 Everything in Bean Validation is open source, so you also can send in actual patches: to the API, the spec document or the TCK.

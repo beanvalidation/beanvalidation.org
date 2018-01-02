@@ -72,5 +72,5 @@ the mailing list and read [how to contribute][contribute].
 [contribute]: /contribute/
 [draft]: /1.1/spec/1.1.0.beta3/?utm_source=blog&utm_medium=web&utm_content=spec&utm_campaign=1_1_beta3
 [issues]: /issues
-[forum]: https://forum.hibernate.org/viewforum.php?f=26
+[forum]: https://discourse.hibernate.org/c/bean-validation
 [mailing list]: https://lists.jboss.org/mailman/listinfo/beanvalidation-dev
