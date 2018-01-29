@@ -4,6 +4,9 @@ git reset --hard origin/production
 
 git clean -fdx
 
+gem install bundler
+bundle install
+
 # Remove all generated files and directories
 rake clean[all]
 
