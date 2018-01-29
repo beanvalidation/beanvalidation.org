@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'awestruct'
 gem 'htmlcompressor'
 gem 'uglifier'
+gem 'json'
 
 # Enable a Markdown gem (only rdiscount seems to work w/ the site):
 gem 'rdiscount', '~> 2.0.7', :platforms => [:ruby]
