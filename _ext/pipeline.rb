@@ -1,11 +1,6 @@
 require 'mytagger'
 require 'relative'
 require 'sassc'
-require 'bootstrap-sass'
-require 'patternfly-sass'
-require 'font-awesome-sass'
-require 'sass_config'
-require 'js_config'
 require 'link_renderer'
 require 'redirect_creator'
 
@@ -30,8 +25,6 @@ if !Haml::Filters.constants.map(&:to_s).include?('AsciiDoc')
 end
 
 Awestruct::Extensions::Pipeline.new do
-  extension BeanVal::SassConfig.new
-  extension BeanVal::JsConfig.new
   extension Awestruct::Extensions::Posts.new( '/news', :posts )
   extension Awestruct::Extensions::Paginator.new(:posts, '/news/index', :per_page => 5 )
   extension Awestruct::Extensions::MyTagger.new( :posts,
