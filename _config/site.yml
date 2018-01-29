@@ -29,10 +29,12 @@ profiles:
   staging:
     << : *base
     disqus_developer: true
+    minified: .min
     base_url: http://staging.beanvalidation.org/
     enable_google_analytics: false
   production:
     << : *base
+    minified: .min
     base_url: http://beanvalidation.org/
     enable_google_analytics: true
 

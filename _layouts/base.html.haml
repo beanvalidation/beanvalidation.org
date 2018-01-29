@@ -6,8 +6,8 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title
       #{site.title} - #{(page.url == "/") ? "Home" : (page.title)}
-    %link(href="#{site.semantic_ui_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
-    %link(href="/stylesheets/styles#{site.minified}.css?t=#{Time.now.to_i}" rel="stylesheet" media="screen")
+    %link(href="#{site.semantic_ui_css_url}#{site.minified}.css" rel="stylesheet")
+    %link(href="/stylesheets/styles.css?t=#{Time.now.to_i}" rel="stylesheet")
     %script(src="#{site.jquery_js_url}#{site.minified}.js")
     %script(src="#{site.semantic_ui_js_url}#{site.minified}.js")
     // Unfortunately, matchHeight doesn't follow the same convention as the other minified files
