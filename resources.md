@@ -21,7 +21,7 @@ so that we can add them here.
  * [Java Bean Validation Extension](https://github.com/nomemory/java-bean-validation-extension) offers a set of useful constraints (`@Alphanumeric`, `@IPv6`, `@StartsWith`...).
  * [The validation project of Markus Malkusch](https://github.com/malkusch/validation) provides another set of constraints (`@BitcoinAddress`, `@ISBN`...).
  * [A nice example of password validator](https://github.com/Baeldung/spring-security-registration/blob/master/src/main/java/org/baeldung/validation/PasswordConstraintValidator.java) based on [Passay](http://www.passay.org/), a password policy enforcement library.
- * The library [Lib-Validation](https://github.com/Naoghuman/lib-validation) from Naoghuman (Peter Rogge) is developed with the goal to allowed easily `validating` in a JavaFX application. See for example [@NewDuration](https://github.com/Naoghuman/lib-validation/blob/master/src/main/java/com/github/naoghuman/lib/validation/core/annotation/NewDuration.java). 
+ * The library [Lib-Validation](https://github.com/Naoghuman/lib-validation) from [Peter Rogge](https://github.com/Naoghuman) is developed with the goal to provide validation functionality for JavaFX applications. It also provides custom constraints, e.g. [@NewDuration](https://github.com/Naoghuman/lib-validation/blob/master/src/main/java/com/github/naoghuman/lib/validation/core/annotation/NewDuration.java).
 
 ### For Bean Validation 1.0 and 1.1
 
