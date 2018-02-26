@@ -1,0 +1,42 @@
+= Bean Validation 2.0 - What's in it?
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "presentations" ]
+
+While a couple of months have passed since link:/news/2017/08/07/bean-validation-2-0-is-a-spec/[Bean Validation 2.0 got released], the info about what's new in the spec may still not yet have reached everyone.
+Here are two presentations which I wanted to share in order to help with that.
+
+The first one is the slide set of the talk on Bean Validation 2.0 and JSR 380 which I did at https://events.rainfocus.com/catalog/oracle/oow17/catalogjavaone17?search=%22keeping%20your%20data%20sane%20with%20bean%20validation%202.0%22&showEnrolled=false[JavaOne 2017]:
+
+++++
+<br />
+<div style="text-align-center">
+<script async class="speakerdeck-embed" data-id="e3ad48be0eee487a8f1e1eac4d55ca18" data-ratio="1.37081659973226" src="//speakerdeck.com/assets/embed.js"></script>
+</div>
+<br />
+++++
+
+You can also download a PDF with these slides from Speaker Deck https://speakerdeck.com/gunnarmorling/keeping-your-data-sane-with-bean-validation-2-dot-3[here].
+
+While the JavaOne session was not recorded, my https://cfp.devoxx.be/2017/talk/TKL-4941/Bean_Validation_2.0_-_you%E2%80%99ve_put_your_annotations_everywhere![quickie session] on the same topic at Devoxx 2017 luckily was.
+In just 14:17 min you'll get an overview on the new spec revision.
+It's lots of contents for the short amount of time, but you can pause and rewind as often as you like ;)
+
+++++
+<br />
+<div class="responsive-video">
+<iframe width="1600" height="900" src="https://www.youtube.com/embed/GdKuxmtA65I?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+<br />
+++++
+
+== Feedback
+
+You got feedback on these presentations or just have a general question around Bean Validation?
+Then let us know by adding a comment below or sending a message to the mailto:beanvalidation-dev@lists.jboss.org[Bean Validation mailing list].
+
+While at the moment no work on the spec itself is going on, we're eager to explore new features in the http://hibernate.org/validator/[reference implementation].
+So if there's something which you think should be added in a future spec revision,
+it's the perfect time to get in touch so we can begin to experiment with these things.
+
+Your feature requests (and pull requests) will be highly welcomed!
