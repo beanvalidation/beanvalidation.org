@@ -22,19 +22,22 @@
       %a.item{:href => "/news/", :class=>"#{'selected' if page.output_path.start_with?('/news') }"}
         %i.grid.icon.newspaper
         News
-      %a.item{:href => "/2.0/", :class=>"#{'selected' if page.output_path.start_with?('/2.0') }"}
+      %a.item{:href => "/2.0/", :class=>"#{'selected' if page.output_path.start_with?('/2.0/') }"}
         %i.grid.icon.book
-        %strong Bean Validation 2.0
+        %strong Jakarta Bean Validation 2.0
       .item
         %i.grid.icon.archive
         Archives
         .menu
-          %a.item{:href => "/1.1/", :class=>"#{'selected' if page.output_path.start_with?('/1.1') }"}
+          %a.item{:href => "/2.0-jsr380/", :class=>"#{'selected' if page.output_path.start_with?('/2.0-jsr380/') }"}
             %i.grid.icon.book
-            Bean Validation 1.1
-          %a.item{:href => "/1.0/", :class=>"#{'selected' if page.output_path.start_with?('/1.0') }"}
+            Bean Validation 2.0 (JSR 380)
+          %a.item{:href => "/1.1/", :class=>"#{'selected' if page.output_path.start_with?('/1.1/') }"}
             %i.grid.icon.book
-            Bean Validation 1.0
+            Bean Validation 1.1 (JSR 349)
+          %a.item{:href => "/1.0/", :class=>"#{'selected' if page.output_path.start_with?('/1.0/') }"}
+            %i.grid.icon.book
+            Bean Validation 1.0 (JSR 303)
       %a.item{:href => "/resources/", :class=>"#{'selected' if page.output_path.start_with?('/resources') }"}
         %i.grid.icon.folder.open
         Additional resources
@@ -57,14 +60,15 @@
             %a.item{:href => "/", :class=>"#{'selected' if page.is_home_page }", :title => 'Home'}
               %img{:src => '/logo/logo.svg', :alt => 'Bean Validation'}
             %a.item{:href => "/news/", :class=>"#{'selected' if page.output_path.start_with?('/news') }"} News
-            %a.item{:href => "/2.0/", :class=>"#{'selected' if page.output_path.start_with?('/2.0') }"}
-              %strong Bean Validation 2.0
-            .ui.dropdown.item{:class=>"#{'selected' if page.output_path.start_with?('/1.1') || page.output_path.start_with?('/1.0') }"}
+            %a.item{:href => "/2.0/", :class=>"#{'selected' if page.output_path.start_with?('/2.0/') }"}
+              %strong Jakarta Bean Validation 2.0
+            .ui.dropdown.item{:class=>"#{'selected' if page.output_path.start_with?('/1.1') || page.output_path.start_with?('/1.0/') || page.output_path.start_with?('/2.0-jsr380/') }"}
               Archives
               %i.dropdown.icon
               .menu
-                %a.item{:href => "/1.1/", :class=>"#{'selected' if page.output_path.start_with?('/1.1') }"} Bean Validation 1.1
-                %a.item{:href => "/1.0/", :class=>"#{'selected' if page.output_path.start_with?('/1.0') }"} Bean Validation 1.0
+                %a.item{:href => "/2.0-jsr380/", :class=>"#{'selected' if page.output_path.start_with?('/2.0-jsr380/') }"} Bean Validation 2.0 (JSR 380)
+                %a.item{:href => "/1.1/", :class=>"#{'selected' if page.output_path.start_with?('/1.1') }"} Bean Validation 1.1 (JSR 349)
+                %a.item{:href => "/1.0/", :class=>"#{'selected' if page.output_path.start_with?('/1.0') }"} Bean Validation 1.0 (JSR 303)
             %a.item{:href => "/resources/", :class=>"#{'selected' if page.output_path.start_with?('/resources') }"} Resources
             %a.item{:href => "/licensing/", :class=>"#{'selected' if page.output_path.start_with?('/licensing') }"} Licensing
             %a.item{:href => "/contribute/", :class=>"#{'selected' if page.output_path.start_with?('/contribute') }"} Contribute

@@ -4,11 +4,17 @@ layout: default
 author: Guillaume Smet
 ---
 
+## Jakarta Bean Validation 2.0
+
+Jakarta Bean Validation 2.0 was published in August 2019 and is part of Jakarta EE 8.
+
+The TCK for Bean Validation 2.0 can be found [here](/2.0/tck/).
+
 ## Bean Validation 2.0
 
 Bean Validation 2.0 ([JSR 380](https://www.jcp.org/en/jsr/detail?id=380)) was finished in 2017 and is part of Java EE 8.
 
-The TCK for Bean Validation 2.0 can be found [here](/2.0/tck/).
+The TCK for Bean Validation 2.0 can be found [here](/2.0-jsr380/tck/).
 
 ## Bean Validation 1.1
 

@@ -8,8 +8,8 @@ author: Gunnar Morling
 
 ### Pull requests
 
-Changes to the Bean Validation API are realized using [pull requests](http://help.github.com/send-pull-requests/)
-against the [API repository](https://github.com/beanvalidation/beanvalidation-api) on GitHub.
+Changes to the Jakarta Bean Validation API are realized using [pull requests](http://help.github.com/send-pull-requests/)
+against the [API repository](https://github.com/eclipse-ee4j/beanvalidation-api) on GitHub.
 Use the [same rules](/contribute/specification) than for submitting a specification change to the spec repository.
 
 ### Coding guidelines

@@ -5,7 +5,7 @@ author: Emmanuel Bernard
 comments: false
 ---
 
-This page is a glossary of Bean Validation terms as well as Java generics terms.
+This page is a glossary of Jakarta Bean Validation terms as well as Java generics terms.
 
 Java Generic terms are copied from [Angelika Langer's glossary](http://www.angelikalanger.com/GenericsFAQ/FAQSections/Glossary.html).
 

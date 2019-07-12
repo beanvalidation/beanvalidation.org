@@ -1,5 +1,5 @@
 ---
-title: Bean Validation roadmap
+title: Jakarta Bean Validation roadmap
 layout: default
 author: Emmanuel Bernard
 ---
@@ -7,10 +7,10 @@ author: Emmanuel Bernard
 We have seriously reduced our stock of todos with the release of Bean
 Validation 1.1 but we still have a few things we would like to put in the
 specification eventually.  Most of them require some experimentation in
-Hibernate Validator or the other Bean Validation implementations out there.
+Hibernate Validator or the other Jakarta Bean Validation implementations out there.
 After feedback they will be ready to be folded back in the specification.
 
-We encourage you to follow the Hibernate Validator [roadmap](http://hibernate.org/validator/roadmap/). We
+We encourage you to follow the Hibernate Validator [roadmap](https://hibernate.org/validator/roadmap/). We
 have also a left over from Bean Validation 1.1 described below.
 
 ### Next revision  <a id="next"></a>

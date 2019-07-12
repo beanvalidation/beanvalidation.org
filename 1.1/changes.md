@@ -21,11 +21,11 @@ The expert group and the community focused on a few key goals as well as smaller
 
 All of Bean Validation 1.1 work has been done in the open and in an open source
 way. Source code for the
-[API](https://github.com/beanvalidation/beanvalidation-api/), [reference
+[API](https://github.com/eclipse-ee4j/beanvalidation-api/), [reference
 implementation](https://github.com/hibernate/hibernate-validator/), [test
-compatibility kit](https://github.com/beanvalidation/beanvalidation-tck/) as
+compatibility kit](https://github.com/eclipse-ee4j/beanvalidation-tck/) as
 well as the
-[specification](https://github.com/beanvalidation/beanvalidation-spec/) and the
+[specification](https://github.com/eclipse-ee4j/beanvalidation-spec/) and the
 [website sources](https://github.com/beanvalidation/beanvalidation.org/) are
 available in the open.  All discussions are done in the open in the publicly
 available development mailing list. Road map and proposals are also published

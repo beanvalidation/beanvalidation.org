@@ -8,7 +8,7 @@ author: Emmanuel Bernard
 	<i class="icon users"></i>
 	<div class="content">
 		<div class="header">Come and join us!</div>
-		<p>Bean Validation 2.0 was finalized in 2017 but it doesn't end here, come and join planning the new features of the next revision!</p>
+		<p>Jakarta Bean Validation 2.0 was published in August 2019 but it doesn't end here, come and join planning the new features of the next revision!</p>
 	</div>
 </div>
 
@@ -17,7 +17,6 @@ We welcome your contributions of any sort:
 * [feedback](#feedback)
 * [proposals](#proposals)
 * [contributions](#contributions)
-* [joining the EG](#joining_eg)
 
 ## <a name="feedback"></a>Feedback
 
@@ -27,8 +26,8 @@ our [bug tracker](https://hibernate.atlassian.net/browse/BVAL).
 
 ## <a name="proposals"></a>Proposals
 
-If you think some new feature should be added to Bean Validation or you want to influence the shape
-of new Bean Validation features, come and join our
+If you think some new feature should be added to Jakarta Bean Validation or you want to influence the shape
+of new Jakarta Bean Validation features, come and join our
 [development mailing list](https://lists.jboss.org/mailman/listinfo/beanvalidation-dev). In addition, you can have a look at the current proposals discussions [here](/proposals/).
 
 ## <a name="contributions"></a>Contributions
@@ -36,10 +35,10 @@ of new Bean Validation features, come and join our
 All specification work is done in the open. This does not only include discussions, but also all code
 and artifacts. Here is a list of all relevant GitHub source repositories:
 
-* [Specification repository](https://github.com/beanvalidation/beanvalidation-spec)
+* [Specification repository](https://github.com/eclipse-ee4j/beanvalidation-spec)
 * [Reference implementation repository](https://github.com/hibernate/hibernate-validator)
-* [API repository](https://github.com/beanvalidation/beanvalidation-api)
-* [TCK repository](https://github.com/beanvalidation/beanvalidation-tck)
+* [API repository](https://github.com/eclipse-ee4j/beanvalidation-api)
+* [TCK repository](https://github.com/eclipse-ee4j/beanvalidation-tck)
 * [This website source](https://github.com/beanvalidation/beanvalidation.org)
 
 Interested? Read all about how to:
@@ -48,13 +47,11 @@ Interested? Read all about how to:
 * [work with the API and TCK sources](coding)
 * [improve this website](site).
 
-## <a name="joining_eg"></a>Joining the EG
+## Specification process
 
-Bean Validation operates under the [2.10 rules](https://jcp.org/en/resources/2.10) of the JCP (Java Community Process).
+Jakarta Bean Validation operates under the [Jakarta EE Specification Process](https://jakarta.ee/about/jesp/).
 
-If you either are or represent a Full member of the JCP, you may become a member of the next JSR expert group. If you are an Associate Member of the JCP, you may become an officially recognized contributor of this JSR. [Nominate yourself](https://www.jcp.org/en/jsr/egnom?id=380) to get started.
-
-### License
+## License
 
 The content of this specification, API, RI, TCK, JavaDoc, website is released under the
 Apache Software License 2.0. [Get more information](/licensing/).
