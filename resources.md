@@ -4,16 +4,20 @@ layout: default
 author: Guillaume Smet
 ---
 
-Bean Validation is more than a specification, it is also a vivid ecosystem.
+Jakarta Bean Validation is more than a specification, it is also a vivid ecosystem.
 
 We list here some additional resources you might find useful when using
-Bean Validation.
+Jakarta Bean Validation.
 
 If you know of others that might be of interest to our users, contact us on the
-[Bean Validation development mailing list](mailto:beanvalidation-dev@lists.jboss.org)
+[Jakarta Bean Validation development mailing list](mailto:bean-validation-dev@eclipse.org)
 so that we can add them here.
 
 ## Additional constraints
+
+### For Jakarta Bean Validation 2.0
+
+Nothing new. Jakarta Bean Validation 2.0 is based on Bean Validation 2.0.
 
 ### For Bean Validation 2.0 (JSR 380)
 
@@ -27,4 +31,4 @@ so that we can add them here.
 
 [Collection Validators](https://github.com/jirutka/validator-collection) allows to define constraints on elements of collections.
 
-In Bean Validation 2.0, you can use type use constraints (e.g. `List<@NotBlank String>`) for that.
+In Bean Validation 2.0 and Jakarta Bean Validation 2.0, you can use type use constraints (e.g. `List<@NotBlank String>`) for that.

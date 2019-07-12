@@ -4,13 +4,22 @@ layout: default
 author: Gunnar Morling
 ---
 
+## Jakarta Bean Validation 2.0
+
+Jakarta Bean Validation 2.0 was published in July 2019.
+It is based on Bean Validation 2.0.
+
+It's part of Jakarta EE 8 (but can of course be used with plain Java SE as the previous releases).
+
+You can learn more about Jakarta Bean Validation 2.0 [here](/2.0/) (specification text, full change log, API docs etc).
+
 ## Bean Validation 2.0
 
 Bean Validation 2.0 ([JSR 380](https://www.jcp.org/en/jsr/detail?id=380)) was finished in August 2017.
 
 It's part of Java EE 8 (but can of course be used with plain Java SE as the previous releases).
 
-You can learn more about Bean Validation 2.0 [here](/2.0/) (specification text, full change log, API docs etc).
+You can learn more about Bean Validation 2.0 [here](/2.0-jsr380/) (specification text, full change log, API docs etc).
 
 ## Bean Validation 1.1
 

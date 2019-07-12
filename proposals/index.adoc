@@ -1,10 +1,10 @@
-= Bean Validation Next proposals
+= Jakarta Bean Validation Next proposals
 Gunnar Morling
 :awestruct-layout: default
 
-This page contains a list of proposals of changes that could be included into the next Bean Validation specification.
+This page contains a list of proposals of changes that could be included into the next Jakarta Bean Validation specification.
 Feedback is very welcome on our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list].
-Also check out the https://hibernate.atlassian.net/projects/BVAL/summary[BVAL JIRA project] for issues which are considered for inclusion in Bean Validation 2.0 but don't have a proposal yet.
+Also check out the https://hibernate.atlassian.net/projects/BVAL/summary[BVAL JIRA project] for issues which are considered for inclusion but don't have a proposal yet.
 
 |===
 |Issue Id (JIRA) |Done |Proposal |Description 

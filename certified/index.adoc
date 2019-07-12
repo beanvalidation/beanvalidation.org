@@ -4,6 +4,23 @@ layout: default
 author: Guillaume Smet
 ---
 
+## Jakarta Bean Validation 2.0
+
+Jakarta Bean Validation 2.0 is based on Bean Validation 2.0 and is part of Jakarta EE 8.
+
+Here is the list of the certified implementations for Jakarta Bean Validation 2.0:
+
+[cols="1,4,2,5,1"]
+|===
+||Name|Version|URL|RI
+
+|image:/images/hibernate.gif[Hibernate]|Hibernate Validator
+|http://hibernate.org/validator/downloads/[6.2.0.Final]
+|http://hibernate.org/validator/[]
+|image:/images/completed.png[Completed]
+
+|===
+
 ## Bean Validation 2.0
 
 Bean Validation 2.0 (https://www.jcp.org/en/jsr/detail?id=380[JSR 380]) was finished in 2017 and is part of Java EE 8.

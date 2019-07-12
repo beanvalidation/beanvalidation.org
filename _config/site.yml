@@ -1,4 +1,4 @@
-title: Bean Validation
+title: Jakarta Bean Validation
 # interpolate content of the markup like #{page.title}
 interpolate: true
 

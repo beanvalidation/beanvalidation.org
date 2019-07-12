@@ -34,4 +34,4 @@ Presenting a new version of the spec should be easier than ever. That was our ul
 
 == Feedback
 
-As usual, if you have some feedback or if you find an issue in the new website, either add a comment just below or post something on the mailto:beanvalidation-dev@lists.jboss.org[Bean Validation mailing list].
+As usual, if you have some feedback or if you find an issue in the new website, either add a comment just below or post something on the mailto:bean-validation-dev@eclipse.org[Bean Validation mailing list].

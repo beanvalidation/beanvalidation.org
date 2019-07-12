@@ -33,7 +33,7 @@ It's lots of contents for the short amount of time, but you can pause and rewind
 == Feedback
 
 You got feedback on these presentations or just have a general question around Bean Validation?
-Then let us know by adding a comment below or sending a message to the mailto:beanvalidation-dev@lists.jboss.org[Bean Validation mailing list].
+Then let us know by adding a comment below or sending a message to the mailto:bean-validation-dev@eclipse.org[Bean Validation mailing list].
 
 While at the moment no work on the spec itself is going on, we're eager to explore new features in the http://hibernate.org/validator/[reference implementation].
 So if there's something which you think should be added in a future spec revision,
