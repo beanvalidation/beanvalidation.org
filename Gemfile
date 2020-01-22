@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Main site dependencies
-gem 'awestruct'
+gem 'awestruct', '0.6.0.RC1'
 gem 'htmlcompressor'
 gem 'uglifier'
 gem 'json'
