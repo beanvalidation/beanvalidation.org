@@ -3,25 +3,24 @@
 git reset --hard origin/staging
 git clean -fdx
 
-# Remove all generated files and directories
-rake clean[all]
+# Give the container user write access to the code
+chmod -R go+w .
 
-# Make sure there was no update to the used dependencies (if not, this is just a quick version check for Bundler)
-rake setup
-rc=$?
-if [[ $rc != 0 ]] ; then
-    echo "ERROR: Rake setup failed!"
-    exit $rc
-fi
+# Update the container image if necessary
+docker pull quay.io/hibernate/awestruct-build-env:latest
 
-# Build the site using the staging profile and sync
-rake --trace gen[staging]
+# Build the site using the staging profile
+docker run --rm=true --security-opt label:disable \
+    -v $(pwd):/home/dev/website \
+    quay.io/hibernate/awestruct-build-env:latest \
+    "rake setup && rake clean[all] gen[staging]"
 rc=$?
 if [[ $rc != 0 ]] ; then
     echo "ERROR: Site generation failed!"
     exit $rc
 fi
 
+# Publish
 rsync --delete --exclude "latest-draft/spec" -avh _site/ ci.hibernate.org:/var/www/staging-beanvalidation.org
 rc=$?
 if [[ $rc != 0 ]] ; then
