@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # Make sure the production branch is in sync with its remote
 git reset --hard origin/production
