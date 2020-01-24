@@ -21,7 +21,7 @@ if [[ $rc != 0 ]] ; then
 fi
 
 # Publish
-rsync --delete --exclude "latest-draft/spec" -avh _site/ ci.hibernate.org:/var/www/staging-beanvalidation.org
+rsync --delete --exclude "latest-draft/spec" -avh _site/ in.relation.to:/var/www/staging-beanvalidation.org
 rc=$?
 if [[ $rc != 0 ]] ; then
     echo "ERROR: Site sync failed!"
