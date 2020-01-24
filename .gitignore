@@ -24,9 +24,14 @@
 /.ruby-gemset
 /.ruby-version
 
-#Eclipse
-.project
+# IDE
 .settings
+.project
+.buildpath
+*.sublime-project
+*.sublime-workspace
+*.iml
+.idea
 
 # Vim
 .*.swp
