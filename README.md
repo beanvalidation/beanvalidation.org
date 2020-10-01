@@ -1,4 +1,4 @@
-# How to build beanvalidation.org
+# How to build beanvalidation.org?
 
 A bit of Git, a bit of Ruby and you will get your local beanvalidation.org served.
 
@@ -52,7 +52,7 @@ If you get *command not found*:
 
 Point your browser to [http://localhost:4242](http://localhost:4242)
 
-## Tips & Tricks
+## Tips & Tricks.....
 
 ### Which other tasks exist in the Rake build file?
 
