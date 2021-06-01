@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bundler', '2.2.17'
+gem 'bundler', '2.2.18'
 
 # Main site dependencies
 gem 'awestruct', '0.6.1'
@@ -15,6 +15,9 @@ gem 'rdiscount', '~> 2.0.7', :platforms => [:ruby]
 gem 'sassc'
 gem 'sass'
 gem 'rake'
+
+# For previews
+gem 'webrick'
 
 # To enable guard and livereload (is C native thus not available on windows. Commented out for now)
 gem 'guard'
