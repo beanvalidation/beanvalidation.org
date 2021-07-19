@@ -2,3 +2,6 @@ Guardfile
 Rakefile
 Gemfile
 Gemfile.lock
+
+## CI
+Jenkinsfile
