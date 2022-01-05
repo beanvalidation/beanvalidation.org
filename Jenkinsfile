@@ -41,26 +41,11 @@ pipeline {
                 not { changeRequest() }
             }
             steps {
-                // Clone beanvalidation.github.io in _publish_tmp if not present.
-                // Using _tmp would mean more headaches related to access rights from the container,
-                // which usually removes that dir in "rake clean": let's avoid that.
-                dir ('_publish_tmp/beanvalidation.github.io') {
-                    script {
-                        checkout changelog: false, poll: false,
-                                scm: [$class           : 'GitSCM', branches: [[name: '*/master']],
-                                      extensions       : [[$class      : 'CloneOption',
-                                                           depth       : 1,
-                                                           honorRefspec: true,
-                                                           noTags      : true,
-                                                           reference   : '',
-                                                           shallow     : true]],
-                                      userRemoteConfigs: [[credentialsId: 'ed25519.Hibernate-CI.github.com',
-                                                           url          : 'git@github.com:beanvalidation/beanvalidation.github.io.git']]]
+                configFileProvider([configFile(fileId: 'release.config.ssh', targetLocation: env.HOME + '/.ssh/config')]) {
+                    // Need an SSH agent to have the key available when pushing to GitHub.
+                    sshagent(['ed25519.Hibernate-CI.github.com']) {
+                        sh '_scripts/publish-to-production.sh'
                     }
-                }
-                // Need an SSH agent to have the key available when pushing to GitHub.
-                sshagent(['ed25519.Hibernate-CI.github.com']) {
-                    sh '_scripts/publish-to-production.sh'
                 }
             }
         }

@@ -1,17 +1,27 @@
 #!/bin/bash -e
-# This script should be invoked from the root of the repo,
-# after the website has been generated,
-# with a clone of git@github.com:beanvalidation/beanvalidation.github.io.git
-# available in directory _publish_tmp/beanvalidation.github.io
 
-pushd _publish_tmp/beanvalidation.github.io
+GENERATED_SITE_DIRECTORY=$(readlink -e "_site/")
 
-# copy site to git repo, commit and push
+# Clone git repo for beanvalidation.github.io
+BV_GITHUB_IO_CLONE=$(mktemp -d --tmpdir 'beanvalidation-github-io-XXXXXXXXXX')
+# Make sure to clean up when the script exits
+trap "rm -rf '${BV_GITHUB_IO_CLONE}'" EXIT
+pushd "${BV_GITHUB_IO_CLONE}"
+git clone --depth 1 git@github.com:beanvalidation/beanvalidation.github.io.git .
+
+# Set up commit info
+git config user.name "Hibernate CI"
+git config user.email "ci@hibernate.org"
+
+# copy site to git repo, commit and push.
+# we filter .git to preserve the git metadata
 # we filter cache as in production we shouldn't need that data
 rsync -av \
       --delete \
-      --filter "- /cache" --exclude ".git" --exclude "latest-draft/spec" \
-      ../../_site/ .
+      --filter "- .git" \
+      --filter "- /cache" \
+      --exclude "latest-draft/spec" \
+      "${GENERATED_SITE_DIRECTORY}" .
 
 if git add -A . && git commit -m "Publish generated site"
 then
