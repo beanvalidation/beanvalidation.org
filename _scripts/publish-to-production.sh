@@ -21,7 +21,7 @@ rsync -av \
       --filter "- .git" \
       --filter "- /cache" \
       --exclude "latest-draft/spec" \
-      "${GENERATED_SITE_DIRECTORY}" .
+      "${GENERATED_SITE_DIRECTORY}/" .
 
 if git add -A . && git commit -m "Publish generated site"
 then
