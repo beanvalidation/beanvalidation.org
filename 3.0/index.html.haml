@@ -1,0 +1,87 @@
+---
+title: Jakarta Bean Validation 3.0
+layout: base
+author: Guillaume Smet
+---
+
+.jumbotron.small
+  .ui.container.grid.stackable
+    .column.ten.wide
+      %h1= site.title
+      %h2= page.title
+    .column.six.wide
+      .ui.segment
+        %p
+          Jakarta Bean Validation 3.0 was published in October 2020.
+        %p It is part of Jakarta EE 9 and 10 (but can of course be used with plain Java SE as the previous releases).
+
+.ui.container.page-content
+  .spec-buttons.text-center
+    %a.ui.button.labeled.icon.green.large(href="https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html")
+      %i.icon.book
+      Jakarta Bean Validation 3.0 specification
+    %a.ui.button.labeled.icon.green.large(href="https://search.maven.org/search?q=g:jakarta.validation%20AND%20a:jakarta.validation-api&core=gav")
+      %i.icon.cube
+      API Artifact
+    %a.ui.button.labeled.icon.green.large(href="https://jakarta.ee/specifications/bean-validation/3.0/apidocs/")
+      %i.icon.code
+      API JavaDocs
+
+.content-banner
+  .ui.container.grid.divided.stackable
+    .twelve.wide.column
+      %h2 Implementations
+      %table.ui.table.celled.striped.unstackable
+        %thead
+          %tr
+            %th(colspan='2') Name
+            %th Version
+            %th Jakarta EE
+            %th RI
+        %tbody
+          %tr
+            %td(width='30')
+              %img(src='/images/hibernate.png')
+            %td
+              %a(href='http://hibernate.org/validator/') Hibernate Validator
+            %td
+              %a(href='http://hibernate.org/validator/releases/') 7.0.3.Final
+            %td
+              Jakarta EE 9
+            %td.text-center(width='30')
+              %i.icon.check.circle.green.large
+          %tr
+            %td(width='30')
+              %img(src='/images/hibernate.png')
+            %td
+              %a(href='http://hibernate.org/validator/') Hibernate Validator
+            %td
+              %a(href='http://hibernate.org/validator/releases/') 8.0.0.Alpha1
+            %td
+              Jakarta EE 10
+            %td.text-center(width='30')
+              %i.icon.check.circle.green.large
+    .four.wide.column
+      %h2 TCK
+      .ui.segment
+        %p
+          The TCK for Jakarta Bean Validation 2.0 can be found
+          %a(href="/2.0/tck/") here
+          \.
+
+.ui.container#content
+  :asciidoc
+    == Changes between Jakarta Bean Validation 3.0 and Jakarta Bean Validation 2.0
+
+    The API package was changed from `javax.validation` to `jakarta.validation`.
+
+    == Feedback
+
+    Do you have feedback? Talk to us:
+
+    - on our https://accounts.eclipse.org/mailing-list/bean-validation-dev[mailing list]
+    - in the https://github.com/eclipse-ee4j/beanvalidation-api/issues[API issue tracker] for API related issues
+    - in the https://github.com/eclipse-ee4j/beanvalidation-spec/issues[Specification issue tracker] for specification related issues
+    - in the https://github.com/eclipse-ee4j/beanvalidation-tck/issues[TCK issue tracker] for TCK related issues
+
+    If you want to take the next step and contribute, read link:/contribute[how to contribute].
