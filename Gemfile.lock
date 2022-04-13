@@ -75,7 +75,7 @@ GEM
     oga (2.15)
       ast
       ruby-ll (~> 2.1)
-    parallel (1.21.0)
+    parallel (1.22.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -109,7 +109,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.8)
+    unf_ext (0.0.8.1)
     webrick (1.7.0)
 
 PLATFORMS
