@@ -107,7 +107,7 @@ end
 
 def get_profile(args)
   if args[:profile].nil?
-    profile = "editor"
+    profile = "development"
   else
     profile = args[:profile]
   end
