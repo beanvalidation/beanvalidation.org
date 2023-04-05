@@ -3,10 +3,11 @@ source 'https://rubygems.org'
 gem 'bundler', '2.3.4'
 
 # Main site dependencies
-gem 'awestruct', '0.6.1'
+gem 'awestruct', '0.6.5'
 gem 'htmlcompressor'
 gem 'uglifier'
 gem 'json'
+gem 'haml', '< 6.0'    # Haml 6 would require udpating our filter registration code
 
 # Enable a Markdown gem (only rdiscount seems to work w/ the site):
 gem 'rdiscount', '~> 2.0.7', :platforms => [:ruby]
