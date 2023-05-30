@@ -121,7 +121,7 @@ PLATFORMS
 
 DEPENDENCIES
   awestruct (= 0.6.5)
-  bundler (= 2.3.4)
+  bundler (= 2.4.10)
   guard
   guard-livereload
   haml (< 6.0)
@@ -135,4 +135,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.3.4
+   2.4.10
