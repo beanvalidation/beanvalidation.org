@@ -1,10 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.3)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     ansi (1.5.0)
-    asciidoctor (2.0.18)
+    asciidoctor (2.0.20)
     ast (2.4.2)
     awestruct (0.6.5)
       asciidoctor (>= 1.5.2)
@@ -78,12 +78,12 @@ GEM
     oga (2.15)
       ast
       ruby-ll (~> 2.1)
-    parallel (1.22.1)
+    parallel (1.23.0)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (5.0.1)
-    rack (2.2.6.4)
+    rack (2.2.7)
     rake (13.0.6)
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
@@ -106,8 +106,8 @@ GEM
     sassc (2.4.0)
       ffi (~> 1.9)
     shellany (0.0.1)
-    temple (0.10.0)
-    thor (1.2.1)
+    temple (0.10.2)
+    thor (1.2.2)
     tilt (2.1.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
