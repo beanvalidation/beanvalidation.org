@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'bundler', '2.4.10'
 
 # Main site dependencies
-gem 'awestruct', '0.6.5'
+gem 'awestruct', '0.6.7'
 gem 'htmlcompressor'
 gem 'uglifier'
 gem 'json'
