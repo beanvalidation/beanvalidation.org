@@ -83,7 +83,6 @@ GEM
       method_source (~> 1.0)
     public_suffix (6.0.1)
     rack (2.2.9)
-    rake (13.2.1)
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
@@ -121,7 +120,6 @@ DEPENDENCIES
   haml (< 6.0)
   htmlcompressor
   json
-  rake
   rdiscount (~> 2.0.7)
   sass
   uglifier

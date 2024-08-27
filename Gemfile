@@ -13,7 +13,6 @@ gem 'haml', '< 6.0'    # Haml 6 would require udpating our filter registration c
 gem 'rdiscount', '~> 2.0.7', :platforms => [:ruby]
 
 gem 'sass'
-gem 'rake'
 
 # For previews
 gem 'webrick'
