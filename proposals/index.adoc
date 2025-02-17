@@ -2,9 +2,9 @@
 Gunnar Morling
 :awestruct-layout: default
 
-This page contains a list of proposals of changes that could be included into the next Jakarta Bean Validation specification.
-Feedback is very welcome on our http://lists.jboss.org/pipermail/beanvalidation-dev/[mailing list].
-Also check out the https://hibernate.atlassian.net/projects/BVAL/summary[BVAL JIRA project] for issues which are considered for inclusion but don't have a proposal yet.
+This page contains a list of proposals of changes that could be included into the next Jakarta Validation specification.
+Feedback is very welcome on our https://accounts.eclipse.org/mailing-list/bean-validation-dev[mailing list].
+Also check out the https://github.com/jakartaee/validation/issues[GitHub issues] for things which are considered for inclusion.
 
 |===
 |Issue Id (JIRA) |Done |Proposal |Description 

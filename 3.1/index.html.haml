@@ -1,0 +1,78 @@
+---
+title: Jakarta Validation 3.1
+layout: base
+author: Marko Bekhta
+---
+
+.jumbotron.small
+  .ui.container.grid.stackable
+    .column.ten.wide
+      %h1= site.title
+      %h2= page.title
+    .column.six.wide
+      .ui.segment
+        %p
+          Jakarta Validation 3.1 was published in April 2024.
+        %p It is part of Jakarta EE 11 (but can of course be used with plain Java SE as the previous releases).
+
+.ui.container.page-content
+  .spec-buttons.text-center
+    %a.ui.button.labeled.icon.green.large(href="https://jakarta.ee/specifications/bean-validation/3.1/jakarta-validation-spec-3.1.html")
+      %i.icon.book
+      Jakarta Validation 3.1 specification
+    %a.ui.button.labeled.icon.green.large(href="https://search.maven.org/search?q=g:jakarta.validation%20AND%20a:jakarta.validation-api&core=gav")
+      %i.icon.cube
+      API Artifact
+    %a.ui.button.labeled.icon.green.large(href="https://jakarta.ee/specifications/bean-validation/3.1/apidocs/")
+      %i.icon.code
+      API JavaDocs
+
+.content-banner
+  .ui.container.grid.divided.stackable
+    .twelve.wide.column
+      %h2 Implementations
+      %table.ui.table.celled.striped.unstackable
+        %thead
+          %tr
+            %th(colspan='2') Name
+            %th Version
+            %th Jakarta EE
+            // %th RI
+        %tbody
+          %tr
+            %td(width='30')
+              %img(src='/images/hibernate.png')
+            %td
+              %a(href='http://hibernate.org/validator/') Hibernate Validator
+            %td
+              %a(href='http://hibernate.org/validator/releases/') 9.0.0.CR1
+            %td
+              Jakarta EE 11
+            // %td.text-center(width='30')
+            //   %i.icon.check.circle.green.large
+    .four.wide.column
+      %h2 TCK
+      .ui.segment
+        %p
+          The TCK for Jakarta Validation 3.1 can be found
+          %a(href="/3.1/tck/") here
+          \.
+
+.ui.container#content
+  :asciidoc
+    == Changes between Jakarta Validation 3.1 and Jakarta Bean Validation 3.0
+
+    - The minimum required Java version is set to 17.
+    - The rename of the specification from Jakarta Bean Validation to Jakarta Validation.
+    - The clarification on the record validation.
+
+    == Feedback
+
+    Do you have feedback? Talk to us:
+
+    - on our https://accounts.eclipse.org/mailing-list/bean-validation-dev[mailing list]
+    - in the https://github.com/jakartaee/validation/issues[API issue tracker] for API related issues
+    - in the https://github.com/jakartaee/validation-spec/issues[Specification issue tracker] for specification related issues
+    - in the https://github.com/jakartaee/validation-tck/issues[TCK issue tracker] for TCK related issues
+
+    If you want to take the next step and contribute, read link:/contribute[how to contribute].

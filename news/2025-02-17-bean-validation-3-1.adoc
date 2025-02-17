@@ -1,0 +1,22 @@
+= Jakarta Validation 3.1 specification
+Marko Bekhta
+:awestruct-layout: news
+:awestruct-tags: [ "release" ]
+
+Jakarta Validation 3.1 was released earlier https://jakarta.ee/specifications/bean-validation/3.1/[in 2024].
+
+== What's new in Bean Validation 3.1?
+
+The 3.1 update of the specification, compared to 3.0, brings the following changes:
+
+- The minimum required Java version is set to 17.
+- The rename of the specification from Jakarta Bean Validation to Jakarta Validation.
+- The clarification on the record validation.
+
+Jakarta Validation 3.1 will be a part of the https://jakarta.ee/specifications/platform/11/[Jakarta EE 11 platform], to be released later.
+
+== Give it a try
+
+Don't wait and try out the new release yourself!
+Just https://hibernate.org/validator/releases/9.0/#get-it[get] the Hibernate Validator implementation, read the https://docs.jboss.org/hibernate/validator/9.0/reference/en-US/html_single/#validator-gettingstarted[Getting started] section of its reference guide.
+You also can read the https://jakarta.ee/specifications/bean-validation/3.1/jakarta-validation-spec-3.1.html[complete specification] as well as the https://jakarta.ee/specifications/bean-validation/3.1/apidocs/[API docs].
