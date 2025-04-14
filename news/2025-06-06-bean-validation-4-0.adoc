@@ -1,0 +1,27 @@
+= Upcoming Jakarta Validation 4.0
+Marko Bekhta
+:awestruct-layout: news
+:awestruct-tags: [ "status-update" ]
+
+Jakarta Validation 4.0 is https://projects.eclipse.org/projects/ee4j.validation/releases/4.0[on its way],
+as the release plan for this version was approved exactly one month ago on May 6!
+
+== What to expect from Jakarta Validation 4.0?
+
+The highlights of this release plan are as follows:
+
+- This version of the specification will require Java SE 21 or higher.
+- Prepare for removal of the legacy approach to mark container elements for cascading validation, i.e. `@Valid List<MyBean> list;`.
+The next major version will consider such code to be requesting the cascading validation of the `List`, and not its elements.
+It's time to finally switch any remaining code using this approach to the much more encouraged and cleaner `List<@Valid MyBean> list;`
+If you have a particular use case where you think that you won't be able to express your constraints
+without relying on the legacy approach -- please reach out on the https://github.com/jakartaee/validation/issues/266[corresponding issue].
+- Introduce an alternative initialization method `ConstraintValidator#initialize` to provide more context than just the annotation
+so that it would be possible to use a more eager approach to initializing the constraint validator.
+- Relax element order in the XSD where it doesn't matter.
+- Add support for `ConstraintValidator` declaration via service loader.
+- Remove any uses of the `SecurityManager` as it's being deprecated without an alternative for some time now.
+- Reevaluate the value extraction for `Optional` and whether `null` should be passed as an extracted value for empty optionals.
+- Other more minor clarifications, cleanups and improvements.
+
+Join the discussions at the https://github.com/jakartaee/validation-spec/issues[issue tracker], or bring your proposals for future consideration.
