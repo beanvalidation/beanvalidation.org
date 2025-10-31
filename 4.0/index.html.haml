@@ -1,0 +1,83 @@
+---
+title: Jakarta Validation 4.0
+layout: base
+author: Marko Bekhta
+---
+
+.jumbotron.small
+  .ui.container.grid.stackable
+    .column.ten.wide
+      %h1= site.title
+      %h2= page.title
+    .column.six.wide
+      .ui.segment
+        %p
+          Jakarta Validation 4.0 is still under development.
+        %p It is part of Jakarta EE 12 (but can of course be used with plain Java SE as the previous releases).
+
+.ui.container.page-content
+  .spec-buttons.text-center
+    %a.ui.button.labeled.icon.green.large(href="https://jakarta.ee/specifications/bean-validation/4.0/jakarta-validation-spec-4.0.html")
+      %i.icon.book
+      Jakarta Validation 4.0 specification
+    %a.ui.button.labeled.icon.green.large(href="https://search.maven.org/search?q=g:jakarta.validation%20AND%20a:jakarta.validation-api&core=gav")
+      %i.icon.cube
+      API Artifact
+    %a.ui.button.labeled.icon.green.large(href="https://jakarta.ee/specifications/bean-validation/4.0/apidocs/")
+      %i.icon.code
+      API JavaDocs
+
+.content-banner
+  .ui.container.grid.divided.stackable
+    .twelve.wide.column
+      %h2 Implementations
+      %table.ui.table.celled.striped.unstackable
+        %thead
+          %tr
+            %th(colspan='2') Name
+            %th Version
+            %th Jakarta EE
+            // %th RI
+        %tbody
+          %tr
+            %td(width='30')
+              %img(src='/images/hibernate.png')
+            %td
+              %a(href='http://hibernate.org/validator/') Hibernate Validator
+            %td
+              %a(href='http://hibernate.org/validator/releases/') 10.0.0-SNAPSHOT
+            %td
+              Jakarta EE 12
+            // %td.text-center(width='30')
+            //   %i.icon.check.circle.green.large
+    .four.wide.column
+      %h2 TCK
+      .ui.segment
+        %p
+          The TCK for Jakarta Validation 4.0 can be found
+          %a(href="/4.0/tck/") here
+          \.
+
+.ui.container#content
+  :asciidoc
+    == Changes between Jakarta Validation 4.0 and Jakarta Bean Validation 3.1
+
+    - Support for `ConstraintValidator` declaration via the service loader mechanism was added.
+    - The `validatedBy` attribute on the `jakarta.validation.Constraint` was made optional;
+    an empty array being the default.
+    - A simpler way to get a single attribute from `ConstraintDescriptor` was introduced.
+    - Support for string representation of numbers by `Min` / `Max` constraints was clarified.
+    - Some methods of the `ConstraintViolationBuilder` were deprecated.
+    Previously, they were only deprecated in the Javadoc comments.
+    - The expectations on applying `@Valid` twice were clarified.
+
+    == Feedback
+
+    Do you have feedback? Talk to us:
+
+    - on our https://accounts.eclipse.org/mailing-list/bean-validation-dev[mailing list]
+    - in the https://github.com/jakartaee/validation/issues[API issue tracker] for API related issues
+    - in the https://github.com/jakartaee/validation-spec/issues[Specification issue tracker] for specification related issues
+    - in the https://github.com/jakartaee/validation-tck/issues[TCK issue tracker] for TCK related issues
+
+    If you want to take the next step and contribute, read link:/contribute[how to contribute].
