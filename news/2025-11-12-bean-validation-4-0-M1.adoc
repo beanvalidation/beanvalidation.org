@@ -1,0 +1,74 @@
+= First milestone release of Jakarta Validation 4.0
+Marko Bekhta
+:awestruct-layout: news
+:awestruct-tags: [ "release" ]
+
+Recently, we published the first milestone release of the upcoming  https://jakarta.ee/specifications/bean-validation/4.0/[Jakarta Validation 4.0].
+Jakarta Validation 4.0 will be a part of the https://jakarta.ee/specifications/platform/12/[Jakarta EE 12 platform], to be released later.
+
+== What has been done so far?
+
+The 4.0 update of the specification, compared to 3.1, brings the following changes:
+
+* **Easier Custom Constraint Validator Integration:**
+developers of custom constraints can now declare their `ConstraintValidator` implementations using the **Java Service Loader mechanism**.
+This decouples the constraint definition and the constraint validator implementation details.
+It especially simplifies the process for external libraries to add support for more types to constraints
+existing in other libraries, including the default, Jakarta Validation ones.
+
+* **Optional `validatedBy` Attribute:**
+The `validatedBy` attribute on the `jakarta.validation.Constraint` annotation is now **optional**.
+It defaults to an empty array, which cleans up the code when you don't need to specify validators explicitly,
+for example, when you define your constraint validators through a service loader mechanism.
+
+* **Simplified Attribute Retrieval:**
+We've introduced a simpler, more direct way to fetch a single attribute from a `ConstraintDescriptor`.
+This reduces the boilerplate type casts.
+
+* **Clarified Number Validation for Strings:**
+Both `@Min` and `@Max` constraints were already able to validate the **string representation of numbers**,
+as the TCK was testing for it.
+Hence, from now on, it is explicitly mentioned that these constraints are applicable to Strings.
+This also better matches the behaviour of their decimal counterparts: `@DecimalMin` and `@DecimalMax`
+
+* **Formal Deprecation of `ConstraintViolationBuilder` Methods:**
+Some methods in the `ConstraintViolationBuilder` that were previously marked as deprecated *only* in the Javadoc comments
+are now **formally deprecated**. This makes it clearer which methods you should avoid using going forward and sets the stage for future removals.
+
+== What won't be getting in?
+
+We were exploring the possibility of https://github.com/jakartaee/validation/issues/258[relaxing some of the XML schema validation constraints].
+But with what is currently available in the XSD specification, there is not much we can change, hence this idea is put on hold.
+
+== What is yet to come?
+
+There are still a few things to address and some ongoing discussions about potential improvements. In particular:
+
+* We are https://github.com/jakartaee/validation/issues/266[planning] to make it clear that after Jakarta Validation 4.0
+the **legacy approach to cascading validation** will be removed.
++
+[source, JAVA, indent=0, subs="+callouts"]
+====
+----
+@Valid // (1)
+List<MyObject> legacyObjects;
+
+List<@Valid MyObject> objects; // (2)
+----
+1. The **legacy** approach to applying cascading validation to list elements.
+2. The **modern** approach to applying cascading validation to list elements.
+Available since Bean Validation 2.0.
+====
++
+Moving forward (e.g. in Jakarta Validation 5), keeping the "legacy" approach
+in place would result in an attempt to validate the container itself (i.e. the list in this case)
+instead of validating the container elements.
++
+We encourage users to finally move away from the legacy approach.
+
+* There is also a discussion on providing https://github.com/jakartaee/validation/issues/271[access to the initialization context]
+within the **constraint validator initialization** step.
+Currently, `ConstraintValidator#initialize(..)` method only exposes the constraint annotation to the `ConstraintValidator` implementer.
+However, it may be useful for some constraints to obtain more information at this stage.
+For example, constraints dealing with temporal types may need to get their hand on the `ClockProvider`,
+or get access to some of the Jakarta Validation provider-specific details.
