@@ -9,8 +9,8 @@ gem 'uglifier'
 gem 'json'
 gem 'haml', '< 6.0'    # Haml 6 would require udpating our filter registration code
 
-# Enable a Markdown gem (only rdiscount seems to work w/ the site):
-gem 'rdiscount', '~> 2.0.7', :platforms => [:ruby]
+# # Enable a Markdown gem:
+gem 'redcarpet'
 
 gem 'sass'
 
