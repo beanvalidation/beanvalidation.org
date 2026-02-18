@@ -1,0 +1,28 @@
+= Jakarta Validation 3.1 TCK
+Hardy Ferentschik, Guillaume Smet
+:description: Jakarta Validation 3.1 TCK documentation
+:sectanchors:
+:revnumber: 3.1.1
+:awestruct-layout: default
+
+A TCK, or Technology Compatibility Kit, is one of the three required pieces for any Jakarta EE specification
+(the other two being the specification document and the reference implementation). The TCK is a set
+of tools and tests to verify that an implementation of the technology conforms to the specification.
+
+The Jakarta Validation 3.1 TCK is licensed under the Apache Software License 2.0 and hosted in a GitHub
+https://github.com/jakartaee/validation-tck[repository].
+The repository consists of multiple artifacts, containing tooling, documentation and most importantly
+a set of http://arquillian.org/[Arquillian] tests. There are also two
+https://github.com/jakartaee/validation-tck/tree/main/setup-examples[setup examples],
+demonstrating the setup of the test harness using Maven and Ant.
+
+The latest version used to test Jakarta Validation 3.1 is 3.1.1.
+
+Distribution bundles are available on the
+https://download.eclipse.org/jakartaee/bean-validation/3.1/[Eclipse download infrastructure] and come as
+https://download.eclipse.org/ee4j/bean-validation/3.1/validation-tck-dist-3.1.1.zip[ZIP] 
+or https://download.eclipse.org/ee4j/bean-validation/3.1/validation-tck-dist-3.1.1.tar.gz[TGZ] 
+archive.
+They contain JARs, documentation, source code, et al.
+
+To report a bug or challenge a test use our https://github.com/jakartaee/validation-tck/issues[issue tracker].

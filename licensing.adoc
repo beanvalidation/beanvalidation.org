@@ -1,0 +1,25 @@
+= Licensing
+Emmanuel Bernard
+:awestruct-layout: default
+
+[NOTE]
+====
+**Open Source** +
+All of our work is freely available under open source licenses.
+====
+
+== Specification, API, TCK and JavaDoc
+
+The specification, API, TCK and generally all artifacts of this website are
+provided under the http://www.apache.org/licenses/LICENSE-2.0.html[Apache Software License 2.0].
+
+The specification and JavaDoc are additionally available under the https://www.eclipse.org/legal/efsl.php[Eclipse Foundation Specification License].
+To obtain artifacts under this license visit the Jakarta EE page for
+https://projects.eclipse.org/projects/ee4j.bean-validation[Jakarta Bean Validation 2.0].
+
+This process is commonly known as
+http://en.wikipedia.org/wiki/Multi-licensing[dual-licensing].
+
+== Website source
+
+The source of this website is released under the http://www.apache.org/licenses/LICENSE-2.0.html[Apache Software License 2.0].

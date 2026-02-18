@@ -1,0 +1,10 @@
+= Proposal for method validation added
+Gunnar Morling
+:awestruct-layout: news
+:awestruct-tags: [ "proposal" ]
+
+The first draft of the proposal for method-level validation is online. The proposal covers the declaration of parameter as well as
+return values constraints, extensions to the `Validator` API, related additions to the meta-data API etc.
+
+So check out the link:/proposals/BVAL-241[proposal document] and let us know what you think, e.g. by sending your questions or remarks to the
+link:https://lists.jboss.org/mailman/listinfo/beanvalidation-dev[beanvalidation-dev] mailing list.

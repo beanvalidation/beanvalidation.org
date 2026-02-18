@@ -1,0 +1,47 @@
+= Bean Validation 2.0 (JSR 380) drafts
+Guillaume Smet
+:description: Archive of Bean Validation 2.0 drafts
+:awestruct-layout: default
+
+[IMPORTANT]
+====
+This pages contains the various drafts published for Bean Validation 2.0.
+This page is useful for archaeological purposes and you probably want
+link:/2.0-jsr380/[the final version of the specification].
+====
+
+== Specification Drafts
+
+
+
+### CR3 (Final Approval Ballot)
+
+* link:/2.0-jsr380/spec/2.0.0.cr3/[CR3]
+* Changes to CR2
+** link:/2.0-jsr380/spec/2.0.0.cr3/diff/diff-to-2.0-cr2/[HTML diff]
+* Changes to 1.1
+** link:/2.0-jsr380/spec/2.0.0.cr3/diff/diff-to-1.1/[HTML diff]
+
+### CR2
+
+* link:/2.0-jsr380/spec/2.0.0.cr2/[CR2]
+* Changes to CR1
+** link:/2.0-jsr380/spec/2.0.0.cr2/diff/diff-to-2.0-cr1/[HTML diff]
+* Changes to 1.1
+** link:/2.0-jsr380/spec/2.0.0.cr2/diff/diff-to-1.1/[HTML diff]
+
+### CR1 (Proposed Final Draft 1)
+
+* link:/2.0-jsr380/spec/2.0.0.cr1/[CR1]
+* Changes to Beta2
+** link:/2.0-jsr380/spec/2.0.0.cr1/diff/diff-to-2.0-beta2/[HTML diff]
+* Changes to 1.1
+** link:/2.0-jsr380/spec/2.0.0.cr1/diff/diff-to-1.1/[HTML diff]
+
+### Beta2 (Public Review Draft 1)
+
+* link:/2.0-jsr380/spec/2.0.0.beta2/[Beta2]
+* Changes to Beta1
+** link:/2.0-jsr380/spec/2.0.0.beta2/diff/diff-to-2.0-beta1/[HTML diff]
+* Changes to 1.1
+** link

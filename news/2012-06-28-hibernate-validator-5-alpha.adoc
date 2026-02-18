@@ -1,0 +1,14 @@
+= Hibernate Validator 5 alpha for Bean Validation 1.1 is out
+Emmanuel Bernard
+:awestruct-layout: news
+:awestruct-tags: [ "test" ]
+
+Hibernate Validator, the reference implementation for Bean Validation has just been link:http://in.relation.to/Bloggers/FirstAlphaReleaseOfHibernateValidator5[released
+in version 5 alpha]. This version implements the new features described in
+Bean Validation 1.1 first draft.
+
+Integrators, spec leads and users should all go and try this release to see if some
+adjustments are needed. On the menu: method validation, dependency
+injection and more.
+
+Read more about it in link:http://in.relation.to/Bloggers/FirstAlphaReleaseOfHibernateValidator5[Hardy's blog post].

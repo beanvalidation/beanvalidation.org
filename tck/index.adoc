@@ -1,0 +1,23 @@
+= TCK
+Guillaume Smet
+:description: Jakarta Bean Validation and JSR TCK history
+:sectanchors:
+:awestruct-layout: default
+
+== Jakarta Bean Validation 2.0
+
+Jakarta Bean Validation 2.0 was published in August 2019 and is part of Jakarta EE 8.
+
+The TCK for Bean Validation 2.0 can be found link:/2.0/tck/[here].
+
+== Bean Validation 2.0
+
+Bean Validation 2.0 (https://www.jcp.org/en/jsr/detail?id=380[JSR 380]) was finished in 2017 and is part of Java EE 8.
+
+The TCK for Bean Validation 2.0 can be found link:/2.0-jsr380/tck/[here].
+
+== Bean Validation 1.1
+
+Bean Validation 1.1 (https://www.jcp.org/en/jsr/detail?id=349[JSR 349]) was finished in 2013 and is part of Java EE 7.
+
+The TCK for Bean Validation 1.1 can be found link:/1.1/tck/[here].
