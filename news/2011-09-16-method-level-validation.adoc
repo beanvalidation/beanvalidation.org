@@ -1,0 +1,21 @@
+= Work on method level validation
+Emmanuel Bernard
+:awestruct-layout: news
+:awestruct-tags: [ "proposal" ]
+
+The expert groups has begun its work on method-level validation. A feature that was drafted in the
+latest spec (appendix) but that we could not finish in time.
+
+You will be able to define constraints on parameters and your favorite interception technology
+(CDI, @Inject, AspectJ, Spring etc) will call Bean Validation.
+
+The final approach is not fixed yet but it will look like this:
+
+[source,java]
+----
+public class BidManager {
+public void placeBid(@Min(0) BigDecimal upTo) { ... }
+}
+----
+
+Want to know more? Join the expert group mailing list. link:/contribute[Learn how].

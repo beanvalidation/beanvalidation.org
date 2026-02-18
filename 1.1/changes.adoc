@@ -1,0 +1,314 @@
+= Bean Validation 1.1 goals
+Emmanuel Bernard
+:description: Key goals and changelog for Bean Validation 1.1
+:awestruct-layout: default
+
+The expert group and the community focused on a few key goals as well as smaller issues.
+
+* <<goals, Main goals>>
+** <<openness, Openness>>
+** <<dependency-injection, Dependency injection and CDI>>
+** <<method-validation, Method validation>>
+** <<group-conversion, Group conversion>>
+** <<message-interpolation, Message interpolation using EL>>
+** <<integration, Integration with other specifications>>
+* <<changelog, Detailed changelog>>
+
+[[goals]]
+== Main goals
+
+[[openness]]
+=== Openness
+
+All of Bean Validation 1.1 work has been done in the open and in an open source
+way. Source code for the
+https://github.com/eclipse-ee4j/beanvalidation-api/[API], https://github.com/hibernate/hibernate-validator/[reference implementation], https://github.com/eclipse-ee4j/beanvalidation-tck/[test compatibility kit] as well as the
+https://github.com/eclipse-ee4j/beanvalidation-spec/[specification] and the
+https://github.com/beanvalidation/beanvalidation.org/[website sources] are
+available in the open. All discussions are done in the open in the publicly
+available development mailing list. Road map and proposals are also published
+on the website.
+
+In short, everything is available at http://beanvalidation.org.
+
+[[dependency-injection]]
+=== Dependency injection and CDI integration
+
+Bean Validation uses a few components: `MessageInterpolator`, `TraversableResolver`,
+`ParameterNameProvider`, `ConstraintValidatorFactory` and `ConstraintValidator`. We
+have standardized how these objects are managed by a container and how these
+objects can benefit from container services. In particular, CDI support within
+Java EE is defined. Note that CDI integration also encompasses support for method
+validation.
+
+An example of the most common use case is using CDI injection in constraint validator
+implementations:
+
+[source,java]
+----
+class ZipCodeValidator implements ConstraintValidator<ZipCode, String> {
+
+    @Inject @France
+    private ZipCodeChecker checker;
+
+    public void initialize(ZipCode zipCode) {}
+
+    public boolean isValid(String value, ConstraintValidationContext context) {
+        if (value==null) return true;
+        return checker.isZipCodeValid(value);
+    }
+}
+----
+
+[[method-validation]]
+=== Method validation
+
+Bean Validation 1.1 allows to apply constraints on parameters and return
+values of methods and constructors. That way the Bean Validation API
+can be used to describe and validate the contract applying to a given method or
+constructor, that is:
+
+* the preconditions that must be met by the caller before the method or
+constructor may be invoked and
+* the postconditions that are guaranteed to the caller after a method or
+constructor invocation returns.
+
+This enables a programming style known as "Programming by Contract" (PbC).
+
+
+
+Compared to traditional means of checking the sanity of argument and return
+values this approach has several advantages:
+
+* These checks are expressed declaratively and don't have to be performed
+manually, which results in less code to write, read and maintain.
+* The pre- and postconditions applying for a method or constructor don't have
+to be expressed again in the documentation, since any of its annotations will
+automatically be included in the generated JavaDoc.
+
+Here is an example:
+
+[source,java]
+----
+@RequestScope class Client {
+    @Inject AccountService service;
+    public void createClient() { service.createUser(...); }
+}
+
+@Dependent class AccountService {
+    public User createUser(
+            @NotEmpty String username,
+            String firstname,
+            String lastname,
+            @NotNull @Email String email,
+            @Past Date birthDate) {
+        // parameters are automatically validated and an exception
+        // is raised upon failure
+        // Method code focuses on the business logic
+    }
+}
+----
+
+[[group-conversion]]
+=== Group conversion
+
+The specification offers a way to alter the targeted group when validation
+cascading is happening. This feature is particularly useful to reuse a given
+object (graph) and to avoid leaking groups between various object subgraphs. It
+also makes for more readable constraints.
+
+[source,java]
+----
+public class User {
+    @Email String email;
+    @Strength(group=Complete.class)
+    String password;
+    @Valid
+    @ConvertGroup.List( {
+        @ConvertGroup(from=Default.class, to=BasicPostal.class),
+        @ConvertGroup(from=Complete.class, to=FullPostal.class)
+    } )
+    Address homeAddress;
+}
+
+class Address {
+    @NotNull(group=BasicPostal.class) String street1;
+     String street2;
+     @ZipCode(group=BasicPostal.class)
+     String zipCode;
+     @CodeChecker(group=FullPostal.class)
+     String doorCode;
+}
+----
+
+[[message-interpolation]]
+=== Message interpolation via the unified expression language
+
+Constraint violation messages can now use EL expressions for a much more
+flexible rendering and string formatting. In particular a formatter object is
+injected in the EL context to convert numbers, dates etc. into the locale
+specific string representation. Likewise, the validated value is also available
+in the EL context.
+
+[source,properties]
+----
+javax.validation.constraints.DecimalMax.message=\
+    must be less than ${inclusive == true ? 'or equal to ' : ''}{value}
+----
+
+[[integration]]
+=== Integration with other specifications
+
+A lot of the work produced is not in this specification but in others. In
+particular, validation of JAX-RS components is supported and reuses the Bean
+Validation method validation.
+
+[[changelog]]
+== Detailed changelog
+
+This list shows a detailed set of changes done in the specification.
+
+[cols="2,1,1,3", options="header"]
+|===
+| Issue Id (JIRA) | Done | Proposal | Description
+
+| https://hibernate.atlassian.net/browse/BVAL-241[BVAL-241]
+| image:/images/completed.png[]
+| link:/proposals/BVAL-241[241]
+| Method level validation
+
+| https://hibernate.atlassian.net/browse/BVAL-272[BVAL-272]
+| image:/images/completed.png[]
+|
+| Close remaining loops in method validation support
+
+| https://hibernate.atlassian.net/browse/BVAL-232[BVAL-232]
+| image:/images/completed.png[]
+| link:/proposals/BVAL-232[232]
+| Solve cross-parameter validation
+
+| https://hibernate.atlassian.net/browse/BVAL-274[BVAL-274]
+| image:/images/completed.png[]
+| link:/proposals/BVAL-274[274]
+| Extend the meta-data API with required convenience methods for method validation
+
+|
+| image:/images/completed.png[]
+|
+| Should method validation methods be defined on j.v.Validator or a dedicated new interface?
+
+| https://hibernate.atlassian.net/browse/BVAL-306[BVAL-306]
+| image:/images/completed.png[]
+|
+| Clarify interceptor order in method validation triggering
+
+| https://hibernate.atlassian.net/browse/BVAL-314[BVAL-314]
+| image:/images/completed.png[]
+| link:/proposals/BVAL-314/[314]
+| Provide ability to disable validation for method/constructor
+
+| https://hibernate.atlassian.net/browse/BVAL-238[BVAL-238]
+| image:/images/completed.png[]
+| link:/proposals/BVAL-238[238]
+| Support for container injection in ConstraintValidator
+
+|
+| image:/images/completed.png[]
+|
+| Discuss and clarify vf.close() and the usage expectation (ie when to close a VF)
+
+|
+| image:/images/completed.png[]
+|
+| Bring back interaction descriptions with Java EE and CDI in the Bean Validation specification
+
+| https://hibernate.atlassian.net/browse/BVAL-307[BVAL-307]
+| image:/images/completed.png[]
+|
+| Decide how CDI and Bean Validation is integrated
+
+| https://hibernate.atlassian.net/browse/BVAL-265[BVAL-265]
+| image:/images/completed.png[]
+| link:/proposals/BVAL-265[265]
+| Expose settings defined in XML in the Configuration API
+
+| https://hibernate.atlassian.net/browse/BVAL-293[BVAL-293]
+| image:/images/completed.png[]
+|
+| Finish renaming of `ConfigurationSource`
+
+| https://hibernate.atlassian.net/browse/BVAL-226[BVAL-226]
+| image:/images/completed.png[]
+|
+| Clarify whether the static or the runtime type should be considered when creating property paths in case of cascaded validations
+
+| https://hibernate.atlassian.net/browse/BVAL-221[BVAL-221]
+| image:/images/completed.png[]
+| link:/proposals/BVAL-221[221]
+| The constraint violation builder cannot put constraint on a top level map key
+
+| https://hibernate.atlassian.net/browse/BVAL-208[BVAL-208]
+| image:/images/completed.png[]
+| link:/proposals/BVAL-208[208]
+| Support groups translation when cascading operations (hosted on @Valid or not)
+
+| https://hibernate.atlassian.net/browse/BVAL-259[BVAL-259]
+| image:/images/completed.png[]
+| link:/proposals/BVAL-259[259]
+| Stop validation of composed constraints at first failing constraint
+
+| https://hibernate.atlassian.net/browse/BVAL-327[BVAL-327]
+| image:/images/completed.png[]
+| link:/proposals/BVAL-327[327]
+| Discuss whether or not getter should be considered constrained methods
+
+| https://hibernate.atlassian.net/browse/BVAL-259[BVAL-259]
+| image:/images/completed.png[]
+|
+| Enforce in the spec that @ReportAsSingleViolation does apply validators once one is reporting a failure
+
+| https://hibernate.atlassian.net/browse/BVAL-219[BVAL-219]
+| image:/images/completed.png[]
+|
+| Consider interpolating the value in error messages
+
+| https://hibernate.atlassian.net/browse/BVAL-223[BVAL-223]
+| image:/images/completed.png[]
+|
+| Add formatter syntax for interpolated messages
+
+| https://hibernate.atlassian.net/browse/BVAL-198[BVAL-198]
+| image:/images/completed.png[]
+|
+| Simplify creation of ConstraintViolationExceptions
+
+| https://hibernate.atlassian.net/browse/BVAL-192[BVAL-192]
+| image:/images/completed.png[]
+|
+| Add 'exclusive' boolean attribute to @DecimalMin/@DecimalMax constraints
+
+| https://hibernate.atlassian.net/browse/BVAL-230[BVAL-230]
+| image:/images/completed.png[]
+|
+| Add support for validating CharSequence types instead of just Strings
+
+| https://hibernate.atlassian.net/browse/BVAL-249[BVAL-249]
+| image:/images/completed.png[]
+|
+| Add unwrap method to ConstraintValidatorContext for provider extension
+
+| https://hibernate.atlassian.net/browse/BVAL-282[BVAL-282]
+| image:/images/completed.png[]
+|
+| Make clear whether it's legal to invoke Configuration#buildValidatorFactory() several times
+
+| https://hibernate.atlassian.net/browse/BVAL-191[BVAL-191]
+| image:/images/completed.png[]
+|
+| Introduce a addEntityNode() method to the fluent node builder API
+
+| https://hibernate.atlassian.net/browse/BVAL-304[BVAL-304]
+| image:/images/completed.png[]
+|
+| Add OSGi headers in the reference implementation
+|===

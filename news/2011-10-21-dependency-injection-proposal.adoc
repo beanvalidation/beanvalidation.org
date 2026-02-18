@@ -1,0 +1,10 @@
+= Adding proposal section and first proposal
+Emmanuel Bernard
+:awestruct-layout: news
+:awestruct-tags: [ "proposal", "site" ]
+
+We have introduced a new section of the website called link:/proposals[proposals].
+This will include wiki-style, work in progress proposals for various features being worked on.
+
+Check out the first proposal page describing ideas and open questions on how to propose
+link:/proposals/BVAL-238[dependency injection in `ConstraintValidator` instances].

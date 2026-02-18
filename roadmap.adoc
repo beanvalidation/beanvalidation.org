@@ -1,0 +1,59 @@
+// ---
+// title: Jakarta Bean Validation roadmap
+// layout: default
+// author: Emmanuel Bernard
+// ---
+
+= Jakarta Bean Validation roadmap
+Emmanuel Bernard
+:layout: default
+
+We have seriously reduced our stock of todos with the release of Bean
+Validation 1.1 but we still have a few things we would like to put in the
+specification eventually.  Most of them require some experimentation in
+Hibernate Validator or the other Jakarta Bean Validation implementations out there.
+After feedback they will be ready to be folded back in the specification.
+
+We encourage you to follow the Hibernate Validator link:https://hibernate.org/validator/roadmap/[roadmap].
+We have also a left over from Bean Validation 1.1 described below.
+
+[[next]]
+== Next revision
+
+[cols="1,1,1,3", options="header"]
+|===
+| Issue Id (JIRA) | Done | Proposal | Description
+| link:https://hibernate.atlassian.net/browse/BVAL-508[BVAL-508] | | | Validating elements contained in a container (like collections)
+| link:https://hibernate.atlassian.net/browse/BVAL-499[BVAL-499] | | |
+| link:https://hibernate.atlassian.net/browse/BVAL-202[BVAL-202] | | |
+| link:https://hibernate.atlassian.net/browse/BVAL-467[BVAL-467] | | |
+|===
+
+[[archived]]
+== (Archived) Next revision
+
+[cols="1,1,1,3", options="header"]
+|===
+| Issue Id (JIRA) | Done | Proposal | Description
+| link:https://hibernate.atlassian.net/browse/BVAL-199[BVAL-199] | | | Offer helper classes to build and potentially raise ConstraintViolationExceptions
+| link:https://hibernate.atlassian.net/browse/BVAL-202[BVAL-202] | | | Apply constraints on the elements of an iterator
+| link:https://hibernate.atlassian.net/browse/BVAL-210[BVAL-210] | | | Make sure JTA / Java EE plays well with Bean Validation + JPA when exceptions occurs (at least raise the concern upstairs ;) )
+| link:https://hibernate.atlassian.net/browse/BVAL-211[BVAL-211] | | | Consider making javax.validation.ValidatorContext a self-referential generic type
+| link:https://hibernate.atlassian.net/browse/BVAL-213[BVAL-213] | | | Convert persistence storage exception into Bean Validation exceptions
+| link:https://hibernate.atlassian.net/browse/BVAL-214[BVAL-214] | | link:/proposals/BVAL-214[214] | Ability to validate an object and a list of changes
+| link:https://hibernate.atlassian.net/browse/BVAL-215[BVAL-215] | | | Make composition more flexible (OR support)
+| link:https://hibernate.atlassian.net/browse/BVAL-216[BVAL-216] | | | Work with the JAXB EG to have a nice Bean Validation integration
+| link:https://hibernate.atlassian.net/browse/BVAL-217[BVAL-217] | | | Separate the notion of message resolver vs message interpolator
+| link:https://hibernate.atlassian.net/browse/BVAL-220[BVAL-220] | | | Offer stereotypes to skip validation on empty or null
+| link:https://hibernate.atlassian.net/browse/BVAL-225[BVAL-225] | | | Propose ability to provide default resource bundles (for a constraint definition provider)
+| link:https://hibernate.atlassian.net/browse/BVAL-229[BVAL-229] | | | Offer a programmatic API to declare constraints on a domain model
+| link:https://hibernate.atlassian.net/browse/BVAL-233[BVAL-233] | | | Provide access to contextual info during message interpolation
+| link:https://hibernate.atlassian.net/browse/BVAL-234[BVAL-234] | | link:/proposals/BVAL-234[234] | Ignore @NotNull on JPA's @GeneratedValue properties for pre-persist operations
+| link:https://hibernate.atlassian.net/browse/BVAL-235[BVAL-235] | | | Support parameterized payload attributes (additional string param on @Payload)
+| link:https://hibernate.atlassian.net/browse/BVAL-237[BVAL-237] | | | Expose validated bean via ConstraintValidatorContext
+| link:https://hibernate.atlassian.net/browse/BVAL-240[BVAL-240] | | | Revisit cross-field validation
+| link:https://hibernate.atlassian.net/browse/BVAL-248[BVAL-248] | | link:/proposals/BVAL-248[248] | Introduce an evaluation order for constraints on a single property
+| link:https://hibernate.atlassian.net/browse/BVAL-251[BVAL-251] | | | Improve Bean Validation support for modularized environments
+| link:https://hibernate.atlassian.net/browse/BVAL-252[BVAL-252] | | | Improve support for the creation of constraint libraries
+| link:https://hibernate.atlassian.net/browse/BVAL-268[BVAL-268] | | | Align with the EE platform on where to find validation.xml
+|===

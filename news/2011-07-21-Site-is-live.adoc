@@ -1,0 +1,6 @@
+= The website is live!
+Emmanuel Bernard
+:awestruct-layout: news
+:awestruct-tags: [ "site" ]
+
+The website is live!

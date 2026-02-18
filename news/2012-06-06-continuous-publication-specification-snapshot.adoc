@@ -1,0 +1,8 @@
+= Continuous publication of the specification snapshot
+Emmanuel Bernard
+:awestruct-layout: news
+:awestruct-tags: [ ]
+
+The latest snapshot of the specification is now always published link:/latest-draft/[on the site]
+as soon as we push change to the Git repository.
+The expert group has been using it for a while, we simply forgot to announce it publicly.

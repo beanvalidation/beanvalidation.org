@@ -1,0 +1,62 @@
+= Help and contribute
+Emmanuel Bernard
+:description: How to get involved with Jakarta Bean Validation
+:sectanchors:
+:awestruct-layout: default
+
+[cols="1,4", frame=none, grid=none, style=icon]
+|===
+| icon:users[size=3x]
+| *Come and join us!* +
+Jakarta Bean Validation 2.0 was published in August 2019 but it doesn't end here, come and join planning the new features of the next revision!
+|===
+
+We welcome your contributions of any sort:
+
+* <<feedback,feedback>>
+* <<proposals,proposals>>
+* <<contributions,contributions>>
+
+[#feedback]
+== Feedback
+
+Feedback is more than welcome, either by starting a discussion on our
+https://discourse.hibernate.org/c/bean-validation[forum] or by opening/commenting an issue in
+our https://hibernate.atlassian.net/browse/BVAL[bug tracker].
+
+[#proposals]
+== Proposals
+
+If you think some new feature should be added to Jakarta Bean Validation or you want to influence the shape
+of new Jakarta Bean Validation features, come and join our
+https://lists.jboss.org/mailman/listinfo/beanvalidation-dev[development mailing list]. In addition, you can have a look at the current proposals discussions link:/proposals/[here].
+
+[#contributions]
+== Contributions
+
+All specification work is done in the open. This does not only include discussions, but also all code
+and artifacts. Here is a list of all relevant GitHub source repositories:
+
+* https://github.com/eclipse-ee4j/beanvalidation-spec[Specification repository]
+* https://github.com/hibernate/hibernate-validator[Reference implementation repository]
+* https://github.com/eclipse-ee4j/beanvalidation-api[API repository]
+* https://github.com/eclipse-ee4j/beanvalidation-tck[TCK repository]
+* https://github.com/beanvalidation/beanvalidation.org[This website source]
+
+Interested? Read all about how to:
+
+* link:specification[concretely contributing to the specification]
+* link:coding[work with the API and TCK sources]
+* link:site[improve this website].
+
+== Specification process
+
+Jakarta Bean Validation operates under the https://jakarta.ee/about/jesp/[Jakarta EE Specification Process].
+
+== License
+
+The content of this specification, API, RI, TCK, Javadoc, website is released under the
+Apache Software License 2.0. link:/licensing/[Get more information].
+
+By submitting a "pull request" or otherwise contributing to this repository, you agree to license
+your contribution under the respective licenses mentioned above.

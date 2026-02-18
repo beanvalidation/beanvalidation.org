@@ -1,0 +1,12 @@
+= Public review ballot favorable to Bean Validation 1.1
+Emmanuel Bernard
+:awestruct-layout: news
+:awestruct-tags: [ "jcp" ]
+
+The Java expert comity has link:http://jcp.org/en/jsr/results?id=5386[just approved]
+the public review version of Bean Validation 1.1.
+
+What does that mean for the spec? We keep going and carry on our work
+to finalize the specification.
+
+Onwards.

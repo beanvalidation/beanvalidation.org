@@ -1,0 +1,9 @@
+= Bean Validation has been voted yes!
+Emmanuel Bernard
+:awestruct-layout: news
+:awestruct-tags: [ "jcp" ]
+
+The expert committee has link:http://jcp.org/en/jsr/results?id=5227[voted yes] on JSR-349. That means
+the work for Bean Validation 1.1 can start. Read some more on link:http://in.relation.to/Bloggers/BeanValidation11HasStartedJoinUs[Emmanuel's blog].
+
+The next few days will be dedicated getting an expert group up and running.

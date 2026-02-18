@@ -1,0 +1,43 @@
+= Bean Validation 2.0 TCK
+Hardy Ferentschik, Guillaume Smet
+:description: Bean Validation 2.0 TCK page
+:awestruct-layout: default
+
+A TCK, or Technology Compatibility Kit, is one of the three required pieces for any JSR
+(the other two being the specification document and the reference implementation). The TCK is a set
+of tools and tests to verify that an implementation of the technology conforms to the specification.
+
+The Bean Validation 2.0 TCK is licensed under the Apache Software License 2.0 and hosted in a GitHub
+https://github.com/eclipse-ee4j/beanvalidation-tck[repository].
+The repository consists of multiple artifacts, containing tooling, documentation and most importantly
+a set of http://arquillian.org/[Arquillian] tests. There are also two
+https://github.com/eclipse-ee4j/beanvalidation-tck/tree/master/setup-examples[setup examples],
+demonstrating the setup of the test harness using Maven and Ant.
+
+The Bean Validation 2.0 TCK is built using Maven and publishes project artifacts to the Maven Central Repository.
+You can browse the available TCK releases
+http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.hibernate.beanvalidation.tck%22[here].
+
+The latest version used to test Bean Validation 2.0 (JSR 380) is:
+
+[source,xml]
+----
+<dependency>
+    <groupId>org.hibernate.beanvalidation.tck</groupId>
+    <artifactId>beanvalidation-tck-tests</artifactId>
+    <version>2.0.4.Final</version>
+</dependency>
+----
+
+Distribution bundles are available on the SourceForge
+http://sourceforge.net/projects/hibernate/files/beanvalidation-tck[File Release System] and come as
+http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/2.0.4.Final/beanvalidation-tck-dist-2.0.4.Final.zip/download[ZIP]
+or http://sourceforge.net/projects/hibernate/files/beanvalidation-tck/2.0.4.Final/beanvalidation-tck-dist-2.0.4.Final.tar.gz/download[TGZ]
+archive.
+They contain JARs, documentation, source code, et al.
+
+You can find the TCK reference manual also online in two different formats -
+http://docs.jboss.org/hibernate/beanvalidation/tck/2.0-jsr380/reference/html_single/[HTML],
+http://docs.jboss.org/hibernate/beanvalidation/tck/2.0-jsr380/reference/pdf/beanvalidation-tck-documentation.pdf[PDF].
+
+To report a bug or challenge a test use our https://hibernate.atlassian.net/browse/BVTCK[issue tracker].

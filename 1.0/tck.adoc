@@ -1,0 +1,30 @@
+= Bean Validation 1.0 TCK
+Hardy Ferentschik
+:description: Bean Validation 1.0 TCK page
+:awestruct-layout: default
+
+A TCK, or Technology Compatibility Kit, is one of the three required pieces for any JSR
+(the other two being the specification document and the reference implementation). The TCK is a set
+of tools and tests to verify that an implementation of the technology conforms to the specification.
+
+The Bean Validation 1.0 TCK is licensed under the Apache Software License 2.0 and hosted in a GitHub
+https://github.com/eclipse-ee4j/beanvalidation-tck[repository].
+The repository consists of multiple artifacts, containing tooling, documentation and most importantly
+a set of http://arquillian.org/[Arquillian] tests. There are also two
+https://github.com/eclipse-ee4j/beanvalidation-tck/tree/master/setup-examples[setup examples],
+demonstrating the setup of the test harness using Maven and Ant.
+
+The Bean Validation 1.0 TCK is built using Maven.
+
+The latest version used to test Bean Validation 1.0 (JSR 303) is 1.0.7.GA.
+
+A distribution bundle is available on the SourceForge
+http://sourceforge.net/projects/hibernate/files/beanvalidation-tck[File Release System] and come as a
+https://sourceforge.net/projects/hibernate/files/beanvalidation-tck/1.0.7.GA/jsr303-tck-1.0.7.GA-dist.zip/download[ZIP]
+archive.
+
+You can find the TCK reference manual also online in two different formats -
+http://docs.jboss.org/hibernate/beanvalidation/tck/1.0/reference/html[html],
+http://docs.jboss.org/hibernate/beanvalidation/tck/1.0/reference/html_single/[html (single-page)].
+
+To report a bug or challenge a test use our https://hibernate.atlassian.net/browse/BVTCK[issue tracker].

@@ -1,0 +1,16 @@
+= The specification repository is released
+Emmanuel Bernard
+:awestruct-layout: news
+:awestruct-tags: [ "open" ]
+
+The last piece of the puzzle is now in the open. I have just released the specification repository on GitHub.
+
+The list of repositories for the spec are:
+
+* link:https://github.com/beanvalidation/beanvalidation-spec[Specification repository]
+* link:https://github.com/hibernate/hibernate-validator[Reference implementation repository]
+* link:https://github.com/beanvalidation/beanvalidation-api[API repository]
+* link:https://github.com/beanvalidation/beanvalidation-tck[TCK repository]
+* link:https://github.com/beanvalidation/beanvalidation.org[This website source]
+
+Want to contribute? link:/contribute[Learn how].

@@ -1,0 +1,35 @@
+= Working with the API and TCK sources
+Gunnar Morling
+:description: Guidelines for working with Jakarta Validation API and TCK
+:sectanchors:
+:awestruct-layout: default
+
+== API
+
+=== Pull requests
+
+Changes to the Jakarta Validation API are realized using http://help.github.com/send-pull-requests/[pull requests] against the https://github.com/jakartaee/validation[API repository] on GitHub.
+Use the link:/contribute/specification[same rules] than for submitting a specification change to the spec repository.
+
+=== Coding guidelines
+
+Obey to the following rules when working on the API sources:
+
+* Javadoc
+  ** Make sure each member is completely documented
+  ** Provide package-level documentation when adding new packages
+  ** Use `{@code}` instead of `<code>`, because it is more readable and `{@code}` also escapes meta characters
+  ** `@param`, `@return` and `@throw` don't end with a '.'
+  ** If referring to other classes and methods use `{@link}`. Use `{@link}` only once in a block. For additional references to the same source use `{@code}` instead of `{@link}`.
+  ** Use `<ul/>` instead of '-' for enumerations
+  ** Use `@since` to document in which spec revision a type/member was added to the API
+  ** Refer to http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html[How to Write Doc Comments] and Joshua Bloch's "Effective Java" for more information on writing good comments.
+
+* Use the IntelliJ https://community.jboss.org/wiki/ContributingToHibernateValidator#Coding_Guidelines[code style template] from the reference implementation to format API sources
+
+== TCK
+
+Information on how to work with the TCK, running it against a given implementation etc. can be found in:
+
+* the TCK http://docs.jboss.org/hibernate/stable/beanvalidation/tck/reference/html_single/[reference guide]
+* the https://community.jboss.org/wiki/BeanValidationTCK[wiki] of the reference implementation
