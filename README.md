@@ -52,6 +52,10 @@ If you get *command not found*:
 
 Point your browser to [http://localhost:4242](http://localhost:4242)
 
+## Updating dependencies
+
+See [the awestruct-build-env update instructions](https://github.com/hibernate/awestruct-build-env/blob/main/CONTRIBUTING.md#updating-dependencies).
+
 ## Tips & Tricks
 
 ### Which other tasks exist in the Rake build file?
