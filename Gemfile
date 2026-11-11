@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'bundler', '2.4.10'
+gem 'bundler', '4.0.24'
 
 # Main site dependencies
 gem 'awestruct', '0.6.7'
+gem 'base64'          # Required by em-websocket, but no longer a Ruby default gem
+gem 'ostruct'         # Required by Awestruct, but no longer a Ruby default gem
+gem 'syslog'          # Loaded by logging, but no longer a Ruby default gem
 gem 'htmlcompressor'
 gem 'uglifier'
 gem 'json'
